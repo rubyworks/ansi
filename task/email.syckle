@@ -1,0 +1,15 @@
+---
+announce:
+  service : Email
+  file    : ~
+  subject : ~
+  mailto  : ruby-talk@ruby-lang.org
+  from    : ENV[EMAIL_ACCOUNT]
+  server  : ENV[EMAIL_SERVER]
+  port    : ENV[EMAIL_PORT]
+  account : ENV[EMAIL_ACCOUNT]
+  domain  : ENV[EMAIL_DOMAIN]
+  login   : ENV[EMAIL_LOGIN]
+  secure  : ENV[EMAIL_SECURE]
+  active  : true
+

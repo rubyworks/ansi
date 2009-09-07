@@ -1,0 +1,9 @@
+---
+rubygems:
+  service: Box
+  active : true
+  types  : [gem, tar]
+  include: [bin, demo, lib, meta, test, "[A-Z]*"]
+  exclude: ~
+  remanifest: true
+

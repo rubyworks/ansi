@@ -1,0 +1,302 @@
+#  
+#  = NAME
+#  
+#  Win32::Console::ANSI - Ruby extension to emulate ANSI console on Win32 system.
+#  
+#  = SYNOPSIS
+#  
+#    require "Win32::Console::ANSI"
+#  
+#    puts "\e[1;34mThis text is bold blue.\e[0m"
+#    puts "This text is normal.""
+#    puts "\e[33;45;1mBold yellow on magenta.\e[0m"
+#    puts "This text is normal."
+#  
+#  With the Term::ANSIColor module one increases the readability:
+#  
+#    require "Win32::Console::ANSI"
+#    require "Term::ANSIColor"
+#  
+#    puts color 'bold blue'
+#    puts "This text is bold blue."
+#    puts color 'reset'
+#    puts "This text is normal."
+#    puts colored ("Bold yellow on magenta.", 'bold yellow on_magenta')
+#    puts "This text is normal."
+#  
+#  And even more with Term::ANSIScreen:
+#  
+#    require "Win32::Console::ANSI;
+#    require "Term::ANSIScreen qw/:color :cursor :screen/;
+#  
+#    locate 1, 1; puts "@ This is (1,1)", savepos;
+#    puts locate(24,60), "@ This is (24,60)"; loadpos;
+#    puts down(2), clline, "@ This is (3,16)";
+#    setscroll 1, 20;
+#    color 'black on white'; clline;
+#    puts "This line is black on white.";
+#    puts color 'reset'; puts "This text is normal.";
+#    puts colored ("This text is bold blue.", 'bold blue');
+#    puts "This text is normal.";
+#    puts colored ['bold blue'], "This text is bold blue.";
+#    puts "This text is normal.";
+#  
+#  = DESCRIPTION
+#  
+#  Windows NT/2000/XP does not support ANSI escape sequences in Win32 Console
+#  applications. This module emulates an ANSI console for the script which
+#  uses it.
+#  
+#  
+#  == Escape sequences for Cursor Movement
+#  
+#     * \e[#A
+#  
+#       CUU: CUrsor Up: Moves the cursor up by the specified number of lines without
+#       changing columns. If the cursor is already on the top line, this sequence
+#       is ignored. \e[A is equivalent to \e[1A.
+#  
+#     * \e[#B
+#  
+#       CUD: CUrsor Down: Moves the cursor down by the specified number of lines
+#       without changing columns. If the cursor is already on the bottom line,
+#       this sequence is ignored. \e[B is equivalent to \e[1B.
+#  
+#     * \e[#C
+#  
+#       CUF: CUrsor Forward: Moves the cursor forward by the specified number of
+#       columns without changing lines. If the cursor is already in the
+#       rightmost column, this sequence is ignored. \e[C is equivalent to \e[1C.
+#  
+#     * \e[#D
+#  
+#        CUB: CUrsor Backward: Moves the cursor back by the specified number of
+#        columns without changing lines. If the cursor is already in the leftmost
+#        column, this sequence is ignored. \e[D is equivalent to \e[1D.
+#  
+#     * \e[#E
+#  
+#        CNL: Cursor Next Line: Moves the cursor down the indicated # of rows, to
+#        column 1. \e[E is equivalent to \e[1E.
+#  
+#     * \e[#F
+#  
+#        CPL: Cursor Preceding Line: Moves the cursor up the indicated # of rows,
+#        to column 1. \e[F is equivalent to \e[1F.
+#  
+#     * \e[#G
+#  
+#        CHA: Cursor Horizontal Absolute: Moves the cursor to indicated column in
+#        current row. \e[G is equivalent to \e[1G.
+#  
+#     * \e[#;#H
+#  
+#        CUP: CUrsor Position: Moves the cursor to the specified position. The first #
+#        specifies the line number, the second # specifies the column.
+#        If you do not specify a position, the cursor moves to the
+#        home position: the upper-left corner of the screen (line 1, column 1).
+#  
+#     * \e[#;#f
+#  
+#        HVP: Horizontal and Vertical Position.
+#        Works the same way as the preceding escape sequence.
+#  
+#     * \e[s
+#  
+#        SCP: Save Cursor Position: Saves the current cursor position. You can move
+#        the cursor to the saved cursor position by using the Restore Cursor
+#        Position sequence.
+#  
+#     * \e[u
+#  
+#        RCP: Restore Cursor Position: Returns the cursor to the position stored
+#        by the Save Cursor Position sequence.
+#  
+#  == Escape sequences for Display Edition
+#  
+#     * \e[#J
+#  
+#        ED: Erase Display:
+#  
+#           * \e[0J
+#  
+#              Clears the screen from cursor to end of display. The cursor position is unchanged.
+#  
+#           * \e[1J
+#  
+#              Clears the screen from start to cursor. The cursor position is unchanged.
+#  
+#            * \e[2J
+#  
+#              Clears the screen and moves the cursor to the home position (line 1, column 1).
+#  
+#         \e[J is equivalent to \e[0J. (Some terminal/emulators respond to \e[J as if
+#         it were \e[2J. Here, the default is 0; it's the norm)
+#  
+#     * \e[#K
+#  
+#        EL: Erase Line:
+#  
+#     * \e[0K
+#  
+#        Clears all characters from the cursor position to the end of the line
+#        (including the character at the cursor position).
+#        The cursor position is unchanged.
+#  
+#     * \e[1K
+#  
+#        Clears all characters from start of line to the cursor position.
+#        (including the character at the cursor position).
+#        The cursor position is unchanged.
+#  
+#     * \e[2K
+#  
+#        Clears all characters of the whole line.
+#        The cursor position is unchanged.
+#  
+#        \e[K is equivalent to \e[0K.
+#  
+#     * \e[#L
+#  
+#        IL: Insert Lines: The cursor line and all lines below it move down # lines,
+#        leaving blank space. The cursor position is unchanged. The bottommost #
+#        lines are lost. \e[L is equivalent to \e[1L.
+#  
+#     * \e[#M
+#  
+#        DL: Delete Line: The block of # lines at and below the cursor are  deleted;
+#        all  lines below  them  move up # lines to fill in the gap, leaving # blank
+#        lines at the bottom of the screen.  The cursor position is unchanged.
+#        \e[M is equivalent to \e[1M.
+#  
+#     * \e#\@
+#  
+#        ICH: Insert CHaracter: The cursor character and all characters to the right
+#        of it move right # columns, leaving behind blank space.
+#        The cursor position is unchanged. The rightmost # characters on the line are lost.
+#  
+#     * \e[#P
+#  
+#        DCH: Delete CHaracter: The block of # characters at and to the right of the
+#        cursor are deleted; all characters to the right of it move left # columns,
+#        leaving behind blank space. The cursor position is unchanged.
+#        \e[P is equivalent to \e[1P.
+#  
+#  
+#  == Escape sequences for Set Graphics Rendition
+#  
+#     * \e[#;...;#m
+#  
+#        SGM: Set Graphics Mode: Calls the graphics functions specified by the
+#        following values. These specified functions remain active until the next
+#        occurrence of this escape sequence. Graphics mode changes the colors and
+#        attributes of text (such as bold and underline) displayed on the
+#        screen.
+#  
+#        * Text attributes
+#  
+#         0    All attributes off
+#         1    Bold on
+#         4    Underscore on
+#         7    Reverse video on
+#         8    Concealed on
+#  
+#         21   Bold off
+#         24   Underscore off
+#         27   Reverse video off
+#         28   Concealed off
+#  
+#        * Foreground colors
+#  
+#         30    Black
+#         31    Red
+#         32    Green
+#         33    Yellow
+#         34    Blue
+#         35    Magenta
+#         36    Cyan
+#         37    White
+#  
+#        * Background colors
+#  
+#         40    Black
+#         41    Red
+#         42    Green
+#         43    Yellow
+#         44    Blue
+#         45    Magenta
+#         46    Cyan
+#         47    White
+#  
+#       \e[m is equivalent to \e0m.
+#  
+#  == Escape sequences for Select Character Set
+#  
+#     * \e(U
+#  
+#        Select null mapping - straight to character from the codepage of the console.
+#  
+#     * \e(K
+#  
+#        Select Windows to DOS mapping, if the corresponding map exist; no effect
+#        otherwise. This is the default mapping (if the map exist, of course). It's
+#        useful becarequire "one types the script with a Windows-based editor (using a
+#        Windows codepage) and the script prints its messages on the console using
+#        another codepage: without translation, the characters with a code greatest
+#        than 127 are different and the printed messages may be not readable.
+#  
+#        The conversion is done by the module Encode if it is installed (it's a
+#        standard module with Perl5.8, not Ruby yet). Otherwise, the conversion is limited to the
+#        following couples:
+#  
+#           WinLatin1 (cp1252)  to DOSLatin1  (cp850)
+#           WinLatin1 (cp1252)  to DOSLatinUS (cp437)
+#           WinLatin2 (cp1250)  to DOSLatin2  (cp852)
+#           WinCyrillic(cp1251) to DOSCyrillic (cp855)
+#  
+#     * \e(#X
+#  
+#        This escape sequence is I<not> standard! It's an experimental one, just for
+#        fun :-)
+#  
+#        If <i>and only if</i> the console uses an Unicode police, it is possible to
+#        change its codepage with this escape sequence. No effect with an ordinary
+#        "Raster Font". (For Windows NT/2000/XP the currently available Unicode
+#        console font is the Lucida Console TrueType font.)
+#        # is the number of the codepage needed, 855 for cp855 for instance.
+#  
+#  
+#  = LIMITATIONS
+#  
+#     * Due to DOS-console limitations, the blink mode (text attributes 5 and 25) is not implemented.
+#  
+#  = SEE ALSO
+#  
+#  <b>Win32::Console</b>, <b>Term::ANSIColor</b>, <b>Term::ANSIScreen</b>.
+#  
+#  = AUTHOR
+#  
+#  J-L Morel jl_morel@bribes.org
+#  
+#  Home page: http://www.bribes.org/perl/wANSIConsole.html
+#
+#  Gonzalo Garramuño GGarramuno@aol.com   Ruby port
+#  
+#  = CREDITS
+#  
+#  Render unto Cæsar the things which are Cæsar's...
+#  
+#  This module requires the module Win32::Console. Thanks to Aldo Calpini.
+#  
+#  The method used to overload the print function is due to Matt Sergeant
+#  (see his module Win32::ASP).
+#  
+#  = COPYRIGHT
+#  
+#  Copyright (c) 2004 Gonzalo Garramuño. All rights reserved.
+#  Copyright (c) 2003 J-L Morel. All rights reserved.
+#  
+#  This program is free software; you can redistribute it and/or modify it under
+#  the terms of the Artistic License.
+#  
+#  

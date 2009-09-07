@@ -1,0 +1,690 @@
+#
+#  = NAME
+#
+#  Win32::Console - Win32 Console and Character Mode Functions
+#
+#
+#  = DESCRIPTION
+#
+#  This module implements the Win32 console and character mode
+#  functions.  They give you full control on the console input and output,
+#  including: support of off-screen console buffers (eg. multiple screen
+#  pages)
+#
+#    - reading and writing of characters, attributes and whole portions of
+#      the screen
+#
+#    - complete processing of keyboard and mouse events
+#
+#    - some very funny additional features :)
+#
+#
+#  Those functions should also make possible a port of the Unix's curses
+#  library; if there is anyone interested (and/or willing to contribute)
+#  to this project, e-mail me.  Thank you.
+#
+#
+#  = REFERENCE
+#
+#
+#  == Methods
+#
+#  - Alloc
+#
+#    Allocates a new console for the process.  Returns C<nil> on errors, a
+#    nonzero value on success.  A process cannot be associated with more
+#    than one console, so this method will fail if there is already an
+#    allocated console.  Use Free to detach the process from the console,
+#    and then call Alloc to create a new console.  See also: C<Free>
+#
+#    Example:
+#
+#      Win32::Console::Alloc()
+#
+#  - Attr [attr]
+#
+#    Gets or sets the current console attribute.  This attribute is used by
+#    the Write method.
+#
+#    Example:
+#
+#      attr = console.Attr()
+#      console.Attr(FG_YELLOW | BG_BLUE)
+#
+#  - Close
+#
+#    Closes a shortcut object.  Note that it is not "strictly" required to
+#    close the objects you created, since the Win32::Shortcut objects are
+#    automatically closed when the program ends (or when you elsehow
+#    destroy such an object).
+#
+#    Example:
+#
+#      link.Close()
+#
+#  - Cls [attr]
+#
+#    Clear the console, with the specified I<attr> if given, or using
+#    ATTR_NORMAL otherwise.
+#
+#    Example:
+#
+#      console.Cls()
+#      console.Cls(FG_WHITE | BG_GREEN)
+#
+#  - Cursor [x, y, size, visible]
+#
+#    Gets or sets cursor position and appearance.  Returns C<nil> on
+#    errors, or a 4-element list containing: I<x>, I<y>, I<size>,
+#    I<visible>.  I<x> and I<y> are the current cursor position; ...
+#
+#    Example:
+#
+#      x, y, size, visible = console.Cursor()
+#
+#      # Get position only
+#      x, y = console.Cursor()
+#
+#      console.Cursor(40, 13, 50, 1)
+#
+#      # Set position only
+#      console.Cursor(40, 13)
+#
+#      # Set size and visibility without affecting position
+#      console.Cursor(-1, -1, 50, 1)
+#
+#  - Display
+#
+#    Displays the specified console on the screen.  Returns C<nil> on errors,
+#    a nonzero value on success.
+#
+#    Example:
+#
+#      console.Display()
+#
+#  - FillAttr [attribute, number, col, row]
+#
+#    Fills the specified number of consecutive attributes, beginning at
+#    I<col>, I<row>, with the value specified in I<attribute>.  Returns the
+#    number of attributes filled, or C<nil> on errors.  See also:
+#    C<FillChar>.
+#
+#    Example:
+#
+#      console.FillAttr(FG_BLACK | BG_BLACK, 80*25, 0, 0)
+#
+#  - FillChar char, number, col, row
+#
+#    Fills the specified number of consecutive characters, beginning at
+#    I<col>, I<row>, with the character specified in I<char>.  Returns the
+#    number of characters filled, or C<nil> on errors.  See also:
+#    C<FillAttr>.
+#
+#    Example:
+#
+#      console.FillChar("X", 80*25, 0, 0)
+#
+#  - Flush
+#
+#    Flushes the console input buffer.  All the events in the buffer are
+#    discarded.  Returns C<nil> on errors, a nonzero value on success.
+#
+#    Example:
+#
+#     console.Flush()
+#
+#  - Free
+#
+#    Detaches the process from the console.  Returns C<nil> on errors, a
+#    nonzero value on success.  See also: C<Alloc>.
+#
+#    Example:
+#
+#      Win32::Console::Free()
+#
+#  - GenerateCtrlEvent [type, processgroup]
+#
+#    Sends a break signal of the specified I<type> to the specified
+#    I<processgroup>.  I<type> can be one of the following constants:
+#
+#      CTRL_BREAK_EVENT
+#      CTRL_C_EVENT
+#
+#    they signal, respectively, the pressing of Control + Break and of
+#    Control + C; if not specified, it defaults to CTRL_C_EVENT.
+#    I<processgroup> is the pid of a process sharing the same console.  If
+#    omitted, it defaults to 0 (the current process), which is also the
+#    only meaningful value that you can pass to this function.  Returns
+#    C<nil> on errors, a nonzero value on success.
+#
+#    Example:
+#
+#      # break this script now
+#      Win32::Console::GenerateCtrlEvent()
+#
+#  - GetEvents
+#
+#    Returns the number of unread input events in the console's input
+#    buffer, or C<nil> on errors.  See also: C<Input>, C<InputChar>,
+#    C<PeekInput>, C<WriteInput>.
+#
+#    Example:
+#
+#      events = console.GetEvents()
+#
+#  - Info
+#
+#    Returns an array of informations about the console (or C<nil> on
+#    errors), which contains:
+#
+#       * columns (X size) of the console buffer.
+#
+#       * rows (Y size) of the console buffer.
+#
+#       * current column (X position) of the cursor.
+#
+#       * current row (Y position) of the cursor.
+#
+#       * current attribute used for C<Write>.
+#
+#       * left column (X of the starting point) of the current console window.
+#
+#       * top row (Y of the starting point) of the current console window.
+#
+#       * right column (X of the final point) of the current console window.
+#
+#       * bottom row (Y of the final point) of the current console window.
+#
+#       * maximum number of columns for the console window, given the current
+#         buffer size, font and the screen size.
+#
+#       * maximum number of rows for the console window, given the current
+#         buffer size, font and the screen size.
+#
+#
+#    See also: <b>Attr</b>, <b>Cursor</b>, <b>Size</b>, <b>Window</b>, <b>MaxWindow</b>.
+#
+#    Example:
+#
+#      info = console.Info()
+#      puts "Cursor at #{info[3]}, #{info[4]}."
+#
+#  - Input
+#
+#    Reads an event from the input buffer.  Returns an array of values, which
+#    depending on the event's nature are:
+#
+#    - keyboard event
+#
+#       The array will contain:
+#
+#       * event type: 1 for keyboard
+#
+#       * key down: TRUE if the key is being pressed, FALSE if the key is being released
+#
+#       * repeat count: the number of times the key is being held down
+#
+#       * virtual keycode: the virtual key code of the key
+#
+#       * virtual scancode: the virtual scan code of the key
+#
+#       * char: the ASCII code of the character (if the key is a character key, 0 otherwise)
+#
+#       * control key state: the state of the control keys (SHIFTs, CTRLs, ALTs, etc.)
+#
+#
+#    - mouse event
+#
+#      The array will contain:
+#
+#       * event type: 2 for mouse
+#
+#       * mouse pos. X: X coordinate (column) of the mouse location
+#
+#       * mouse pos. Y: Y coordinate (row) of the mouse location
+#
+#       * button state: the mouse button(s) which are pressed
+#
+#       * control key state: the state of the control keys (SHIFTs, CTRLs, ALTs, etc.)
+#
+#       * event flags: the type of the mouse event
+#
+#
+#    This method will return <b>nil</b> on errors.  Note that the events
+#    returned are depending on the input <b>Mode</b> of the console; for example,
+#    mouse events are not intercepted unless ENABLE_MOUSE_INPUT is
+#    specified.  See also: <b>GetEvents</b>, <b>InputChar</b>, <b>Mode</b>,
+#    <b>PeekInput</b>, <b>WriteInput</b>.
+#
+#    Example:
+#
+#      event = console.Input()
+#
+#  - InputChar number
+#
+#    Reads and returns I<number> characters from the console input buffer,
+#    or <b>nil</b> on errors.  See also: <b>Input</b>, <b>Mode</b>.
+#
+#    Example:
+#
+#      key = console.InputChar(1)
+#
+#  - InputCP [codepage]
+#
+#    Gets or sets the input code page used by the console.  Note that this
+#    doesn't apply to a console object, but to the standard input
+#    console.  This attribute is used by the Write method.  See also:
+#    <b>OutputCP</b>.
+#
+#    Example:
+#
+#      codepage = Win32::Console::InputCP()
+#      Win32::Console::InputCP(437)
+#
+#  - MaxWindow
+#
+#    Returns the size of the largest possible console window, based on the
+#    current font and the size of the display.  The result is <b>nil</b> on
+#    errors, otherwise a 2-element list containing col, row.
+#
+#    Example:
+#
+#      maxCol, maxRow = console.MaxWindow()
+#
+#  - Mode [flags]
+#
+#    Gets or sets the input or output mode of a console.  I<flags> can be a
+#    combination of the following constants:
+#
+#      ENABLE_LINE_INPUT
+#      ENABLE_ECHO_INPUT
+#      ENABLE_PROCESSED_INPUT
+#      ENABLE_WINDOW_INPUT
+#      ENABLE_MOUSE_INPUT
+#      ENABLE_PROCESSED_OUTPUT
+#      ENABLE_WRAP_AT_EOL_OUTPUT
+#
+#    For more informations on the meaning of those flags, please refer to
+#    the L<"Microsoft's Documentation">.
+#
+#    Example:
+#
+#      mode = console.Mode()
+#      console.Mode(ENABLE_MOUSE_INPUT | ENABLE_PROCESSED_INPUT)
+#
+#  - MouseButtons
+#
+#    Returns the number of the buttons on your mouse, or <b>nil</b> on errors.
+#
+#    Example:
+#
+#      puts "Your mouse has #{Win32::Console::MouseButtons()} buttons."
+#
+#  - Win32::Console.new standard_handle
+#
+#  - Win32::Console.new [accessmode, sharemode]
+#
+#    Creates a new console object.  The first form creates a handle to a
+#    standard channel, I<standard_handle> can be one of the following:
+#
+#      STD_OUTPUT_HANDLE
+#      STD_ERROR_HANDLE
+#      STD_INPUT_HANDLE
+#
+#    The second form, instead, creates a console screen buffer in memory,
+#    which you can access for reading and writing as a normal console, and
+#    then redirect on the standard output (the screen) with <b>Display</b>.  In
+#    this case, you can specify one or both of the following values for
+#    I<accessmode>:
+#
+#      GENERIC_READ
+#      GENERIC_WRITE
+#
+#    which are the permissions you will have on the created buffer, and one
+#    or both of the following values for I<sharemode>:
+#
+#      FILE_SHARE_READ
+#      FILE_SHARE_WRITE
+#
+#    which affect the way the console can be shared.  If you don't specify
+#    any of those parameters, all 4 flags will be used.
+#
+#    Example:
+#
+#      stdout = Win32::Console.new(STD_OUTPUT_HANDLE)
+#      stderr = Win32::Console.new(STD_ERROR_HANDLE)
+#      stdin  = Win32::Console.new(STD_INPUT_HANDLE)
+#
+#      buffer = Win32::Console.new()
+#      buffer = Win32::Console.new(GENERIC_READ | GENERIC_WRITE)
+#
+#  - OutputCP [codepage]
+#
+#    Gets or sets the output code page used by the console.  Note that this
+#    doesn't apply to a console object, but to the standard output console.
+#    See also: <b>InputCP</b>.
+#
+#    Example:
+#
+#      codepage = Win32::Console::OutputCP()
+#      Win32::Console::OutputCP(437)
+#
+#  - PeekInput
+#
+#    Does exactly the same as <b>Input</b>, except that the event read is not
+#    removed from the input buffer.  See also: <b>GetEvents</b>, <b>Input</b>,
+#    <b>InputChar</b>, <b>Mode</b>, <b>WriteInput</b>.
+#
+#    Example:
+#
+#      event = console.PeekInput()
+#
+#  - ReadAttr [number, col, row]
+#
+#    Reads the specified I<number> of consecutive attributes, beginning at
+#    I<col>, I<row>, from the console.  Returns the attributes read (a
+#    variable containing one character for each attribute), or <b>nil</b> on
+#    errors.  You can then pass the returned variable to <b>WriteAttr</b> to
+#    restore the saved attributes on screen.  See also: <b>ReadChar</b>,
+#    <b>ReadRect</b>.
+#
+#    Example:
+#
+#      colors = console.ReadAttr(80*25, 0, 0)
+#
+#  - ReadChar [number, col, row]
+#
+#    Reads the specified I<number> of consecutive characters, beginning at
+#    I<col>, I<row>, from the console.  Returns a string containing the
+#    characters read, or <b>nil</b> on errors.  You can then pass the
+#    returned variable to <b>WriteChar</b> to restore the saved characters on
+#    screen.  See also: <b>ReadAttr</b>, <b>ReadRect</b>.
+#
+#    Example:
+#
+#      chars = console.ReadChar(80*25, 0, 0)
+#
+#  - ReadRect left, top, right, bottom
+#
+#    Reads the content (characters and attributes) of the rectangle
+#    specified by I<left>, I<top>, I<right>, I<bottom> from the console.
+#    Returns a string containing the rectangle read, or <b>nil</b> on errors.
+#    You can then pass the returned variable to <b>WriteRect</b> to restore the
+#    saved rectangle on screen (or on another console).  See also:
+#    <b>ReadAttr</b>, <b>ReadChar</b>.
+#
+#    Example:
+#
+#       rect = console.ReadRect(0, 0, 80, 25)
+#
+#  - Scroll left, top, right, bottom, col, row, char, attr,
+#               [cleft, ctop, cright, cbottom]
+#
+#    Moves a block of data in a console buffer the block is identified by
+#    I<left>, I<top>, I<right>, I<bottom>, while I<row>, I<col> identify
+#    the new location of the block.  The cells left empty as a result of
+#    the move are filled with the character I<char> and attribute I<attr>.
+#    Optionally you can specify a clipping region with I<cleft>, I<ctop>,
+#    I<cright>, I<cbottom>, so that the content of the console outside this
+#    rectangle are unchanged.  Returns <b>nil</b> on errors, a nonzero value
+#    on success.
+#
+#    Example:
+#
+#      # scrolls the screen 10 lines down, filling with black spaces
+#      console.Scroll(0, 0, 80, 25, 0, 10, " ", FG_BLACK | BG_BLACK)
+#
+#  - Select standard_handle
+#
+#    Redirects a standard handle to the specified console.
+#    I<standard_handle> can have one of the following values:
+#
+#      STD_INPUT_HANDLE
+#      STD_OUTPUT_HANDLE
+#      STD_ERROR_HANDLE
+#
+#    Returns <b>nil</b> on errors, a nonzero value on success.
+#
+#    Example:
+#
+#      console.Select(STD_OUTPUT_HANDLE)
+#
+#  - Size [col, row]
+#
+#    Gets or sets the console buffer size.
+#
+#    Example:
+#
+#      x, y = console.Size()
+#      console.Size(80, 25)
+#
+#  - Title [title]
+#
+#    Gets or sets the title bar the string of the current console window.
+#
+#    Example:
+#
+#      title = console.Title()
+#      console.Title("This is a title")
+#
+#  - Window [flag, left, top, right, bottom]
+#
+#    Gets or sets the current console window size.  If called without
+#    arguments, returns a 4-element list containing the current window
+#    coordinates in the form of I<left>, I<top>, I<right>, I<bottom>.  To
+#    set the window size, you have to specify an additional I<flag>
+#    parameter: if it is 0 (zero), coordinates are considered relative to
+#    the current coordinates; if it is non-zero, coordinates are absolute.
+#
+#    Example:
+#
+#      left, top, right, bottom = console.Window()
+#      console.Window(1, 0, 0, 80, 50)
+#
+#  - Write string
+#
+#    Writes I<string> on the console, using the current attribute, that you
+#    can set with <b>Attr</b>, and advancing the cursor as needed.  This isn't
+#    so different from Perl's "print" statement.  Returns the number of
+#    characters written or <b>nil</b> on errors.  See also: <b>WriteAttr</b>,
+#    <b>WriteChar</b>, <b>WriteRect</b>.
+#
+#    Example:
+#
+#      console.Write("Hello, world!")
+#
+#  - WriteAttr attrs, col, row
+#
+#    Writes the attributes in the string I<attrs>, beginning at I<col>,
+#    I<row>, without affecting the characters that are on screen.  The
+#    string attrs can be the result of a <b>ReadAttr</b> function, or you can
+#    build your own attribute string; in this case, keep in mind that every
+#    attribute is treated as a character, not a number (see example).
+#    Returns the number of attributes written or <b>nil</b> on errors.  See
+#    also: <b>Write</b>, <b>WriteChar</b>, <b>WriteRect</b>.
+#
+#    Example:
+#
+#      console.WriteAttr($attrs, 0, 0)
+#
+#      # note the use of chr()...
+#      attrs = (FG_BLACK | BG_WHITE).chr() * 80
+#      console.WriteAttr(attrs, 0, 0)
+#
+#  - WriteChar chars, col, row
+#
+#    Writes the characters in the string <i>attr</i>, beginning at <i>col</i>, <i>row</i>,
+#    without affecting the attributes that are on screen.  The string <i>chars</i>
+#    can be the result of a <b>ReadChar</b> function, or a normal string.  Returns
+#    the number of characters written or <b>nil</b> on errors.  See also:
+#    <b>Write</b>, <b>WriteAttr</b>, <b>WriteRect</b>.
+#
+#    Example:
+#
+#      console.WriteChar("Hello, worlds!", 0, 0)
+#
+#  - WriteInput (event)
+#
+#    Pushes data in the console input buffer.  I<(event)> is a list of values,
+#    for more information see <b>Input</b>.  The string chars can be the result of
+#    a <b>ReadChar</b> function, or a normal string.  Returns the number of
+#    characters written or <b>nil</b> on errors.  See also: <b>Write</b>,
+#    <b>WriteAttr</b>, <b>WriteRect</b>.
+#
+#    Example:
+#
+#      console.WriteInput(event)
+#
+#  - WriteRect rect, left, top, right, bottom
+#
+#    Writes a rectangle of characters and attributes (contained in <i>rect</i>)
+#    on the console at the coordinates specified by <i>left</i>, <i>top</i>,
+#    <i>right</i>, <i>bottom</i>.  <i>rect</i> can be the result of a <b>ReadRect</b>
+#    function.  Returns <b>nil</b> on errors, otherwise a 4-element list
+#    containing the coordinates of the affected rectangle, in the format
+#    <i>left</i>, <i>top</i>, <i>right</i>, <i>bottom</i>.  See also: <b>Write</b>,
+#    <b>WriteAttr</b>, <b>WriteChar</b>.
+#
+#    Example:
+#
+#      console.WriteRect(rect, 0, 0, 80, 25)
+#
+#
+#  == Constants
+#
+#  The following constants are defined in the namespace of 
+#  Win32::Console::Constants and are brought into the current
+#  namespace when the module is required:
+#
+#      BACKGROUND_BLUE
+#      BACKGROUND_GREEN
+#      BACKGROUND_INTENSITY
+#      BACKGROUND_RED
+#      CAPSLOCK_ON
+#      CONSOLE_TEXTMODE_BUFFER
+#      ENABLE_ECHO_INPUT
+#      ENABLE_LINE_INPUT
+#      ENABLE_MOUSE_INPUT
+#      ENABLE_PROCESSED_INPUT
+#      ENABLE_PROCESSED_OUTPUT
+#      ENABLE_WINDOW_INPUT
+#      ENABLE_WRAP_AT_EOL_OUTPUT
+#      ENHANCED_KEY
+#      FILE_SHARE_READ
+#      FILE_SHARE_WRITE
+#      FOREGROUND_BLUE
+#      FOREGROUND_GREEN
+#      FOREGROUND_INTENSITY
+#      FOREGROUND_RED
+#      LEFT_ALT_PRESSED
+#      LEFT_CTRL_PRESSED
+#      NUMLOCK_ON
+#      GENERIC_READ
+#      GENERIC_WRITE
+#      RIGHT_ALT_PRESSED
+#      RIGHT_CTRL_PRESSED
+#      SCROLLLOCK_ON
+#      SHIFT_PRESSED
+#      STD_INPUT_HANDLE
+#      STD_OUTPUT_HANDLE
+#      STD_ERROR_HANDLE
+#
+#  Additionally, these other constants are also added to your current
+#  namespace when requiring the module:
+#
+#      FG_BLACK
+#      FG_BLUE
+#      FG_LIGHTBLUE
+#      FG_RED
+#      FG_LIGHTRED
+#      FG_GREEN
+#      FG_LIGHTGREEN
+#      FG_MAGENTA
+#      FG_LIGHTMAGENTA
+#      FG_CYAN
+#      FG_LIGHTCYAN
+#      FG_BROWN
+#      FG_YELLOW
+#      FG_GRAY
+#      FG_WHITE
+#
+#      BG_BLACK
+#      BG_BLUE
+#      BG_LIGHTBLUE
+#      BG_RED
+#      BG_LIGHTRED
+#      BG_GREEN
+#      BG_LIGHTGREEN
+#      BG_MAGENTA
+#      BG_LIGHTMAGENTA
+#      BG_CYAN
+#      BG_LIGHTCYAN
+#      BG_BROWN
+#      BG_YELLOW
+#      BG_GRAY
+#      BG_WHITE
+#
+#      ATTR_NORMAL
+#      ATTR_INVERSE
+#
+#  ATTR_NORMAL is set to gray foreground on black background (DOS's
+#  standard colors).
+#
+#
+#  == Microsoft's Documentation
+#
+#  Documentation for the Win32 Console and Character mode Functions can
+#  be found on Microsoft's site at this URL:
+#
+#  http://www.microsoft.com/msdn/sdk/platforms/doc/sdk/win32/sys/src/conchar.htm
+#
+#  A reference of the available functions is at:
+#
+#  http://www.microsoft.com/msdn/sdk/platforms/doc/sdk/win32/sys/src/conchar_34.htm
+#
+#
+#  = VERSION HISTORY
+#
+#   * 0.031 (24 Sep 1999)
+#
+#     * Fixed typo in GenerateCtrlEvent().
+#
+#     * Converted and added pod documentation (from Jan Dubois <jand@activestate.com>).
+#
+#   * 0.03 (07 Apr 1997)
+#
+#     * Added "GenerateCtrlEvent" method.
+#
+#     * The PLL file now comes in 2 versions, one for Perl version 5.001
+#       (build 110) and one for Perl version 5.003 (build 300 and higher,
+#       EXCEPT 304).
+#
+#     * added an installation program that will automatically copy the right
+#       version in the right place.
+#
+#  * 0.01 (09 Feb 1997)
+#
+#      * First public release.
+#
+#  = AUTHORS
+#
+#  Aldo Calpini <a.calpini@romagiubileo.it> Perl module
+#
+#  Gonzalo Garramuño <GGarramuno@aol.com>   Ruby Port
+#
+#  = CREDITS
+#
+#  Thanks to: Jesse Dougherty, Dave Roth, ActiveWare, and the
+#  Perl-Win32-Users community.
+#
+#
+#  = DISCLAIMER
+#
+#  This program is FREE; you can redistribute, modify, disassemble, or
+#  even reverse engineer this software at your will.  Keep in mind,
+#  however, that NOTHING IS GUARANTEED to work and everything you do is
+#  AT YOUR OWN RISK - I will not take responsibility for any damage, loss
+#  of money and/or health that may arise from the use of this program!
+#
+#  This is distributed under the terms of Larry Wall's Artistic License.
+#

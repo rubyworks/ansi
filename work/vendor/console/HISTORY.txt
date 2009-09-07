@@ -1,0 +1,7 @@
+v1.0 - Added .dup to _printString function to avoid mangling outside
+       string references.  Removed the other (later) .dup call.
+       Turned of some exceptions that were conflicting with using
+       the module with pipes or redirections.
+v0.8 - Fixed bugs in reading routines, added ruby docs, and 
+       sample test suite.
+v0.5 - First public release.

@@ -1,0 +1,9 @@
+---
+notes:
+  service  : Notes
+  loadpath : ~
+  labels   : ~
+  output   : ~
+  format   : ~
+  active   : false
+

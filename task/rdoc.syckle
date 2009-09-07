@@ -1,0 +1,10 @@
+---
+rdoc:
+  service  : RDoc
+  include  : ~
+  exclude  : ~
+  template : ~
+  main     : ~
+  extra    : ~
+  active   : true
+

@@ -1,0 +1,10 @@
+---
+testunit:
+  service  : Testrb
+  tests    : ~
+  exclude  : ~
+  loadpath : ~
+  requires : ~
+  live     : false   
+  active   : false
+

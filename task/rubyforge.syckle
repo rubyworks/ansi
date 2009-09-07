@@ -1,0 +1,10 @@
+---
+rubyforge:
+  service : Rubyforge
+  unixname: <%= project %>
+  groupid : ~
+  package : <%= package %>
+  sitemap:
+    doc/rdoc: <%= package %>
+  active  : true
+

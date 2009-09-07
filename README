@@ -1,0 +1,72 @@
+= ANSI
+
+* http://death.rubyforge.org
+* http://death.rubyforge.org/ansi
+
+
+== DESCRIPTION
+
+The ANSI project is a collection of ANSI code related libraries
+enabling ANSI code based colorization and stylization of output.
+It is very nice for beautifying shell output.
+
+This collection is based on a set of scripts spun-off from
+Ruby Facets. Include are Code (used to be ANSICode), Logger,
+Progressbar and String. In addition the library include
+Terminal which provides information about the current output
+device.
+
+
+== FEATURES/ISSUES
+
+* ANSI::Code can be used as a mixin or as module functions.
+* Good coverage of standard ANSI codes.
+* Windows support needs some TLC :(
+
+
+== RELEASE NOTES
+
+Please see HISTORY file.
+
+
+== SYNOPSIS
+
+The ANSI::Code module defines ANSI codes as methods.
+
+   include ANSICode
+
+   p red, "Hello", blue, "World"
+   => "\e[31mHello\e[34mWorld"
+
+   p red { "Hello" } + blue { "World" }
+   => "\e[31mHello\e[0m\e[34mWorld\e[0m"
+
+Thes mehods can also be called as module methods, eg. 'ANSI::Code.red'.
+
+Please see the online documentation for more information on using
+the other libraries.
+
+
+== HOW TO INSTALL
+
+To install with RubyGems simply open a console and type:
+
+  gem install ansi
+
+Local installation requires Setup.rb (gem install setup),
+then download the tarball package and type:
+
+  tar -xvzf ansi-1.0.0.tgz
+  cd ansi-1.0.0
+  sudo setup.rb all
+
+Windows users use 'ruby setup.rb all'.
+
+
+== LICENSE/COPYRIGHT
+
+Copyright (c) 2004 Coding Dead
+
+This program is ditributed unser the terms of the LGPLv3 license.
+
+See LICENSE file for details.

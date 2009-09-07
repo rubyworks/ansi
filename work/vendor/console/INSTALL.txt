@@ -1,0 +1,18 @@
+
+To compile and install:
+
+
+Open a windows console.
+> vcvars32.bat    # to set up microsoft's compiling environment
+                  # this is located in the bin/ directory of the MSVC compiler
+> ruby extconf.rb # to create a Makefile
+> nmake           # to compile
+> nmake install   # to install
+
+
+To test:
+
+> cd test
+> dir              # to see available samples
+> ruby [anysample]
+

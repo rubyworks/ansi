@@ -1,0 +1,24 @@
+= RELEASE HISTORY
+
+== 1.0.1 // 2009-08-15
+
+The release fixes a single bug that should allow Ruby 1.9
+to use the ANSI library.
+
+Changes:
+
+* 1 Major Enhancement
+
+    * Renamed PLATFORM to RUBY_PLATFORM
+
+
+== 1.0.0 // 2009-08-15
+
+This is the initial stand-alone release of ANSI, a collection
+of ANSI based classes spun-off from Ruby Facets.
+
+Changes:
+
+* 1 Major Enhancement
+
+    * Happy Birthday!
