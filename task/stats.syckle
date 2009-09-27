@@ -1,5 +1,5 @@
 ---
-codestats:
+stats:
   service  : Stats
   title    : ~
   loadpath : ~
