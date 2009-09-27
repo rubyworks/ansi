@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>ANSI</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>ANSI</h1>
+
+	
+	<div id="main">
+		
+<ul>
+<li><a href="http://death.rubyforge.org">death.rubyforge.org</a>
+
+</li>
+<li><a href="http://death.rubyforge.org/ansi">death.rubyforge.org/ansi</a>
+
+</li>
+</ul>
+<h2>DESCRIPTION</h2>
+<p>
+The <a href="ANSI.html">ANSI</a> project is a collection of <a
+href="ANSI.html">ANSI</a> code related libraries enabling <a
+href="ANSI.html">ANSI</a> code based colorization and stylization of
+output. It is very nice for beautifying shell output.
+</p>
+<p>
+This collection is based on a set of scripts spun-off from Ruby Facets.
+Include are Code (used to be ANSICode), <a href="Logger.html">Logger</a>,
+Progressbar and String. In addition the library include Terminal which
+provides information about the current output device.
+</p>
+<h2>FEATURES/ISSUES</h2>
+<ul>
+<li><a href="ANSI/Code.html">ANSI::Code</a> can be used as a mixin or as module
+functions.
+
+</li>
+<li>Good coverage of standard <a href="ANSI.html">ANSI</a> codes.
+
+</li>
+<li>Windows support needs some TLC :(
+
+</li>
+</ul>
+<h2>RELEASE NOTES</h2>
+<p>
+Please see <a href="HISTORY.html">HISTORY</a> file.
+</p>
+<h2>SYNOPSIS</h2>
+<p>
+The <a href="ANSI/Code.html">ANSI::Code</a> module defines <a
+href="ANSI.html">ANSI</a> codes as methods.
+</p>
+<pre>
+   include ANSICode
+
+   p red, &quot;Hello&quot;, blue, &quot;World&quot;
+   =&gt; &quot;\e[31mHello\e[34mWorld&quot;
+
+   p red { &quot;Hello&quot; } + blue { &quot;World&quot; }
+   =&gt; &quot;\e[31mHello\e[0m\e[34mWorld\e[0m&quot;
+</pre>
+<p>
+Thes mehods can also be called as module methods, eg.
+&#8216;ANSI::Code.red&#8217;.
+</p>
+<p>
+Please see the online documentation for more information on using the other
+libraries.
+</p>
+<h2>HOW TO INSTALL</h2>
+<p>
+To install with RubyGems simply open a console and type:
+</p>
+<pre>
+  gem install ansi
+</pre>
+<p>
+Local installation requires Setup.rb (gem install setup), then download the
+tarball package and type:
+</p>
+<pre>
+  tar -xvzf ansi-1.0.0.tgz
+  cd ansi-1.0.0
+  sudo setup.rb all
+</pre>
+<p>
+Windows users use &#8216;ruby setup.rb all&#8217;.
+</p>
+<h2>LICENSE/COPYRIGHT</h2>
+<p>
+Copyright &#169; 2004 Coding Dead
+</p>
+<p>
+This program is ditributed unser the terms of the LGPLv3 license.
+</p>
+<p>
+See <a href="LICENSE.html">LICENSE</a> file for details.
+</p>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="HISTORY.html">HISTORY</a></li>
+		
+			<li class="file"><a href="LICENSE.html">LICENSE</a></li>
+		
+			<li class="file"><a href="README.html">README</a></li>
+		
+	</ul>
+	
+
+	<h2>Classes/Modules</h2>
+	<ul>
+		
+		<li class="module"><a href="ANSI.html">ANSI</a></li>
+		
+		<li class="module"><a href="ANSI/Code.html">ANSI::Code</a></li>
+		
+		<li class="class"><a href="ANSI/Logger.html">ANSI::Logger</a></li>
+		
+		<li class="class"><a href="ANSI/Progressbar.html">ANSI::Progressbar</a></li>
+		
+		<li class="class"><a href="ANSI/String.html">ANSI::String</a></li>
+		
+		<li class="module"><a href="ANSI/Terminal.html">ANSI::Terminal</a></li>
+		
+		<li class="module"><a href="Logger.html">Logger</a></li>
+		
+		<li class="class"><a href="Logger/LogDevice.html">Logger::LogDevice</a></li>
+		
+	</ul>
+
+	<h2>Methods</h2>
+	<ul>
+		
+			<li><a href="ANSI/Code.html#M000024">::define_ansicolor_method &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/String.html#M000078">::new &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000041">::new &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI.html#M000075">::string &mdash; ANSI</a></li>
+		
+			<li><a href="ANSI/String.html#M000088">#+ &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000058">#GetConsoleMode &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000061">#GetConsoleScreenBufferInfo &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000054">#GetStdHandle &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000045">#SetConsoleEcho &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000060">#SetConsoleMode &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/String.html#M000091">#[] &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000096">#ansi &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000098">#ansi! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000002">#ansicolor= &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000001">#ansicolor? &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="Logger/LogDevice.html#M000000">#ansicolor? &mdash; Logger::LogDevice</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000073">#bar &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000046">#bar_mark= &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/String.html#M000103">#black &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000112">#black! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000102">#blue &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000111">#blue! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000107">#bold &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000116">#bold! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000066">#bytes &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Code.html#M000009">#clear_line &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Code.html#M000007">#clear_screen &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Code.html#M000012">#clr &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Code.html#M000008">#cls &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/String.html#M000097">#color &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000099">#color! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000089">#colorize &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Code.html#M000029">#colors &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000064">#convert_bytes &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/String.html#M000106">#cyan &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000115">#cyan! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000015">#debug &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000026">#debug_with_color &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Code.html#M000020">#display &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Code.html#M000017">#down &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/String.html#M000086">#downcase &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000087">#downcase! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000069">#elapsed &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000072">#eol &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000016">#error &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000025">#error_with_color &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000068">#eta &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000021">#fatal &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000027">#fatal_with_color &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000052">#file_transfer_mode &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000053">#finish &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000055">#flush &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000048">#format &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000067">#format_time &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000003">#formatter &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000034">#get_character &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000036">#get_character &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000042">#get_character &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000032">#get_character &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000077">#get_width &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/String.html#M000101">#green &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000110">#green! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000095">#gsub &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000094">#gsub! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000056">#halt &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000062">#inc &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000010">#info &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000022">#info_with_color &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000063">#inspect &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Code.html#M000018">#left &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/String.html#M000104">#magenta &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000113">#magenta! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Code.html#M000013">#move &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000074">#percentage &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000038">#raw_no_echo_mode &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/String.html#M000100">#red &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000109">#red! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000059">#reset &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Code.html#M000006">#restore &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000039">#restore_mode &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Code.html#M000019">#right &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Code.html#M000005">#save &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000037">#screen_width &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000057">#set &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/String.html#M000118">#shift_marks &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000119">#shift_marks! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000080">#show &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000084">#show_progress &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/String.html#M000082">#size &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000090">#slice &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000050">#standard_mode &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000070">#stat &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000071">#stat_for_file_transfer &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000049">#style &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000004">#styles &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/String.html#M000093">#sub &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000092">#sub! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000031">#terminal_height &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000040">#terminal_size &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000043">#terminal_size &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000033">#terminal_size &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000035">#terminal_size &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Terminal.html#M000030">#terminal_width &mdash; ANSI::Terminal</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000076">#title &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000044">#title= &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/String.html#M000079">#to_s &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000081">#to_str &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000047">#total_overflow= &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000051">#transfer_mode &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Progressbar.html#M000065">#transfer_rate &mdash; ANSI::Progressbar</a></li>
+		
+			<li><a href="ANSI/Code.html#M000028">#uncolored &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/String.html#M000108">#underline &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000117">#underline! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Code.html#M000014">#up &mdash; ANSI::Code</a></li>
+		
+			<li><a href="ANSI/String.html#M000083">#upcase &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000085">#upcase! &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000011">#warn &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/Logger.html#M000023">#warn_with_color &mdash; ANSI::Logger</a></li>
+		
+			<li><a href="ANSI/String.html#M000105">#yellow &mdash; ANSI::String</a></li>
+		
+			<li><a href="ANSI/String.html#M000114">#yellow! &mdash; ANSI::String</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
