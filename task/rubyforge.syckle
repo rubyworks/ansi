@@ -6,5 +6,5 @@ rubyforge:
   package : <%= package %>
   sitemap:
     doc/rdoc: <%= package %>
-  active  : true
+  active  : false
 
