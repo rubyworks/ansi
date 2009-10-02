@@ -71,35 +71,35 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#M000052">#GetConsoleMode</a></li>
+          <li><a href="#M000053">#GetConsoleMode</a></li>
           
-          <li><a href="#M000055">#GetConsoleScreenBufferInfo</a></li>
+          <li><a href="#M000060">#GetConsoleScreenBufferInfo</a></li>
           
-          <li><a href="#M000048">#GetStdHandle</a></li>
+          <li><a href="#M000052">#GetStdHandle</a></li>
           
-          <li><a href="#M000044">#SetConsoleEcho</a></li>
+          <li><a href="#M000045">#SetConsoleEcho</a></li>
           
-          <li><a href="#M000054">#SetConsoleMode</a></li>
+          <li><a href="#M000059">#SetConsoleMode</a></li>
           
-          <li><a href="#M000037">#get_character</a></li>
+          <li><a href="#M000036">#get_character</a></li>
           
           <li><a href="#M000032">#get_character</a></li>
           
           <li><a href="#M000034">#get_character</a></li>
           
-          <li><a href="#M000041">#get_character</a></li>
+          <li><a href="#M000042">#get_character</a></li>
           
           <li><a href="#M000038">#raw_no_echo_mode</a></li>
           
           <li><a href="#M000039">#restore_mode</a></li>
           
-          <li><a href="#M000036">#screen_width</a></li>
+          <li><a href="#M000037">#screen_width</a></li>
           
           <li><a href="#M000031">#terminal_height</a></li>
           
           <li><a href="#M000040">#terminal_size</a></li>
           
-          <li><a href="#M000042">#terminal_size</a></li>
+          <li><a href="#M000043">#terminal_size</a></li>
           
           <li><a href="#M000033">#terminal_size</a></li>
           
@@ -180,7 +180,8 @@
   <div id="documentation">
 
     <div id="description">
-      <p>
+      <h1><a href="Terminal.html">Terminal</a></h1>
+<p>
 This library is based of HighLine&#8217;s SystemExtensions by James Edward
 Gray II.
 </p>
@@ -276,7 +277,7 @@ win32 console APIs
 
     
       <div id="-et-onsole-ode-method" class="method-detail ">
-        <a name="M000052"></a>
+        <a name="M000053"></a>
 
         <div class="method-heading">
         
@@ -313,7 +314,7 @@ win32 console APIs
 
     
       <div id="-et-onsole-creen-uffer-nfo-method" class="method-detail ">
-        <a name="M000055"></a>
+        <a name="M000060"></a>
 
         <div class="method-heading">
         
@@ -352,7 +353,7 @@ win32 console APIs
 
     
       <div id="-et-td-andle-method" class="method-detail ">
-        <a name="M000048"></a>
+        <a name="M000052"></a>
 
         <div class="method-heading">
         
@@ -387,7 +388,7 @@ win32 console APIs
 
     
       <div id="-et-onsole-cho-method" class="method-detail ">
-        <a name="M000044"></a>
+        <a name="M000045"></a>
 
         <div class="method-heading">
         
@@ -430,7 +431,7 @@ windows savvy console echo toggler
 
     
       <div id="-et-onsole-ode-method" class="method-detail ">
-        <a name="M000054"></a>
+        <a name="M000059"></a>
 
         <div class="method-heading">
         
@@ -465,7 +466,7 @@ windows savvy console echo toggler
 
     
       <div id="get-character-method" class="method-detail ">
-        <a name="M000037"></a>
+        <a name="M000036"></a>
 
         <div class="method-heading">
         
@@ -591,7 +592,7 @@ Unix savvy getc(). (First choice.)
 
     
       <div id="get-character-method" class="method-detail ">
-        <a name="M000041"></a>
+        <a name="M000042"></a>
 
         <div class="method-heading">
         
@@ -709,7 +710,7 @@ program!
 
     
       <div id="screen-width-method" class="method-detail ">
-        <a name="M000036"></a>
+        <a name="M000037"></a>
 
         <div class="method-heading">
         
@@ -726,7 +727,7 @@ Console screen width (taken from progress bar)
 </p>
 <p>
 NOTE: Don&#8217;t know how portable <a
-href="Terminal.html#M000036">screen_width</a> is. TODO: How to fit in to
+href="Terminal.html#M000037">screen_width</a> is. TODO: How to fit in to
 system?
 </p>
           
@@ -781,7 +782,7 @@ Get the height of the terminal window.
           <div class="method-source-code"
             id="terminal-height-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 34</span>
+<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_height</span>
       <span class="ruby-identifier">terminal_size</span>[<span class="ruby-value">1</span>]
     <span class="ruby-keyword kw">end</span></pre>
@@ -833,7 +834,7 @@ A Unix savvy method to fetch the console columns, and rows.
 
     
       <div id="terminal-size-method" class="method-detail ">
-        <a name="M000042"></a>
+        <a name="M000043"></a>
 
         <div class="method-heading">
         
@@ -966,7 +967,7 @@ Get the width of the terminal window.
           <div class="method-source-code"
             id="terminal-width-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 29</span>
+<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 31</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_width</span>
       <span class="ruby-identifier">terminal_size</span>[<span class="ruby-value">0</span>]
     <span class="ruby-keyword kw">end</span></pre>

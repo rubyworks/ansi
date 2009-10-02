@@ -66,7 +66,7 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#M000043">::new</a></li>
+          <li><a href="#M000041">::new</a></li>
           
           <li><a href="#M000074">#bar</a></li>
           
@@ -84,49 +84,49 @@
           
           <li><a href="#M000068">#eta</a></li>
           
-          <li><a href="#M000056">#file_transfer_mode</a></li>
+          <li><a href="#M000054">#file_transfer_mode</a></li>
           
-          <li><a href="#M000057">#finish</a></li>
+          <li><a href="#M000055">#finish</a></li>
           
-          <li><a href="#M000058">#flush</a></li>
+          <li><a href="#M000056">#flush</a></li>
           
-          <li><a href="#M000049">#format</a></li>
+          <li><a href="#M000048">#format</a></li>
           
           <li><a href="#M000067">#format_time</a></li>
           
-          <li><a href="#M000079">#get_width</a></li>
+          <li><a href="#M000078">#get_width</a></li>
           
-          <li><a href="#M000059">#halt</a></li>
+          <li><a href="#M000057">#halt</a></li>
           
           <li><a href="#M000062">#inc</a></li>
           
           <li><a href="#M000063">#inspect</a></li>
           
-          <li><a href="#M000076">#percentage</a></li>
+          <li><a href="#M000075">#percentage</a></li>
           
           <li><a href="#M000061">#reset</a></li>
           
-          <li><a href="#M000060">#set</a></li>
+          <li><a href="#M000058">#set</a></li>
           
           <li><a href="#M000080">#show</a></li>
           
           <li><a href="#M000088">#show_progress</a></li>
           
-          <li><a href="#M000051">#standard_mode</a></li>
+          <li><a href="#M000050">#standard_mode</a></li>
           
           <li><a href="#M000070">#stat</a></li>
           
           <li><a href="#M000071">#stat_for_file_transfer</a></li>
           
-          <li><a href="#M000050">#style</a></li>
+          <li><a href="#M000049">#style</a></li>
           
           <li><a href="#M000077">#title</a></li>
           
-          <li><a href="#M000045">#title=</a></li>
+          <li><a href="#M000044">#title=</a></li>
           
           <li><a href="#M000047">#total_overflow=</a></li>
           
-          <li><a href="#M000053">#transfer_mode</a></li>
+          <li><a href="#M000051">#transfer_mode</a></li>
           
           <li><a href="#M000065">#transfer_rate</a></li>
           
@@ -203,8 +203,10 @@
   <div id="documentation">
 
     <div id="description">
-      <p>
-ProgressBar is a text-based progressbar library.
+      <h1><a href="Progressbar.html">Progressbar</a></h1>
+<p>
+<a href="Progressbar.html">Progressbar</a> is a text-based progressbar
+library.
 </p>
 <pre>
   pbar = Progressbar.new( &quot;Demo&quot;, 100 )
@@ -284,7 +286,7 @@ ProgressBar is a text-based progressbar library.
 
     
       <div id="new-method" class="method-detail ">
-        <a name="M000043"></a>
+        <a name="M000041"></a>
 
         <div class="method-heading">
         
@@ -303,7 +305,7 @@ ProgressBar is a text-based progressbar library.
           <div class="method-source-code"
             id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 18</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 20</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">out</span>=<span class="ruby-constant">STDERR</span>)
     <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">title</span>
     <span class="ruby-ivar">@total</span> = <span class="ruby-identifier">total</span>
@@ -358,7 +360,7 @@ ProgressBar is a text-based progressbar library.
           <div class="method-source-code"
             id="bar-mark--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 50</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 52</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bar_mark=</span>(<span class="ruby-identifier">mark</span>)
     <span class="ruby-ivar">@bar_mark</span> = <span class="ruby-constant">String</span>(<span class="ruby-identifier">mark</span>)[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>]
   <span class="ruby-keyword kw">end</span></pre>
@@ -371,7 +373,7 @@ ProgressBar is a text-based progressbar library.
 
     
       <div id="file-transfer-mode-method" class="method-detail method-alias">
-        <a name="M000056"></a>
+        <a name="M000054"></a>
 
         <div class="method-heading">
         
@@ -384,7 +386,7 @@ ProgressBar is a text-based progressbar library.
         <div class="method-description">
           
           <p>
-Alias for <a href="Progressbar.html#M000053">transfer_mode</a>
+Alias for <a href="Progressbar.html#M000051">transfer_mode</a>
 </p>
           
 
@@ -396,7 +398,7 @@ Alias for <a href="Progressbar.html#M000053">transfer_mode</a>
 
     
       <div id="finish-method" class="method-detail ">
-        <a name="M000057"></a>
+        <a name="M000055"></a>
 
         <div class="method-heading">
         
@@ -415,7 +417,7 @@ Alias for <a href="Progressbar.html#M000053">transfer_mode</a>
           <div class="method-source-code"
             id="finish-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 84</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 86</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">finish</span>
     <span class="ruby-ivar">@current</span> = <span class="ruby-ivar">@total</span>
     <span class="ruby-ivar">@is_finished</span> = <span class="ruby-keyword kw">true</span>
@@ -430,7 +432,7 @@ Alias for <a href="Progressbar.html#M000053">transfer_mode</a>
 
     
       <div id="flush-method" class="method-detail ">
-        <a name="M000058"></a>
+        <a name="M000056"></a>
 
         <div class="method-heading">
         
@@ -449,7 +451,7 @@ Alias for <a href="Progressbar.html#M000053">transfer_mode</a>
           <div class="method-source-code"
             id="flush-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 90</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 92</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flush</span>
     <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">flush</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -462,7 +464,7 @@ Alias for <a href="Progressbar.html#M000053">transfer_mode</a>
 
     
       <div id="format-method" class="method-detail ">
-        <a name="M000049"></a>
+        <a name="M000048"></a>
 
         <div class="method-heading">
         
@@ -483,7 +485,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="format-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 59</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 61</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format</span>(<span class="ruby-identifier">format</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>)
     <span class="ruby-ivar">@format</span> = <span class="ruby-identifier">format</span>
     <span class="ruby-ivar">@format_arguments</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
@@ -497,7 +499,7 @@ Set format and format arguments.
 
     
       <div id="halt-method" class="method-detail ">
-        <a name="M000059"></a>
+        <a name="M000057"></a>
 
         <div class="method-heading">
         
@@ -516,7 +518,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="halt-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 94</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 96</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">halt</span>
     <span class="ruby-ivar">@is_finished</span> = <span class="ruby-keyword kw">true</span>
     <span class="ruby-identifier">show_progress</span>
@@ -549,7 +551,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="inc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 120</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 122</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inc</span>(<span class="ruby-identifier">step</span> = <span class="ruby-value">1</span>)
     <span class="ruby-ivar">@current</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">step</span>
     <span class="ruby-ivar">@current</span> = <span class="ruby-ivar">@total</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@current</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@total</span>
@@ -584,7 +586,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="inspect-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 127</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 129</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
     <span class="ruby-node">&quot;(ProgressBar: #{@current}/#{@total})&quot;</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -616,7 +618,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="reset-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 115</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 117</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
     <span class="ruby-ivar">@current</span> = <span class="ruby-value">0</span>
     <span class="ruby-ivar">@is_finished</span> = <span class="ruby-keyword kw">false</span>
@@ -630,7 +632,7 @@ Set format and format arguments.
 
     
       <div id="set-method" class="method-detail ">
-        <a name="M000060"></a>
+        <a name="M000058"></a>
 
         <div class="method-heading">
         
@@ -649,7 +651,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="set-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 99</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 101</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set</span>(<span class="ruby-identifier">count</span>)
     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;invalid count less than zero: #{count}&quot;</span>
@@ -673,7 +675,7 @@ Set format and format arguments.
 
     
       <div id="standard-mode-method" class="method-detail ">
-        <a name="M000051"></a>
+        <a name="M000050"></a>
 
         <div class="method-heading">
         
@@ -692,7 +694,7 @@ Set format and format arguments.
           <div class="method-source-code"
             id="standard-mode-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 70</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 72</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">standard_mode</span>
     <span class="ruby-ivar">@format</span> = <span class="ruby-value str">&quot;%-14s %3d%% %s %s&quot;</span>
     <span class="ruby-ivar">@format_arguments</span> = [<span class="ruby-identifier">:title</span>, <span class="ruby-identifier">:percentage</span>, <span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">:stat</span>]
@@ -706,7 +708,7 @@ Set format and format arguments.
 
     
       <div id="style-method" class="method-detail ">
-        <a name="M000050"></a>
+        <a name="M000049"></a>
 
         <div class="method-heading">
         
@@ -727,7 +729,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="style-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 65</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 67</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style</span>(<span class="ruby-identifier">options</span>)
     <span class="ruby-ivar">@styles</span> = <span class="ruby-identifier">options</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -740,7 +742,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
 
     
       <div id="title--method" class="method-detail ">
-        <a name="M000045"></a>
+        <a name="M000044"></a>
 
         <div class="method-heading">
         
@@ -759,7 +761,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="title--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 46</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 48</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title=</span>(<span class="ruby-identifier">str</span>)
     <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">str</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -791,7 +793,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="total-overflow--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 54</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 56</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">total_overflow=</span>(<span class="ruby-identifier">boolv</span>)
     <span class="ruby-ivar">@total_overflow</span> = <span class="ruby-identifier">boolv</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -804,7 +806,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
 
     
       <div id="transfer-mode-method" class="method-detail ">
-        <a name="M000053"></a>
+        <a name="M000051"></a>
 
         <div class="method-heading">
         
@@ -823,7 +825,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="transfer-mode-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 76</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 78</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transfer_mode</span>
     <span class="ruby-ivar">@format</span> = <span class="ruby-value str">&quot;%-14s %3d%% %s %s&quot;</span>
     <span class="ruby-ivar">@format_arguments</span> = [<span class="ruby-identifier">:title</span>, <span class="ruby-identifier">:percentage</span>, <span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">:stat_for_file_transfer</span>]
@@ -834,7 +836,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
 
         
         <div class="aliases">
-          Also aliased as: <a href="Progressbar.html#M000056">file_transfer_mode</a>
+          Also aliased as: <a href="Progressbar.html#M000054">file_transfer_mode</a>
         </div>
         
       </div>
@@ -866,7 +868,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="bar-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 195</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 197</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bar</span>
     <span class="ruby-identifier">len</span> = <span class="ruby-identifier">percentage</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@bar_length</span> <span class="ruby-operator">/</span> <span class="ruby-value">100</span>
     <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;|%s%s|&quot;</span>, <span class="ruby-ivar">@bar_mark</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">len</span>, <span class="ruby-value str">&quot; &quot;</span> <span class="ruby-operator">*</span>  (<span class="ruby-ivar">@bar_length</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">len</span>))
@@ -899,7 +901,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="bytes-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 151</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 153</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bytes</span>
     <span class="ruby-identifier">convert_bytes</span>(<span class="ruby-ivar">@current</span>)
   <span class="ruby-keyword kw">end</span></pre>
@@ -931,7 +933,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="colorize-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 263</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 265</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">colorize</span>(<span class="ruby-identifier">part</span>, <span class="ruby-identifier">style</span>)
     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">part</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">style</span>
     [<span class="ruby-identifier">style</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">part</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">pt</span>, <span class="ruby-identifier">st</span><span class="ruby-operator">|</span> <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">st</span>){ <span class="ruby-identifier">pt</span> } }
@@ -964,7 +966,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="convert-bytes-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 134</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 136</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_bytes</span>(<span class="ruby-identifier">bytes</span>)
     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bytes</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1024</span>
       <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%6dB&quot;</span>, <span class="ruby-identifier">bytes</span>)
@@ -1004,7 +1006,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="elapsed-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 174</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 176</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">elapsed</span>
     <span class="ruby-identifier">elapsed</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@start_time</span>
     <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;Time: %s&quot;</span>, <span class="ruby-identifier">format_time</span>(<span class="ruby-identifier">elapsed</span>))
@@ -1037,7 +1039,7 @@ Set <a href="../ANSI.html">ANSI</a> styling options.
           <div class="method-source-code"
             id="eol-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 191</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 193</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eol</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@is_finished</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-keyword kw">else</span> <span class="ruby-value str">&quot;\r&quot;</span> <span class="ruby-keyword kw">end</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -1071,7 +1073,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="eta-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 164</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 166</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eta</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@current</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
       <span class="ruby-value str">&quot;ETA:  --:--:--&quot;</span>
@@ -1109,7 +1111,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="format-time-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 155</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 157</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format_time</span>(<span class="ruby-identifier">t</span>)
     <span class="ruby-identifier">t</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_i</span>
     <span class="ruby-identifier">sec</span> = <span class="ruby-identifier">t</span> <span class="ruby-operator">%</span> <span class="ruby-value">60</span>
@@ -1126,7 +1128,7 @@ ETA stands for Estimated Time of Arrival.
 
     
       <div id="get-width-method" class="method-detail ">
-        <a name="M000079"></a>
+        <a name="M000078"></a>
 
         <div class="method-heading">
         
@@ -1145,7 +1147,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="get-width-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 212</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 214</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_width</span>
     <span class="ruby-comment cmt"># FIXME: I don't know how portable it is.</span>
     <span class="ruby-identifier">default_width</span> = <span class="ruby-value">80</span>
@@ -1171,7 +1173,7 @@ ETA stands for Estimated Time of Arrival.
 
     
       <div id="percentage-method" class="method-detail ">
-        <a name="M000076"></a>
+        <a name="M000075"></a>
 
         <div class="method-heading">
         
@@ -1190,7 +1192,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="percentage-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 200</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 202</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">percentage</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@total</span>.<span class="ruby-identifier">zero?</span>
       <span class="ruby-value">100</span>
@@ -1226,7 +1228,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="show-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 230</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 232</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show</span>
     <span class="ruby-identifier">arguments</span> = <span class="ruby-ivar">@format_arguments</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
       <span class="ruby-identifier">colorize</span>(<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>), <span class="ruby-identifier">styles</span>[<span class="ruby-identifier">method</span>])
@@ -1272,7 +1274,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="show-progress-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 249</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 251</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_progress</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@total</span>.<span class="ruby-identifier">zero?</span>
       <span class="ruby-identifier">cur_percentage</span> = <span class="ruby-value">100</span>
@@ -1313,7 +1315,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="stat-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 179</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 181</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stat</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@is_finished</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">elapsed</span> <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">eta</span> <span class="ruby-keyword kw">end</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -1345,7 +1347,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="stat-for-file-transfer-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 183</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 185</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stat_for_file_transfer</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@is_finished</span> <span class="ruby-keyword kw">then</span>
       <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%s %s %s&quot;</span>, <span class="ruby-identifier">bytes</span>, <span class="ruby-identifier">transfer_rate</span>, <span class="ruby-identifier">elapsed</span>)
@@ -1381,7 +1383,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="title-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 208</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 210</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title</span>
     <span class="ruby-ivar">@title</span>[<span class="ruby-value">0</span>,<span class="ruby-value">13</span>] <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;:&quot;</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -1413,7 +1415,7 @@ ETA stands for Estimated Time of Arrival.
           <div class="method-source-code"
             id="transfer-rate-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 146</span>
+<span class="ruby-comment cmt"># File lib/ansi/progressbar.rb, line 148</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transfer_rate</span>
     <span class="ruby-identifier">bytes_per_second</span> = <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@start_time</span>)
     <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%s/s&quot;</span>, <span class="ruby-identifier">convert_bytes</span>(<span class="ruby-identifier">bytes_per_second</span>))

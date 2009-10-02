@@ -66,7 +66,7 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#M000075">::new</a></li>
+          <li><a href="#M000076">::new</a></li>
           
           <li><a href="#M000087">#+</a></li>
           
@@ -128,7 +128,7 @@
           
           <li><a href="#M000092">#sub!</a></li>
           
-          <li><a href="#M000078">#to_s</a></li>
+          <li><a href="#M000079">#to_s</a></li>
           
           <li><a href="#M000081">#to_str</a></li>
           
@@ -217,9 +217,11 @@
   <div id="documentation">
 
     <div id="description">
-      <p>
-Clio Strings stores a regular string (@text) and a Hash mapping character
-index to ansicodes (@marks). For example is we have the string:
+      <h1><a href="String.html">String</a></h1>
+<p>
+<a href="../ANSI.html">ANSI</a> Strings store a regular string (@text) and
+a Hash mapping character index to <a href="../ANSI.html">ANSI</a> codes
+(@marks). For example is we have the string:
 </p>
 <pre>
   &quot;Big Apple&quot;
@@ -299,7 +301,7 @@ until it is more compatible.
 
     
       <div id="new-method" class="method-detail ">
-        <a name="M000075"></a>
+        <a name="M000076"></a>
 
         <div class="method-heading">
         
@@ -320,7 +322,7 @@ New Ansi::String
           <div class="method-source-code"
             id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 31</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 34</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">text</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">marks</span>=<span class="ruby-keyword kw">nil</span>)
     <span class="ruby-ivar">@text</span>  = (<span class="ruby-identifier">text</span>  <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>).<span class="ruby-identifier">to_s</span>
     <span class="ruby-ivar">@marks</span> = <span class="ruby-identifier">marks</span>  <span class="ruby-operator">||</span> []
@@ -363,7 +365,7 @@ href="String.html">String</a>.
           <div class="method-source-code"
             id="--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 71</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 74</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">other</span>
     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
@@ -430,7 +432,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="ansi-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 191</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 194</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi</span>(<span class="ruby-identifier">code</span>)
     <span class="ruby-identifier">m</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">dup</span>
     <span class="ruby-identifier">m</span>.<span class="ruby-identifier">unshift</span>([<span class="ruby-value">0</span>, <span class="ruby-identifier">code</span>])
@@ -469,7 +471,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="ansi--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 200</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 203</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi!</span>(<span class="ruby-identifier">code</span>)
     <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">unshift</span>([<span class="ruby-value">0</span>, <span class="ruby-identifier">ansicolor</span>])
     <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">size</span>, <span class="ruby-identifier">:clear</span>])
@@ -506,7 +508,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="black-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 209</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 212</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black</span>      ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:black</span>)    ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -536,7 +538,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="black--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 220</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 223</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black!</span>     ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:black</span>)   ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -566,7 +568,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="blue-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 208</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 211</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue</span>       ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:blue</span>)     ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -596,7 +598,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="blue--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 219</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 222</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue!</span>      ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:blue</span>)    ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -626,7 +628,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="bold-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 214</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 217</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bold</span>       ; <span class="ruby-identifier">ansi</span>(<span class="ruby-identifier">:bold</span>)       ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -656,7 +658,7 @@ Alias for <a href="String.html#M000089">slice</a>
           <div class="method-source-code"
             id="bold--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 225</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 228</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bold!</span>      ; <span class="ruby-identifier">ansi!</span>(<span class="ruby-identifier">:bold</span>)      ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -736,7 +738,7 @@ Alias for <a href="String.html#M000098">ansi!</a>
           <div class="method-source-code"
             id="cyan-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 212</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 215</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan</span>       ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:cyan</span>)     ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -766,7 +768,7 @@ Alias for <a href="String.html#M000098">ansi!</a>
           <div class="method-source-code"
             id="cyan--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 223</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 226</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan!</span>      ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:cyan</span>)    ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -798,7 +800,7 @@ Downcase the string.
           <div class="method-source-code"
             id="downcase-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 67</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 70</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">downcase</span>  ; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">marks</span>) ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -828,7 +830,7 @@ Downcase the string.
           <div class="method-source-code"
             id="downcase--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 68</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 71</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">downcase!</span> ; <span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase!</span> ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -858,7 +860,7 @@ Downcase the string.
           <div class="method-source-code"
             id="green-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 207</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 210</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green</span>      ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:green</span>)    ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -888,7 +890,7 @@ Downcase the string.
           <div class="method-source-code"
             id="green--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 218</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 221</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green!</span>     ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:green</span>)   ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -920,7 +922,7 @@ See <a href="String.html#M000094">gsub!</a>.
           <div class="method-source-code"
             id="gsub-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 186</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 189</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword kw">end</span></pre>
@@ -952,7 +954,7 @@ See <a href="String.html#M000094">gsub!</a>.
           <div class="method-source-code"
             id="gsub--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 160</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 163</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-identifier">mark_changes</span>   = []
     <span class="ruby-identifier">mark_additions</span> = []
@@ -1005,7 +1007,7 @@ See <a href="String.html#M000094">gsub!</a>.
           <div class="method-source-code"
             id="magenta-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 210</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 213</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta</span>    ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:magenta</span>)  ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1035,7 +1037,7 @@ See <a href="String.html#M000094">gsub!</a>.
           <div class="method-source-code"
             id="magenta--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 221</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 224</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta!</span>   ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:magenta</span>) ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1065,7 +1067,7 @@ See <a href="String.html#M000094">gsub!</a>.
           <div class="method-source-code"
             id="red-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 206</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 209</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red</span>        ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:red</span>)      ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1095,7 +1097,7 @@ See <a href="String.html#M000094">gsub!</a>.
           <div class="method-source-code"
             id="red--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 217</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 220</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red!</span>       ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:red</span>)     ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1127,7 +1129,7 @@ The size of the base text.
           <div class="method-source-code"
             id="size-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 60</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 63</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size</span> ; <span class="ruby-identifier">text</span>.<span class="ruby-identifier">size</span> ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1159,7 +1161,7 @@ slice
           <div class="method-source-code"
             id="slice-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 96</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 99</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">slice</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
       <span class="ruby-identifier">index</span>, <span class="ruby-identifier">len</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
@@ -1225,7 +1227,7 @@ See <a href="String.html#M000092">sub!</a>.
           <div class="method-source-code"
             id="sub-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 155</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 158</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>,<span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword kw">end</span></pre>
@@ -1264,7 +1266,7 @@ TODO: block support.
           <div class="method-source-code"
             id="sub--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 136</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 139</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-identifier">mark_changes</span> = []
     <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
@@ -1291,7 +1293,7 @@ TODO: block support.
 
     
       <div id="to-s-method" class="method-detail ">
-        <a name="M000078"></a>
+        <a name="M000079"></a>
 
         <div class="method-heading">
         
@@ -1314,7 +1316,7 @@ codes.
           <div class="method-source-code"
             id="to-s-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 39</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 42</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
     <span class="ruby-identifier">s</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">dup</span>
     <span class="ruby-identifier">m</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">sort</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>)<span class="ruby-operator">|</span>
@@ -1357,7 +1359,7 @@ codes.
         <div class="method-description">
           
           <p>
-Alias for <a href="String.html#M000078">to_s</a>
+Alias for <a href="String.html#M000079">to_s</a>
 </p>
           
 
@@ -1388,7 +1390,7 @@ Alias for <a href="String.html#M000078">to_s</a>
           <div class="method-source-code"
             id="underline-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 215</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 218</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">underline</span>  ; <span class="ruby-identifier">ansi</span>(<span class="ruby-identifier">:underline</span>)  ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1418,7 +1420,7 @@ Alias for <a href="String.html#M000078">to_s</a>
           <div class="method-source-code"
             id="underline--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 226</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 229</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">underline!</span> ; <span class="ruby-identifier">ansi!</span>(<span class="ruby-identifier">:underline</span>) ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1450,7 +1452,7 @@ Upcase the string.
           <div class="method-source-code"
             id="upcase-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 63</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 66</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upcase</span>  ; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">marks</span>) ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1480,7 +1482,7 @@ Upcase the string.
           <div class="method-source-code"
             id="upcase--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 64</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 67</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upcase!</span> ; <span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase!</span> ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1510,7 +1512,7 @@ Upcase the string.
           <div class="method-source-code"
             id="yellow-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 211</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 214</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow</span>     ; <span class="ruby-identifier">color</span>(<span class="ruby-identifier">:yellow</span>)   ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1540,7 +1542,7 @@ Upcase the string.
           <div class="method-source-code"
             id="yellow--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 222</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 225</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow!</span>    ; <span class="ruby-identifier">color!</span>(<span class="ruby-identifier">:yellow</span>)  ; <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -1576,7 +1578,7 @@ Upcase the string.
           <div class="method-source-code"
             id="shift-marks-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 231</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 234</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shift_marks</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>, <span class="ruby-identifier">marks</span>=<span class="ruby-keyword kw">nil</span>)
     <span class="ruby-identifier">new_marks</span> = []
     (<span class="ruby-identifier">marks</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@marks</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">c</span>)<span class="ruby-operator">|</span>
@@ -1617,7 +1619,7 @@ Upcase the string.
           <div class="method-source-code"
             id="shift-marks--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 245</span>
+<span class="ruby-comment cmt"># File lib/ansi/string.rb, line 248</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shift_marks!</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>)
     <span class="ruby-ivar">@marks</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">shift_marks</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>))
   <span class="ruby-keyword kw">end</span></pre>
