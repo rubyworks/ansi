@@ -1,9 +1,9 @@
 ---
 rdoc:
   service  : RDoc
+  template : redfish
   include  : ~
   exclude  : ~
-  template : ~
   main     : ~
   extra    : ~
   active   : true
