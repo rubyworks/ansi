@@ -1,205 +1,257 @@
 /*
  * "Darkfish" Rdoc CSS
  * $Id: rdoc.css 54 2009-01-27 01:09:48Z deveiant $
- * 
+ *
  * Author: Michael Granger <ged@FaerieMUD.org>
- * 
+ *
  */
 
-/* Base Green is: #6C8C22 */
+/* Base Red is: color: #FF226C; */
 
 *{ padding: 0; margin: 0; }
 
 body {
-    background: #efefef;
-	font: 14px "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+  background: #efefef;
+  font: 14px "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+  padding: 20px 40px;
 }
+
+/*
 body.class, body.module, body.file {
-    margin-left: 40px;
+  margin-left: 40px;
 }
+*/
+
 body.file-popup {
-	font-size: 90%;
-	margin-left: 0;
+  font-size: 90%;
+  margin-left: 0;
 }
 
 h1 {
-	font-size: 300%;
-	text-shadow: rgba(135,145,135,0.65) 2px 2px 3px;
-	color: #6C8C22;
+  font-size: 300%;
+  text-shadow: rgba(135,145,135,0.65) 2px 2px 3px;
+  color: #FF226C;
 }
+
 h2,h3,h4 { margin-top: 1.5em; }
 
 a {
-	color: #6C8C22;
-	text-decoration: none;
+  color: #FF226C;
+  text-decoration: none;
 }
+
 a:hover {
- 	border-bottom: 1px dotted #6C8C22;
+  border-bottom: 1px dotted #FF226C;
 }
 
 pre {
-	background: #ddd;
-	padding: 0.5em 0;
+  background: #ddd;
+  padding: 0.5em 0;
+  border: 1px solid #ccc;
 }
 
+p {
+  margin: 1em 0;
+}
+
+
+.head {
+  width: auto;
+  background: #FF226C;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 5px 20px;
+}
+
+.head h1 { color: white; }
 
 /* @group Generic Classes */
 
 .initially-hidden {
-	display: none;
+  display: none;
 }
 
 .quicksearch-field {
-	width: 98%;
-	background: #ddd;
-	border: 1px solid #aaa;
-	height: 1.5em;
-	-webkit-border-radius: 4px;
+  width: 98%;
+  background: #ddd;
+  border: 1px solid #aaa;
+  height: 1.5em;
+  -webkit-border-radius: 4px;
 }
 .quicksearch-field:focus {
-	background: #f1edba;
+  background: #f1edba;
 }
 
 .missing-docs {
-	font-size: 120%;
-	background: white url(images/wrench_orange.png) no-repeat 4px center;
-	color: #ccc;
-	line-height: 2em;
-	border: 1px solid #d00;
-	opacity: 1;
-	padding-left: 20px;
-	text-indent: 24px;
-	letter-spacing: 3px;
-	font-weight: bold;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+  font-size: 120%;
+  background: white url(images/wrench_orange.png) no-repeat 4px center;
+  color: #ccc;
+  line-height: 2em;
+  border: 1px solid #d00;
+  opacity: 1;
+  padding-left: 20px;
+  text-indent: 24px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
 .target-section {
-	border: 2px solid #dcce90;
-	border-left-width: 8px;
-	padding: 0 1em;
-	background: #fff3c2;
+  border: 2px solid #dcce90;
+  border-left-width: 8px;
+  padding: 0 1em;
+  background: #fff3c2;
 }
 
 /* @end */
 
 
 /* @group Index Page, Standalone file pages */
+
+/*
 body.indexpage {
-	margin: 1em 3em;
+  margin: 1em 3em;
 }
+*/
+
+/*
 body.indexpage p,
 body.indexpage div,
 body.file p {
-	margin: 1em 0;
+  margin: 1em 0;
+}
+*/
+
+ul a {
+  font-size: 14px;
 }
 
 .indexpage ul,
 .file #documentation ul {
-	line-height: 160%;
-	list-style: none;
+  line-height: 160%;
+  list-style: none;
 }
+
+/*
 .indexpage ul a,
 .file #documentation ul a {
-	font-size: 16px;
+  font-size: 16px;
 }
+*/
 
 .indexpage li,
 .file #documentation li {
-	padding-left: 20px;
-	background: url(images/bullet_black.png) no-repeat left 4px;
+  padding-left: 20px;
+  background: url(images/bullet_black.png) no-repeat left 4px;
 }
-.indexpage li.module {
-	background: url(images/package.png) no-repeat left 4px;
+
+li {
+
 }
-.indexpage li.class {
-	background: url(images/ruby.png) no-repeat left 4px;
+
+li.module {
+  padding-left: 20px;
+  background: url(images/package.png) no-repeat left 2px;
 }
-.indexpage li.file {
-	background: url(images/page_white_text.png) no-repeat left 4px;
+
+li.class {
+  padding-left: 20px;
+  background: url(images/ruby.png) no-repeat left 2px;
+}
+
+li.file {
+  padding-left: 20px;
+  background: url(images/page_white_text.png) no-repeat left 2px;
 }
 
 /* @end */
 
 /* @group Top-Level Structure */
 
-.class #metadata,
-.file #metadata,
-.module #metadata {
-	float: left;
-	width: 260px;
+#metadata {
+  float: left;
+  width: 320px;
+  margin-top: 0;
 }
 
-.class #documentation,
-.file #documentation,
-.module #documentation {
-	margin: 2em 1em 5em 300px;
-	min-width: 340px;
+#documentation {
+  margin: 2em 1em 5em 360px;
+  min-width: 340px;
 }
 
+/*
 .file #metadata {
-	margin: 0.8em;
+  margin: 0.8em;
 }
+*/
 
 #validator-badges {
-	clear: both;
-	margin: 1em 1em 2em;
+  clear: both;
+  text-align: left;
+  margin: 1em 1em 2em;
+  font-weight: bold;
+  font-size: 80%;
 }
 
 /* @end */
 
 /* @group Metadata Section */
+
 #metadata .section {
-	background-color: #dedede;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid #aaa;
-	margin: 0 8px 16px;
-	font-size: 90%;
-	overflow: hidden;
+  background-color: #dedede;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #aaa;
+  margin: 0 8px 16px;
+  font-size: 90%;
+  overflow: hidden;
 }
+
 #metadata h3.section-header {
-	margin: 0;
-	padding: 2px 8px;
-	background: #ccc;
-	color: #666;
-	-moz-border-radius-topleft: 4px;
-	-moz-border-radius-topright: 4px;
-	-webkit-border-top-left-radius: 4px;
-	-webkit-border-top-right-radius: 4px;
-	border-bottom: 1px solid #aaa;
+  margin: 0;
+  padding: 2px 8px;
+  background: #ccc;
+  color: #666;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-bottom: 1px solid #aaa;
 }
+
 #metadata ul,
 #metadata dl,
 #metadata p {
-	padding:  8px;
-	list-style: none;
+  padding:  8px;
+  list-style: none;
 }
 
 #file-metadata ul {
-	padding-left: 28px;
-	list-style-image: url(images/page_green.png);
+  padding-left: 28px;
+  list-style-image: url(images/page_green.png);
 }
 
 dl.svninfo {
-	color: #666;
-	margin: 0;
+  color: #666;
+  margin: 0;
 }
 dl.svninfo dt {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 ul.link-list li {
-	white-space: nowrap;
+  white-space: nowrap;
 }
+
 ul.link-list .type {
-	font-size: 8px;
-	text-transform: uppercase;
-	color: white;
-	background: #969696;
-	padding: 2px 4px;
-	-webkit-border-radius: 5px;
+  font-size: 8px;
+  text-transform: uppercase;
+  color: white;
+  background: #969696;
+  padding: 2px 4px;
+  -webkit-border-radius: 5px;
 }
 
 /* @end */
@@ -207,12 +259,14 @@ ul.link-list .type {
 
 /* @group Project Metadata Section */
 #project-metadata {
-	margin-top: 3em;
+  margin-top: 3em;
 }
 
+/*
 .file #project-metadata {
   margin-top: 0em;
 }
+*/
 
 #project-metadata .section {
 	border: 1px solid #aaa;
@@ -267,63 +321,63 @@ ul.link-list .type {
 
 #description dl,
 #documentation dl {
-	margin: 8px 1.5em;
-	border: 1px solid #ccc;
+  margin: 8px 1.5em;
+  border: 1px solid #ccc;
 }
 #description dl {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 #description dt,
 #documentation dt {
-	padding: 2px 4px;
-	font-weight: bold;
-	background: #ddd;
+  padding: 2px 4px;
+  font-weight: bold;
+  background: #ddd;
 }
 #description dd,
 #documentation dd  {
-	padding: 2px 12px;
+  padding: 2px 12px;
 }
 #description dd + dt,
 #documentation dd + dt {
-	margin-top: 0.7em;
+  margin-top: 0.7em;
 }
 
 #documentation .section {
-	font-size: 90%;
+  font-size: 90%;
 }
 #documentation h3.section-header {
-	margin-top: 2em;
-	padding: 0.75em 0.5em;
-	background-color: #dedede;
-	color: #333;
-	font-size: 150%;
-	border: 1px solid #bbb;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+  margin-top: 2em;
+  padding: 0.75em 0.5em;
+  background-color: #dedede;
+  color: #333;
+  font-size: 150%;
+  border: 1px solid #bbb;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 
 #constants-list > dl,
 #attributes-list > dl {
-	margin: 1em 0 2em;
-	border: 0;
+  margin: 1em 0 2em;
+  border: 0;
 }
 #constants-list > dl dt,
 #attributes-list > dl dt {
-	padding-left: 0;
-	font-weight: bold;
-	font-family: Monaco, "Andale Mono";
-	background: inherit;
+  padding-left: 0;
+  font-weight: bold;
+  font-family: Monaco, "Andale Mono";
+  background: inherit;
 }
 #constants-list > dl dt a,
 #attributes-list > dl dt a {
-	color: inherit;
+  color: inherit;
 }
 #constants-list > dl dd,
 #attributes-list > dl dd {
-	margin: 0 0 1em 0;
-	padding: 0;
-	color: #666;
+  margin: 0 0 1em 0;
+  padding: 0;
+  color: #666;
 }
 
 /* @group Method Details */
@@ -414,10 +468,10 @@ ul.link-list .type {
 /* @group Source Code */
 
 a.source-toggle {
-	font-size: 90%;
+  font-size: 90%;
 }
+
 a.source-toggle img {
-	
 }
 
 div.method-source-code {
@@ -605,25 +659,25 @@ margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = d
 }
 
 #TB_title{
-	background-color: #6C8C22;
-	color: #dedede;
-	height:40px;
+  background-color: #FF226C;
+  color: #dedede;
+  height:40px;
 }
 #TB_title a {
-	color: white !important;
-	border-bottom: 1px dotted #dedede;
+  color: white !important;
+  border-bottom: 1px dotted #dedede;
 }
 
 #TB_ajaxContent{
-	clear:both;
-	padding:2px 15px 15px 15px;
-	overflow:auto;
-	text-align:left;
-	line-height:1.4em;
+  clear:both;
+  padding:2px 15px 15px 15px;
+  overflow:auto;
+  text-align:left;
+  line-height:1.4em;
 }
 
 #TB_ajaxContent.TB_modal{
-	padding:15px;
+  padding:15px;
 }
 
 #TB_ajaxContent p{
