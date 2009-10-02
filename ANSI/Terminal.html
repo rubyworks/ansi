@@ -73,19 +73,19 @@
           
           <li><a href="#M000052">#GetConsoleMode</a></li>
           
-          <li><a href="#M000060">#GetConsoleScreenBufferInfo</a></li>
+          <li><a href="#M000055">#GetConsoleScreenBufferInfo</a></li>
           
           <li><a href="#M000048">#GetStdHandle</a></li>
           
           <li><a href="#M000044">#SetConsoleEcho</a></li>
           
-          <li><a href="#M000055">#SetConsoleMode</a></li>
+          <li><a href="#M000054">#SetConsoleMode</a></li>
+          
+          <li><a href="#M000037">#get_character</a></li>
           
           <li><a href="#M000032">#get_character</a></li>
           
           <li><a href="#M000034">#get_character</a></li>
-          
-          <li><a href="#M000037">#get_character</a></li>
           
           <li><a href="#M000041">#get_character</a></li>
           
@@ -180,7 +180,18 @@
   <div id="documentation">
 
     <div id="description">
-      
+      <p>
+This library is based of HighLine&#8217;s SystemExtensions by James Edward
+Gray II.
+</p>
+<pre>
+  Copyright 2006 Gray Productions.
+</pre>
+<p>
+This is Free Software. See <a href="../LICENSE.html">LICENSE</a> and
+COPYING for details.
+</p>
+
     </div>
 
     <!-- Constants -->
@@ -302,7 +313,7 @@ win32 console APIs
 
     
       <div id="-et-onsole-creen-uffer-nfo-method" class="method-detail ">
-        <a name="M000060"></a>
+        <a name="M000055"></a>
 
         <div class="method-heading">
         
@@ -419,7 +430,7 @@ windows savvy console echo toggler
 
     
       <div id="-et-onsole-ode-method" class="method-detail ">
-        <a name="M000055"></a>
+        <a name="M000054"></a>
 
         <div class="method-heading">
         
@@ -444,6 +455,50 @@ windows savvy console echo toggler
                                             [<span class="ruby-value str">'L'</span>, <span class="ruby-value str">'L'</span>], <span class="ruby-value str">'I'</span> )
 
       <span class="ruby-ivar">@@apiSetConsoleMode</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Unix savvy getc(). (Second choice.)
+</p>
+<p>
+<b>WARNING</b>: This method requires the external &#8220;stty&#8221;
+program!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+      <span class="ruby-identifier">raw_no_echo_mode</span>
+
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+      <span class="ruby-keyword kw">ensure</span>
+        <span class="ruby-identifier">restore_mode</span>
+      <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -525,50 +580,6 @@ Unix savvy getc(). (First choice.)
         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
       <span class="ruby-keyword kw">ensure</span>
         <span class="ruby-constant">Termios</span>.<span class="ruby-identifier">setattr</span>(<span class="ruby-identifier">input</span>, <span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">TCSANOW</span>, <span class="ruby-identifier">old_settings</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="get-character-method" class="method-detail ">
-        <a name="M000037"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">get_character</span><span
-            class="method-args">( input = STDIN )</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-Unix savvy getc(). (Second choice.)
-</p>
-<p>
-<b>WARNING</b>: This method requires the external &#8220;stty&#8221;
-program!
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="get-character-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
-      <span class="ruby-identifier">raw_no_echo_mode</span>
-
-      <span class="ruby-keyword kw">begin</span>
-        <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
-      <span class="ruby-keyword kw">ensure</span>
-        <span class="ruby-identifier">restore_mode</span>
       <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -770,7 +781,7 @@ Get the height of the terminal window.
           <div class="method-source-code"
             id="terminal-height-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 36</span>
+<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 34</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_height</span>
       <span class="ruby-identifier">terminal_size</span>[<span class="ruby-value">1</span>]
     <span class="ruby-keyword kw">end</span></pre>
@@ -955,7 +966,7 @@ Get the width of the terminal window.
           <div class="method-source-code"
             id="terminal-width-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 31</span>
+<span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 29</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_width</span>
       <span class="ruby-identifier">terminal_size</span>[<span class="ruby-value">0</span>]
     <span class="ruby-keyword kw">end</span></pre>

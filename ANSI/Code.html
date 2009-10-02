@@ -61,33 +61,33 @@
           
           <li><a href="#M000024">::define_ansicolor_method</a></li>
           
-          <li><a href="#M000009">#clear_line</a></li>
+          <li><a href="#M000011">#clear_line</a></li>
           
-          <li><a href="#M000007">#clear_screen</a></li>
+          <li><a href="#M000009">#clear_screen</a></li>
           
-          <li><a href="#M000011">#clr</a></li>
+          <li><a href="#M000012">#clr</a></li>
           
-          <li><a href="#M000008">#cls</a></li>
+          <li><a href="#M000010">#cls</a></li>
           
           <li><a href="#M000029">#colors</a></li>
           
-          <li><a href="#M000020">#display</a></li>
+          <li><a href="#M000022">#display</a></li>
           
-          <li><a href="#M000016">#down</a></li>
+          <li><a href="#M000017">#down</a></li>
           
-          <li><a href="#M000017">#left</a></li>
+          <li><a href="#M000018">#left</a></li>
           
-          <li><a href="#M000012">#move</a></li>
+          <li><a href="#M000013">#move</a></li>
           
           <li><a href="#M000006">#restore</a></li>
           
-          <li><a href="#M000019">#right</a></li>
+          <li><a href="#M000021">#right</a></li>
           
           <li><a href="#M000005">#save</a></li>
           
           <li><a href="#M000028">#uncolored</a></li>
           
-          <li><a href="#M000013">#up</a></li>
+          <li><a href="#M000016">#up</a></li>
           
         </ul>
       </div>
@@ -162,7 +162,8 @@
   <div id="documentation">
 
     <div id="description">
-      <p>
+      <h1><a href="Code.html">ANSI::Code</a></h1>
+<p>
 Ansi::Code module makes it very easy to use <a href="../ANSI.html">ANSI</a>
 codes. These are esspecially nice for beautifying shell output.
 </p>
@@ -273,7 +274,7 @@ Define color codes.
           <div class="method-source-code"
             id="define-ansicolor-method-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 151</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 154</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">define_ansicolor_method</span>(<span class="ruby-identifier">name</span>,<span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;def \#{name.to_s}(string = nil)\nresult = \&quot;\\e[\#{code}m\&quot;\nif block_given?\nresult &lt;&lt; yield\nresult &lt;&lt; \&quot;\\e[0m\&quot;\nelsif string\nresult &lt;&lt; string\nresult &lt;&lt; \&quot;\\e[0m\&quot;\nelsif respond_to?(:to_str)\nresult &lt;&lt; self\nresult &lt;&lt; \&quot;\\e[0m\&quot;\nend\nreturn result\nend\n&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -292,7 +293,7 @@ Define color codes.
 
     
       <div id="clear-line-method" class="method-detail ">
-        <a name="M000009"></a>
+        <a name="M000011"></a>
 
         <div class="method-heading">
         
@@ -313,7 +314,7 @@ Clear to the end of the current line.
           <div class="method-source-code"
             id="clear-line-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 96</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 99</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_line</span>
       <span class="ruby-value str">&quot;\e[K&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -323,14 +324,14 @@ Clear to the end of the current line.
 
         
         <div class="aliases">
-          Also aliased as: <a href="Code.html#M000011">clr</a>
+          Also aliased as: <a href="Code.html#M000012">clr</a>
         </div>
         
       </div>
 
     
       <div id="clear-screen-method" class="method-detail ">
-        <a name="M000007"></a>
+        <a name="M000009"></a>
 
         <div class="method-heading">
         
@@ -351,7 +352,7 @@ Clear the screen and move cursor to home.
           <div class="method-source-code"
             id="clear-screen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 90</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 93</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_screen</span>
       <span class="ruby-value str">&quot;\e[2J&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -361,14 +362,14 @@ Clear the screen and move cursor to home.
 
         
         <div class="aliases">
-          Also aliased as: <a href="Code.html#M000008">cls</a>
+          Also aliased as: <a href="Code.html#M000010">cls</a>
         </div>
         
       </div>
 
     
       <div id="clr-method" class="method-detail method-alias">
-        <a name="M000011"></a>
+        <a name="M000012"></a>
 
         <div class="method-heading">
         
@@ -381,7 +382,7 @@ Clear the screen and move cursor to home.
         <div class="method-description">
           
           <p>
-Alias for <a href="Code.html#M000009">clear_line</a>
+Alias for <a href="Code.html#M000011">clear_line</a>
 </p>
           
 
@@ -393,7 +394,7 @@ Alias for <a href="Code.html#M000009">clear_line</a>
 
     
       <div id="cls-method" class="method-detail method-alias">
-        <a name="M000008"></a>
+        <a name="M000010"></a>
 
         <div class="method-heading">
         
@@ -406,7 +407,7 @@ Alias for <a href="Code.html#M000009">clear_line</a>
         <div class="method-description">
           
           <p>
-Alias for <a href="Code.html#M000007">clear_screen</a>
+Alias for <a href="Code.html#M000009">clear_screen</a>
 </p>
           
 
@@ -437,7 +438,7 @@ Alias for <a href="Code.html#M000007">clear_screen</a>
           <div class="method-source-code"
             id="colors-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 224</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 227</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">colors</span>
       <span class="ruby-ivar">@@colors</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>[<span class="ruby-value">0</span>] }
     <span class="ruby-keyword kw">end</span></pre>
@@ -450,7 +451,7 @@ Alias for <a href="Code.html#M000007">clear_screen</a>
 
     
       <div id="display-method" class="method-detail ">
-        <a name="M000020"></a>
+        <a name="M000022"></a>
 
         <div class="method-heading">
         
@@ -472,7 +473,7 @@ adding string argument.
           <div class="method-source-code"
             id="display-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 134</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 137</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display</span>( <span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">string</span>=<span class="ruby-keyword kw">nil</span> ) <span class="ruby-comment cmt">#:yield:</span>
       <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;\e[s&quot;</span>
       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{line.to_i};#{column.to_i}H&quot;</span>
@@ -497,7 +498,7 @@ adding string argument.
 
     
       <div id="down-method" class="method-detail ">
-        <a name="M000016"></a>
+        <a name="M000017"></a>
 
         <div class="method-heading">
         
@@ -518,7 +519,7 @@ Move cursor down a specificed number of spaces.
           <div class="method-source-code"
             id="down-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 118</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 121</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">down</span>( <span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span> )
       <span class="ruby-node">&quot;\e[#{spaces.to_i}B&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -531,7 +532,7 @@ Move cursor down a specificed number of spaces.
 
     
       <div id="left-method" class="method-detail ">
-        <a name="M000017"></a>
+        <a name="M000018"></a>
 
         <div class="method-heading">
         
@@ -552,7 +553,7 @@ Move cursor left a specificed number of spaces.
           <div class="method-source-code"
             id="left-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 123</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 126</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">left</span>( <span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span> )
       <span class="ruby-node">&quot;\e[#{spaces.to_i}D&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -565,7 +566,7 @@ Move cursor left a specificed number of spaces.
 
     
       <div id="move-method" class="method-detail ">
-        <a name="M000012"></a>
+        <a name="M000013"></a>
 
         <div class="method-heading">
         
@@ -586,7 +587,7 @@ Move curose to line and column.
           <div class="method-source-code"
             id="move-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 108</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 111</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">move</span>( <span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>=<span class="ruby-value">0</span> )
       <span class="ruby-node">&quot;\e[#{line.to_i};#{column.to_i}H&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -620,7 +621,7 @@ Restore saved cursor positon.
           <div class="method-source-code"
             id="restore-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 85</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 88</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restore</span>
       <span class="ruby-value str">&quot;\e[u&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -633,7 +634,7 @@ Restore saved cursor positon.
 
     
       <div id="right-method" class="method-detail ">
-        <a name="M000019"></a>
+        <a name="M000021"></a>
 
         <div class="method-heading">
         
@@ -654,7 +655,7 @@ Move cursor right a specificed number of spaces.
           <div class="method-source-code"
             id="right-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 128</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 131</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">right</span>( <span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span> )
       <span class="ruby-node">&quot;\e[#{spaces.to_i}C&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -688,7 +689,7 @@ Save current cursor positon.
           <div class="method-source-code"
             id="save-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 80</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 83</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>
       <span class="ruby-value str">&quot;\e[s&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -720,7 +721,7 @@ Save current cursor positon.
           <div class="method-source-code"
             id="uncolored-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 211</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 214</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uncolored</span>(<span class="ruby-identifier">string</span> = <span class="ruby-keyword kw">nil</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
         <span class="ruby-keyword kw">yield</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">ColoredRegexp</span>, <span class="ruby-value str">''</span>)
@@ -741,7 +742,7 @@ Save current cursor positon.
 
     
       <div id="up-method" class="method-detail ">
-        <a name="M000013"></a>
+        <a name="M000016"></a>
 
         <div class="method-heading">
         
@@ -762,7 +763,7 @@ Move cursor up a specificed number of spaces.
           <div class="method-source-code"
             id="up-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 113</span>
+<span class="ruby-comment cmt"># File lib/ansi/code.rb, line 116</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">up</span>( <span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span> )
       <span class="ruby-node">&quot;\e[#{spaces.to_i}A&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>
