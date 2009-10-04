@@ -81,29 +81,29 @@
           
           <li><a href="#M000046">#SetConsoleMode</a></li>
           
+          <li><a href="#M000036">#get_character</a></li>
+          
           <li><a href="#M000032">#get_character</a></li>
-          
-          <li><a href="#M000041">#get_character</a></li>
-          
-          <li><a href="#M000035">#get_character</a></li>
           
           <li><a href="#M000034">#get_character</a></li>
           
-          <li><a href="#M000036">#raw_no_echo_mode</a></li>
+          <li><a href="#M000041">#get_character</a></li>
           
-          <li><a href="#M000037">#restore_mode</a></li>
+          <li><a href="#M000038">#raw_no_echo_mode</a></li>
           
-          <li><a href="#M000040">#screen_width</a></li>
+          <li><a href="#M000039">#restore_mode</a></li>
+          
+          <li><a href="#M000037">#screen_width</a></li>
           
           <li><a href="#M000031">#terminal_height</a></li>
           
-          <li><a href="#M000033">#terminal_size</a></li>
+          <li><a href="#M000040">#terminal_size</a></li>
           
           <li><a href="#M000042">#terminal_size</a></li>
           
-          <li><a href="#M000038">#terminal_size</a></li>
+          <li><a href="#M000033">#terminal_size</a></li>
           
-          <li><a href="#M000039">#terminal_size</a></li>
+          <li><a href="#M000035">#terminal_size</a></li>
           
           <li><a href="#M000030">#terminal_width</a></li>
           
@@ -122,9 +122,9 @@
         <h3 class="section-header">Files</h3>
         <ul>
         
-          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
         
-          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
         
           <li class="file"><a href="../README.html">README</a></li>
         
@@ -191,8 +191,8 @@ Gray II.
   Copyright 2006 Gray Productions.
 </pre>
 <p>
-This is Free Software. See <a href="../LICENSE.html">LICENSE</a> and
-COPYING for details.
+This is Free Software. See LICENSE and <a
+href="../COPYING.html">COPYING</a> for details.
 </p>
 
     </div>
@@ -468,82 +468,7 @@ windows savvy console echo toggler
 
     
       <div id="get-character-method" class="method-detail ">
-        <a name="M000032"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">get_character</span><span
-            class="method-args">(input = STDIN)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-Curses savvy getc().
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="get-character-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 14</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>(<span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span>)
-      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">getch</span>()
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="get-character-method" class="method-detail ">
-        <a name="M000041"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">get_character</span><span
-            class="method-args">( input = STDIN )</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-Windows savvy getc().
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="get-character-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 17</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
-      <span class="ruby-ivar">@stdin_handle</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">GetStdHandle</span>(<span class="ruby-constant">STD_INPUT_HANDLE</span>)
-
-      <span class="ruby-keyword kw">begin</span>
-          <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword kw">false</span>)
-          <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
-      <span class="ruby-keyword kw">ensure</span>
-          <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword kw">true</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="get-character-method" class="method-detail ">
-        <a name="M000035"></a>
+        <a name="M000036"></a>
 
         <div class="method-heading">
         
@@ -577,6 +502,40 @@ program!
       <span class="ruby-keyword kw">ensure</span>
         <span class="ruby-identifier">restore_mode</span>
       <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">(input = STDIN)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Curses savvy getc().
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>(<span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span>)
+      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">getch</span>()
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -634,8 +593,49 @@ Unix savvy getc(). (First choice.)
       </div>
 
     
+      <div id="get-character-method" class="method-detail ">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Windows savvy getc().
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 17</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+      <span class="ruby-ivar">@stdin_handle</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">GetStdHandle</span>(<span class="ruby-constant">STD_INPUT_HANDLE</span>)
+
+      <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword kw">false</span>)
+          <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+      <span class="ruby-keyword kw">ensure</span>
+          <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword kw">true</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
       <div id="raw-no-echo-mode-method" class="method-detail ">
-        <a name="M000036"></a>
+        <a name="M000038"></a>
 
         <div class="method-heading">
         
@@ -674,7 +674,7 @@ program!
 
     
       <div id="restore-mode-method" class="method-detail ">
-        <a name="M000037"></a>
+        <a name="M000039"></a>
 
         <div class="method-heading">
         
@@ -712,7 +712,7 @@ program!
 
     
       <div id="screen-width-method" class="method-detail ">
-        <a name="M000040"></a>
+        <a name="M000037"></a>
 
         <div class="method-heading">
         
@@ -729,7 +729,7 @@ Console screen width (taken from progress bar)
 </p>
 <p>
 NOTE: Don&#8217;t know how portable <a
-href="Terminal.html#M000040">screen_width</a> is. TODO: How to fit in to
+href="Terminal.html#M000037">screen_width</a> is. TODO: How to fit in to
 system?
 </p>
           
@@ -797,7 +797,7 @@ Get the height of the terminal window.
 
     
       <div id="terminal-size-method" class="method-detail ">
-        <a name="M000033"></a>
+        <a name="M000040"></a>
 
         <div class="method-heading">
         
@@ -809,19 +809,23 @@ Get the height of the terminal window.
 
         <div class="method-description">
           
-          <p class="missing-docs">(Not documented)</p>
+          <p>
+A Unix savvy method to fetch the console columns, and rows.
+</p>
           
 
           
           <div class="method-source-code"
             id="terminal-size-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 18</span>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 44</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
-      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">init_screen</span>
-      <span class="ruby-identifier">w</span>, <span class="ruby-identifier">r</span> = <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">cols</span>, <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">rows</span>
-      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">close_screen</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>, <span class="ruby-identifier">w</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/solaris/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-keyword kw">and</span>
+          <span class="ruby-value">`stty`</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\brows = (\d+).*\bcolumns = (\d+)/</span>
+        [<span class="ruby-identifier">$2</span>, <span class="ruby-identifier">$1</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-value">`stty size`</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">reverse</span>
+      <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -870,7 +874,42 @@ A Windows savvy method to fetch the console columns, and rows.
 
     
       <div id="terminal-size-method" class="method-detail ">
-        <a name="M000038"></a>
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-size-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 18</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
+      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">init_screen</span>
+      <span class="ruby-identifier">w</span>, <span class="ruby-identifier">r</span> = <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">cols</span>, <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">rows</span>
+      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">close_screen</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>, <span class="ruby-identifier">w</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-size-method" class="method-detail ">
+        <a name="M000035"></a>
 
         <div class="method-heading">
         
@@ -892,45 +931,6 @@ A Unix savvy method to fetch the console columns, and rows.
             id="terminal-size-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/ansi/terminal/termios.rb, line 31</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/solaris/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-keyword kw">and</span>
-          <span class="ruby-value">`stty`</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\brows = (\d+).*\bcolumns = (\d+)/</span>
-        [<span class="ruby-identifier">$2</span>, <span class="ruby-identifier">$1</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-value">`stty size`</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">reverse</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="terminal-size-method" class="method-detail ">
-        <a name="M000039"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">terminal_size</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-A Unix savvy method to fetch the console columns, and rows.
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="terminal-size-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 44</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/solaris/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-keyword kw">and</span>
           <span class="ruby-value">`stty`</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\brows = (\d+).*\bcolumns = (\d+)/</span>
