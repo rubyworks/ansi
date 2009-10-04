@@ -30,12 +30,14 @@ class ANSI::Logger < Logger
   SIMPLE_FORMAT   = "%5s: %s\n"
   DETAILED_FORMAT = "%s %5s: %s\n"
 
-  #
-  class ::Logger::LogDevice
-    attr_writer :ansicolor
+  # TODO: Not sure I like this approach.
+  class ::Logger #:nodoc:
+    class LogDevice #:nodoc:
+      attr_writer :ansicolor
 
-    def ansicolor?
-      @ansicolor.nil? ? true : @ansicolor
+      def ansicolor?
+        @ansicolor.nil? ? true : @ansicolor
+      end
     end
   end
 
