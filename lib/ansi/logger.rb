@@ -8,8 +8,8 @@ require "ansi/code"
 
 # = ANSI::Logger
 #
-# Extended variation of Ruby's standard Logger library.
-# Mainly for compatibility purposes (with what?)
+# Extended variation of Ruby's standard Logger library that supports
+# color output.
 #
 #   log = ANSI::Logger.new
 #

@@ -7,7 +7,9 @@
 
 require 'ansi/code'
 
-# ProgressBar is a text-based progressbar library.
+# = Progressbar
+#
+# Progressbar is a text-based progressbar library.
 #
 #   pbar = Progressbar.new( "Demo", 100 )
 #   100.times { pbar.inc }

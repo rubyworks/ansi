@@ -7,8 +7,10 @@ def ANSI.string(str)
   ANSI::String.new(str)
 end
 
-# Clio Strings stores a regular string (@text) and
-# a Hash mapping character index to ansicodes (@marks).
+# = String
+#
+# ANSI Strings store a regular string (@text) and
+# a Hash mapping character index to ANSI codes (@marks).
 # For example is we have the string:
 #
 #   "Big Apple"
@@ -18,7 +20,8 @@ end
 #   { 0=>[:red] , 9=>[:clear] }
 #
 # TODO: In the future we may be able to subclass String,
-# instead of delegating via @text, but not until it is more compatible.
+# instead of delegating via @text, but not until it is more
+# compatible.
 #
 class ANSI::String
 

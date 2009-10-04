@@ -8,11 +8,14 @@
 # TODO: Re-evaluate how color/yielding methods are defined.
 # TODO: Maybe up, down, right, left should have yielding methods too?
 
+#
 module ANSI
 
   # Currently Windows is not supported.
   SUPPORTED = !(RUBY_PLATFORM =~ /win/)
 
+  # = ANSI Codes
+  #
   # Ansi::Code module makes it very easy to use ANSI codes.
   # These are esspecially nice for beautifying shell output.
   #
@@ -227,3 +230,4 @@ module ANSI
   end
 
 end
+

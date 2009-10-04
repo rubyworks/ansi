@@ -1,13 +1,13 @@
-#
-# This library is based of HighLine's SystemExtensions
-# by James Edward Gray II.
-#
-#   Copyright 2006 Gray Productions. All rights reserved.
-#
-# This is Free Software.  See LICENSE and COPYING for details.
-
 module ANSI
 
+  # = Terminal
+  #
+  # This library is based of HighLine's SystemExtensions
+  # by James Edward Gray II.
+  #
+  #   Copyright 2006 Gray Productions.
+  #
+  # This is Free Software. See LICENSE and COPYING for details.
   #
   module Terminal
 
