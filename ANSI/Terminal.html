@@ -39,11 +39,11 @@
             <li><a href="../lib/ansi/terminal/curses_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/terminal/curses.rb">lib/ansi/terminal/curses.rb</a></li>
           
-            <li><a href="../lib/ansi/terminal/termios_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/ansi/terminal/termios.rb">lib/ansi/terminal/termios.rb</a></li>
-          
             <li><a href="../lib/ansi/terminal/stty_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/terminal/stty.rb">lib/ansi/terminal/stty.rb</a></li>
+          
+            <li><a href="../lib/ansi/terminal/termios_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/terminal/termios.rb">lib/ansi/terminal/termios.rb</a></li>
           
             <li><a href="../lib/ansi/terminal/win32_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/terminal/win32.rb">lib/ansi/terminal/win32.rb</a></li>
@@ -81,31 +81,31 @@
           
           <li><a href="#M000045">#SetConsoleMode</a></li>
           
-          <li><a href="#M000031">#get_character</a></li>
-          
           <li><a href="#M000033">#get_character</a></li>
           
-          <li><a href="#M000036">#get_character</a></li>
+          <li><a href="#M000034">#get_character</a></li>
           
           <li><a href="#M000040">#get_character</a></li>
           
-          <li><a href="#M000037">#raw_no_echo_mode</a></li>
+          <li><a href="#M000029">#get_character</a></li>
           
-          <li><a href="#M000038">#restore_mode</a></li>
+          <li><a href="#M000035">#raw_no_echo_mode</a></li>
           
-          <li><a href="#M000035">#screen_width</a></li>
+          <li><a href="#M000036">#restore_mode</a></li>
           
-          <li><a href="#M000030">#terminal_height</a></li>
+          <li><a href="#M000039">#screen_width</a></li>
           
-          <li><a href="#M000039">#terminal_size</a></li>
+          <li><a href="#M000032">#terminal_height</a></li>
+          
+          <li><a href="#M000037">#terminal_size</a></li>
           
           <li><a href="#M000041">#terminal_size</a></li>
           
-          <li><a href="#M000032">#terminal_size</a></li>
+          <li><a href="#M000038">#terminal_size</a></li>
           
-          <li><a href="#M000034">#terminal_size</a></li>
+          <li><a href="#M000030">#terminal_size</a></li>
           
-          <li><a href="#M000029">#terminal_width</a></li>
+          <li><a href="#M000031">#terminal_width</a></li>
           
         </ul>
       </div>
@@ -161,8 +161,6 @@
           <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
         
           <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
-        
-          <li class="module"><a href="../Logger.html">Logger</a></li>
         
         </ul>
         <div id="no-class-search-results" style="display: none;">No matching classes.</div>
@@ -466,12 +464,12 @@ windows savvy console echo toggler
 
     
       <div id="get-character-method" class="method-detail ">
-        <a name="M000031"></a>
+        <a name="M000033"></a>
 
         <div class="method-heading">
         
           <span class="method-name">get_character</span><span
-            class="method-args">(input = STDIN)</span>
+            class="method-args">( input = STDIN )</span>
           <span class="method-click-advice">click to toggle source</span>
         
         </div>
@@ -479,7 +477,11 @@ windows savvy console echo toggler
         <div class="method-description">
           
           <p>
-Curses savvy getc().
+Unix savvy getc(). (Second choice.)
+</p>
+<p>
+<b>WARNING</b>: This method requires the external &#8220;stty&#8221;
+program!
 </p>
           
 
@@ -487,9 +489,15 @@ Curses savvy getc().
           <div class="method-source-code"
             id="get-character-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 14</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>(<span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span>)
-      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">getch</span>()
+<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+      <span class="ruby-identifier">raw_no_echo_mode</span>
+
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+      <span class="ruby-keyword kw">ensure</span>
+        <span class="ruby-identifier">restore_mode</span>
+      <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
@@ -500,7 +508,7 @@ Curses savvy getc().
 
     
       <div id="get-character-method" class="method-detail ">
-        <a name="M000033"></a>
+        <a name="M000034"></a>
 
         <div class="method-heading">
         
@@ -537,50 +545,6 @@ Unix savvy getc(). (First choice.)
         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
       <span class="ruby-keyword kw">ensure</span>
         <span class="ruby-constant">Termios</span>.<span class="ruby-identifier">setattr</span>(<span class="ruby-identifier">input</span>, <span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">TCSANOW</span>, <span class="ruby-identifier">old_settings</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="get-character-method" class="method-detail ">
-        <a name="M000036"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">get_character</span><span
-            class="method-args">( input = STDIN )</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-Unix savvy getc(). (Second choice.)
-</p>
-<p>
-<b>WARNING</b>: This method requires the external &#8220;stty&#8221;
-program!
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="get-character-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
-      <span class="ruby-identifier">raw_no_echo_mode</span>
-
-      <span class="ruby-keyword kw">begin</span>
-        <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
-      <span class="ruby-keyword kw">ensure</span>
-        <span class="ruby-identifier">restore_mode</span>
       <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -632,8 +596,42 @@ Windows savvy getc().
       </div>
 
     
+      <div id="get-character-method" class="method-detail ">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">(input = STDIN)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Curses savvy getc().
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>(<span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span>)
+      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">getch</span>()
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
       <div id="raw-no-echo-mode-method" class="method-detail ">
-        <a name="M000037"></a>
+        <a name="M000035"></a>
 
         <div class="method-heading">
         
@@ -672,7 +670,7 @@ program!
 
     
       <div id="restore-mode-method" class="method-detail ">
-        <a name="M000038"></a>
+        <a name="M000036"></a>
 
         <div class="method-heading">
         
@@ -710,7 +708,7 @@ program!
 
     
       <div id="screen-width-method" class="method-detail ">
-        <a name="M000035"></a>
+        <a name="M000039"></a>
 
         <div class="method-heading">
         
@@ -727,7 +725,7 @@ Console screen width (taken from progress bar)
 </p>
 <p>
 NOTE: Don&#8217;t know how portable <a
-href="Terminal.html#M000035">screen_width</a> is. TODO: How to fit in to
+href="Terminal.html#M000039">screen_width</a> is. TODO: How to fit in to
 system?
 </p>
           
@@ -761,7 +759,7 @@ system?
 
     
       <div id="terminal-height-method" class="method-detail ">
-        <a name="M000030"></a>
+        <a name="M000032"></a>
 
         <div class="method-heading">
         
@@ -795,7 +793,7 @@ Get the height of the terminal window.
 
     
       <div id="terminal-size-method" class="method-detail ">
-        <a name="M000039"></a>
+        <a name="M000037"></a>
 
         <div class="method-heading">
         
@@ -872,42 +870,7 @@ A Windows savvy method to fetch the console columns, and rows.
 
     
       <div id="terminal-size-method" class="method-detail ">
-        <a name="M000032"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">terminal_size</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p class="missing-docs">(Not documented)</p>
-          
-
-          
-          <div class="method-source-code"
-            id="terminal-size-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 18</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
-      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">init_screen</span>
-      <span class="ruby-identifier">w</span>, <span class="ruby-identifier">r</span> = <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">cols</span>, <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">rows</span>
-      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">close_screen</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>, <span class="ruby-identifier">w</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="terminal-size-method" class="method-detail ">
-        <a name="M000034"></a>
+        <a name="M000038"></a>
 
         <div class="method-heading">
         
@@ -945,8 +908,43 @@ A Unix savvy method to fetch the console columns, and rows.
       </div>
 
     
+      <div id="terminal-size-method" class="method-detail ">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-size-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 18</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
+      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">init_screen</span>
+      <span class="ruby-identifier">w</span>, <span class="ruby-identifier">r</span> = <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">cols</span>, <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">rows</span>
+      <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">close_screen</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>, <span class="ruby-identifier">w</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
       <div id="terminal-width-method" class="method-detail ">
-        <a name="M000029"></a>
+        <a name="M000031"></a>
 
         <div class="method-heading">
         

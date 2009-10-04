@@ -52,7 +52,7 @@
       <div id="parent-class-section" class="section">
         <h3 class="section-header">Parent</h3>
         
-        <p class="link">Logger</p>
+        <p class="link"><a href="../Logger.html">Logger</a></p>
         
       </div>
       
@@ -70,29 +70,29 @@
           
           <li><a href="#M000000">#ansicolor?</a></li>
           
-          <li><a href="#M000011">#debug</a></li>
+          <li><a href="#M000016">#debug</a></li>
           
           <li><a href="#M000025">#debug_with_color</a></li>
           
-          <li><a href="#M000012">#error</a></li>
+          <li><a href="#M000019">#error</a></li>
           
-          <li><a href="#M000023">#error_with_color</a></li>
+          <li><a href="#M000024">#error_with_color</a></li>
           
-          <li><a href="#M000017">#fatal</a></li>
+          <li><a href="#M000020">#fatal</a></li>
           
           <li><a href="#M000026">#fatal_with_color</a></li>
           
-          <li><a href="#M000002">#formatter</a></li>
+          <li><a href="#M000004">#formatter</a></li>
           
-          <li><a href="#M000004">#info</a></li>
+          <li><a href="#M000011">#info</a></li>
           
-          <li><a href="#M000018">#info_with_color</a></li>
+          <li><a href="#M000021">#info_with_color</a></li>
           
-          <li><a href="#M000003">#styles</a></li>
+          <li><a href="#M000005">#styles</a></li>
           
-          <li><a href="#M000005">#warn</a></li>
+          <li><a href="#M000015">#warn</a></li>
           
-          <li><a href="#M000022">#warn_with_color</a></li>
+          <li><a href="#M000023">#warn_with_color</a></li>
           
         </ul>
       </div>
@@ -148,8 +148,6 @@
           <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
         
           <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
-        
-          <li class="module"><a href="../Logger.html">Logger</a></li>
         
         </ul>
         <div id="no-class-search-results" style="display: none;">No matching classes.</div>
@@ -233,7 +231,7 @@ Some available logging formats.
           <div class="method-source-code"
             id="ansicolor--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 48</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 50</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansicolor=</span>(<span class="ruby-identifier">on</span>)
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor</span> = <span class="ruby-identifier">on</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -265,7 +263,7 @@ Some available logging formats.
           <div class="method-source-code"
             id="ansicolor--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 43</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 45</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansicolor?</span>
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor?</span>
   <span class="ruby-keyword kw">end</span></pre>
@@ -278,7 +276,7 @@ Some available logging formats.
 
     
       <div id="debug-method" class="method-detail ">
-        <a name="M000011"></a>
+        <a name="M000016"></a>
 
         <div class="method-heading">
         
@@ -297,7 +295,7 @@ Some available logging formats.
           <div class="method-source-code"
             id="debug-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 95</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 97</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">debug</span>(<span class="ruby-identifier">progname</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">debug?</span>
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor?</span> <span class="ruby-value">? </span><span class="ruby-identifier">debug_with_color</span>{ <span class="ruby-keyword kw">super</span> } <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>
@@ -311,7 +309,7 @@ Some available logging formats.
 
     
       <div id="error-method" class="method-detail ">
-        <a name="M000012"></a>
+        <a name="M000019"></a>
 
         <div class="method-heading">
         
@@ -330,7 +328,7 @@ Some available logging formats.
           <div class="method-source-code"
             id="error-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 101</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 103</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">progname</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">error?</span>
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor?</span> <span class="ruby-value">? </span><span class="ruby-identifier">error_with_color</span>{ <span class="ruby-keyword kw">super</span> } <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>
@@ -344,7 +342,7 @@ Some available logging formats.
 
     
       <div id="fatal-method" class="method-detail ">
-        <a name="M000017"></a>
+        <a name="M000020"></a>
 
         <div class="method-heading">
         
@@ -363,7 +361,7 @@ Some available logging formats.
           <div class="method-source-code"
             id="fatal-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 107</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 109</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fatal</span>(<span class="ruby-identifier">progname</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">error?</span>
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor?</span> <span class="ruby-value">? </span><span class="ruby-identifier">fatal_with_color</span>{ <span class="ruby-keyword kw">super</span> } <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>
@@ -377,7 +375,7 @@ Some available logging formats.
 
     
       <div id="formatter-method" class="method-detail ">
-        <a name="M000002"></a>
+        <a name="M000004"></a>
 
         <div class="method-heading">
         
@@ -408,7 +406,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="formatter-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 65</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 67</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">formatter</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">formatter</span> = <span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
     <span class="ruby-keyword kw">super</span>
@@ -422,7 +420,7 @@ strings given severity, timestamp, progname and msg.
 
     
       <div id="info-method" class="method-detail ">
-        <a name="M000004"></a>
+        <a name="M000011"></a>
 
         <div class="method-heading">
         
@@ -441,7 +439,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="info-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 83</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 85</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">info</span>(<span class="ruby-identifier">progname</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">info?</span>
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor?</span> <span class="ruby-value">? </span><span class="ruby-identifier">info_with_color</span>{ <span class="ruby-keyword kw">super</span> } <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>
@@ -455,7 +453,7 @@ strings given severity, timestamp, progname and msg.
 
     
       <div id="styles-method" class="method-detail ">
-        <a name="M000003"></a>
+        <a name="M000005"></a>
 
         <div class="method-heading">
         
@@ -474,7 +472,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="styles-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 70</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 72</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">styles</span>(<span class="ruby-identifier">options</span>=<span class="ruby-keyword kw">nil</span>)
     <span class="ruby-ivar">@styles</span> <span class="ruby-operator">||=</span> {
       <span class="ruby-identifier">:info</span>  =<span class="ruby-operator">&gt;</span> [],
@@ -495,7 +493,7 @@ strings given severity, timestamp, progname and msg.
 
     
       <div id="warn-method" class="method-detail ">
-        <a name="M000005"></a>
+        <a name="M000015"></a>
 
         <div class="method-heading">
         
@@ -514,7 +512,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="warn-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 89</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 91</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">progname</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">warn?</span>
     <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">ansicolor?</span> <span class="ruby-value">? </span><span class="ruby-identifier">warn_with_color</span>{ <span class="ruby-keyword kw">super</span> } <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>
@@ -553,7 +551,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="debug-with-color-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 132</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 134</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">debug_with_color</span> <span class="ruby-comment cmt">#:yield:</span>
     <span class="ruby-identifier">styles</span>[<span class="ruby-identifier">:debug</span>].<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">s</span>) }
     <span class="ruby-keyword kw">yield</span>
@@ -568,7 +566,7 @@ strings given severity, timestamp, progname and msg.
 
     
       <div id="error-with-color-method" class="method-detail ">
-        <a name="M000023"></a>
+        <a name="M000024"></a>
 
         <div class="method-heading">
         
@@ -587,7 +585,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="error-with-color-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 126</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 128</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_with_color</span> <span class="ruby-comment cmt">#:yield:</span>
     <span class="ruby-identifier">styles</span>[<span class="ruby-identifier">:error</span>].<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">s</span>) }
     <span class="ruby-keyword kw">yield</span>
@@ -621,7 +619,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="fatal-with-color-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 138</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 140</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fatal_with_color</span> <span class="ruby-comment cmt">#:yield:</span>
     <span class="ruby-identifier">styles</span>[<span class="ruby-identifier">:fatal</span>].<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">s</span>) }
     <span class="ruby-keyword kw">yield</span>
@@ -636,7 +634,7 @@ strings given severity, timestamp, progname and msg.
 
     
       <div id="info-with-color-method" class="method-detail ">
-        <a name="M000018"></a>
+        <a name="M000021"></a>
 
         <div class="method-heading">
         
@@ -655,7 +653,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="info-with-color-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 114</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 116</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">info_with_color</span> <span class="ruby-comment cmt">#:yield:</span>
     <span class="ruby-identifier">styles</span>[<span class="ruby-identifier">:info</span>].<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">s</span>) }
     <span class="ruby-keyword kw">yield</span>
@@ -670,7 +668,7 @@ strings given severity, timestamp, progname and msg.
 
     
       <div id="warn-with-color-method" class="method-detail ">
-        <a name="M000022"></a>
+        <a name="M000023"></a>
 
         <div class="method-heading">
         
@@ -689,7 +687,7 @@ strings given severity, timestamp, progname and msg.
           <div class="method-source-code"
             id="warn-with-color-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 120</span>
+<span class="ruby-comment cmt"># File lib/ansi/logger.rb, line 122</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">warn_with_color</span> <span class="ruby-comment cmt">#:yield:</span>
     <span class="ruby-identifier">styles</span>[<span class="ruby-identifier">:warn</span>].<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">s</span>) }
     <span class="ruby-keyword kw">yield</span>
