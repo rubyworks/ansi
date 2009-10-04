@@ -81,11 +81,11 @@
           
           <li><a href="#M000046">#SetConsoleMode</a></li>
           
-          <li><a href="#M000036">#get_character</a></li>
-          
           <li><a href="#M000032">#get_character</a></li>
           
           <li><a href="#M000034">#get_character</a></li>
+          
+          <li><a href="#M000037">#get_character</a></li>
           
           <li><a href="#M000041">#get_character</a></li>
           
@@ -93,7 +93,7 @@
           
           <li><a href="#M000039">#restore_mode</a></li>
           
-          <li><a href="#M000037">#screen_width</a></li>
+          <li><a href="#M000036">#screen_width</a></li>
           
           <li><a href="#M000031">#terminal_height</a></li>
           
@@ -468,50 +468,6 @@ windows savvy console echo toggler
 
     
       <div id="get-character-method" class="method-detail ">
-        <a name="M000036"></a>
-
-        <div class="method-heading">
-        
-          <span class="method-name">get_character</span><span
-            class="method-args">( input = STDIN )</span>
-          <span class="method-click-advice">click to toggle source</span>
-        
-        </div>
-
-        <div class="method-description">
-          
-          <p>
-Unix savvy getc(). (Second choice.)
-</p>
-<p>
-<b>WARNING</b>: This method requires the external &#8220;stty&#8221;
-program!
-</p>
-          
-
-          
-          <div class="method-source-code"
-            id="get-character-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
-      <span class="ruby-identifier">raw_no_echo_mode</span>
-
-      <span class="ruby-keyword kw">begin</span>
-        <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
-      <span class="ruby-keyword kw">ensure</span>
-        <span class="ruby-identifier">restore_mode</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-      </div>
-
-    
-      <div id="get-character-method" class="method-detail ">
         <a name="M000032"></a>
 
         <div class="method-heading">
@@ -583,6 +539,50 @@ Unix savvy getc(). (First choice.)
         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
       <span class="ruby-keyword kw">ensure</span>
         <span class="ruby-constant">Termios</span>.<span class="ruby-identifier">setattr</span>(<span class="ruby-identifier">input</span>, <span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">TCSANOW</span>, <span class="ruby-identifier">old_settings</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Unix savvy getc(). (Second choice.)
+</p>
+<p>
+<b>WARNING</b>: This method requires the external &#8220;stty&#8221;
+program!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+      <span class="ruby-identifier">raw_no_echo_mode</span>
+
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+      <span class="ruby-keyword kw">ensure</span>
+        <span class="ruby-identifier">restore_mode</span>
       <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span></pre>
           </div>
@@ -712,7 +712,7 @@ program!
 
     
       <div id="screen-width-method" class="method-detail ">
-        <a name="M000037"></a>
+        <a name="M000036"></a>
 
         <div class="method-heading">
         
@@ -729,7 +729,7 @@ Console screen width (taken from progress bar)
 </p>
 <p>
 NOTE: Don&#8217;t know how portable <a
-href="Terminal.html#M000037">screen_width</a> is. TODO: How to fit in to
+href="Terminal.html#M000036">screen_width</a> is. TODO: How to fit in to
 system?
 </p>
           
