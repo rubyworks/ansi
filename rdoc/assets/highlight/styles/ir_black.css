@@ -1,0 +1,92 @@
+/*
+  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
+*/
+
+pre {
+    background: #000;
+}
+
+pre code {
+    color: #f8f8f8;
+}
+
+pre code .shebang,
+pre code .comment,
+pre code .template_comment,
+pre code .javadoc {
+    color: #7c7c7c;
+}
+
+pre code .keyword,
+pre code .tag,
+pre code .ruby .function .keyword {
+    color: #96CBFE;
+}
+
+pre code .function .keyword,
+pre code .sub .keyword,
+pre code .method,
+pre code .list .title {
+    color: #FFFFB6;
+}
+
+pre code .string,
+pre code .attribute .value,
+pre code .cdata,
+pre code .filter .argument,
+pre code .attr_selector,
+pre code .apache .cbracket,
+pre code .date {
+    color: #A8FF60;
+}
+
+pre code .subst {
+    color: #DAEFA3;
+}
+
+pre code .regexp {
+    color: #E9C062;
+}
+
+pre code .function .title,
+pre code .sub .identifier,
+pre code .pi,
+pre code .decorator,
+pre code .ini .title {
+    color: #FFFFB6;
+}
+
+pre code .class .title,
+pre code .smalltalk .class,
+pre code .javadoctag,
+pre code .phpdoc {
+    color: #FFFFB6;
+}
+
+pre code .symbol,
+pre code .number,
+pre code .variable,
+pre code .vbscript, .literal {
+    color: #C6C5FE;
+}
+
+pre code .css .keyword {
+    color: #96CBFE;
+}
+
+pre code .css .rule .keyword,
+pre code .css .id {
+    color: #FFFFB6;
+}
+
+pre code .css .class {
+    color: #FFF;
+}
+
+pre code .hexcolor {
+    color: #C6C5FE;
+}
+
+pre code .number {
+    color:#FF73FD;
+}

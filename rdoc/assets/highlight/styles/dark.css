@@ -1,0 +1,102 @@
+﻿/*
+
+Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+pre code[class]:after {
+  content: 'highlight: ' attr(class);
+  display: block; text-align: right;
+  font-size: smaller;
+  color: #CCC; background: white;
+  border-top: solid 1px black;
+  padding-top: 0.5em;
+}
+
+pre code {
+  display: block;
+  background: #444;
+}
+
+pre code .keyword,
+pre code .literal,
+pre code .change,
+pre code .winutils,
+pre code .flow,
+pre code .lisp .title {
+  color: white;
+}
+
+pre code,
+pre code .ruby .subst {
+  color: #DDD;
+}
+
+pre code .string,
+pre code .function .title,
+pre code .class .title,
+pre code .ini .title,
+pre code .tag .attribute .value,
+pre code .css .rules .value,
+pre code .preprocessor,
+pre code .ruby .symbol,
+pre code .ruby .instancevar,
+pre code .ruby .class .parent,
+pre code .built_in,
+pre code .sql .aggregate,
+pre code .django .template_tag,
+pre code .django .variable,
+pre code .smalltalk .class,
+pre code .javadoc,
+pre code .ruby .string,
+pre code .django .filter .argument,
+pre code .smalltalk .localvars,
+pre code .smalltalk .array,
+pre code .attr_selector,
+pre code .pseudo,
+pre code .addition,
+pre code .stream,
+pre code .envvar,
+pre code .apache .tag,
+pre code .apache .cbracket {
+  color: #D88;
+}
+
+pre code .comment,
+pre code .java .annotation,
+pre code .python .decorator,
+pre code .template_comment,
+pre code .pi,
+pre code .doctype,
+pre code .deletion,
+pre code .shebang,
+pre code .apache .sqbracket {
+  color: #777;
+}
+
+pre code .keyword,
+pre code .literal,
+pre code .css .id,
+pre code .phpdoc,
+pre code .function .title,
+pre code .class .title,
+pre code .vbscript .built_in,
+pre code .sql .aggregate,
+pre code .rsl .built_in,
+pre code .smalltalk .class,
+pre code .xml .tag .title,
+pre code .diff .header,
+pre code .chunk,
+pre code .winutils,
+pre code .bash .variable,
+pre code .lisp .title,
+pre code .apache .tag {
+  font-weight: bold;
+}
+
+pre code .html .css,
+pre code .html .javascript,
+pre code .html .vbscript {
+  opacity: 0.5;
+}
+

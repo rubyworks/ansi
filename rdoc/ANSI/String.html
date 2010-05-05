@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: ANSI::String</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">ANSI</a>&nbsp;
+      <a href="/">ANSI::String</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../lib/ansi/string_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/string.rb">lib/ansi/string.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <li class="class">Object</li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-%2B">#+</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-%5B%5D">#[]</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-ansi">#ansi</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-ansi%21">#ansi!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black">#black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black%21">#black!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue">#blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue%21">#blue!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-bold">#bold</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-bold%21">#bold!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-color">#color</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-color%21">#color!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan">#cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan%21">#cyan!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-downcase">#downcase</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-downcase%21">#downcase!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green">#green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green%21">#green!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-gsub">#gsub</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-gsub%21">#gsub!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta">#magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta%21">#magenta!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red">#red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red%21">#red!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-shift_marks">#shift_marks</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-shift_marks%21">#shift_marks!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-size">#size</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-slice">#slice</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-sub">#sub</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-sub%21">#sub!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-to_s">#to_s</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-to_str">#to_str</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-underline">#underline</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-underline%21">#underline!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-upcase">#upcase</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-upcase%21">#upcase!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow">#yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow%21">#yellow!</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../ANSI.html">ANSI</a></li>
+        
+          <li class="module"><a href="../ANSI/BBCode.html">ANSI::BBCode</a></li>
+        
+          <li class="module"><a href="../ANSI/Code.html">ANSI::Code</a></li>
+        
+          <li class="class"><a href="../ANSI/Logger.html">ANSI::Logger</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2.1
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="String.html">String</a></h1>
+<p>
+<a href="../ANSI.html">ANSI</a> Strings store a regular string (@text) and
+a Hash mapping character index to <a href="../ANSI.html">ANSI</a> codes
+(@marks). For example is we have the string:
+</p>
+<pre>
+  &quot;Big Apple&quot;
+</pre>
+<p>
+And applied the color red to it, the marks hash would be:
+</p>
+<pre>
+  { 0=&gt;[:red] , 9=&gt;[:clear] }
+</pre>
+<p>
+TODO: In the future we may be able to subclass <a
+href="String.html">String</a>, instead of delegating via @text, but not
+until it is more compatible.
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="CLR">CLR</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+    <div id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="text-attribute-method" class="method-detail">
+        <a name="text"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">text</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="marks-attribute-method" class="method-detail">
+        <a name="marks"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">marks</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="method-c-new"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(text=nil, marks=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+New Ansi::String
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">text</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">marks</span>=<span class="ruby-keyword kw">nil</span>)
+35:     <span class="ruby-ivar">@text</span>  = (<span class="ruby-identifier">text</span>  <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>).<span class="ruby-identifier">to_s</span>
+36:     <span class="ruby-ivar">@marks</span> = <span class="ruby-identifier">marks</span>  <span class="ruby-operator">||</span> []
+37:     <span class="ruby-keyword kw">yield</span>(<span class="ruby-keyword kw">self</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+38:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="method-i-%2B"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">+</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Add one <a href="String.html">String</a> to another, or to a regular <a
+href="String.html">String</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 74</span>
+74:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+75:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">other</span>
+76:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+77:       <span class="ruby-identifier">ntext</span>  = <span class="ruby-identifier">text</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">text</span>
+78:       <span class="ruby-identifier">nmarks</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">dup</span>
+79:       <span class="ruby-identifier">omarks</span> = <span class="ruby-identifier">shift_marks</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">text</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">marks</span>)
+80:       <span class="ruby-identifier">omarks</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">c</span>)<span class="ruby-operator">|</span> <span class="ruby-identifier">nmarks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">i</span>,<span class="ruby-identifier">c</span>] }
+81:     <span class="ruby-keyword kw">else</span>
+82:       <span class="ruby-identifier">ntext</span>  = <span class="ruby-identifier">text</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_s</span>
+83:       <span class="ruby-identifier">nmarks</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">dup</span>
+84:     <span class="ruby-keyword kw">end</span>
+85:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ntext</span>, <span class="ruby-identifier">nmarks</span>)
+86:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail method-alias">
+        <a name="method-i-%5B%5D"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">[]</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ansi-method" class="method-detail ">
+        <a name="method-i-ansi"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi</span><span
+            class="method-args">(code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="ansi-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 194</span>
+194:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi</span>(<span class="ruby-identifier">code</span>)
+195:     <span class="ruby-identifier">m</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">dup</span>
+196:     <span class="ruby-identifier">m</span>.<span class="ruby-identifier">unshift</span>([<span class="ruby-value">0</span>, <span class="ruby-identifier">code</span>])
+197:     <span class="ruby-identifier">m</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">size</span>, <span class="ruby-value">:clear</span>])
+198:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">m</span>)
+199:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="String.html#method-i-color">color</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="ansi--method" class="method-detail ">
+        <a name="method-i-ansi%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi!</span><span
+            class="method-args">(code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="ansi--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 203</span>
+203:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi!</span>(<span class="ruby-identifier">code</span>)
+204:     <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">unshift</span>([<span class="ruby-value">0</span>, <span class="ruby-identifier">ansicolor</span>])
+205:     <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">size</span>, <span class="ruby-value">:clear</span>])
+206:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="String.html#method-i-color%21">color!</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="black-method" class="method-detail ">
+        <a name="method-i-black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 212</span>
+212:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black</span>      ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:black</span>)    ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black--method" class="method-detail ">
+        <a name="method-i-black%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 223</span>
+223:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black!</span>     ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:black</span>)   ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-method" class="method-detail ">
+        <a name="method-i-blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 211</span>
+211:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue</span>       ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:blue</span>)     ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue--method" class="method-detail ">
+        <a name="method-i-blue%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 222</span>
+222:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue!</span>      ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:blue</span>)    ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bold-method" class="method-detail ">
+        <a name="method-i-bold"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bold</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="bold-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 217</span>
+217:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bold</span>       ; <span class="ruby-identifier">ansi</span>(<span class="ruby-value">:bold</span>)       ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bold--method" class="method-detail ">
+        <a name="method-i-bold%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bold!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="bold--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 228</span>
+228:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bold!</span>      ; <span class="ruby-identifier">ansi!</span>(<span class="ruby-value">:bold</span>)      ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="color-method" class="method-detail method-alias">
+        <a name="method-i-color"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">color</span><span
+            class="method-args">(code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="color--method" class="method-detail method-alias">
+        <a name="method-i-color%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">color!</span><span
+            class="method-args">(code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-method" class="method-detail ">
+        <a name="method-i-cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 215</span>
+215:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan</span>       ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:cyan</span>)     ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan--method" class="method-detail ">
+        <a name="method-i-cyan%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 226</span>
+226:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan!</span>      ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:cyan</span>)    ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="downcase-method" class="method-detail ">
+        <a name="method-i-downcase"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">downcase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Downcase the string.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="downcase-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 70</span>
+70:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">downcase</span>  ; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">marks</span>) ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="downcase--method" class="method-detail ">
+        <a name="method-i-downcase%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">downcase!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="downcase--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 71</span>
+71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">downcase!</span> ; <span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase!</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-method" class="method-detail ">
+        <a name="method-i-green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 210</span>
+210:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green</span>      ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:green</span>)    ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green--method" class="method-detail ">
+        <a name="method-i-green%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 221</span>
+221:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green!</span>     ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:green</span>)   ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="gsub-method" class="method-detail ">
+        <a name="method-i-gsub"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">gsub</span><span
+            class="method-args">(pattern, replacement=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+See <a href="String.html#method-i-gsub%21">#</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="gsub-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 189</span>
+189:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+190:     <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>, &amp;<span class="ruby-identifier">block</span>)
+191:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="gsub--method" class="method-detail ">
+        <a name="method-i-gsub%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">gsub!</span><span
+            class="method-args">(pattern, replacement=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="gsub--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 163</span>
+163:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+164:     <span class="ruby-identifier">mark_changes</span>   = []
+165:     <span class="ruby-identifier">mark_additions</span> = []
+166:     <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+167:       <span class="ruby-identifier">index</span> = <span class="ruby-identifier">$~</span>.<span class="ruby-identifier">begin</span>(<span class="ruby-value">0</span>)
+168:       <span class="ruby-identifier">replacement</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+169:       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span><span class="ruby-operator">===</span><span class="ruby-identifier">replacement</span>
+170:         <span class="ruby-identifier">adj_marks</span> = <span class="ruby-identifier">replacement</span>.<span class="ruby-identifier">marks</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">c</span>)<span class="ruby-operator">|</span> [<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-identifier">index</span>,<span class="ruby-identifier">c</span>] }
+171:         <span class="ruby-identifier">mark_additions</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">adj_marks</span>)
+172:         <span class="ruby-identifier">replacement</span> = <span class="ruby-identifier">replacement</span>.<span class="ruby-identifier">text</span>
+173:       <span class="ruby-keyword kw">end</span>
+174:       <span class="ruby-identifier">delta</span> = (<span class="ruby-identifier">replacement</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span>)
+175:       <span class="ruby-identifier">mark_changes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>]
+176:       <span class="ruby-identifier">replacement</span>
+177:     <span class="ruby-keyword kw">end</span>
+178:     <span class="ruby-identifier">marks</span> = <span class="ruby-ivar">@marks</span>
+179:     <span class="ruby-identifier">mark_changes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>)<span class="ruby-operator">|</span>
+180:       <span class="ruby-identifier">marks</span> = <span class="ruby-identifier">shift_marks</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>, <span class="ruby-identifier">marks</span>)
+181:     <span class="ruby-keyword kw">end</span>
+182:     <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">mark_additions</span>)
+183:     <span class="ruby-ivar">@text</span>  = <span class="ruby-identifier">text</span>
+184:     <span class="ruby-ivar">@marks</span> = <span class="ruby-identifier">marks</span>
+185:     <span class="ruby-keyword kw">self</span>
+186:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-method" class="method-detail ">
+        <a name="method-i-magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 213</span>
+213:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta</span>    ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:magenta</span>)  ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta--method" class="method-detail ">
+        <a name="method-i-magenta%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 224</span>
+224:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta!</span>   ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:magenta</span>) ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-method" class="method-detail ">
+        <a name="method-i-red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 209</span>
+209:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red</span>        ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:red</span>)      ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red--method" class="method-detail ">
+        <a name="method-i-red%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 220</span>
+220:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red!</span>       ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:red</span>)     ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="size-method" class="method-detail ">
+        <a name="method-i-size"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The size of the base text.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="size-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 63</span>
+63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size</span> ; <span class="ruby-identifier">text</span>.<span class="ruby-identifier">size</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="slice-method" class="method-detail ">
+        <a name="method-i-slice"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">slice</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+slice
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="slice-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 99</span>
+ 99:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">slice</span>(*<span class="ruby-identifier">args</span>)
+100:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+101:       <span class="ruby-identifier">index</span>, <span class="ruby-identifier">len</span> = *<span class="ruby-identifier">args</span>
+102:       <span class="ruby-identifier">endex</span>  = <span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-identifier">len</span>
+103:       <span class="ruby-identifier">new_text</span>  = <span class="ruby-identifier">text</span>[<span class="ruby-identifier">index</span>, <span class="ruby-identifier">len</span>]
+104:       <span class="ruby-identifier">new_marks</span> = []
+105:       <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
+106:         <span class="ruby-identifier">new_marks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">i</span>, <span class="ruby-identifier">v</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">endex</span>
+107:       <span class="ruby-keyword kw">end</span>
+108:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new_text</span>, <span class="ruby-identifier">new_marks</span>)
+109:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+110:       <span class="ruby-identifier">rng</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+111:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">rng</span>
+112:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Range</span>
+113:         <span class="ruby-identifier">index</span>, <span class="ruby-identifier">endex</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">end</span>
+114:         <span class="ruby-identifier">new_text</span>  = <span class="ruby-identifier">text</span>[<span class="ruby-identifier">rng</span>]
+115:         <span class="ruby-identifier">new_marks</span> = []
+116:         <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
+117:           <span class="ruby-identifier">new_marks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">i</span>, <span class="ruby-identifier">v</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">endex</span>
+118:         <span class="ruby-keyword kw">end</span>
+119:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new_text</span>, <span class="ruby-identifier">new_marks</span>)
+120:       <span class="ruby-keyword kw">else</span>
+121:         <span class="ruby-identifier">nm</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">c</span>)<span class="ruby-operator">|</span>
+122:           <span class="ruby-identifier">marks</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">rng</span> <span class="ruby-keyword kw">or</span> ( <span class="ruby-identifier">marks</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">rng</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> [<span class="ruby-value">:clear</span>, <span class="ruby-value">:reset</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">marks</span>[<span class="ruby-value">1</span>]) )
+123:         <span class="ruby-keyword kw">end</span>
+124:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">text</span>[<span class="ruby-identifier">rng</span>,<span class="ruby-value">1</span>], <span class="ruby-identifier">nm</span>)
+125:       <span class="ruby-keyword kw">end</span>
+126:     <span class="ruby-keyword kw">else</span>
+127:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>
+128:     <span class="ruby-keyword kw">end</span>
+129:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="String.html#method-i-%5B%5D">[]</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="sub-method" class="method-detail ">
+        <a name="method-i-sub"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">sub</span><span
+            class="method-args">(pattern,replacement=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+See <a href="String.html#method-i-sub%21">#</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="sub-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 158</span>
+158:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>,<span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+159:     <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>, &amp;<span class="ruby-identifier">block</span>)
+160:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="sub--method" class="method-detail ">
+        <a name="method-i-sub%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">sub!</span><span
+            class="method-args">(pattern, replacement=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+This is more limited than the normal <a href="String.html">String</a>
+method. It does not yet support a block, and <tt>replacement</tt>
+won&#8217;t substitue for 1, 2, etc.
+</p>
+<p>
+TODO: block support.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="sub--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 139</span>
+139:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sub!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>=<span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+140:     <span class="ruby-identifier">mark_changes</span> = []
+141:     <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+142:       <span class="ruby-identifier">index</span>  = <span class="ruby-identifier">$~</span>.<span class="ruby-identifier">begin</span>(<span class="ruby-value">0</span>)
+143:       <span class="ruby-identifier">replacement</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">s</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+144:       <span class="ruby-identifier">delta</span>  = (<span class="ruby-identifier">replacement</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span>)
+145:       <span class="ruby-identifier">mark_changes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>]
+146:       <span class="ruby-identifier">replacement</span>
+147:     <span class="ruby-keyword kw">end</span>
+148:     <span class="ruby-identifier">marks</span> = <span class="ruby-ivar">@marks</span>
+149:     <span class="ruby-identifier">mark_changes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span><span class="ruby-operator">|</span>
+150:       <span class="ruby-identifier">marks</span> = <span class="ruby-identifier">shift_marks</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>, <span class="ruby-identifier">marks</span>)
+151:     <span class="ruby-keyword kw">end</span>
+152:     <span class="ruby-ivar">@text</span>  = <span class="ruby-identifier">text</span>
+153:     <span class="ruby-ivar">@marks</span> = <span class="ruby-identifier">marks</span>
+154:     <span class="ruby-keyword kw">self</span>
+155:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-s-method" class="method-detail ">
+        <a name="method-i-to_s"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Convert Ansi::String object to normal <a href="String.html">String</a>.
+This converts the intental markup codes to <a href="../ANSI.html">ANSI</a>
+codes.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-s-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 42</span>
+42:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+43:     <span class="ruby-identifier">s</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">dup</span>
+44:     <span class="ruby-identifier">m</span> = <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">sort</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>)<span class="ruby-operator">|</span>
+45:       <span class="ruby-identifier">v</span> = <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>]
+46:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+47:         (<span class="ruby-identifier">b</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:clear</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:reset</span>) <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+48:       <span class="ruby-keyword kw">else</span>
+49:         <span class="ruby-identifier">v</span>
+50:       <span class="ruby-keyword kw">end</span>
+51:     <span class="ruby-keyword kw">end</span>
+52:     <span class="ruby-identifier">m</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">code</span>)<span class="ruby-operator">|</span>
+53:       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">index</span>, <span class="ruby-constant">ANSICode</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">code</span>))
+54:     <span class="ruby-keyword kw">end</span>
+55:     <span class="ruby-comment cmt">#s &lt;&lt; CLR unless s =~ /#{Regexp.escape(CLR)}$/  # always end with a clear</span>
+56:     <span class="ruby-identifier">s</span>
+57:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="String.html#method-i-to_str">to_str</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="to-str-method" class="method-detail method-alias">
+        <a name="method-i-to_str"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_str</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Ansi::String is a type of <a href="String.html">String</a>.
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="underline-method" class="method-detail ">
+        <a name="method-i-underline"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">underline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="underline-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 218</span>
+218:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">underline</span>  ; <span class="ruby-identifier">ansi</span>(<span class="ruby-value">:underline</span>)  ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="underline--method" class="method-detail ">
+        <a name="method-i-underline%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">underline!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="underline--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 229</span>
+229:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">underline!</span> ; <span class="ruby-identifier">ansi!</span>(<span class="ruby-value">:underline</span>) ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="upcase-method" class="method-detail ">
+        <a name="method-i-upcase"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">upcase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Upcase the string.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="upcase-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 66</span>
+66:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upcase</span>  ; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">marks</span>) ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="upcase--method" class="method-detail ">
+        <a name="method-i-upcase%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">upcase!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="upcase--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 67</span>
+67:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upcase!</span> ; <span class="ruby-identifier">text</span>.<span class="ruby-identifier">upcase!</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-method" class="method-detail ">
+        <a name="method-i-yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 214</span>
+214:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow</span>     ; <span class="ruby-identifier">color</span>(<span class="ruby-value">:yellow</span>)   ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow--method" class="method-detail ">
+        <a name="method-i-yellow%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 225</span>
+225:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow!</span>    ; <span class="ruby-identifier">color!</span>(<span class="ruby-value">:yellow</span>)  ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="private-instance-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
+
+    
+      <div id="shift-marks-method" class="method-detail ">
+        <a name="method-i-shift_marks"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">shift_marks</span><span
+            class="method-args">(index, delta, marks=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="shift-marks-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 234</span>
+234:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shift_marks</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>, <span class="ruby-identifier">marks</span>=<span class="ruby-keyword kw">nil</span>)
+235:     <span class="ruby-identifier">new_marks</span> = []
+236:     (<span class="ruby-identifier">marks</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@marks</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">c</span>)<span class="ruby-operator">|</span>
+237:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">index</span>
+238:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span>
+239:         <span class="ruby-identifier">new_marks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">i</span>, <span class="ruby-identifier">c</span>]
+240:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span>, <span class="ruby-value">1</span>
+241:         <span class="ruby-identifier">new_marks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-identifier">delta</span>, <span class="ruby-identifier">c</span>]
+242:       <span class="ruby-keyword kw">end</span>
+243:     <span class="ruby-keyword kw">end</span>
+244:     <span class="ruby-identifier">new_marks</span>
+245:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="shift-marks--method" class="method-detail ">
+        <a name="method-i-shift_marks%21"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">shift_marks!</span><span
+            class="method-args">(index, delta)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="shift-marks--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 248</span>
+248:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shift_marks!</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>)
+249:     <span class="ruby-ivar">@marks</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">shift_marks</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">delta</span>))
+250:   <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

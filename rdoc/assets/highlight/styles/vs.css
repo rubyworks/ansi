@@ -1,0 +1,69 @@
+/*
+
+Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
+
+*/
+
+pre code .comment,
+pre code .annotation,
+pre code .template_comment,
+pre code .diff .header,
+pre code .chunk,
+pre code .apache .cbracket {
+    color: rgb(0, 128, 0);
+}
+
+pre code .keyword,
+pre code .id,
+pre code .title,
+pre code .built_in,
+pre code .aggregate,
+pre code .smalltalk .class,
+pre code .winutils,
+pre code .bash .variable {
+    color: rgb(0, 0, 255);
+}
+
+pre code .string,
+pre code .title,
+pre code .parent,
+pre code .tag .attribute .value,
+pre code .rules .value,
+pre code .rules .value .number,
+pre code .ruby .symbol,
+pre code .instancevar,
+pre code .aggregate,
+pre code .template_tag,
+pre code .django .variable,
+pre code .addition,
+pre code .flow,
+pre code .stream,
+pre code .apache .tag,
+pre code .date {
+    color: rgb(163, 21, 21);
+}
+
+pre code .ruby .string,
+pre code .decorator,
+pre code .filter .argument,
+pre code .localvars,
+pre code .array,
+pre code .attr_selector,
+pre code .pseudo,
+pre code .pi,
+pre code .doctype,
+pre code .deletion,
+pre code .envvar,
+pre code .shebang,
+pre code .preprocessor,
+pre code .userType,
+pre code .apache .sqbracket {
+    color: rgb(43, 145, 175);
+}
+
+pre code .phpdoc,
+pre code .javadoc,
+pre code .xmlDocTag {
+    color: rgb(128, 128, 128);
+}
+

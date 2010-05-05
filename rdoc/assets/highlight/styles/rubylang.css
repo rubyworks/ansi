@@ -1,0 +1,119 @@
+/*
+
+rubylang.org style (c) Thomas Sawyer
+
+*/
+
+pre code {
+    display: block;
+    color: #ffffff;
+    background: #213449;
+}
+
+pre code .comment,
+pre code .template_comment,
+pre code .diff .header,
+pre code .javadoc {
+    color: #428bdd;
+    font-style: italic
+}
+
+pre code .keyword,
+pre code .css .rule .keyword,
+pre code .winutils,
+pre code .javascript .title,
+pre code .lisp .title,
+pre code .subst {
+    color: #f9bb00;
+    font-weight: bold 
+}
+
+pre code .number,
+pre code .hexcolor {
+    color: #eddd3d;
+}
+
+pre code .string,
+pre code .attribute .value,
+pre code .phpdoc {
+    color: #00cc00;
+}
+
+pre code .title,
+pre code .id {
+    color: #900;
+    font-weight: bold
+}
+
+pre code .javascript .title,
+pre code .lisp .title,
+pre code .subst {
+    font-weight: normal
+}
+
+pre code .class .title {
+    color: #fff;
+    font-weight: bold
+}
+
+pre code .tag,
+pre code .css .keyword,
+pre code .html .keyword,
+pre code .tag .title,
+pre code .django .tag .keyword {
+    color: #f9bb00;
+    font-weight: normal
+}
+
+pre code .attribute,
+pre code .variable,
+pre code .instancevar,
+pre code .lisp .body {
+    color: #8aa6c1;
+}
+
+pre code .regexp {
+    color: #ca4344;
+}
+
+pre code .class {
+    color: #fff;
+    font-weight: bold
+}
+
+pre code .symbol,
+pre code .lisp .keyword {
+    color: #b53b3c;
+}
+
+pre code .builtin,
+pre code .built_in,
+pre code .lisp .title {
+    color: #fff;
+}
+
+pre code .preprocessor,
+pre code .pi,
+pre code .doctype,
+pre code .shebang,
+pre code .cdata {
+    color: #999;
+    font-weight: bold
+}
+
+pre code .deletion {
+    background: #fdd
+}
+
+pre code .addition {
+    background: #dfd
+}
+
+pre code .diff .change {
+    background: #0086b3
+}
+
+pre code .chunk {
+    color: #aaa
+}
+

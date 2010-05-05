@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: ANSI::BBCode</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">ANSI</a>&nbsp;
+      <a href="/">ANSI::BBCode</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../lib/ansi/bbcode_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/bbcode.rb">lib/ansi/bbcode.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#method-c-ansi">::ansi</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-ansi_to_bbcode">::ansi_to_bbcode</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-ansi_to_html">::ansi_to_html</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-bbcode_to_ansi">::bbcode_to_ansi</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-bbcode_to_html">::bbcode_to_html</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-html_to_ansi">::html_to_ansi</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-html_to_bbcode">::html_to_bbcode</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-strip_bbcode">::strip_bbcode</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../ANSI.html">ANSI</a></li>
+        
+          <li class="module"><a href="../ANSI/BBCode.html">ANSI::BBCode</a></li>
+        
+          <li class="module"><a href="../ANSI/Code.html">ANSI::Code</a></li>
+        
+          <li class="class"><a href="../ANSI/Logger.html">ANSI::Logger</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2.1
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="BBCode.html">BBCode</a></h1>
+<p>
+The <a href="BBCode.html">BBCode</a> module helps ease the separation of
+core and frontend with the core (or submodules) being still able to say,
+what colors shall be used in it&#8217;s responses. This is achieved by
+encoding formatting information using the <a href="BBCode.html">BBCode</a>
+tokens. This enables you to &#8220;pipe&#8221; layout information such as
+colors, style, fonttype, size and alignment through the core to the
+frontend.
+</p>
+<p>
+Additionally it converts markups/codes between <a
+href="../ANSI.html">ANSI</a>, HTML and <a href="BBCode.html">BBCode</a>
+almost freely ;)
+</p>
+<h2>Usage</h2>
+<pre>
+  # Converting a bbcode string to ANSI and XHTML
+
+  str = &quot;this is [COLOR=red]red[/COLOR], this is [B]bold[/B]&quot;
+  print( BBCode.bbcode_to_ansi(str) )
+  print( BBCode.bbcode_to_html(str) )</pre>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="ANSINAME2CODE">ANSINAME2CODE</a></dt>
+        
+        <dd class="description"><p>
+ANSIname => ANSIcode LUT
+</p></dd>
+        
+      
+        <dt><a name="BBCOLOR2ANSI">BBCOLOR2ANSI</a></dt>
+        
+        <dd class="description"><p>
+BBColor => ANSIname LUT
+</p></dd>
+        
+      
+        <dt><a name="ANSINAME2BBCODE">ANSINAME2BBCODE</a></dt>
+        
+        <dd class="description"><p>
+ANSInames => <a href="BBCode.html">BBCode</a> LUT
+</p></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="ansi-method" class="method-detail ">
+        <a name="method-c-ansi"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi</span><span
+            class="method-args">(colorname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the <a href="../ANSI.html">ANSI</a> sequence for given color, if
+existant
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ansi-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 90</span>
+90:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">ansi</span>(<span class="ruby-identifier">colorname</span>)
+91:         <span class="ruby-identifier">colorname</span>.<span class="ruby-identifier">strip!</span>
+92:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">ANSINAME2CODE</span>[ <span class="ruby-identifier">colorname</span>.<span class="ruby-identifier">downcase</span> ]
+93:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ansi-to-bbcode-method" class="method-detail ">
+        <a name="method-c-ansi_to_bbcode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi_to_bbcode</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the string with all ansi escape sequences converted to BBCodes
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ansi-to-bbcode-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 103</span>
+103:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">ansi_to_bbcode</span>(<span class="ruby-identifier">string</span>)
+104:         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span>
+105:         <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;&quot;</span>
+106:         <span class="ruby-identifier">tagstack</span> = []
+107: 
+108:         <span class="ruby-comment cmt">## Iterate over input lines</span>
+109:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+110:             <span class="ruby-identifier">ansi</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\e\[[0-9;]+m/</span>)
+111:             <span class="ruby-identifier">continue</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ansi</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">ansi</span>.<span class="ruby-identifier">empty?</span>
+112: 
+113:             <span class="ruby-comment cmt">## Iterate over found ansi sequences</span>
+114:             <span class="ruby-identifier">ansi</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">seq</span><span class="ruby-operator">|</span>
+115:                 <span class="ruby-identifier">ansiname</span> = <span class="ruby-constant">ANSINAME2CODE</span>.<span class="ruby-identifier">invert</span>[<span class="ruby-node">&quot;#{seq}&quot;</span>]
+116: 
+117:                 <span class="ruby-comment cmt">## Pop last tag and form closing tag</span>
+118:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ansiname</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;reset&quot;</span>
+119:                     <span class="ruby-identifier">lasttag</span> = <span class="ruby-identifier">tagstack</span>.<span class="ruby-identifier">pop</span>
+120:                     <span class="ruby-identifier">bbname</span> = <span class="ruby-value str">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">lasttag</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;=&quot;</span>)[<span class="ruby-value">0</span>] )
+121: 
+122:                 <span class="ruby-comment cmt">## Get corresponding BBCode tag + Push to stack</span>
+123:                 <span class="ruby-keyword kw">else</span>
+124:                     <span class="ruby-identifier">bbname</span>   = <span class="ruby-constant">ANSINAME2BBCODE</span>[<span class="ruby-identifier">ansiname</span>]
+125:                     <span class="ruby-identifier">tagstack</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">bbname</span>)
+126:                 <span class="ruby-keyword kw">end</span>
+127: 
+128:                 <span class="ruby-comment cmt">## Replace ansi sequence by BBCode tag</span>
+129:                 <span class="ruby-identifier">replace</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;[%s]&quot;</span>, <span class="ruby-identifier">bbname</span>)
+130:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">&quot;#{Regexp.quote(seq)}&quot;</span>, <span class="ruby-identifier">replace</span>)
+131:             <span class="ruby-keyword kw">end</span>
+132: 
+133:             <span class="ruby-comment cmt">## Append converted line</span>
+134:             <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%s\n&quot;</span>, <span class="ruby-identifier">line</span>)
+135:         <span class="ruby-keyword kw">end</span>
+136: 
+137: 
+138:         <span class="ruby-comment cmt">## Some tags are unclosed</span>
+139:         <span class="ruby-keyword kw">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">tagstack</span>.<span class="ruby-identifier">empty?</span>
+140:             <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;[/%s]&quot;</span>, <span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tagstack</span>.<span class="ruby-identifier">pop</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;=&quot;</span>)[<span class="ruby-value">0</span>])  )
+141:         <span class="ruby-keyword kw">end</span>
+142: 
+143:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+144:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ansi-to-html-method" class="method-detail ">
+        <a name="method-c-ansi_to_html"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi_to_html</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts a <a href="../ANSI.html">ANSI</a> string to one with HTML markup.
+Returns the string with <a href="../ANSI.html">ANSI</a> code sequences
+converted to XHTML markup.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ansi-to-html-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 321</span>
+321:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">ansi_to_html</span>(<span class="ruby-identifier">string</span>)
+322:         <span class="ruby-identifier">bbcoded</span> = <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">ansi_to_bbcode</span>(<span class="ruby-identifier">string</span> )
+323:         <span class="ruby-identifier">htmled</span>  = <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">bbcode_to_html</span>(<span class="ruby-identifier">bbcoded</span>)
+324: 
+325:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">htmled</span>
+326:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bbcode-to-ansi-method" class="method-detail ">
+        <a name="method-c-bbcode_to_ansi"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bbcode_to_ansi</span><span
+            class="method-args">(string, usecolors = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts a <a href="BBCode.html">BBCode</a> string to one with <a
+href="../ANSI.html">ANSI</a> sequences. Returns the string with all
+formatting instructions in BBCodes converted to <a
+href="../ANSI.html">ANSI</a> code sequences / aligned with spaces to
+specified width.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bbcode-to-ansi-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 149</span>
+149:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">bbcode_to_ansi</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">usecolors</span> = <span class="ruby-keyword kw">true</span>)
+150:         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span>
+151:         <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;&quot;</span>
+152: 
+153:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">strip_bbcode</span>(<span class="ruby-identifier">string</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">usecolors</span>
+154: 
+155:         <span class="ruby-comment cmt">## Iterate over lines</span>
+156:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+157: 
+158:             <span class="ruby-comment cmt">## TODO: stacking? other styles!</span>
+159:             <span class="ruby-constant">ANSINAME2BBCODE</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+160:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/\[#{val}\]/</span>, <span class="ruby-constant">ANSINAME2CODE</span>[<span class="ruby-identifier">key</span>])
+161:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/\[\/#{val}\]/</span>, <span class="ruby-constant">ANSINAME2CODE</span>[<span class="ruby-value str">&quot;reset&quot;</span>])
+162:             <span class="ruby-keyword kw">end</span>
+163: 
+164:             <span class="ruby-comment cmt">## Fonttypes and sizes not available</span>
+165:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[SIZE=\d\]/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+166:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/SIZE\]/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+167:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[FONT=[^\]]*\]/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+168:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/FONT\]/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+169: 
+170:             <span class="ruby-comment cmt">## Color-mapping</span>
+171:             <span class="ruby-identifier">colors</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\[COLOR=(.*?)\]/</span>)
+172:             <span class="ruby-identifier">colors</span> = <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>  <span class="ruby-identifier">s</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>} <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">colors</span>.<span class="ruby-identifier">nil?</span>
+173:             <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">col</span><span class="ruby-operator">|</span>
+174:                 <span class="ruby-identifier">name</span> = <span class="ruby-constant">BBCOLOR2ANSI</span>[<span class="ruby-identifier">col</span>.<span class="ruby-identifier">downcase</span>]
+175:                 <span class="ruby-identifier">name</span> = <span class="ruby-constant">BBCOLOR2ANSI</span>[<span class="ruby-value str">&quot;white&quot;</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>
+176:                 <span class="ruby-identifier">code</span> = <span class="ruby-constant">ANSINAME2CODE</span>[<span class="ruby-identifier">name</span>]
+177: 
+178:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/\[COLOR=#{col}\]/</span>, <span class="ruby-identifier">code</span>)
+179:             <span class="ruby-keyword kw">end</span>
+180:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/COLOR\]/</span>, <span class="ruby-constant">ANSINAME2CODE</span>[<span class="ruby-value str">&quot;reset&quot;</span>])
+181: 
+182:             <span class="ruby-comment cmt">## TODO: Alignment</span>
+183:             <span class="ruby-comment cmt">## TODO: IMGs</span>
+184:             <span class="ruby-comment cmt">## TODO: EMAILs</span>
+185:             <span class="ruby-comment cmt">## TODO: URLs</span>
+186:             <span class="ruby-comment cmt">## TODO: QUOTEs</span>
+187:             <span class="ruby-comment cmt">## TODO: LISTs</span>
+188: 
+189:             <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%s\n&quot;</span>, <span class="ruby-identifier">line</span>)
+190:         <span class="ruby-keyword kw">end</span>
+191: 
+192:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+193:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bbcode-to-html-method" class="method-detail ">
+        <a name="method-c-bbcode_to_html"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bbcode_to_html</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts a <a href="BBCode.html">BBCode</a> string to one with HTML markup.
+Returns the string with all formatting instructions in BBCodes converted to
+XHTML markups.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bbcode-to-html-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 256</span>
+256:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">bbcode_to_html</span>(<span class="ruby-identifier">string</span>)
+257:         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span>
+258:         <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;&quot;</span>
+259:         <span class="ruby-identifier">quote</span> = <span class="ruby-value">0</span>
+260: 
+261:         <span class="ruby-comment cmt">## Iterate over lines</span>
+262:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+263:             <span class="ruby-identifier">styles</span> = { <span class="ruby-value str">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;strong&quot;</span>, <span class="ruby-value str">&quot;i&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;em&quot;</span>, <span class="ruby-value str">&quot;u&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;u&quot;</span> }
+264: 
+265:             <span class="ruby-comment cmt">## preserve B, I, U</span>
+266:             <span class="ruby-identifier">styles</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span>,<span class="ruby-identifier">html</span><span class="ruby-operator">|</span>
+267:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/\[#{code}\]/</span>, <span class="ruby-node">&quot;&lt;#{html}&gt;&quot;</span>)
+268:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/\[\/#{code}\]/</span>, <span class="ruby-node">&quot;&lt;/#{html}&gt;&quot;</span>)
+269:             <span class="ruby-keyword kw">end</span>
+270: 
+271:             <span class="ruby-comment cmt">## COLOR =&gt; font color=... (TODO: should be numeric!)</span>
+272:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[COLOR=(.*?)\]/</span>, <span class="ruby-value str">&quot;&lt;font color=\&quot;\\1\&quot;&gt;&quot;</span>)
+273:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/COLOR\]/</span>,     <span class="ruby-value str">&quot;&lt;/font&gt;&quot;</span>)
+274: 
+275:             <span class="ruby-comment cmt">## SIZE =&gt; font size=...</span>
+276:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[SIZE=(.*?)\]/</span>, <span class="ruby-value str">&quot;&lt;font size=\&quot;\\1\&quot;&gt;&quot;</span>)
+277:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/SIZE\]/</span>,     <span class="ruby-value str">&quot;&lt;/font&gt;&quot;</span>)
+278: 
+279:             <span class="ruby-comment cmt">## URL</span>
+280:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[URL\]([^\[]+?)\[\/URL\]/</span>, <span class="ruby-value str">&quot;&lt;a href=\&quot;\\1\&quot;&gt;\\1&lt;/a&gt;&quot;</span>)
+281:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[URL=(.*?)\](.+?)\[\/URL\]/</span>, <span class="ruby-value str">&quot;&lt;a href=\&quot;\\1\&quot;&gt;\\2&lt;/a&gt;&quot;</span>)
+282: 
+283:             <span class="ruby-comment cmt">## IMG</span>
+284:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[IMG=(.*?)\]/</span>, <span class="ruby-value str">&quot;&lt;img src=\&quot;\\1\&quot; /&gt;&quot;</span>)
+285: 
+286:             <span class="ruby-comment cmt">## ALIGN=center (TODO: right, left)</span>
+287:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[ALIGN=center\]/</span>, <span class="ruby-value str">&quot;&lt;center&gt;&quot;</span>)
+288:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[ALIGN=right\]/</span>,  <span class="ruby-value str">&quot;&lt;center&gt;&quot;</span>)
+289:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[ALIGN=left\]/</span>,   <span class="ruby-value str">&quot;&lt;center&gt;&quot;</span>)
+290:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/ALIGN\]/</span>,      <span class="ruby-value str">&quot;&lt;/center&gt;&quot;</span>)
+291: 
+292:             <span class="ruby-comment cmt">## QUOTE</span>
+293:             <span class="ruby-identifier">quote</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\[QUOTE\]/</span>
+294:             <span class="ruby-identifier">quote</span><span class="ruby-operator">-=</span><span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\[\/QUOTE\]/</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">quote</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+295:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[QUOTE\]/</span>,   <span class="ruby-value str">&quot;&lt;pre&gt;\n&quot;</span>)
+296:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/QUOTE\]/</span>, <span class="ruby-value str">&quot;&lt;/pre&gt;\n&quot;</span>)
+297:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/^/</span>, <span class="ruby-node">&quot;&amp;#62;&quot;</span>*<span class="ruby-identifier">quote</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">quote</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+298: 
+299:             <span class="ruby-comment cmt">## EMAIL</span>
+300:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[EMAIL\](.*?)\[\/EMAIL\]/</span>, <span class="ruby-value str">&quot;&lt;a href=\&quot;mailto:\\1\&quot;&gt;\\1&lt;/a&gt;&quot;</span>)
+301: 
+302:             <span class="ruby-comment cmt">## LIST (TODO: LIST=1, LIST=A)</span>
+303:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[LIST(?:=(.*?))?\]/</span>, <span class="ruby-value str">&quot;\n&lt;ul&gt;\n&quot;</span>)
+304:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\/LIST\]/</span>,          <span class="ruby-value str">&quot;\n&lt;/ul&gt;\n&quot;</span>)
+305:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\[\*\]/</span>,              <span class="ruby-value str">&quot;\n&lt;li /&gt;&quot;</span>)
+306: 
+307:             <span class="ruby-comment cmt">## FONT =&gt; font ??????</span>
+308:             <span class="ruby-comment cmt">## ?BLUR?, FADE?</span>
+309: 
+310:             <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%s&lt;br /&gt;\n&quot;</span>, <span class="ruby-identifier">line</span>)
+311:         <span class="ruby-keyword kw">end</span>
+312: 
+313:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+314:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="html-to-ansi-method" class="method-detail ">
+        <a name="method-c-html_to_ansi"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">html_to_ansi</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the (X)HTML markup code as <a href="../ANSI.html">ANSI</a>
+sequences
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="html-to-ansi-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 329</span>
+329:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">html_to_ansi</span>(<span class="ruby-identifier">string</span>)
+330:         <span class="ruby-identifier">bbcoded</span> = <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">html_to_bbcode</span>(<span class="ruby-identifier">string</span> )
+331:         <span class="ruby-identifier">ansied</span>  = <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">bbcode_to_ansi</span>(<span class="ruby-identifier">bbcoded</span>)
+332: 
+333:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">ansied</span>
+334:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="html-to-bbcode-method" class="method-detail ">
+        <a name="method-c-html_to_bbcode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">html_to_bbcode</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts a HTML string into one with <a href="BBCode.html">BBCode</a>
+markup (TODO) Returns the (X)HTML markup string as <a
+href="BBCode.html">BBCode</a>
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="html-to-bbcode-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 197</span>
+197:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">html_to_bbcode</span>(<span class="ruby-identifier">string</span>)
+198:         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span>
+199:         <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;&quot;</span>
+200: 
+201:         <span class="ruby-comment cmt">## Iterate over lines</span>
+202:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/&lt;br *\/?&gt;/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+203:             <span class="ruby-identifier">styles</span> = { <span class="ruby-value str">&quot;strong&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;b&quot;</span>, <span class="ruby-value str">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;b&quot;</span>,
+204:                         <span class="ruby-value str">&quot;em&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;i&quot;</span>, <span class="ruby-value str">&quot;i&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;i&quot;</span>,
+205:                         <span class="ruby-value str">&quot;u&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;u&quot;</span> }
+206: 
+207:             <span class="ruby-comment cmt">## preserve B, I, U</span>
+208:             <span class="ruby-identifier">styles</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">html</span>,<span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+209:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/&lt;#{html}&gt;/</span>, <span class="ruby-node">&quot;[#{code.upcase}]&quot;</span>)
+210:                 <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/&lt;\/#{html}&gt;/</span>, <span class="ruby-node">&quot;[/#{code.upcase}]&quot;</span>)
+211:             <span class="ruby-keyword kw">end</span>
+212: 
+213:             <span class="ruby-comment cmt">## TODO: COLORs</span>
+214:             <span class="ruby-comment cmt">## TODO: SIZEs</span>
+215:             <span class="ruby-comment cmt">## TODO: FONTs</span>
+216: 
+217:             <span class="ruby-comment cmt">## EMAIL</span>
+218:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;a +href *= *\&quot;mailto:(.*?)\&quot;.*?&gt;.*?&lt;\/a&gt;/</span>, <span class="ruby-value str">&quot;[EMAIL]\\1[/EMAIL]&quot;</span>)
+219: 
+220:             <span class="ruby-comment cmt">## URL</span>
+221:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;a +href *= *\&quot;((?:https?|ftp):\/\/.*?)\&quot;.*?&gt;(.*?)&lt;\/a&gt;/</span>, <span class="ruby-value str">&quot;[URL=\\1]\\2[/URL]&quot;</span>)
+222: 
+223:             <span class="ruby-comment cmt">## Other refs + closing tags =&gt; throw away</span>
+224:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;a +href *= *\&quot;.*?\&quot;.*?&gt;/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+225:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;\/a&gt;/</span>,            <span class="ruby-value str">&quot;&quot;</span>)
+226: 
+227:             <span class="ruby-comment cmt">## IMG</span>
+228:             <span class="ruby-comment cmt">#line.gsub!(/&lt;img +src *= *\&quot;(.*?)\&quot;.*?\/?&gt;/i, &quot;[IMG=\\1]&quot;)</span>
+229:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;img +src *= *\&quot;(.*?)\&quot;.*?\/?&gt;/</span>, <span class="ruby-value str">&quot;[IMG]\\1[/IMG]&quot;</span>)
+230: 
+231:             <span class="ruby-comment cmt">## CENTER (right/left??)</span>
+232:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;center&gt;/</span>,   <span class="ruby-value str">&quot;[ALIGN=center]&quot;</span>)
+233:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;\/center&gt;/</span>, <span class="ruby-value str">&quot;[/ALIGN]&quot;</span>)
+234: 
+235:             <span class="ruby-comment cmt">## QUOTE</span>
+236:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;(?:xmp|pre)&gt;/</span>,   <span class="ruby-value str">&quot;[QUOTE]&quot;</span>)
+237:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;\/(?:xmp|pre)&gt;/</span>, <span class="ruby-value str">&quot;[/QUOTE]&quot;</span>)
+238: 
+239:             <span class="ruby-comment cmt">## LIST</span>
+240:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;ul&gt;/</span>,      <span class="ruby-value str">&quot;\n[LIST]\n&quot;</span>)
+241:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;\/ul&gt;/</span>,    <span class="ruby-value str">&quot;\n[/LIST]\n&quot;</span>)
+242:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;li *\/?&gt; */</span>, <span class="ruby-value str">&quot;\n[*] &quot;</span>)
+243: 
+244:             <span class="ruby-comment cmt">## Unkown tags =&gt; throw away</span>
+245:             <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;.*? *\/?&gt;/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+246: 
+247:             <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%s&lt;br /&gt;\n&quot;</span>, <span class="ruby-identifier">line</span>)
+248:         <span class="ruby-keyword kw">end</span>
+249: 
+250:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;br *\/?&gt;/</span>, <span class="ruby-value str">&quot;\n&quot;</span>)
+251:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="strip-bbcode-method" class="method-detail ">
+        <a name="method-c-strip_bbcode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">strip_bbcode</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+&#8212; <a href="BBCode.html#method-c-strip_bbcode">strip_bbcode</a>(
+string ) Will strip any <a href="BBCode.html">BBCode</a> tags from the
+given string.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="strip-bbcode-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/bbcode.rb, line 97</span>
+ 97:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BBCode</span>.<span class="ruby-identifier">strip_bbcode</span>(<span class="ruby-identifier">string</span>)
+ 98:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">strip!</span>
+ 99:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\[[A-Za-z0-9\/=]+\]/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+100:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+﻿/*
+Description: Magula style for highligh.js
+Author: Ruslan Keba <rukeba@gmail.com>
+Website: http://rukeba.com/
+Version: 1.0
+Date: 2009-01-03
+Music: Aphex Twin / Xtal
+*/
+
+pre {
+  margin: .5em; padding: .5em;
+  background-color: #f4f4f4;
+}
+
+pre code,
+pre code .ruby .subst,
+pre code .lisp .title {
+  color: black;
+}
+
+pre code .string,
+pre code .title,
+pre code .parent,
+pre code .tag .attribute .value,
+pre code .rules .value,
+pre code .rules .value .number,
+pre code .preprocessor,
+pre code .ruby .symbol,
+pre code .instancevar,
+pre code .aggregate,
+pre code .template_tag,
+pre code .django .variable,
+pre code .smalltalk .class,
+pre code .addition,
+pre code .flow,
+pre code .stream,
+pre code .bash .variable,
+pre code .apache .cbracket {
+  color: #050;
+}
+
+pre code .comment,
+pre code .annotation,
+pre code .template_comment,
+pre code .diff .header,
+pre code .chunk {
+  color: #777;
+}
+
+pre code .number,
+pre code .date,
+pre code .regexp,
+pre code .literal,
+pre code .smalltalk .symbol,
+pre code .smalltalk .char,
+pre code .change {
+  color: #800;
+}
+
+pre code .label,
+pre code .javadoc,
+pre code .ruby .string,
+pre code .decorator,
+pre code .filter .argument,
+pre code .localvars,
+pre code .array,
+pre code .attr_selector,
+pre code .pseudo,
+pre code .pi,
+pre code .doctype,
+pre code .deletion,
+pre code .envvar,
+pre code .shebang,
+pre code .apache .sqbracket {
+  color: #00e;
+}
+
+pre code .keyword,
+pre code .id,
+pre code .phpdoc,
+pre code .title,
+pre code .built_in,
+pre code .aggregate,
+pre code .smalltalk .class,
+pre code .winutils,
+pre code .bash .variable,
+pre code .apache .tag,
+pre code .xml .tag,
+pre code .xml .title {
+  font-weight: bold;
+  color: navy;
+}
+
+pre code .html .css,
+pre code .html .javascript,
+pre code .html .vbscript {
+  opacity: 0.5;
+}
+
+/* --- */
+pre code .apache .tag {
+  font-weight: bold;
+  color: blue;
+}
+

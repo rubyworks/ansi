@@ -1,0 +1,113 @@
+/*
+
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+
+*/
+
+pre code[class]:after {
+  content: 'highlight: ' attr(class);
+  display: block; text-align: right;
+  font-size: smaller;
+  color: #CCC; background: white;
+  border-top: solid 1px black;
+  padding-top: 0.5em;
+}
+
+pre code {
+  display: block;
+  background: #3F3F3F;
+  color: #DCDCDC;
+}
+
+pre code .keyword,
+pre code .tag,
+pre code .django .tag,
+pre code .django .keyword,
+pre code .css .class,
+pre code .css .id,
+pre code .lisp .title {
+  color: #E3CEAB;
+}
+
+pre code .django .template_tag,
+pre code .django .variable,
+pre code .django .filter .argument {
+  color: #DCDCDC;
+}
+
+pre code .number,
+pre code .date {
+  color: #8CD0D3;
+}
+
+pre code .dos .envvar,
+pre code .dos .stream,
+pre code .variable,
+pre code .apache .sqbracket {
+  color: #EFDCBC;
+}
+
+pre code .dos .flow,
+pre code .diff .change,
+pre code .python .exception,
+pre code .python .built_in,
+pre code .literal {
+  color: #EFEFAF;
+}
+
+pre code .diff .chunk,
+pre code .ruby .subst {
+  color: #8F8F8F;
+}
+
+pre code .dos .keyword,
+pre code .python .decorator,
+pre code .class .title,
+pre code .function .title,
+pre code .ini .title,
+pre code .diff .header,
+pre code .ruby .class .parent,
+pre code .apache .tag {
+    color: #efef8f;
+}
+
+pre code .dos .winutils,
+pre code .ruby .symbol,
+pre code .ruby .string,
+pre code .ruby .instancevar {
+  color: #DCA3A3;
+}
+
+pre code .diff .deletion,
+pre code .string,
+pre code .tag .attribute .value,
+pre code .preprocessor,
+pre code .built_in,
+pre code .sql .aggregate,
+pre code .javadoc,
+pre code .smalltalk .class,
+pre code .smalltalk .localvars,
+pre code .smalltalk .array,
+pre code .css .rules .value,
+pre code .attr_selector,
+pre code .pseudo,
+pre code .apache .cbracket {
+  color: #CC9393;
+}
+
+pre code .shebang,
+pre code .diff .addition,
+pre code .comment,
+pre code .java .annotation,
+pre code .template_comment,
+pre code .pi,
+pre code .doctype {
+  color: #7F9F7F;
+}
+
+pre code .html .css,
+pre code .html .javascript {
+  opacity: 0.5;
+}
+

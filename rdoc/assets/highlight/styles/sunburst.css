@@ -1,0 +1,140 @@
+/*
+
+Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+pre {
+    background: #000;
+}
+
+pre code {
+    font: 1em / 1.3em 'Lucida Console', 'courier new', monospace;
+    color: #f8f8f8;
+}
+
+pre code .comment,
+pre code .template_comment,
+pre code .javadoc {
+    color: #aeaeae;
+    font-style: italic;
+}
+
+pre code .keyword,
+pre code .ruby .function .keyword {
+    color: #E28964;
+}
+
+pre code .function .keyword,
+pre code .sub .keyword,
+pre code .method,
+pre code .list .title {
+    color: #99CF50;
+}
+
+pre code .string,
+pre code .attribute .value,
+pre code .cdata,
+pre code .filter .argument,
+pre code .attr_selector,
+pre code .apache .cbracket,
+pre code .date {
+    color: #65B042;
+}
+
+.subst {
+    color: #DAEFA3;
+}
+
+.regexp {
+    color: #E9C062;
+}
+
+pre code .function .title,
+pre code .sub .identifier,
+pre code .pi,
+pre code .tag,
+pre code .tag .keyword,
+pre code .decorator,
+pre code .ini .title,
+pre code .shebang {
+    color: #89BDFF;
+}
+
+pre code .class .title,
+pre code .smalltalk .class,
+pre code .javadoctag,
+pre code .phpdoc {
+    text-decoration: underline;
+}
+
+pre code .symbol,
+pre code .number {
+    color: #3387CC;
+}
+
+pre code .params,
+pre code .variable {
+    color: #3E87E3;
+}
+
+pre code .css .keyword,
+pre code .pseudo {
+    color: #CDA869;
+}
+
+pre code .css .class {
+    color: #9B703F;
+}
+
+pre code .rules .keyword {
+    color: #C5AF75;
+}
+
+pre code .rules .value {
+    color: #CF6A4C;
+}
+
+pre code .css .id {
+    color: #8B98AB;
+}
+
+pre code .annotation,
+pre code .apache .sqbracket {
+    color: #9B859D;
+}
+
+pre code .preprocessor {
+    color: #8996A8;
+}
+
+pre code .hexcolor,
+pre code .css .value .number {
+    color: #DD7B3B;
+}
+
+pre code .css .function {
+    color: #DAD085;
+}
+
+pre code .diff .header,
+pre code .chunk {
+    background-color: #0E2231;
+    color: #F8F8F8;
+    font-style: italic;
+}
+
+pre code .diff .change {
+    background-color: #4A410D;
+    color: #F8F8F8;
+}
+
+pre code .addition {
+    background-color: #253B22;
+    color: #F8F8F8;
+}
+
+pre code .deletion {
+    background-color: #420E09;
+    color: #F8F8F8;
+}

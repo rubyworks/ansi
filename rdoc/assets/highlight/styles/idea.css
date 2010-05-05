@@ -1,0 +1,110 @@
+/*
+
+Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+pre code {
+    display: block;
+    color: #000;
+    background: #fff;
+}
+
+pre code .subst,
+pre code .title {
+    font-weight: normal;
+    color: #000;
+}
+
+pre code .comment,
+pre code .template_comment,
+pre code .javadoc,
+pre code .diff .header {
+    color: #808080;
+    font-style: italic;
+}
+
+pre code .annotation,
+pre code .decorator,
+pre code .preprocessor,
+pre code .doctype,
+pre code .pi,
+pre code .chunk,
+pre code .shebang,
+pre code .apache .cbracket {
+    color: #808000;
+}
+
+pre code .tag,
+pre code .pi {
+    background: #efefef;
+}
+
+pre code .tag .title,
+pre code .id,
+pre code .attr_selector,
+pre code .pseudo,
+pre code .literal,
+pre code .keyword,
+pre code .hexcolor,
+pre code .css .function,
+pre code .ini .title,
+pre code .css .class,
+pre code .list .title {
+    font-weight: bold;
+    color: #000080;
+}
+
+pre code .attribute,
+pre code .rules .keyword,
+pre code .number,
+pre code .date,
+pre code .regexp {
+    font-weight: bold;
+    color: #0000ff;
+}
+
+pre code .number,
+pre code .regexp {
+    font-weight: normal;
+}
+
+pre code .string,
+pre code .value,
+pre code .filter .argument,
+pre code .css .function .params,
+pre code .apache .tag {
+    color: #008000;
+    font-weight: bold;
+}
+
+pre code .symbol,
+pre code .char {
+    color: #000;
+    background: #d0eded;
+    font-style: italic;
+}
+
+pre code .phpdoc,
+pre code .javadoctag {
+    text-decoration: underline;
+}
+
+pre code .variable,
+pre code .envvar,
+pre code .apache .sqbracket {
+    color: #660e7a;
+}
+
+pre code .addition {
+    background: #baeeba;
+}
+
+pre code .deletion {
+    background: #ffc8bd;
+}
+
+pre code .diff .change {
+    background: #bccff9;
+}
+

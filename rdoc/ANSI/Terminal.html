@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: ANSI::Terminal</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">ANSI</a>&nbsp;
+      <a href="/">ANSI::Terminal</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../lib/ansi/terminal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/terminal.rb">lib/ansi/terminal.rb</a></li>
+          
+            <li class="file"><a href="../lib/ansi/terminal/curses_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/terminal/curses.rb">lib/ansi/terminal/curses.rb</a></li>
+          
+            <li class="file"><a href="../lib/ansi/terminal/termios_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/terminal/termios.rb">lib/ansi/terminal/termios.rb</a></li>
+          
+            <li class="file"><a href="../lib/ansi/terminal/stty_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/terminal/stty.rb">lib/ansi/terminal/stty.rb</a></li>
+          
+            <li class="file"><a href="../lib/ansi/terminal/win32_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/terminal/win32.rb">lib/ansi/terminal/win32.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#method-i-GetConsoleMode">#GetConsoleMode</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-GetConsoleScreenBufferInfo">#GetConsoleScreenBufferInfo</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-GetStdHandle">#GetStdHandle</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-SetConsoleEcho">#SetConsoleEcho</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-SetConsoleMode">#SetConsoleMode</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-get_character">#get_character</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-get_character">#get_character</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-get_character">#get_character</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-get_character">#get_character</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-raw_no_echo_mode">#raw_no_echo_mode</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-restore_mode">#restore_mode</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-screen_width">#screen_width</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-terminal_height">#terminal_height</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-terminal_size">#terminal_size</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-terminal_size">#terminal_size</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-terminal_size">#terminal_size</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-terminal_size">#terminal_size</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-terminal_width">#terminal_width</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../ANSI.html">ANSI</a></li>
+        
+          <li class="module"><a href="../ANSI/BBCode.html">ANSI::BBCode</a></li>
+        
+          <li class="module"><a href="../ANSI/Code.html">ANSI::Code</a></li>
+        
+          <li class="class"><a href="../ANSI/Logger.html">ANSI::Logger</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2.1
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="Terminal.html">Terminal</a></h1>
+<p>
+This library is based of HighLine&#8217;s SystemExtensions by James Edward
+Gray II.
+</p>
+<pre>
+  Copyright 2006 Gray Productions.
+</pre>
+<p>
+This is Free Software. See LICENSE and <a
+href="../COPYING.html">COPYING</a> for details.
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="CHARACTER_MODE">CHARACTER_MODE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="STD_INPUT_HANDLE">STD_INPUT_HANDLE</a></dt>
+        
+        <dd class="description"><p>
+win32 console APIs
+</p></dd>
+        
+      
+        <dt><a name="STD_OUTPUT_HANDLE">STD_OUTPUT_HANDLE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="STD_ERROR_HANDLE">STD_ERROR_HANDLE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_PROCESSED_INPUT">ENABLE_PROCESSED_INPUT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_LINE_INPUT">ENABLE_LINE_INPUT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_WRAP_AT_EOL_OUTPUT">ENABLE_WRAP_AT_EOL_OUTPUT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_ECHO_INPUT">ENABLE_ECHO_INPUT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_WINDOW_INPUT">ENABLE_WINDOW_INPUT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_MOUSE_INPUT">ENABLE_MOUSE_INPUT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_INSERT_MODE">ENABLE_INSERT_MODE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ENABLE_QUICK_EDIT_MODE">ENABLE_QUICK_EDIT_MODE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="-et-onsole-ode-method" class="method-detail ">
+        <a name="method-i-GetConsoleMode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">GetConsoleMode</span><span
+            class="method-args">( console_handle )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="-et-onsole-ode-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 78</span>
+78:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">GetConsoleMode</span>( <span class="ruby-identifier">console_handle</span> )
+79:       <span class="ruby-identifier">@@apiGetConsoleMode</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">&quot;kernel32&quot;</span>, <span class="ruby-value str">&quot;GetConsoleMode&quot;</span>,
+80:                                             [<span class="ruby-value str">'L'</span>, <span class="ruby-value str">'P'</span>], <span class="ruby-value str">'I'</span> )
+81: 
+82:       <span class="ruby-identifier">mode</span> = <span class="ruby-value str">' '</span> * <span class="ruby-value">4</span>
+83:       <span class="ruby-identifier">@@apiGetConsoleMode</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>)
+84:       <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>)[<span class="ruby-value">0</span>]
+85:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-et-onsole-creen-uffer-nfo-method" class="method-detail ">
+        <a name="method-i-GetConsoleScreenBufferInfo"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">GetConsoleScreenBufferInfo</span><span
+            class="method-args">( console_handle )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="-et-onsole-creen-uffer-nfo-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 94</span>
+ 94:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">GetConsoleScreenBufferInfo</span>( <span class="ruby-identifier">console_handle</span> )
+ 95:       <span class="ruby-identifier">@@apiGetConsoleScreenBufferInfo</span> <span class="ruby-operator">||=</span>
+ 96:         <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">&quot;kernel32&quot;</span>, <span class="ruby-value str">&quot;GetConsoleScreenBufferInfo&quot;</span>,
+ 97:                       [<span class="ruby-value str">'L'</span>, <span class="ruby-value str">'P'</span>], <span class="ruby-value str">'L'</span> )
+ 98: 
+ 99:       <span class="ruby-identifier">format</span> = <span class="ruby-value str">'SSSSSssssSS'</span>
+100:       <span class="ruby-identifier">buf</span>    = ([<span class="ruby-value">0</span>] * <span class="ruby-identifier">format</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-identifier">format</span>)
+101:       <span class="ruby-identifier">@@apiGetConsoleScreenBufferInfo</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">buf</span>)
+102:       <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-identifier">format</span>)
+103:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-et-td-andle-method" class="method-detail ">
+        <a name="method-i-GetStdHandle"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">GetStdHandle</span><span
+            class="method-args">( handle_type )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="-et-td-andle-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 71</span>
+71:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">GetStdHandle</span>( <span class="ruby-identifier">handle_type</span> )
+72:       <span class="ruby-identifier">@@apiGetStdHandle</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">&quot;kernel32&quot;</span>, <span class="ruby-value str">&quot;GetStdHandle&quot;</span>,
+73:                                           [<span class="ruby-value str">'L'</span>], <span class="ruby-value str">'L'</span> )
+74: 
+75:       <span class="ruby-identifier">@@apiGetStdHandle</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">handle_type</span> )
+76:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-et-onsole-cho-method" class="method-detail ">
+        <a name="method-i-SetConsoleEcho"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">SetConsoleEcho</span><span
+            class="method-args">( console_handle, on )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+windows savvy console echo toggler
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="-et-onsole-cho-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 38</span>
+38:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">SetConsoleEcho</span>( <span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">on</span> )
+39:       <span class="ruby-identifier">mode</span> = <span class="ruby-constant">GetConsoleMode</span>(<span class="ruby-identifier">console_handle</span>)
+40: 
+41:       <span class="ruby-comment cmt"># toggle the console echo bit</span>
+42:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">on</span>
+43:           <span class="ruby-identifier">mode</span> <span class="ruby-operator">|=</span>  <span class="ruby-constant">ENABLE_ECHO_INPUT</span>
+44:       <span class="ruby-keyword kw">else</span>
+45:           <span class="ruby-identifier">mode</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span><span class="ruby-constant">ENABLE_ECHO_INPUT</span>
+46:       <span class="ruby-keyword kw">end</span>
+47: 
+48:       <span class="ruby-identifier">ok</span> = <span class="ruby-constant">SetConsoleMode</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>)
+49:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-et-onsole-ode-method" class="method-detail ">
+        <a name="method-i-SetConsoleMode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">SetConsoleMode</span><span
+            class="method-args">( console_handle, mode )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="-et-onsole-ode-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 87</span>
+87:     <span class="ruby-keyword kw">def</span> <span class="ruby-constant">SetConsoleMode</span>( <span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span> )
+88:       <span class="ruby-identifier">@@apiSetConsoleMode</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">&quot;kernel32&quot;</span>, <span class="ruby-value str">&quot;SetConsoleMode&quot;</span>,
+89:                                             [<span class="ruby-value str">'L'</span>, <span class="ruby-value str">'L'</span>], <span class="ruby-value str">'I'</span> )
+90: 
+91:       <span class="ruby-identifier">@@apiSetConsoleMode</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+92:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="method-i-get_character"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">(input = STDIN)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Curses savvy getc().
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 14</span>
+14:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>(<span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span>)
+15:       <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">getch</span>()
+16:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="method-i-get_character"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Unix savvy getc().  (First choice.)
+</p>
+<p>
+<b>WARNING</b>:  This method requires the &#8220;termios&#8221; library!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/termios.rb, line 15</span>
+15:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+16:       <span class="ruby-identifier">old_settings</span> = <span class="ruby-constant">Termios</span>.<span class="ruby-identifier">getattr</span>(<span class="ruby-identifier">input</span>)
+17: 
+18:       <span class="ruby-identifier">new_settings</span>                     =  <span class="ruby-identifier">old_settings</span>.<span class="ruby-identifier">dup</span>
+19:       <span class="ruby-identifier">new_settings</span>.<span class="ruby-identifier">c_lflag</span>             <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span>(<span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">ECHO</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">ICANON</span>)
+20:       <span class="ruby-identifier">new_settings</span>.<span class="ruby-identifier">c_cc</span>[<span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">VMIN</span>] =  <span class="ruby-value">1</span>
+21: 
+22:       <span class="ruby-keyword kw">begin</span>
+23:         <span class="ruby-constant">Termios</span>.<span class="ruby-identifier">setattr</span>(<span class="ruby-identifier">input</span>, <span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">TCSANOW</span>, <span class="ruby-identifier">new_settings</span>)
+24:         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+25:       <span class="ruby-keyword kw">ensure</span>
+26:         <span class="ruby-constant">Termios</span>.<span class="ruby-identifier">setattr</span>(<span class="ruby-identifier">input</span>, <span class="ruby-constant">Termios</span><span class="ruby-operator">::</span><span class="ruby-constant">TCSANOW</span>, <span class="ruby-identifier">old_settings</span>)
+27:       <span class="ruby-keyword kw">end</span>
+28:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="method-i-get_character"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Unix savvy getc().  (Second choice.)
+</p>
+<p>
+<b>WARNING</b>:  This method requires the external &#8220;stty&#8221;
+program!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 14</span>
+14:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+15:       <span class="ruby-identifier">raw_no_echo_mode</span>
+16: 
+17:       <span class="ruby-keyword kw">begin</span>
+18:         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+19:       <span class="ruby-keyword kw">ensure</span>
+20:         <span class="ruby-identifier">restore_mode</span>
+21:       <span class="ruby-keyword kw">end</span>
+22:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="get-character-method" class="method-detail ">
+        <a name="method-i-get_character"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Windows savvy getc().
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="get-character-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 17</span>
+17:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+18:       <span class="ruby-ivar">@stdin_handle</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">GetStdHandle</span>(<span class="ruby-constant">STD_INPUT_HANDLE</span>)
+19: 
+20:       <span class="ruby-keyword kw">begin</span>
+21:           <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword kw">false</span>)
+22:           <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>
+23:       <span class="ruby-keyword kw">ensure</span>
+24:           <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword kw">true</span>)
+25:       <span class="ruby-keyword kw">end</span>
+26:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="raw-no-echo-mode-method" class="method-detail ">
+        <a name="method-i-raw_no_echo_mode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">raw_no_echo_mode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Switched the input mode to raw and disables echo.
+</p>
+<p>
+<b>WARNING</b>:  This method requires the external &#8220;stty&#8221;
+program!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="raw-no-echo-mode-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 29</span>
+29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw_no_echo_mode</span>
+30:       <span class="ruby-ivar">@state</span> = <span class="ruby-value">`stty -g`</span>
+31:       <span class="ruby-identifier">system</span> <span class="ruby-value str">&quot;stty raw -echo cbreak isig&quot;</span>
+32:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="restore-mode-method" class="method-detail ">
+        <a name="method-i-restore_mode"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">restore_mode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Restores a previously saved input mode.
+</p>
+<p>
+<b>WARNING</b>:  This method requires the external &#8220;stty&#8221;
+program!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="restore-mode-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 39</span>
+39:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restore_mode</span>
+40:       <span class="ruby-identifier">system</span> <span class="ruby-node">&quot;stty #{@state}&quot;</span>
+41:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="screen-width-method" class="method-detail ">
+        <a name="method-i-screen_width"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">screen_width</span><span
+            class="method-args">(out=STDERR)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Console screen width (taken from progress bar)
+</p>
+<p>
+NOTE: Don&#8217;t know how portable <a
+href="Terminal.html#method-i-screen_width">#</a> is. TODO: How to fit in to
+system?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="screen-width-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/termios.rb, line 45</span>
+45:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">screen_width</span>(<span class="ruby-identifier">out</span>=<span class="ruby-constant">STDERR</span>)
+46:       <span class="ruby-identifier">default_width</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'COLUMNS'</span>] <span class="ruby-operator">||</span> <span class="ruby-value">76</span>
+47:       <span class="ruby-keyword kw">begin</span>
+48:         <span class="ruby-identifier">tiocgwinsz</span> = <span class="ruby-value">0x5413</span>
+49:         <span class="ruby-identifier">data</span> = [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">&quot;SSSS&quot;</span>)
+50:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">out</span>.<span class="ruby-identifier">ioctl</span>(<span class="ruby-identifier">tiocgwinsz</span>, <span class="ruby-identifier">data</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span>
+51:           <span class="ruby-identifier">rows</span>, <span class="ruby-identifier">cols</span>, <span class="ruby-identifier">xpixels</span>, <span class="ruby-identifier">ypixels</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;SSSS&quot;</span>)
+52:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cols</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">cols</span> <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">default_width</span> <span class="ruby-keyword kw">end</span>
+53:         <span class="ruby-keyword kw">else</span>
+54:           <span class="ruby-identifier">default_width</span>
+55:         <span class="ruby-keyword kw">end</span>
+56:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span>
+57:         <span class="ruby-identifier">default_width</span>
+58:       <span class="ruby-keyword kw">end</span>
+59:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-height-method" class="method-detail ">
+        <a name="method-i-terminal_height"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_height</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Get the height of the terminal window.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-height-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 36</span>
+36:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_height</span>
+37:       <span class="ruby-identifier">terminal_size</span>[<span class="ruby-value">1</span>]
+38:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-size-method" class="method-detail ">
+        <a name="method-i-terminal_size"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A Unix savvy method to fetch the console columns, and rows.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-size-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/stty.rb, line 44</span>
+44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
+45:       <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/solaris/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-keyword kw">and</span>
+46:           <span class="ruby-value">`stty`</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\brows = (\d+).*\bcolumns = (\d+)/</span>
+47:         [<span class="ruby-node">$2</span>, <span class="ruby-node">$1</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
+48:       <span class="ruby-keyword kw">else</span>
+49:         <span class="ruby-value">`stty size`</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">reverse</span>
+50:       <span class="ruby-keyword kw">end</span>
+51:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-size-method" class="method-detail ">
+        <a name="method-i-terminal_size"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A Windows savvy method to fetch the console columns, and rows.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-size-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/win32.rb, line 29</span>
+29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
+30:       <span class="ruby-identifier">stdout_handle</span> = <span class="ruby-constant">GetStdHandle</span>(<span class="ruby-constant">STD_OUTPUT_HANDLE</span>)
+31: 
+32:       <span class="ruby-identifier">bufx</span>, <span class="ruby-identifier">bufy</span>, <span class="ruby-identifier">curx</span>, <span class="ruby-identifier">cury</span>, <span class="ruby-identifier">wattr</span>, <span class="ruby-identifier">left</span>, <span class="ruby-identifier">top</span>, <span class="ruby-identifier">right</span>, <span class="ruby-identifier">bottom</span>, <span class="ruby-identifier">maxx</span>, <span class="ruby-identifier">maxy</span> =
+33:         <span class="ruby-constant">GetConsoleScreenBufferInfo</span>(<span class="ruby-identifier">stdout_handle</span>)
+34:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">bottom</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+35:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-size-method" class="method-detail ">
+        <a name="method-i-terminal_size"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-size-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/curses.rb, line 18</span>
+18:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
+19:       <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">init_screen</span>
+20:       <span class="ruby-identifier">w</span>, <span class="ruby-identifier">r</span> = <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">cols</span>, <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">rows</span>
+21:       <span class="ruby-constant">Curses</span>.<span class="ruby-identifier">close_screen</span>
+22:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">r</span>, <span class="ruby-identifier">w</span>
+23:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-size-method" class="method-detail ">
+        <a name="method-i-terminal_size"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A Unix savvy method to fetch the console columns, and rows.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-size-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal/termios.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_size</span>
+32:       <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/solaris/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-keyword kw">and</span>
+33:           <span class="ruby-value">`stty`</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\brows = (\d+).*\bcolumns = (\d+)/</span>
+34:         [<span class="ruby-node">$2</span>, <span class="ruby-node">$1</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
+35:       <span class="ruby-keyword kw">else</span>
+36:         <span class="ruby-value">`stty size`</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">reverse</span>
+37:       <span class="ruby-keyword kw">end</span>
+38:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="terminal-width-method" class="method-detail ">
+        <a name="method-i-terminal_width"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">terminal_width</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Get the width of the terminal window.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="terminal-width-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/terminal.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal_width</span>
+32:       <span class="ruby-identifier">terminal_size</span>[<span class="ruby-value">0</span>]
+33:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+
