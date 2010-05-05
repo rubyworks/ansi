@@ -1,0 +1,96 @@
+/* github.com style (c) Vasily Polovnyov <vast@whiteants.net> */
+
+/* NOTE: This has been included in the rdoc.css stylesheet
+   rather then have it's own file simply b/c I have not 
+   figured out how to utilize my own generator to be able
+   to copy additional files.
+ */
+
+pre code {
+    display: block;
+    color: #000;
+    background: #f8f8ff;
+    background: #eee;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+code .comment, .template_comment, .diff .header, .javadoc {
+    color: #998;
+    font-style: italic
+}
+
+code .keyword, .css .rule .keyword, .winutils, .javascript .title, .lisp .title, .subst {
+    color: #000;
+    font-weight: bold 
+}
+
+code .number, .hexcolor {
+    color: #40a070
+}
+
+code .string, .attribute .value, .phpdoc {
+    color: #d14
+}
+
+code .title, .id {
+    color: #900;
+    font-weight: bold
+}
+
+code .javascript .title, .lisp .title, .subst {
+    font-weight: normal
+}
+
+code .class .title {
+    color: #458;
+    font-weight: bold
+}
+
+code .tag, .css .keyword, .html .keyword, .tag .title, .django .tag .keyword {
+    color: #000080;
+    font-weight: normal
+}
+
+code .attribute, .variable, .instancevar, .lisp .body {
+    color: #008080
+}
+
+code .regexp {
+    color: #009926
+}
+
+code .class {
+    color: #458;
+    font-weight: bold
+}
+
+code .symbol, .lisp .keyword {
+    color: #990073
+}
+
+code .builtin, .built_in, .lisp .title {
+    color: #0086b3
+}
+
+code .preprocessor, .pi, .doctype, .shebang, .cdata {
+    color: #999;
+    font-weight: bold
+}
+
+code .deletion {
+    background: #fdd
+}
+
+code .addition {
+    background: #dfd
+}
+
+code .diff .change {
+    background: #0086b3
+}
+
+code .chunk {
+    color: #aaa
+}
+

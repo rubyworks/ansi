@@ -1,0 +1,54 @@
+/* ID STYLES */
+
+
+
+
+/* LAYOUT */
+
+/* #header */
+
+#header { border-bottom: 1px solid #ccc; padding: 10px; }
+#header .title { padding: 10px 0; font-size: 20px;  background: url(../../assets/images/logo.png) top right no-repeat; height: 200px; vertical-align: absmiddle; }
+#header .title h1 { font-size: 81px; font-weight: bold; margin-top: 30px; }
+#header .title h1 { color: #00415A; }
+#header .title pre { background: transparent; }
+
+/* #nav */
+
+#nav { padding: 0 10px 0 50px; text-align: left; }
+#nav ul { list-style-type: none; margin: 0px; padding: 0px; width: 100%; position: relative; }
+#nav ul li { margin: 0 1px 10px 0; line-height: 20px; white-space:nowrap; }
+#nav ul li a { border-top: 0 solid; }
+#nav { text-align: right; }
+#nav ul li a { font-weight: bold; text-decoration: none; font-size: 30px; }
+#nav ul li a:hover { text-decoration: underline; }
+#nav ul li a:active { text-decoration: underline; }
+#nav ul { background: transparent; }
+#nav ul li a { color: #00415A; border-color: #80C1DA; }
+
+/* #main */
+
+.main { padding: 30px 0 30px 0; }
+.main { }
+.main a { font-size: 100%; }
+.main a:hover { text-decoration: underline; }
+.main h2 { font-size: 2em; font-weight: bold; }
+.main h3 { font-style: italic; }
+
+/* #doc */
+
+#doc { font-family: helvetica, sans-serif; font-weight: bold; line-height: 150%; padding-right: 20px; }
+#doc a { color: #00415A; }
+#doc a:hover { }
+#doc p { font-weight: bold; font-size: 150%; }
+#doc h2 { color: #00415A; border-color: #80C1DA; }
+#doc h3 { border-color: #80C1DA; }
+
+#readme { margin-top: 0; padding-top: 20px; border-top: 1px solid #ccc; }
+#readme ol, ul { list-style: square; margin-left: 24px; }
+/* #footer */
+
+#footer { margin-top: 0; padding-top: 30px; border-top: 1px solid #ccc; }
+#footer .advert { border: 1px solid :eee; }
+#footer .copyright { margin-top: 20px; padding: 20px 0px 35px 0px; font-size: 0.8em; color: #aaa; }
+

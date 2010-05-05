@@ -33,7 +33,7 @@ Please see HISTORY file.
 
 The ANSI::Code module defines ANSI codes as methods.
 
-   include ANSICode
+   include ANSI::Code
 
    p red, "Hello", blue, "World"
    => "\e[31mHello\e[34mWorld"
