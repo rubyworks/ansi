@@ -50,13 +50,13 @@ class ANSI::String
       end
     end
     m.each do |(index, code)|
-      s.insert(index, ANSICode.__send__(code))
+      s.insert(index, ANSI::Code.__send__(code))
     end
     #s << CLR unless s =~ /#{Regexp.escape(CLR)}$/  # always end with a clear
     s
   end
 
-  # Ansi::String is a type of String.
+  # ANSI::String is a type of String.
   alias_method :to_str, :to_s
 
   # The size of the base text.
@@ -67,13 +67,13 @@ class ANSI::String
   def upcase! ; text.upcase! ; end
 
   # Downcase the string.
-  def downcase  ; self.class.new(text.upcase, marks) ; end
+  def downcase  ; self.class.new(text.downcase, marks) ; end
   def downcase! ; text.upcase! ; end
 
   # Add one String to another, or to a regular String.
   def +(other)
     case other
-    when String
+    when ANSI::String
       ntext  = text + other.text
       nmarks = marks.dup
       omarks = shift_marks(0, text.size, other.marks)
@@ -197,13 +197,15 @@ class ANSI::String
     m.push([size, :clear])
     self.class.new(text, m)
   end
+
   alias_method :color, :ansi
 
   #
   def ansi!(code)
-    marks.unshift([0, ansicolor])
+    marks.unshift([0, code])
     marks.push([size, :clear])
   end
+
   alias_method :color!, :ansi!
 
   def red        ; color(:red)      ; end

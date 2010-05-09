@@ -123,7 +123,7 @@ module ANSI
     end
 
     # Move cursor left a specificed number of spaces.
-    def left( spaces=1 )
+    def left( spa      ANSI::Code.send(op, self, *a, &b)ces=1 )
       "\e[#{spaces.to_i}D"
     end
 
@@ -229,5 +229,28 @@ module ANSI
 
   end
 
+  # ANSI::Functor is used to extend String.
+  class Functor
+
+    #
+    def initialize(string)
+      @string = string
+    end
+
+    #
+    def method_missing(op, *args, &block)
+      ANSI::Code.send(op, @string, *args, &block)
+    end
+
+  end
+
+end
+
+#
+class String
+  #
+  def ansi
+    ANSI::Functor.new(self)
+  end
 end
 

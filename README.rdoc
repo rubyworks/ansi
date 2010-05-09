@@ -31,42 +31,51 @@ Please see HISTORY file.
 
 == SYNOPSIS
 
-The ANSI::Code module defines ANSI codes as methods.
+There are a number of modules and classes provided by the ANSI
+package. To get a good unserstanding of them it is best to puruse 
+the QED documents{http://github.com/rubyworks/ansi/tree/master/qed/}
+or the API documentation{rdoc/}.
 
-   include ANSI::Code
+At the heart of all the provided libraries lies the ANSI::Code module
+which defines ANSI codes as methods. For exmaple:
 
-   p red, "Hello", blue, "World"
-   => "\e[31mHello\e[34mWorld"
+  require 'ansi/code'
 
-   p red { "Hello" } + blue { "World" }
-   => "\e[31mHello\e[0m\e[34mWorld\e[0m"
+  include ANSI::Code
 
-Thes mehods can also be called as module methods, eg. 'ANSI::Code.red'.
+  p red, "Hello", blue, "World"
+  => "\e[31mHello\e[34mWorld"
 
-Please see the online documentation for more information on using
-the other libraries.
+  p red { "Hello" } + blue { "World" }
+  => "\e[31mHello\e[0m\e[34mWorld\e[0m"
+
+These mehods can also be called as module methods, eg. 'ANSI::Code.red'.
+
+The methods defined by this modele that are used throughout the rest of
+the system.
 
 
 == HOW TO INSTALL
 
 To install with RubyGems simply open a console and type:
 
-  gem install ansi
+  $ sudo gem install ansi
 
 Local installation requires Setup.rb (gem install setup),
-then download the tarball package and type:
+then download{http://github.com/rubyworks/ansi/download} the tarball package and type:
 
-  tar -xvzf ansi-1.0.0.tgz
-  cd ansi-1.0.0
-  sudo setup.rb all
+  $ tar -xvzf ansi-1.0.0.tgz
+  $ cd ansi-1.0.0
+  $ sudo setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
 
 == LICENSE/COPYRIGHT
 
-Copyright (c) 2004 Coding Dead
+Copyright (c) 2004 Thomas Sawyer
 
 This program is ditributed unser the terms of the LGPLv3 license.
 
 See LICENSE file for details.
+
