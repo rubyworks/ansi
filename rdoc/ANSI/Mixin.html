@@ -1,0 +1,3114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: ANSI::Mixin</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">ANSI</a>&nbsp;
+      <a href="/">ANSI::Mixin</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../lib/ansi/mixin_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/mixin.rb">lib/ansi/mixin.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#method-i-black">#black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_blue">#black_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_cyan">#black_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_green">#black_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_magenta">#black_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_red">#black_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_white">#black_on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-black_on_yellow">#black_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blink">#blink</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue">#blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_black">#blue_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_cyan">#blue_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_green">#blue_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_magenta">#blue_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_red">#blue_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_white">#blue_on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-blue_on_yellow">#blue_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-bold">#bold</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-concealed">#concealed</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan">#cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_black">#cyan_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_blue">#cyan_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_green">#cyan_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_magenta">#cyan_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_red">#cyan_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_white">#cyan_on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cyan_on_yellow">#cyan_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-dark">#dark</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green">#green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_black">#green_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_blue">#green_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_cyan">#green_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_magenta">#green_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_red">#green_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_white">#green_on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-green_on_yellow">#green_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-italic">#italic</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta">#magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_black">#magenta_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_blue">#magenta_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_cyan">#magenta_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_green">#magenta_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_red">#magenta_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_white">#magenta_on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-magenta_on_yellow">#magenta_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-negative">#negative</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_black">#on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_blue">#on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_cyan">#on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_green">#on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_magenta">#on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_red">#on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_white">#on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-on_yellow">#on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-rapid">#rapid</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red">#red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_black">#red_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_blue">#red_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_cyan">#red_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_green">#red_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_magenta">#red_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_white">#red_on_white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-red_on_yellow">#red_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-reverse">#reverse</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-strike">#strike</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-underline">#underline</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-underscore">#underscore</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white">#white</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_black">#white_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_blue">#white_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_cyan">#white_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_green">#white_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_magenta">#white_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_red">#white_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-white_on_yellow">#white_on_yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow">#yellow</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_black">#yellow_on_black</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_blue">#yellow_on_blue</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_cyan">#yellow_on_cyan</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_green">#yellow_on_green</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_magenta">#yellow_on_magenta</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_red">#yellow_on_red</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-yellow_on_white">#yellow_on_white</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../ANSI.html">ANSI</a></li>
+        
+          <li class="module"><a href="../ANSI/BBCode.html">ANSI::BBCode</a></li>
+        
+          <li class="module"><a href="../ANSI/Code.html">ANSI::Code</a></li>
+        
+          <li class="class"><a href="../ANSI/Logger.html">ANSI::Logger</a></li>
+        
+          <li class="module"><a href="../ANSI/Mixin.html">ANSI::Mixin</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
+        
+          <li class="class"><a href="../String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2.1
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Mixin</h1>
+      
+
+      <p>
+This module is designed specifically for mixing into String-like classes or
+extending String-like objects.
+</p>
+<p>
+Generally speaking the <a href="String.html#method-i-ansi">String#ansi</a>
+method is the more elegant approach to modifying a string with codes via a
+method call. But in some cases this Mixin&#8217;s design might be
+preferable. In particular it was primarily designed to provide a
+compatability layer for the <tt>colored</tt> gem.
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="black-method" class="method-detail ">
+        <a name="method-i-black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 28</span>
+28:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-blue-method" class="method-detail ">
+        <a name="method-i-black_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 49</span>
+49:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_blue</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_blue</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-cyan-method" class="method-detail ">
+        <a name="method-i-black_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 51</span>
+51:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_cyan</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_cyan</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-green-method" class="method-detail ">
+        <a name="method-i-black_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 47</span>
+47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_green</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_green</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-magenta-method" class="method-detail ">
+        <a name="method-i-black_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 50</span>
+50:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_magenta</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_magenta</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-red-method" class="method-detail ">
+        <a name="method-i-black_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 46</span>
+46:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_red</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_red</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-white-method" class="method-detail ">
+        <a name="method-i-black_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 52</span>
+52:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_white</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_white</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="black-on-yellow-method" class="method-detail ">
+        <a name="method-i-black_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">black_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="black-on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 48</span>
+48:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">black_on_yellow</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">black_on_yellow</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blink-method" class="method-detail ">
+        <a name="method-i-blink"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blink</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blink-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 21</span>
+21:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blink</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blink</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-method" class="method-detail ">
+        <a name="method-i-blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 32</span>
+32:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-black-method" class="method-detail ">
+        <a name="method-i-blue_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 78</span>
+78:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_black</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_black</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-cyan-method" class="method-detail ">
+        <a name="method-i-blue_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 83</span>
+83:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_cyan</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_cyan</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-green-method" class="method-detail ">
+        <a name="method-i-blue_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 80</span>
+80:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_green</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_green</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-magenta-method" class="method-detail ">
+        <a name="method-i-blue_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 82</span>
+82:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_magenta</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_magenta</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-red-method" class="method-detail ">
+        <a name="method-i-blue_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 79</span>
+79:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_red</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_red</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-white-method" class="method-detail ">
+        <a name="method-i-blue_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 84</span>
+84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_white</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_white</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blue-on-yellow-method" class="method-detail ">
+        <a name="method-i-blue_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blue_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="blue-on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 81</span>
+81:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blue_on_yellow</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">blue_on_yellow</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bold-method" class="method-detail ">
+        <a name="method-i-bold"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bold</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="bold-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 16</span>
+16:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bold</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">bold</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="concealed-method" class="method-detail ">
+        <a name="method-i-concealed"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">concealed</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="concealed-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 25</span>
+25:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">concealed</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">concealed</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-method" class="method-detail ">
+        <a name="method-i-cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 34</span>
+34:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-black-method" class="method-detail ">
+        <a name="method-i-cyan_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 94</span>
+94:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_black</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_black</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-blue-method" class="method-detail ">
+        <a name="method-i-cyan_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 98</span>
+98:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_blue</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_blue</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-green-method" class="method-detail ">
+        <a name="method-i-cyan_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 96</span>
+96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_green</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_green</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-magenta-method" class="method-detail ">
+        <a name="method-i-cyan_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 99</span>
+99:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_magenta</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_magenta</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-red-method" class="method-detail ">
+        <a name="method-i-cyan_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 95</span>
+95:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_red</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_red</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-white-method" class="method-detail ">
+        <a name="method-i-cyan_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-white-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 100</span>
+100:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_white</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_white</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cyan-on-yellow-method" class="method-detail ">
+        <a name="method-i-cyan_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cyan_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cyan-on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 97</span>
+97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cyan_on_yellow</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">cyan_on_yellow</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="dark-method" class="method-detail ">
+        <a name="method-i-dark"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">dark</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="dark-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 17</span>
+17:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dark</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">dark</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-method" class="method-detail ">
+        <a name="method-i-green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 30</span>
+30:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-black-method" class="method-detail ">
+        <a name="method-i-green_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 62</span>
+62:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_black</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_black</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-blue-method" class="method-detail ">
+        <a name="method-i-green_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 65</span>
+65:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_blue</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_blue</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-cyan-method" class="method-detail ">
+        <a name="method-i-green_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 67</span>
+67:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_cyan</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_cyan</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-magenta-method" class="method-detail ">
+        <a name="method-i-green_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 66</span>
+66:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_magenta</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_magenta</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-red-method" class="method-detail ">
+        <a name="method-i-green_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 63</span>
+63:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_red</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_red</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-white-method" class="method-detail ">
+        <a name="method-i-green_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 68</span>
+68:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_white</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_white</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="green-on-yellow-method" class="method-detail ">
+        <a name="method-i-green_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">green_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="green-on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 64</span>
+64:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">green_on_yellow</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">green_on_yellow</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="italic-method" class="method-detail ">
+        <a name="method-i-italic"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">italic</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="italic-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 18</span>
+18:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">italic</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">italic</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-method" class="method-detail ">
+        <a name="method-i-magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 33</span>
+33:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-black-method" class="method-detail ">
+        <a name="method-i-magenta_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 86</span>
+86:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_black</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_black</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-blue-method" class="method-detail ">
+        <a name="method-i-magenta_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 90</span>
+90:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_blue</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_blue</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-cyan-method" class="method-detail ">
+        <a name="method-i-magenta_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 91</span>
+91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_cyan</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_cyan</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-green-method" class="method-detail ">
+        <a name="method-i-magenta_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 88</span>
+88:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_green</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_green</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-red-method" class="method-detail ">
+        <a name="method-i-magenta_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 87</span>
+87:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_red</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_red</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-white-method" class="method-detail ">
+        <a name="method-i-magenta_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 92</span>
+92:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_white</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_white</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="magenta-on-yellow-method" class="method-detail ">
+        <a name="method-i-magenta_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">magenta_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="magenta-on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 89</span>
+89:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">magenta_on_yellow</span> ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">magenta_on_yellow</span> { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="negative-method" class="method-detail ">
+        <a name="method-i-negative"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">negative</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="negative-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 24</span>
+24:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">negative</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">negative</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-black-method" class="method-detail ">
+        <a name="method-i-on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 37</span>
+37:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_black</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_black</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-blue-method" class="method-detail ">
+        <a name="method-i-on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 41</span>
+41:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_blue</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_blue</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-cyan-method" class="method-detail ">
+        <a name="method-i-on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 43</span>
+43:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_cyan</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_cyan</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-green-method" class="method-detail ">
+        <a name="method-i-on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 39</span>
+39:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_green</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_green</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-magenta-method" class="method-detail ">
+        <a name="method-i-on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 42</span>
+42:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_magenta</span> ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_magenta</span> { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-red-method" class="method-detail ">
+        <a name="method-i-on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 38</span>
+38:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_red</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_red</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-white-method" class="method-detail ">
+        <a name="method-i-on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 44</span>
+44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_white</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_white</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="on-yellow-method" class="method-detail ">
+        <a name="method-i-on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 40</span>
+40:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_yellow</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">on_yellow</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rapid-method" class="method-detail ">
+        <a name="method-i-rapid"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rapid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="rapid-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 22</span>
+22:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rapid</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">rapid</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-method" class="method-detail ">
+        <a name="method-i-red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 29</span>
+29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red</span>        ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red</span>        { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-black-method" class="method-detail ">
+        <a name="method-i-red_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 54</span>
+54:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_black</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_black</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-blue-method" class="method-detail ">
+        <a name="method-i-red_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 57</span>
+57:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_blue</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_blue</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-cyan-method" class="method-detail ">
+        <a name="method-i-red_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 59</span>
+59:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_cyan</span>       ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_cyan</span>       { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-green-method" class="method-detail ">
+        <a name="method-i-red_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 55</span>
+55:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_green</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_green</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-magenta-method" class="method-detail ">
+        <a name="method-i-red_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 58</span>
+58:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_magenta</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_magenta</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-white-method" class="method-detail ">
+        <a name="method-i-red_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 60</span>
+60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_white</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_white</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="red-on-yellow-method" class="method-detail ">
+        <a name="method-i-red_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">red_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="red-on-yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 56</span>
+56:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">red_on_yellow</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">red_on_yellow</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="reverse-method" class="method-detail ">
+        <a name="method-i-reverse"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">reverse</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="reverse-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 23</span>
+23:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reverse</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">reverse</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="strike-method" class="method-detail ">
+        <a name="method-i-strike"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">strike</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="strike-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 26</span>
+26:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">strike</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">strike</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="underline-method" class="method-detail ">
+        <a name="method-i-underline"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">underline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="underline-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 19</span>
+19:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">underline</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">underline</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="underscore-method" class="method-detail ">
+        <a name="method-i-underscore"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">underscore</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="underscore-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">underscore</span> ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">underscore</span> { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-method" class="method-detail ">
+        <a name="method-i-white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 35</span>
+35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-black-method" class="method-detail ">
+        <a name="method-i-white_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-black-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 102</span>
+102:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_black</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_black</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-blue-method" class="method-detail ">
+        <a name="method-i-white_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-blue-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 106</span>
+106:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_blue</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_blue</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-cyan-method" class="method-detail ">
+        <a name="method-i-white_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-cyan-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 108</span>
+108:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_cyan</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_cyan</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-green-method" class="method-detail ">
+        <a name="method-i-white_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-green-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 104</span>
+104:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_green</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_green</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-magenta-method" class="method-detail ">
+        <a name="method-i-white_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-magenta-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 107</span>
+107:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_magenta</span>  ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_magenta</span>  { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-red-method" class="method-detail ">
+        <a name="method-i-white_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-red-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 103</span>
+103:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_red</span>      ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_red</span>      { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="white-on-yellow-method" class="method-detail ">
+        <a name="method-i-white_on_yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">white_on_yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="white-on-yellow-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 105</span>
+105:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">white_on_yellow</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">white_on_yellow</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-method" class="method-detail ">
+        <a name="method-i-yellow"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-black-method" class="method-detail ">
+        <a name="method-i-yellow_on_black"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_black</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-black-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 70</span>
+70:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_black</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_black</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-blue-method" class="method-detail ">
+        <a name="method-i-yellow_on_blue"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_blue</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-blue-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 73</span>
+73:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_blue</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_blue</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-cyan-method" class="method-detail ">
+        <a name="method-i-yellow_on_cyan"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_cyan</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-cyan-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 75</span>
+75:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_cyan</span>    ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_cyan</span>    { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-green-method" class="method-detail ">
+        <a name="method-i-yellow_on_green"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-green-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 72</span>
+72:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_green</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_green</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-magenta-method" class="method-detail ">
+        <a name="method-i-yellow_on_magenta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_magenta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-magenta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_magenta</span> ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_magenta</span> { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-red-method" class="method-detail ">
+        <a name="method-i-yellow_on_red"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_red</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-red-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 71</span>
+71:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_red</span>     ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_red</span>     { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="yellow-on-white-method" class="method-detail ">
+        <a name="method-i-yellow_on_white"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">yellow_on_white</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="yellow-on-white-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/mixin.rb, line 76</span>
+76:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yellow_on_white</span>   ; <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">yellow_on_white</span>   { <span class="ruby-identifier">to_s</span> } ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

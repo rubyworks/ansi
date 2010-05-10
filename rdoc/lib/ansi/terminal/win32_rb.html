@@ -75,9 +75,9 @@
         
           <li class="file"><a href="../../../HISTORY.html">HISTORY</a></li>
         
-          <li class="file"><a href="../../../COPYING.html">COPYING</a></li>
+          <li class="file"><a href="../../../LICENSE.html">LICENSE</a></li>
         
-          <li class="file"><a href="../../../README.html">README</a></li>
+          <li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
         
         </ul>
       </div>
@@ -106,6 +106,8 @@
         
           <li class="class"><a href="../../../ANSI/Logger.html">ANSI::Logger</a></li>
         
+          <li class="module"><a href="../../../ANSI/Mixin.html">ANSI::Mixin</a></li>
+        
           <li class="class"><a href="../../../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
         
           <li class="class"><a href="../../../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
@@ -113,6 +115,8 @@
           <li class="class"><a href="../../../ANSI/String.html">ANSI::String</a></li>
         
           <li class="module"><a href="../../../ANSI/Terminal.html">ANSI::Terminal</a></li>
+        
+          <li class="class"><a href="../../../String.html">String</a></li>
         
         </ul>
         <div id="no-class-search-results" style="display: none;">No matching classes.</div>
@@ -156,7 +160,7 @@
             
             <li class="singleton" style="clear: both;">
               <span class="method-parent-aside">ANSI::Code</span>
-              <a href="ANSI/Code.html#method-c-define_ansicolor_method">::define_ansicolor_method</a>
+              <a href="ANSI/Code.html#method-c-colors">::colors</a>
             </li>
           
             
@@ -173,14 +177,14 @@
           
             
             <li class="singleton" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-c-new">::new</a>
+              <span class="method-parent-aside">ANSI::ProgressBar</span>
+              <a href="ANSI/ProgressBar.html#method-c-new">::new</a>
             </li>
           
             
             <li class="singleton" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-c-new">::new</a>
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-c-new">::new</a>
             </li>
           
             
@@ -199,6 +203,12 @@
             <li class="singleton" style="clear: both;">
               <span class="method-parent-aside">ANSI::BBCode</span>
               <a href="ANSI/BBCode.html#method-c-strip_bbcode">::strip_bbcode</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-c-styles">::styles</a>
             </li>
           
             
@@ -251,6 +261,12 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">String</span>
+              <a href="String.html#method-i-ansi">#ansi</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-ansi%21">#ansi!</a>
             </li>
@@ -299,8 +315,62 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black">#black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-black%21">#black!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_blue">#black_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_cyan">#black_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_green">#black_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_magenta">#black_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_red">#black_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_white">#black_on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-black_on_yellow">#black_on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blink">#blink</a>
             </li>
           
             
@@ -311,8 +381,62 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue">#blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-blue%21">#blue!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_black">#blue_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_cyan">#blue_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_green">#blue_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_magenta">#blue_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_red">#blue_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_white">#blue_on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue_on_yellow">#blue_on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-bold">#bold</a>
             </li>
           
             
@@ -337,6 +461,12 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-bytes">#bytes</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-clear">#clear</a>
             </li>
           
             
@@ -371,6 +501,12 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-color">#color</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-color%21">#color!</a>
             </li>
@@ -389,8 +525,8 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::Code</span>
-              <a href="ANSI/Code.html#method-i-colors">#colors</a>
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-concealed">#concealed</a>
             </li>
           
             
@@ -403,6 +539,12 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-convert_bytes">#convert_bytes</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan">#cyan</a>
             </li>
           
             
@@ -415,6 +557,54 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-cyan%21">#cyan!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_black">#cyan_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_blue">#cyan_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_green">#cyan_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_magenta">#cyan_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_red">#cyan_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_white">#cyan_on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-cyan_on_yellow">#cyan_on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-dark">#dark</a>
             </li>
           
             
@@ -623,8 +813,56 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green">#green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-green%21">#green!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_black">#green_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_blue">#green_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_cyan">#green_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_magenta">#green_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_red">#green_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_white">#green_on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-green_on_yellow">#green_on_yellow</a>
             </li>
           
             
@@ -689,6 +927,12 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-italic">#italic</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Code</span>
               <a href="ANSI/Code.html#method-i-left">#left</a>
             </li>
@@ -701,8 +945,56 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta">#magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-magenta%21">#magenta!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_black">#magenta_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_blue">#magenta_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_cyan">#magenta_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_green">#magenta_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_red">#magenta_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_white">#magenta_on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta_on_yellow">#magenta_on_yellow</a>
             </li>
           
             
@@ -713,6 +1005,60 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-negative">#negative</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_black">#on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_blue">#on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_cyan">#on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_green">#on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_magenta">#on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_red">#on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_white">#on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-on_yellow">#on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-percentage">#percentage</a>
             </li>
@@ -721,6 +1067,12 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-percentage">#percentage</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-rapid">#rapid</a>
             </li>
           
             
@@ -737,14 +1089,68 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red">#red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-red%21">#red!</a>
             </li>
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_black">#red_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_blue">#red_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_cyan">#red_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_green">#red_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_magenta">#red_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_white">#red_on_white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red_on_yellow">#red_on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-reset">#reset</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-reset">#reset</a>
             </li>
           
             
@@ -763,6 +1169,12 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Terminal</span>
               <a href="ANSI/Terminal.html#method-i-restore_mode">#restore_mode</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-reverse">#reverse</a>
             </li>
           
             
@@ -877,6 +1289,18 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-stat_for_file_transfer">#stat_for_file_transfer</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-strike">#strike</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-style">#style</a>
             </li>
           
             
@@ -1020,7 +1444,19 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Code</span>
-              <a href="ANSI/Code.html#method-i-uncolored">#uncolored</a>
+              <a href="ANSI/Code.html#method-i-uncolered">#uncolered</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-uncolor">#uncolor</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-underline">#underline</a>
             </li>
           
             
@@ -1033,6 +1469,18 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-underline%21">#underline!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-underscore">#underscore</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-unstyle">#unstyle</a>
             </li>
           
             
@@ -1067,6 +1515,60 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white">#white</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_black">#white_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_blue">#white_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_cyan">#white_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_green">#white_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_magenta">#white_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_red">#white_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-white_on_yellow">#white_on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow">#yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-yellow">#yellow</a>
             </li>
@@ -1075,6 +1577,48 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-yellow%21">#yellow!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_black">#yellow_on_black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_blue">#yellow_on_blue</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_cyan">#yellow_on_cyan</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_green">#yellow_on_green</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_magenta">#yellow_on_magenta</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_red">#yellow_on_red</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow_on_white">#yellow_on_white</a>
             </li>
           
         </ul>
