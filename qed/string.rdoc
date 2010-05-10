@@ -1,8 +1,8 @@
 = ANSI::String
 
-The ANSI::String class is a very sophistacted implementation
+The ANSI::String class is a very sophisticated implementation
 of Ruby's standard String class, but one that can handle
-ANSI codes seemlessly.
+ANSI codes seamlessly.
 
   require 'ansi/string'
 
@@ -41,9 +41,9 @@ Standard case conversion such as #upcase and #downcase work.
   flower1.upcase.to_s.assert == "\e[31mROSES\e[0m"
   flower1.downcase.to_s.assert == "\e[31mroses\e[0m"
 
-Some of the most difficult methods to reimplement were the 
+Some of the most difficult methods to re-implement were the 
 substitution methods such as #sub and #gsub. They are still
-somewhat more limited than the orignal string methods, but
+somewhat more limited than the original string methods, but
 their primary functionality should work.
 
   flower1.gsub('s', 'z').to_s.assert == "\e[31mRozez\e[0m"

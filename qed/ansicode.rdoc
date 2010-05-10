@@ -24,7 +24,7 @@ More conveniently the ANSI::Code module extends ANSI itself.
   str.assert == "\e[31mHello\e[0m\e[34mWorld\e[0m"
 
 In the appropriate context the ANSI::Code module can also be
-included, making its methods directly accessable.
+included, making its methods directly accessible.
 
   include ANSI::Code
 
@@ -45,7 +45,7 @@ As well as combined color methods.
   str.assert == "\e[37m\e[41mHello"
 
 In addition the library offers an extension to String class
-called #ansi, which allows some fo the ANSI::Code methods
+called #ansi, which allows some of the ANSI::Code methods
 to be called in a more object-oriented fashion.
 
   str = "Hello".ansi(:red) + "World".ansi(:blue)

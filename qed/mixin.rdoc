@@ -1,6 +1,6 @@
 = ANSI::Mixin
 
-The ANSI::mixin module is design for including into
+The ANSI::Mixin module is design for including into
 String-like classes. It will support any class that defines
 a #to_s method.
 
@@ -13,7 +13,7 @@ core String class.
     include ANSI::Mixin
   end
 
-Now all strings will have access to ANSI's stlye and color
+Now all strings will have access to ANSI's style and color
 codes via simple method calls.
 
   "roses".red.assert == "\e[31mroses\e[0m"
