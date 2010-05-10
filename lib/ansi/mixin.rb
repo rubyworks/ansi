@@ -13,7 +13,7 @@ module ANSI
 
   module Mixin
 
-    def bold       ; ANSI::Code.black      { to_s } ; end
+    def bold       ; ANSI::Code.bold       { to_s } ; end
     def dark       ; ANSI::Code.dark       { to_s } ; end
     def italic     ; ANSI::Code.italic     { to_s } ; end
     def underline  ; ANSI::Code.underline  { to_s } ; end
