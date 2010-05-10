@@ -272,7 +272,7 @@ module ANSI
   end
 
   #
-  Progressbar = ProgressBar
+  Progressbar = ProgressBar #:nodoc:
 
 end
 

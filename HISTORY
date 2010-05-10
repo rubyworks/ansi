@@ -1,5 +1,43 @@
 = RELEASE HISTORY
 
+== 1.2.0 // 2010-05-10
+
+This release entails numerous improvements. First and foremost
+the Code module is transitioning to a block interface only
+and phasing out the string argument interface. Admittedly this
+is mildly unconvential, but it allows the arguments to be used
+as options with common defaults more elegantly.
+
+Another important change is that ANSI::Code no longer provides
+String extension methods hwen included. For this use the new
+ANSI::Mixin.
+
+Other improvements include a String extension, #ansi, added to
+code.rb, which makes it even easir to apply ANSI codes to strings.
+Also, the ANSI::String class has been fixed (a few bugs crept
+it with the last release) and continues to improve. On top of all
+this testing has substatially improved thanks to QED.
+
+Changes:
+
+* Support string argument for now but with warning
+* Bug fixes for ANSI::String
+* Add mixin.rb for alternate mixin.
+* Many new tests and QED documents.
+
+
+== 1.1.0 // 2009-10-04
+
+This release is the first toward making the ANSI library
+more widely useable.
+
+Changes:
+
+* Add bbcode.rb for conversion between BBCode/ANSI/HTML.
+* ProgressBar and Progressbar are the same.
+* Other minor underthehood improvements.
+
+
 == 1.0.1 // 2009-08-15
 
 The release fixes a single bug that should allow Ruby 1.9
@@ -7,9 +45,7 @@ to use the ANSI library.
 
 Changes:
 
-* 1 Major Enhancement
-
-    * Renamed PLATFORM to RUBY_PLATFORM
+* Renamed PLATFORM to RUBY_PLATFORM
 
 
 == 1.0.0 // 2009-08-15
@@ -19,6 +55,4 @@ of ANSI based classes spun-off from Ruby Facets.
 
 Changes:
 
-* 1 Major Enhancement
-
-    * Happy Birthday!
+* Happy Birthday!
