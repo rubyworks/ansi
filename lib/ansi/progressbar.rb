@@ -237,7 +237,7 @@ module ANSI
       end
       line      = sprintf(@format, *arguments)
       width     = get_width
-      length    = ANSI::Code.uncolored(line).length
+      length    = ANSI::Code.uncolor{line}.length
       if length == width - 1
         @out.print(line + eol)
       elsif length >= width
@@ -266,7 +266,7 @@ module ANSI
     #
     def colorize(part, style)
       return part unless style
-      [style].flatten.inject(part){ |pt, st| ANSI::Code.send(st){ pt } }
+      [style].flatten.inject(part){ |pt, st| ANSI::Code.send(st){pt} }
     end
 
   end

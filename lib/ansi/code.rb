@@ -127,11 +127,13 @@ module ANSI
     # Clear the screen and move cursor to home.
     CLS          = "\e[2J"
 
-    styles = %w{bold dark italic underline underscore blink rapid reverse negative concealed strike}
+    def self.styles
+      %w{bold dark italic underline underscore blink rapid reverse negative concealed strike}
+    end
 
     styles.each do |style|
-      module_eval %{
-        def #{color}(string=nil)
+      module_eval <<-END, __FILE__, __LINE__
+        def #{style}(string=nil)
           if string
             warn "use ANSI block notation for future versions"
             return "\#{#{style.upcase}}\#{string}\#{CLEAR}"
@@ -141,13 +143,15 @@ module ANSI
           end
           #{style.upcase}
         end
-      }
+      END
     end
 
-    colors = %w{black red green yellow blue magenta cyan white}
+    def self.colors
+      %w{black red green yellow blue magenta cyan white}
+    end
 
     colors.each do |color|
-      module_eval %{
+      module_eval <<-END, __FILE__, __LINE__
         def #{color}(string=nil)
           if string
             warn "use ANSI block notation for future versions"
@@ -169,14 +173,14 @@ module ANSI
           end
           ON_#{color.upcase}
         end
-      }
+      END
     end
 
     # Dynamically create color on color methods.
 
     colors.each do |color|
       colors.each do |on_color|
-        module_eval %{
+        module_eval <<-END, __FILE__, __LINE__
           def #{color}_on_#{on_color}
             if block_given?
               #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + CLEAR
@@ -184,7 +188,7 @@ module ANSI
               #{color.upcase} + ON_#{on_color.upcase}
             end
           end
-        }
+        END
       end
     end
 
@@ -279,11 +283,13 @@ module ANSI
     def style(*codes)
       s = ""
       codes.each do |code|
-        s << "\e[#{STYLES[code]}m"
+        s << "\e[#{TABLE[code]}m"
       end
       s << yield
       s << CLEAR
     end
+
+    alias_method :color, :style
 
     #
     def unstyle
@@ -291,41 +297,30 @@ module ANSI
         yield.gsub(PATTERN, '')
       #elsif string
       #  string.gsub(ColoredRegexp, '')
-      #elsif respond_to?(:to_str)
-      #  gsub(ColoredRegexp, '')
       else
         ''
       end
     end
 
-    # old term
-    alias_method :uncolored, :unstyle
+    alias_method :uncolor, :unstyle
 
-=begin
-    # Define color codes.
-    def self.define_ansicolor_method(name,code)
-      class_eval <<-HERE, __FILE__, __LINE__
-        def #{name.to_s}(string = nil)
-          result = "\e[#{code}m"
-          if block_given?
-            result << yield
-            result << "\e[0m"
-          elsif string
-            result << string
-            result << "\e[0m"
-          elsif respond_to?(:to_str)
-            result << self
-            result << "\e[0m"
-          end
-          return result
-        end
-      HERE
+    # This old term will be deprecated.
+    def uncolered(string=nil)
+      warn "use #uncolor in block form for future version"
+      if block_given?
+        yield.gsub(PATTERN, '')
+      elsif string
+        string.gsub(PATTERN, '')
+      else
+        ''
+      end
     end
-=end
 
+    # Regexp for matching style and color codes.
     PATTERN = /\e\[([34][0-7]|[0-9])m/
 
-    STYLES = {
+    # Table of style and color codes.
+    TABLE = {
       :clear        =>   0,
       :reset        =>   0,
       :bold         =>   1,
@@ -356,20 +351,6 @@ module ANSI
       :on_cyan      =>  46,
       :on_white     =>  47
     }
-
-=begin
-    @@colors.each do |c, v|
-      define_ansicolor_method(c, v)
-    end
-
-
-    #
-    def colors
-      @@colors.map{ |c| c[0] }
-    end
-
-=end
-
   end
 
   extend Code
