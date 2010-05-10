@@ -1,7 +1,7 @@
 # ANSI module contains all the ANSI related classes.
 #
 module ANSI
-  VERSION = "1.1.0"  # :till: VERSION="<%= version %>"
+  # TODO: metadata constant lookup
 end
 
 require 'ansi/code'
