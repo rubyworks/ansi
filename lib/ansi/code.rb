@@ -2,6 +2,9 @@ require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /win32/
 
 module ANSI
 
+  # deprecate
+  SUPPORTED = true
+
   # = ANSI Codes
   #
   # Ansi::Code module makes it very easy to use ANSI codes.
@@ -9,10 +12,10 @@ module ANSI
   #
   #   include Ansi::Code
   #
-  #   p red, "Hello", blue, "World"
+  #   red + "Hello" + blue + "World"
   #   => "\e[31mHello\e[34mWorld"
   #
-  #   p red { "Hello" } + blue { "World" }
+  #   red { "Hello" } + blue { "World" }
   #   => "\e[31mHello\e[0m\e[34mWorld\e[0m"
   #
   # == Supported ANSI Commands
