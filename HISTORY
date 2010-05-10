@@ -9,7 +9,7 @@ is mildly unconvential, but it allows the arguments to be used
 as options with common defaults more elegantly.
 
 Another important change is that ANSI::Code no longer provides
-String extension methods hwen included. For this use the new
+String extension methods when included. For this use the new
 ANSI::Mixin.
 
 Other improvements include a String extension, #ansi, added to
