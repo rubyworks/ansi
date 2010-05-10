@@ -123,7 +123,7 @@ module ANSI
     end
 
     # Move cursor left a specificed number of spaces.
-    def left( spa      ANSI::Code.send(op, self, *a, &b)ces=1 )
+    def left( spaces=1 )
       "\e[#{spaces.to_i}D"
     end
 
