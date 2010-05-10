@@ -6,22 +6,23 @@
 
 == DESCRIPTION
 
-The ANSI project is a collection of ANSI code related libraries
+The ANSI project is a collection of ANSI escape code related libraries
 enabling ANSI code based colorization and stylization of output.
 It is very nice for beautifying shell output.
 
 This collection is based on a set of scripts spun-off from
 Ruby Facets. Include are Code (used to be ANSICode), Logger,
-Progressbar and String. In addition the library include
+ProgressBar and String. In addition the library includes
 Terminal which provides information about the current output
 device.
 
 
 == FEATURES/ISSUES
 
-* ANSI::Code can be used as a mixin or as module functions.
-* Good coverage of standard ANSI codes.
-* Windows support needs some TLC :(
+* ANSI::Code can be used as a mixin or for module functions.
+* ANSI::Mixin provides an alternative mixin like +colored+ gem.
+* Single extension to String class makes common usage very elegant.
+* Very Good coverage of standard ANSI codes.
 
 
 == RELEASE NOTES
@@ -37,21 +38,24 @@ the QED documents{http://github.com/rubyworks/ansi/tree/master/qed/}
 or the API documentation{rdoc/}.
 
 At the heart of all the provided libraries lies the ANSI::Code module
-which defines ANSI codes as methods. For exmaple:
+which defines ANSI codes as constants and methods. For exmaple:
 
   require 'ansi/code'
 
   include ANSI::Code
 
-  p red, "Hello", blue, "World"
+  red + "Hello" + blue + "World"
   => "\e[31mHello\e[34mWorld"
 
-  p red { "Hello" } + blue { "World" }
+Or in block form.
+
+  red{ "Hello" } + blue{ "World" }
   => "\e[31mHello\e[0m\e[34mWorld\e[0m"
 
-These mehods can also be called as module methods, eg. 'ANSI::Code.red'.
+Rather than include +ANSI::Code+, these mehods can also be called as module
+methods. Either as <code>ANSI::Code.red</code> or just <code>ANSI.red</code>.
 
-The methods defined by this modele that are used throughout the rest of
+The methods defined by this module are used throughout the rest of
 the system.
 
 
