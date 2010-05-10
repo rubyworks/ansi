@@ -35,7 +35,7 @@ Please see HISTORY file.
 There are a number of modules and classes provided by the ANSI
 package. To get a good unserstanding of them it is best to puruse 
 the QED documents[http://github.com/rubyworks/ansi/tree/master/qed/]
-or the API documentation[rdoc/].
+or the API documentation[http://rubyworks.github.com/ansi/rdoc/].
 
 At the heart of all the provided libraries lies the ANSI::Code module
 which defines ANSI codes as constants and methods. For exmaple:
