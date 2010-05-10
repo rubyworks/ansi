@@ -5,10 +5,11 @@ module ANSI
   # This library is based of HighLine's SystemExtensions
   # by James Edward Gray II.
   #
-  #   Copyright 2006 Gray Productions.
+  # Copyright 2006 Gray Productions
   #
-  # This is Free Software. See LICENSE and COPYING for details.
-  #
+  # Distributed under the tems of the
+  # {Ruby software license}[http://www.ruby-lang.org/en/LICENSE.txt].
+
   module Terminal
 
     module_function
