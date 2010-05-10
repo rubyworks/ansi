@@ -1,9 +1,9 @@
 require 'test/unit'
-require 'ansicode'
+require 'ansi/code'
 
 class TestANSICode < Test::Unit::TestCase
 
-  include ANSICode
+  include ANSI::Code
 
   def test_methods
     str = red + "Hello" + blue + "World"
