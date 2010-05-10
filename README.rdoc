@@ -34,8 +34,8 @@ Please see HISTORY file.
 
 There are a number of modules and classes provided by the ANSI
 package. To get a good unserstanding of them it is best to puruse 
-the QED documents{http://github.com/rubyworks/ansi/tree/master/qed/}
-or the API documentation{rdoc/}.
+the QED documents[http://github.com/rubyworks/ansi/tree/master/qed/]
+or the API documentation[rdoc/].
 
 At the heart of all the provided libraries lies the ANSI::Code module
 which defines ANSI codes as constants and methods. For exmaple:
@@ -66,7 +66,7 @@ To install with RubyGems simply open a console and type:
   $ sudo gem install ansi
 
 Local installation requires Setup.rb (gem install setup),
-then download{http://github.com/rubyworks/ansi/download} the tarball package and type:
+then download[http://github.com/rubyworks/ansi/download] the tarball package and type:
 
   $ tar -xvzf ansi-1.0.0.tgz
   $ cd ansi-1.0.0
@@ -79,7 +79,7 @@ Windows users use 'ruby setup.rb all'.
 
 Copyright (c) 2004 Thomas Sawyer
 
-This program is ditributed unser the terms of the LGPLv3 license.
+This program is ditributed unser the terms of the MIT license.
 
 See LICENSE file for details.
 
