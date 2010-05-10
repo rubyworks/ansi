@@ -68,11 +68,11 @@ module ANSI
   #
   # This library is a partial adaptation of ANSIColor by Florian Frank.
   #
-  # ANSIColor Copyright (c) 2002 Florian Frank, LGPL
+  # ANSIColor Copyright (c) 2002 Florian Frank
   #
-  # TODO: Need to add rest of ANSI codes. Include modes?
-  # TODO: Re-evaluate how color/yielding methods are defined.
-  # TODO: Maybe up, down, right, left should have yielding methods too?
+  # TODO: Any ANSI codes left to add? Modes?
+  #
+  # TODO: up, down, right, left, etc could have yielding methods too
 
   module Code
     extend self
@@ -129,10 +129,17 @@ module ANSI
 
     styles = %w{bold dark italic underline underscore blink rapid reverse negative concealed strike}
 
-    styles.each do |color|
+    styles.each do |style|
       module_eval %{
-        def #{color}
-          block_given? ? "\#{#{color.upcase}}\#{yield}\#{CLEAR}" : #{color.upcase}
+        def #{color}(string=nil)
+          if string
+            warn "use ANSI block notation for future versions"
+            return "\#{#{style.upcase}}\#{string}\#{CLEAR}"
+          end
+          if block_given?
+            return "\#{#{style.upcase}}\#{yield}\#{CLEAR}"
+          end
+          #{style.upcase}
         end
       }
     end
@@ -141,12 +148,26 @@ module ANSI
 
     colors.each do |color|
       module_eval %{
-        def #{color}
-          block_given? ? "\#{#{color.upcase}}\#{yield}\#{CLEAR}" : #{color.upcase}
+        def #{color}(string=nil)
+          if string
+            warn "use ANSI block notation for future versions"
+            return "\#{#{color.upcase}}\#{string}\#{CLEAR}"
+          end
+          if block_given?
+            return "\#{#{color.upcase}}\#{yield}\#{CLEAR}"
+          end
+          #{color.upcase}
         end
 
-        def on_#{color}
-          block_given? ? "\#{ON_#{color.upcase}}\#{yield}\#{CLEAR}" : ON_#{color.upcase}
+        def on_#{color}(string=nil)
+          if string
+            warn "use ANSI block notation for future versions"
+            return "\#{ON_#{color.upcase}}\#{string}\#{CLEAR}"
+          end
+          if block_given?
+            return "\#{ON_#{color.upcase}}\#{yield}\#{CLEAR}"
+          end
+          ON_#{color.upcase}
         end
       }
     end
