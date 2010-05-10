@@ -2,4 +2,10 @@
 
 == 1.3
 
-* Consider adding something like terminal-table (http://github.com/visionmedia/terminal-table).
+=== Tables
+
+Consider adding something a Table class.
+
+See http://github.com/visionmedia/terminal-table
+and http://github.com/aptinio/text-table
+
