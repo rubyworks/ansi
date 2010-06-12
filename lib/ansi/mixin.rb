@@ -107,6 +107,16 @@ module ANSI
     def white_on_magenta  ; ANSI::Code.white_on_magenta  { to_s } ; end
     def white_on_cyan     ; ANSI::Code.white_on_cyan     { to_s } ; end
 
+    # Move cursor to line and column, insert +self.to_s+ and return to
+    # original positon.
+    def display(line, column=0)
+      result = "\e[s"
+      result << "\e[#{line.to_i};#{column.to_i}H"
+      result << to_s
+      result << "\e[u"
+      result
+    end
+
   end
 
 end
