@@ -1,5 +1,27 @@
 = RELEASE HISTORY
 
+== 1.2.2 // 2010-06-12
+
+This release removes warnings about string arguments for certain
+ANSI::Code methods. While the string form is considered deprecated,
+for a few methods there is no use for any argument, so the string
+form can remain. In addition, String#unansi has been added to
+compliment String#ansi. Lastly, this release also adds the #display
+method to ANSI::Mixin.
+
+Changes:
+
+* Remove string argument warnings.
+* Add String#unansi and String#unansi!
+* Add ANIS::Mixin#display.
+
+
+== 1.2.1 // 2010-05-10
+
+This release was simply a quick fix to remove the incorecct embedded
+version number, until it gets fixed.
+
+
 == 1.2.0 // 2010-05-10
 
 This release entails numerous improvements. First and foremost
