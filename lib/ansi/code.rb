@@ -20,7 +20,7 @@ module ANSI
   #
   # == Supported ANSI Commands
   #
-  # The following is a list of supported codes.
+  # The following is a list of supported display codes.
   #
   #     save
   #     restore
@@ -33,7 +33,8 @@ module ANSI
   #     down
   #     left
   #     right
-  #     display
+  #
+  # The following is a list of supported "style" codes.
   #
   #     clear
   #     reset           # synonym for :clear
@@ -47,6 +48,8 @@ module ANSI
   #     negative        # no reverse because of String#reverse
   #     concealed
   #     strikethrough   # not widely implemented
+  #
+  # The following is a list of supported color codes.
   #
   #     black
   #     red
@@ -66,13 +69,19 @@ module ANSI
   #     on_cyan
   #     on_white
   #
+  # In addition there are color combinations like +red_on_white+.
+  #
+  # == Acknowledgement
+  #
   # This library is a partial adaptation of ANSIColor by Florian Frank.
   #
   # ANSIColor Copyright (c) 2002 Florian Frank
   #
+  # == Developer's Notes
+  #
   # TODO: Any ANSI codes left to add? Modes?
   #
-  # TODO: up, down, right, left, etc could have yielding methods too
+  # TODO: up, down, right, left, etc could have yielding methods too?
 
   module Code
     extend self
@@ -135,7 +144,7 @@ module ANSI
       module_eval <<-END, __FILE__, __LINE__
         def #{style}(string=nil)
           if string
-            warn "use ANSI block notation for future versions"
+            #warn "use ANSI block notation for future versions"
             return "\#{#{style.upcase}}\#{string}\#{CLEAR}"
           end
           if block_given?
@@ -150,11 +159,13 @@ module ANSI
       %w{black red green yellow blue magenta cyan white}
     end
 
+    # Dynamically create color methods.
+
     colors.each do |color|
       module_eval <<-END, __FILE__, __LINE__
         def #{color}(string=nil)
           if string
-            warn "use ANSI block notation for future versions"
+            #warn "use ANSI block notation for future versions"
             return "\#{#{color.upcase}}\#{string}\#{CLEAR}"
           end
           if block_given?
@@ -165,7 +176,7 @@ module ANSI
 
         def on_#{color}(string=nil)
           if string
-            warn "use ANSI block notation for future versions"
+            #warn "use ANSI block notation for future versions"
             return "\#{ON_#{color.upcase}}\#{string}\#{CLEAR}"
           end
           if block_given?
@@ -181,7 +192,11 @@ module ANSI
     colors.each do |color|
       colors.each do |on_color|
         module_eval <<-END, __FILE__, __LINE__
-          def #{color}_on_#{on_color}
+          def #{color}_on_#{on_color}(string=nil)
+            if string
+              #warn "use ANSI block notation for future versions"
+              return #{color.upcase} + ON_#{color.upcase} + string + CLEAR
+            end
             if block_given?
               #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + CLEAR
             else
@@ -192,10 +207,12 @@ module ANSI
       end
     end
 
+    # Clear code.
     def clear
       CLEAR
     end
 
+    # Reset code.
     def reset
       RESET
     end
@@ -230,13 +247,22 @@ module ANSI
       CLS
     end
 
-    #--
-    #def position
-    #  "\e[#;#R"
-    #end
-    #++
+    # Like +move+ but returns to original positon after
+    # yielding the block.
+    def display(line, column=0) #:yield:
+      result = "\e[s"
+      result << "\e[#{line.to_i};#{column.to_i}H"
+      if block_given?
+        result << yield
+        result << "\e[u"
+      #elsif string
+      #  result << string
+      #  result << "\e[u"
+      end
+      result
+    end
 
-    # Move curose to line and column.
+    # Move cursor to line and column.
     def move(line, column=0)
       "\e[#{line.to_i};#{column.to_i}H"
     end
@@ -261,52 +287,42 @@ module ANSI
       "\e[#{spaces.to_i}C"
     end
 
-    # Like +move+ but returns to original positon after
-    # yielding the block.
-    def display(line, column=0) #:yield:
-      result = "\e[s"
-      result << "\e[#{line.to_i};#{column.to_i}H"
-      if block_given?
-        result << yield
-        result << "\e[u"
-      #elsif string
-      #  result << string
-      #  result << "\e[u"
-      #elsif respond_to?(:to_str)
-      #  result << self
-      #  result << "\e[u"
-      end
-      result
-    end
+    ##
+    #def position
+    #  "\e[#;#R"
+    #end
 
+    # Apply ansi codes to block yield.
     #
-    def style(*codes)
+    #   style(:red, :on_white){ "Valentine" }
+    #
+    def style(*codes) #:yield:
       s = ""
       codes.each do |code|
         s << "\e[#{TABLE[code]}m"
       end
-      s << yield
+      s << yield.to_s
       s << CLEAR
     end
 
+    # Alternate term for #style.
     alias_method :color, :style
 
     #
-    def unstyle
+    def unstyle #:yield:
       if block_given?
         yield.gsub(PATTERN, '')
-      #elsif string
-      #  string.gsub(ColoredRegexp, '')
       else
         ''
       end
     end
 
+    #
     alias_method :uncolor, :unstyle
 
-    # This old term will be deprecated.
+    # DEPRECATE: This old term will be deprecated.
     def uncolered(string=nil)
-      warn "use #uncolor in block form for future version"
+      warn "ansi: use #uncolor or #unansi for future version"
       if block_given?
         yield.gsub(PATTERN, '')
       elsif string
@@ -314,6 +330,27 @@ module ANSI
       else
         ''
       end
+    end
+
+    # This method is just like #style, except it takes a string
+    # rather than a block. The primary purpose of this method
+    # is to speed up the String#ansi call.
+    #
+    #   ansi("Valentine", :red, :on_white)
+    #
+    def ansi(string, *codes)
+      s = ""
+      codes.each do |code|
+        s << "\e[#{TABLE[code]}m"
+      end
+      s << string
+      s << CLEAR
+    end
+
+    # Remove ansi codes from +string+. This method is like unstyle,
+    # but takes a string rather than a block.
+    def unansi(string)
+      string.gsub(PATTERN, '')
     end
 
     # Regexp for matching style and color codes.
@@ -354,14 +391,28 @@ module ANSI
   end
 
   extend Code
-
 end
 
 #
 class String
   #
   def ansi(*codes)
-    ANSI::Code.style(*codes){ self }
+    ANSI::Code.ansi(self, *codes)
+  end
+
+  #
+  def ansi!(*codes)
+    replace(ansi(*codes))
+  end
+
+  #
+  def unansi
+    ANSI::Code.unansi(self)
+  end
+
+  #
+  def unansi!
+    replace(unansi)
   end
 end
 
