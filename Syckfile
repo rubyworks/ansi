@@ -16,11 +16,8 @@ gemcutter:
 
 box:
   service: Box
+  types  : [gem]
   active : true
-  types  : [gem, gz]
-  include: [bin, demo, lib, meta, plug, test, "[A-Z]*"]
-  exclude: ~
-  master : false
 
 ridoc:
   service: RIDoc
