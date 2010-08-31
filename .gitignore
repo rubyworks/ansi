@@ -1,6 +1,6 @@
 .cache
 log
 pkg
-doc/rdoc
-doc/ri
+ri
+site/rdoc
 MANIFEST

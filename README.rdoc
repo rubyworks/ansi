@@ -19,9 +19,9 @@ device.
 
 == FEATURES/ISSUES
 
-* ANSI::Code can be used as a mixin or for module functions.
-* ANSI::Mixin provides an alternative mixin like +colored+ gem.
-* Single extension to String class makes common usage very elegant.
+* ANSI::Code provides ANSI codes as module functions.
+* String#ansi makes common usage very easy and elegant.
+* ANSI::Mixin provides an alternative mixin (like +colored+ gem).
 * Very Good coverage of standard ANSI codes.
 
 
