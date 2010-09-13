@@ -45,22 +45,11 @@ module ANSI
     attr_accessor :format
 
     #
-    def to_s
-      if fit
-        to_s_fit
-     else
-        to_s_flush
-      end
-    end
-
-    private
-
-    #
-    def to_s_flush
+    def to_s #(fit=false)
       row_count = table.size
       col_count = table[0].size
 
-      max = max_columns
+      max = max_columns(fit)
 
       div = dividing_line
       top = div.gsub('+', ".")
@@ -80,18 +69,25 @@ module ANSI
       "#{top}\n#{body}\n#{bot}\n"
     end
 
+    private
+
     # TODO: look at the lines and figure out how many columns will fit
-    def to_s_fit
+    def fit_width
       width = Terminal.terminal_width
+      ((width.to_f / column_size) - 3).to_i
     end
 
     #
-    def max_columns
+    def max_columns(fit=false)
       max = Array.new(column_size, 0)
       table.each do |row|
         row.each_with_index do |col, index|
           col = col.to_s
-          max[index] = col.size if col.size > max[index]
+          if fit
+            max[index] = [max[index], col.size, fit_width].max
+          else
+            max[index] = [max[index], col.size].max
+          end
         end
       end
       max
@@ -133,7 +129,7 @@ module ANSI
 
     # TODO: make more efficient
     def dividing_line
-      tmp = max_columns.map{ |m| "%#{m}s" }.join(" | ")
+      tmp = max_columns(fit).map{ |m| "%#{m}s" }.join(" | ")
       tmp = "| #{tmp} |"
       lin = (tmp % (['-'] * column_size)).gsub(/[^\|]/, '-').gsub('|', '+')
     end
