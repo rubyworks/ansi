@@ -1,0 +1,152 @@
+require 'ansi'
+require 'ansi/terminal'
+
+module ANSI
+
+  class Table
+
+    # The Table class can be used to output nicely formatted
+    # tables with division lines and alignment.
+    #
+    # table - array of array
+    #
+    # options[:align]   - align :left or :right
+    # options[:padding] - space to add to each cell
+    # options[:fit]     - fit to screen width (COMING SOON)
+    #
+    # The +format+ block must return ANSI codes to apply
+    # to each cell.
+    #
+    # TODO: Support for table headers and footers.
+    def initialize(table, options={}, &format)
+      @table   = table
+      @padding = options[:padding] || 0
+      @align   = options[:align]
+      @fit     = options[:fit]
+      #@ansi    = [options[:ansi]].flatten
+      @format  = format
+
+      @pad = " " * @padding
+    end
+
+    #
+    attr_accessor :table
+
+    # Fit to scree width.
+    attr_accessor :fit
+
+    #
+    attr_accessor :padding
+
+    #
+    attr_accessor :align
+
+    #
+    attr_accessor :format
+
+    #
+    def to_s
+      if fit
+        to_s_fit
+     else
+        to_s_flush
+      end
+    end
+
+    private
+
+    #
+    def to_s_flush
+      row_count = table.size
+      col_count = table[0].size
+
+      max = max_columns
+
+      div = dividing_line
+      top = div.gsub('+', ".")
+      bot = div.gsub('+', "'")
+
+      body = []
+      table.each_with_index do |row, r|
+         body_row = []
+         row.each_with_index do |cell, c|
+           t = cell_template(max[c])
+           body_row << (t % cell.to_s).ansi(*ansi_formating(cell, c, r))
+         end
+         body << "| " + body_row.join(' | ') + " |"
+      end
+      body = body.join("\n#{div}\n")
+
+      "#{top}\n#{body}\n#{bot}\n"
+    end
+
+    # TODO: look at the lines and figure out how many columns will fit
+    def to_s_fit
+      width = Terminal.terminal_width
+    end
+
+    #
+    def max_columns
+      max = Array.new(column_size, 0)
+      table.each do |row|
+        row.each_with_index do |col, index|
+          col = col.to_s
+          max[index] = col.size if col.size > max[index]
+        end
+      end
+      max
+    end
+
+    # Number of columns.
+    def column_size
+      table.first.size
+    end
+
+    #
+    def cell_template(max)
+      case align
+      when :right, 'right'
+        "#{@pad}%#{max}s"
+      else
+        "%-#{max}s#{@pad}"
+      end
+    end
+
+    #
+    def ansi_formating(cell, col, row)
+      if @format
+        case @format.arity
+        when 0
+          f = @format[]
+        when 1
+          f = @format[cell]
+        when 2 
+          f = @format[row, col]
+        else
+          f = @format[cell, row, col]
+        end
+      else
+        f = nil
+      end
+      [f].flatten.compact
+    end
+
+    # TODO: make more efficient
+    def dividing_line
+      tmp = max_columns.map{ |m| "%#{m}s" }.join(" | ")
+      tmp = "| #{tmp} |"
+      lin = (tmp % (['-'] * column_size)).gsub(/[^\|]/, '-').gsub('|', '+')
+    end
+
+    #def dividing_line_top
+    #  dividing_line.gsub('+', '.')
+    #end
+
+    #def dividing_line_bottom
+    #  dividing_line.gsub('+', "'")
+    #end
+
+  end
+
+end
+
