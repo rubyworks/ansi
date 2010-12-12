@@ -1,11 +1,12 @@
 --- 
-title     : ANSI
-suite     : rubyworks
-summary   : ANSI codes at your fingertips!
-copyright : Copyright (c) 2009 Thomas Sawyer
-license   : MIT
-contact   : rubyworks-mailinglist@googlegroups.com
-created   : 2004-08-01
+title  : ANSI
+summary: ANSI codes at your fingertips!
+license: Apache 2.0
+contact: rubyworks-mailinglist@googlegroups.com
+created: 2004-08-01
+
+requires:
+  - syckle (build)
 
 authors:
   - Thomas Sawyer
@@ -20,4 +21,7 @@ resources:
   reference   : http://rubyworks.github.com/ansi/rdoc
   mailinglist : http://groups.google.com/group/rubyworks-mailinglist
   repository  : git://github.com/rubyworks/ansi.git
+
+organization : RubyWorks
+copyright    : Copyright (c) 2009 Thomas Sawyer
 
