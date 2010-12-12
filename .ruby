@@ -1,4 +1,3 @@
-/home/trans/Documents/programs/github.com/rubyworks/ansi/.ruby
 --- 
 name: ansi
 title: ANSI
