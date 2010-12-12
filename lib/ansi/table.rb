@@ -12,10 +12,16 @@ module ANSI
     #
     # options[:align]   - align :left or :right
     # options[:padding] - space to add to each cell
-    # options[:fit]     - fit to screen width (COMING SOON)
+    # options[:fit]     - fit to screen width
+    # options[:border]  - 
     #
     # The +format+ block must return ANSI codes to apply
     # to each cell.
+    #
+    # Other Implementations:
+    #
+    # * http://github.com/visionmedia/terminal-table
+    # * http://github.com/aptinio/text-table
     #
     # TODO: Support for table headers and footers.
     def initialize(table, options={}, &format)
@@ -23,6 +29,7 @@ module ANSI
       @padding = options[:padding] || 0
       @align   = options[:align]
       @fit     = options[:fit]
+      @border  = options[:border]
       #@ansi    = [options[:ansi]].flatten
       @format  = format
 
@@ -45,6 +52,9 @@ module ANSI
     attr_accessor :format
 
     #
+    attr_accessor :border
+
+    #
     def to_s #(fit=false)
       row_count = table.size
       col_count = table[0].size
@@ -52,8 +62,8 @@ module ANSI
       max = max_columns(fit)
 
       div = dividing_line
-      top = div.gsub('+', ".")
-      bot = div.gsub('+', "'")
+      top = div #.gsub('+', ".")
+      bot = div #.gsub('+', "'")
 
       body = []
       table.each_with_index do |row, r|
@@ -64,7 +74,12 @@ module ANSI
          end
          body << "| " + body_row.join(' | ') + " |"
       end
-      body = body.join("\n#{div}\n")
+
+      if border
+        body = body.join("\n#{div}\n")
+      else
+        body = body.join("\n")
+      end
 
       "#{top}\n#{body}\n#{bot}\n"
     end
@@ -74,7 +89,7 @@ module ANSI
     # TODO: look at the lines and figure out how many columns will fit
     def fit_width
       width = Terminal.terminal_width
-      ((width.to_f / column_size) - 3).to_i
+      ((width.to_f / column_size) - (padding + 3)).to_i
     end
 
     #

@@ -1,0 +1,23 @@
+= ANSI::Table
+
+  require 'ansi/table'
+
+  data = [
+    [ 10, 20, 30 ],
+    [ 20, 10, 20 ],
+    [ 50, 40, 20 ]
+  ]
+
+  table = ANSI::Table.new(data)
+
+  table.to_s
+
+The output will be:
+
+  +----+----+----+
+  | 10 | 20 | 30 |
+  | 20 | 10 | 20 |
+  | 50 | 40 | 20 |
+  +----+----+----+
+
+
