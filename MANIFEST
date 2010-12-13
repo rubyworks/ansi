@@ -1,0 +1,26 @@
+#!mast -x Syckfile .ruby bin lib test [A-Z]*
+.ruby
+lib/ansi/bbcode.rb
+lib/ansi/code.rb
+lib/ansi/columns.rb
+lib/ansi/logger.rb
+lib/ansi/mixin.rb
+lib/ansi/progressbar.rb
+lib/ansi/string.rb
+lib/ansi/table.rb
+lib/ansi/terminal/curses.rb
+lib/ansi/terminal/stty.rb
+lib/ansi/terminal/termios.rb
+lib/ansi/terminal/win32.rb
+lib/ansi/terminal.rb
+lib/ansi/version.rb
+lib/ansi.rb
+test/test_ansicode.rb
+test/test_bbcode.rb
+test/test_mixin.rb
+test/test_progressbar.rb
+PROFILE
+LICENSE
+README.rdoc
+HISTORY
+VERSION
