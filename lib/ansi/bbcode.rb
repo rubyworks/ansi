@@ -107,11 +107,8 @@ module ANSI
 
         ## Iterate over input lines
         string.split("\n").each do |line|
-            ansi = line.scan(/\e\[[0-9;]+m/)
-            continue if ansi.nil? || ansi.empty?
-
             ## Iterate over found ansi sequences
-            ansi.each do |seq|
+            line.scan(/\e\[[0-9;]+m/).each do |seq|
                 ansiname = ANSINAME2CODE.invert["#{seq}"]
 
                 ## Pop last tag and form closing tag
@@ -127,7 +124,7 @@ module ANSI
 
                 ## Replace ansi sequence by BBCode tag
                 replace = sprintf("[%s]", bbname)
-                line.sub!("#{Regexp.quote(seq)}", replace)
+                line.sub!(seq, replace)
             end
 
             ## Append converted line

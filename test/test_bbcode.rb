@@ -15,5 +15,15 @@ class TC_BBCode < Test::Unit::TestCase
     assert_equal( out, ANSI::BBCode.bbcode_to_html(str) )
   end
 
+  def test_ansi_to_html
+    str = "this is \e[0;31mred\e[0m, this is \e[1mbold\e[0m\n" +
+          "this is a line without any ansi code\n" +
+          "this is \e[0;31mred\e[0m, this is \e[1mbold\e[0m\n"
+    out = "this is <font color=\"red\">red</font>, this is <strong>bold</strong><br />\n" +
+          "this is a line without any ansi code<br />\n" +
+          "this is <font color=\"red\">red</font>, this is <strong>bold</strong><br />\n"
+    assert_equal( out, ANSI::BBCode.ansi_to_html(str) )
+  end
+
 end
 
