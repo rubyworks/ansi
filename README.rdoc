@@ -79,7 +79,7 @@ Windows users use 'ruby setup.rb all'.
 
 Copyright (c) 2004 Thomas Sawyer
 
-This program is ditributed unser the terms of the MIT license.
+This program is ditributed unser the terms of the Apache 2 license.
 
 See LICENSE file for details.
 
