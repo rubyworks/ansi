@@ -7,6 +7,7 @@ created: 2004-08-01
 
 requires:
   - syckle (build)
+  - ko (test)
 
 authors:
   - Thomas Sawyer

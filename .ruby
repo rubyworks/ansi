@@ -8,6 +8,10 @@ requires:
   - build
   name: syckle
   version: 0+
+- group: 
+  - test
+  name: ko
+  version: 0+
 resources: 
   repository: git://github.com/rubyworks/ansi.git
   api: http://rubyworks.github.com/ansi/rdoc

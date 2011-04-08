@@ -33,6 +33,20 @@ dependencies:
         version: "0"
   type: :development
   version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: ko
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id002
 description: ANSI codes at your fingertips!
 email: rubyworks-mailinglist@googlegroups.com
 executables: []
