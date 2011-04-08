@@ -1,0 +1,18 @@
+= COPYRIGHT NOTICES
+
+== ProgressBar
+
+ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
+
+Copyright (C) 2001 Satoru Takabayashi
+
+
+== Terminal Extensions
+
+The terminal extensions are based on HighLine's SystemExtensions
+by James Edward Gray II.
+
+Copyright 2006 Gray Productions
+
+{Ruby software license}[http://www.ruby-lang.org/en/LICENSE.txt]
+
