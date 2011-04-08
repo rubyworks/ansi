@@ -4,6 +4,7 @@
 
 Changes:
 
+* Add ProgressBar#clear method.
 * Fixed ANSI::BBCode.ansi_to_bbcode and ansi_to_html from omitting lines
 without any ansi code (Junegunn Choi).
 
