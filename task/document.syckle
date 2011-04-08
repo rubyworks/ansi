@@ -1,0 +1,41 @@
+---
+dnote:
+  service  : DNote
+  loadpath : ~
+  labels   : ~
+  exclude  : [work]
+  output   : ~
+  format   : ~
+  active   : true
+
+stats:
+  service  : Stats
+  title    : ~
+  loadpath : ~
+  exclude  : ~
+  output   : ~
+  active   : true
+
+ridoc:
+  service: RIDoc
+  output : ri
+  include: ~
+  exclude: ~
+  active : true
+
+rdoc:
+  service : RDoc
+  template: newfish
+  include : ~
+  exclude : [ Syckfile ]
+  output  : site/rdoc
+  active  : true
+
+# vclog:
+#  service  : VClog
+#  formats  : [json]
+#  #layout   : rel    # gnu
+#  typed    : false
+#  output   : ~
+#  active   : false
+
