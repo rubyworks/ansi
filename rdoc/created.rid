@@ -1,4 +1,4 @@
-Fri, 08 Apr 2011 05:46:29 -0400
+Fri, 08 Apr 2011 06:18:47 -0400
 lib/ansi/table.rb	Mon, 13 Sep 2010 18:52:32 -0400
 NOTICE	Fri, 08 Apr 2011 05:39:55 -0400
 HISTORY	Fri, 08 Apr 2011 05:43:43 -0400
@@ -6,7 +6,7 @@ PROFILE	Sun, 12 Dec 2010 15:56:56 -0500
 lib/ansi/string.rb	Sun, 09 May 2010 12:37:17 -0400
 lib/ansi/terminal/win32.rb	Fri, 14 Aug 2009 12:45:05 -0400
 lib/ansi/mixin.rb	Sat, 12 Jun 2010 07:32:46 -0400
-LICENSE	Mon, 10 May 2010 05:23:38 -0400
+LICENSE	Fri, 08 Apr 2011 06:15:59 -0400
 lib/ansi/terminal/termios.rb	Fri, 14 Aug 2009 12:44:57 -0400
 lib/ansi/terminal/curses.rb	Fri, 14 Aug 2009 12:44:48 -0400
 lib/ansi/logger.rb	Sat, 03 Oct 2009 21:03:25 -0400
@@ -14,9 +14,9 @@ lib/ansi/progressbar.rb	Mon, 27 Dec 2010 13:45:15 -0500
 lib/ansi/terminal.rb	Mon, 10 May 2010 05:25:28 -0400
 lib/ansi/columns.rb	Mon, 30 Aug 2010 20:19:09 -0400
 VERSION	Sun, 12 Dec 2010 15:54:31 -0500
-README.rdoc	Sat, 12 Jun 2010 08:46:43 -0400
+README.rdoc	Fri, 08 Apr 2011 06:16:43 -0400
 lib/ansi.rb	Sat, 12 Jun 2010 08:36:12 -0400
 lib/ansi/bbcode.rb	Fri, 08 Apr 2011 04:24:30 -0400
 lib/ansi/code.rb	Sat, 12 Jun 2010 07:43:47 -0400
 lib/ansi/terminal/stty.rb	Fri, 14 Aug 2009 12:45:01 -0400
-lib/ansi/version.rb	Fri, 08 Apr 2011 05:46:25 -0400
+lib/ansi/version.rb	Fri, 08 Apr 2011 06:18:43 -0400
