@@ -1,7 +1,7 @@
 /* TAG STYLES */
 
 html { font-family: helvetica, sans-serif; font-size: 100%; }
-body { position: relative; color: #222233; background: #ffffff; }
+body { position: relative; color: #222233; background: url(../images/bg.png) #b2140b; }
 
   li { padding: 3px 0; font-size: 80%; line-height: 150%; }
 pre { margin: 10px 0; font-family: monospace; color: white; }
