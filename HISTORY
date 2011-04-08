@@ -1,5 +1,12 @@
 = RELEASE HISTORY
 
+== 1.2.3 // 2011-04-12
+
+Changes:
+
+* Fixed ANSI::BBCode.ansi_to_bbcode and ansi_to_html from omitting lines
+without any ansi code (Junegunn Choi).
+
 == 1.2.2 // 2010-06-12
 
 This release removes warnings about string arguments for certain

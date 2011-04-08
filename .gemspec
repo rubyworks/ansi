@@ -16,7 +16,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2010-12-12 00:00:00 -05:00
+date: 2011-04-08 00:00:00 -04:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -42,18 +42,21 @@ extensions: []
 extra_rdoc_files: 
 - README.rdoc
 files: 
-- Syckfile
+- .ruby
 - lib/ansi/bbcode.rb
 - lib/ansi/code.rb
+- lib/ansi/columns.rb
 - lib/ansi/logger.rb
 - lib/ansi/mixin.rb
 - lib/ansi/progressbar.rb
 - lib/ansi/string.rb
+- lib/ansi/table.rb
 - lib/ansi/terminal/curses.rb
 - lib/ansi/terminal/stty.rb
 - lib/ansi/terminal/termios.rb
 - lib/ansi/terminal/win32.rb
 - lib/ansi/terminal.rb
+- lib/ansi/version.rb
 - lib/ansi.rb
 - test/test_ansicode.rb
 - test/test_bbcode.rb

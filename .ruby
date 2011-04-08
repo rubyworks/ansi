@@ -1,21 +1,21 @@
 --- 
 name: ansi
+spec_version: 1.0.0
 title: ANSI
 contact: rubyworks-mailinglist@googlegroups.com
-resources: 
-  reference: http://rubyworks.github.com/ansi/rdoc
-  repository: git://github.com/rubyworks/ansi.git
-  mailinglist: http://groups.google.com/group/rubyworks-mailinglist
-  development: http://github.com/rubyworks/ansi
-  homepage: http://rubyworks.github.com/ansi
 requires: 
 - group: 
   - build
   name: syckle
   version: 0+
-pom_verison: 1.0.0
+resources: 
+  repository: git://github.com/rubyworks/ansi.git
+  api: http://rubyworks.github.com/ansi/rdoc
+  mail: http://groups.google.com/group/rubyworks-mailinglist
+  home: http://rubyworks.github.com/ansi
+  work: http://github.com/rubyworks/ansi
 manifest: 
-- Syckfile
+- .ruby
 - lib/ansi/bbcode.rb
 - lib/ansi/code.rb
 - lib/ansi/columns.rb
@@ -46,8 +46,8 @@ licenses:
 copyright: Copyright (c) 2009 Thomas Sawyer
 description: ANSI codes at your fingertips!
 summary: ANSI codes at your fingertips!
+organization: RubyWorks
 authors: 
 - Thomas Sawyer
 - Florian Frank
-organization: RubyWorks
 created: 2004-08-01
