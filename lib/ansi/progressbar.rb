@@ -121,11 +121,17 @@ module ANSI
       @is_finished = false
     end
 
+    #
     def inc(step = 1)
       @current += step
       @current = @total if @current > @total
       show_progress
       @previous = @current
+    end
+
+    #
+    def clear
+      @out.print(" " * get_width + eol)
     end
 
     def inspect
