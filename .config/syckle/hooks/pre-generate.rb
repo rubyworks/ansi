@@ -4,10 +4,13 @@ file = "lib/#{project.metadata.name}/version.rb"
 line = []
 line << "module ANSI"
 line << "  VERSION = '#{project.version}'"
-line << "  DATE    = '#{Time.new}'"
-project.profile.to_h.each do |key, value|
-  line << "  #{key.upcase} = #{value.to_s.inspect}"
-end
+line << "  DATE    = '#{Time.new.strftime("%Y-%m-%d")}'"
+
+#project.profile.to_h.each do |key, value|
+#  next if key == "manifest"
+#  line << "  #{key.upcase} = #{value.inspect}"
+#end
+
 line << "end"
 
 text = line.join("\n")
