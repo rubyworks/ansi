@@ -1,4 +1,4 @@
-Fri, 08 Apr 2011 06:18:47 -0400
+Fri, 08 Apr 2011 12:40:27 -0400
 lib/ansi/table.rb	Mon, 13 Sep 2010 18:52:32 -0400
 NOTICE	Fri, 08 Apr 2011 05:39:55 -0400
 HISTORY	Fri, 08 Apr 2011 05:43:43 -0400
@@ -13,10 +13,10 @@ lib/ansi/logger.rb	Sat, 03 Oct 2009 21:03:25 -0400
 lib/ansi/progressbar.rb	Mon, 27 Dec 2010 13:45:15 -0500
 lib/ansi/terminal.rb	Mon, 10 May 2010 05:25:28 -0400
 lib/ansi/columns.rb	Mon, 30 Aug 2010 20:19:09 -0400
-VERSION	Sun, 12 Dec 2010 15:54:31 -0500
+VERSION	Fri, 08 Apr 2011 11:30:54 -0400
 README.rdoc	Fri, 08 Apr 2011 06:16:43 -0400
 lib/ansi.rb	Sat, 12 Jun 2010 08:36:12 -0400
 lib/ansi/bbcode.rb	Fri, 08 Apr 2011 04:24:30 -0400
 lib/ansi/code.rb	Sat, 12 Jun 2010 07:43:47 -0400
 lib/ansi/terminal/stty.rb	Fri, 14 Aug 2009 12:45:01 -0400
-lib/ansi/version.rb	Fri, 08 Apr 2011 06:18:43 -0400
+lib/ansi/version.rb	Fri, 08 Apr 2011 11:31:03 -0400
