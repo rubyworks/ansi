@@ -1,13 +1,13 @@
 --- !ruby/object:Gem::Specification 
 name: ansi
 version: !ruby/object:Gem::Version 
-  hash: 27
+  hash: 25
   prerelease: false
   segments: 
   - 1
   - 2
-  - 2
-  version: 1.2.2
+  - 3
+  version: 1.2.3
 platform: ruby
 authors: 
 - Thomas Sawyer
@@ -58,14 +58,15 @@ files:
 - lib/ansi/terminal.rb
 - lib/ansi/version.rb
 - lib/ansi.rb
-- test/test_ansicode.rb
-- test/test_bbcode.rb
-- test/test_mixin.rb
-- test/test_progressbar.rb
+- test/case_ansicode.rb
+- test/case_bbcode.rb
+- test/case_mixin.rb
+- test/case_progressbar.rb
 - PROFILE
 - LICENSE
 - README.rdoc
 - HISTORY
+- NOTICE
 - VERSION
 has_rdoc: true
 homepage: http://rubyworks.github.com/ansi
@@ -104,8 +105,5 @@ rubygems_version: 1.3.7
 signing_key: 
 specification_version: 3
 summary: ANSI codes at your fingertips!
-test_files: 
-- test/test_ansicode.rb
-- test/test_bbcode.rb
-- test/test_mixin.rb
-- test/test_progressbar.rb
+test_files: []
+

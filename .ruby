@@ -31,16 +31,17 @@ manifest:
 - lib/ansi/terminal.rb
 - lib/ansi/version.rb
 - lib/ansi.rb
-- test/test_ansicode.rb
-- test/test_bbcode.rb
-- test/test_mixin.rb
-- test/test_progressbar.rb
+- test/case_ansicode.rb
+- test/case_bbcode.rb
+- test/case_mixin.rb
+- test/case_progressbar.rb
 - PROFILE
 - LICENSE
 - README.rdoc
 - HISTORY
+- NOTICE
 - VERSION
-version: 1.2.2
+version: 1.2.3
 licenses: 
 - Apache 2.0
 copyright: Copyright (c) 2009 Thomas Sawyer
