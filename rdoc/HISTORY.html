@@ -49,7 +49,7 @@
       <h3 class="section-header">File Stats</h3>
       <dl>
         <dt class="modified-date">Last Modified</dt>
-        <dd class="modified-date">Sat Sep 05 15:49:24 -0400 2009</dd>
+        <dd class="modified-date">Fri Apr 08 05:43:43 -0400 2011</dd>
 
         
 
@@ -64,9 +64,15 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
+          <li class="file"><a href="./NOTICE.html">NOTICE</a></li>
+        
           <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
         
+          <li class="file"><a href="./PROFILE.html">PROFILE</a></li>
+        
           <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
         
@@ -95,15 +101,17 @@
         
           <li class="module"><a href="./ANSI/Code.html">ANSI::Code</a></li>
         
+          <li class="class"><a href="./ANSI/Columns.html">ANSI::Columns</a></li>
+        
           <li class="class"><a href="./ANSI/Logger.html">ANSI::Logger</a></li>
         
           <li class="module"><a href="./ANSI/Mixin.html">ANSI::Mixin</a></li>
         
           <li class="class"><a href="./ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
         
-          <li class="class"><a href="./ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
-        
           <li class="class"><a href="./ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="class"><a href="./ANSI/Table.html">ANSI::Table</a></li>
         
           <li class="module"><a href="./ANSI/Terminal.html">ANSI::Terminal</a></li>
         
@@ -168,8 +176,8 @@
           
             
             <li class="singleton" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-c-new">::new</a>
+              <span class="method-parent-aside">ANSI::Columns</span>
+              <a href="ANSI/Columns.html#method-c-new">::new</a>
             </li>
           
             
@@ -182,6 +190,12 @@
             <li class="singleton" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="singleton" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-c-new">::new</a>
             </li>
           
             
@@ -246,8 +260,8 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-ansi">#ansi</a>
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-ansi">#ansi</a>
             </li>
           
             
@@ -259,7 +273,31 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-ansi">#ansi</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">String</span>
+              <a href="String.html#method-i-ansi%21">#ansi!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-ansi%21">#ansi!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Columns</span>
+              <a href="ANSI/Columns.html#method-i-ansi_formating">#ansi_formating</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-ansi_formating">#ansi_formating</a>
             </li>
           
             
@@ -283,31 +321,19 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-bar">#bar</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-bar_mark%3D">#bar_mark=</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-bar_mark%3D">#bar_mark=</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-black">#black</a>
             </li>
           
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Mixin</span>
               <a href="ANSI/Mixin.html#method-i-black">#black</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-black">#black</a>
             </li>
           
             
@@ -366,14 +392,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-blue">#blue</a>
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-blue">#blue</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::Mixin</span>
-              <a href="ANSI/Mixin.html#method-i-blue">#blue</a>
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-blue">#blue</a>
             </li>
           
             
@@ -450,8 +476,14 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-cell_template">#cell_template</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-bytes">#bytes</a>
+              <a href="ANSI/ProgressBar.html#method-i-clear">#clear</a>
             </li>
           
             
@@ -510,20 +542,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-colorize">#colorize</a>
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-column_size">#column_size</a>
             </li>
           
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Mixin</span>
               <a href="ANSI/Mixin.html#method-i-concealed">#concealed</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-convert_bytes">#convert_bytes</a>
             </li>
           
             
@@ -612,8 +638,20 @@
           
             
             <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-display">#display</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Code</span>
               <a href="ANSI/Code.html#method-i-display">#display</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-dividing_line">#dividing_line</a>
             </li>
           
             
@@ -643,18 +681,6 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-elapsed">#elapsed</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-eol">#eol</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-eol">#eol</a>
             </li>
           
@@ -668,12 +694,6 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Logger</span>
               <a href="ANSI/Logger.html#method-i-error_with_color">#error_with_color</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-eta">#eta</a>
             </li>
           
             
@@ -703,25 +723,13 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-file_transfer_mode">#file_transfer_mode</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-finish">#finish</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-finish">#finish</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-flush">#flush</a>
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-fit_width">#fit_width</a>
             </li>
           
             
@@ -734,18 +742,6 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-format">#format</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-format">#format</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-format_time">#format_time</a>
             </li>
           
             
@@ -782,12 +778,6 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Terminal</span>
               <a href="ANSI/Terminal.html#method-i-get_character">#get_character</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-get_width">#get_width</a>
             </li>
           
             
@@ -877,18 +867,6 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-halt">#halt</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-inc">#inc</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-inc">#inc</a>
             </li>
           
@@ -912,12 +890,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-inspect">#inspect</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Mixin</span>
               <a href="ANSI/Mixin.html#method-i-italic">#italic</a>
             </li>
@@ -930,14 +902,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-magenta">#magenta</a>
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-magenta">#magenta</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::Mixin</span>
-              <a href="ANSI/Mixin.html#method-i-magenta">#magenta</a>
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-magenta">#magenta</a>
             </li>
           
             
@@ -986,6 +958,12 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Mixin</span>
               <a href="ANSI/Mixin.html#method-i-magenta_on_yellow">#magenta_on_yellow</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-max_columns">#max_columns</a>
             </li>
           
             
@@ -1056,12 +1034,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-percentage">#percentage</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Mixin</span>
               <a href="ANSI/Mixin.html#method-i-rapid">#rapid</a>
             </li>
@@ -1074,14 +1046,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-red">#red</a>
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-red">#red</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::Mixin</span>
-              <a href="ANSI/Mixin.html#method-i-red">#red</a>
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-red">#red</a>
             </li>
           
             
@@ -1146,12 +1118,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-reset">#reset</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Code</span>
               <a href="ANSI/Code.html#method-i-restore">#restore</a>
             </li>
@@ -1194,12 +1160,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-set">#set</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-shift_marks">#shift_marks</a>
             </li>
@@ -1214,18 +1174,6 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-show">#show</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-show">#show</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-show_progress">#show_progress</a>
             </li>
           
             
@@ -1255,25 +1203,7 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-standard_mode">#standard_mode</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-stat">#stat</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-stat">#stat</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-stat_for_file_transfer">#stat_for_file_transfer</a>
             </li>
           
             
@@ -1302,12 +1232,6 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-style">#style</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::Logger</span>
               <a href="ANSI/Logger.html#method-i-styles">#styles</a>
             </li>
@@ -1322,6 +1246,12 @@
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-sub%21">#sub!</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Columns</span>
+              <a href="ANSI/Columns.html#method-i-template">#template</a>
             </li>
           
             
@@ -1369,25 +1299,37 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-title">#title</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-title%3D">#title=</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-title%3D">#title=</a>
+              <span class="method-parent-aside">ANSI::Columns</span>
+              <a href="ANSI/Columns.html#method-i-to_s">#to_s</a>
             </li>
           
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::String</span>
               <a href="ANSI/String.html#method-i-to_s">#to_s</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Table</span>
+              <a href="ANSI/Table.html#method-i-to_s">#to_s</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Columns</span>
+              <a href="ANSI/Columns.html#method-i-to_s_auto">#to_s_auto</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Columns</span>
+              <a href="ANSI/Columns.html#method-i-to_s_columns">#to_s_columns</a>
             </li>
           
             
@@ -1405,18 +1347,6 @@
             
             <li class="method" style="clear: both;">
               <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-total_overflow%3D">#total_overflow=</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-transfer_mode">#transfer_mode</a>
-            </li>
-          
-            
-            <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
               <a href="ANSI/ProgressBar.html#method-i-transfer_mode">#transfer_mode</a>
             </li>
           
@@ -1428,8 +1358,20 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::ProgressBar</span>
-              <a href="ANSI/ProgressBar.html#method-i-transfer_rate">#transfer_rate</a>
+              <span class="method-parent-aside">String</span>
+              <a href="String.html#method-i-unansi">#unansi</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">ANSI::Code</span>
+              <a href="ANSI/Code.html#method-i-unansi">#unansi</a>
+            </li>
+          
+            
+            <li class="method" style="clear: both;">
+              <span class="method-parent-aside">String</span>
+              <a href="String.html#method-i-unansi%21">#unansi!</a>
             </li>
           
             
@@ -1446,14 +1388,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::Mixin</span>
-              <a href="ANSI/Mixin.html#method-i-underline">#underline</a>
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-underline">#underline</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-underline">#underline</a>
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-underline">#underline</a>
             </li>
           
             
@@ -1554,14 +1496,14 @@
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::Mixin</span>
-              <a href="ANSI/Mixin.html#method-i-yellow">#yellow</a>
+              <span class="method-parent-aside">ANSI::String</span>
+              <a href="ANSI/String.html#method-i-yellow">#yellow</a>
             </li>
           
             
             <li class="method" style="clear: both;">
-              <span class="method-parent-aside">ANSI::String</span>
-              <a href="ANSI/String.html#method-i-yellow">#yellow</a>
+              <span class="method-parent-aside">ANSI::Mixin</span>
+              <a href="ANSI/Mixin.html#method-i-yellow">#yellow</a>
             </li>
           
             
@@ -1621,7 +1563,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://proutils.github.com/webri">WebRI Newfish</a> 1.2.1
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.1.0
       <br/><br/>
     </div>
   </div>
@@ -1639,6 +1581,121 @@
 
   <div id="documentation">
     <h1>RELEASE <a href="HISTORY.html">HISTORY</a></h1>
+<h2>1.2.3 // 2011-04-12</h2>
+<p>
+Changes:
+</p>
+<ul>
+<li><p>
+Add ProgressBar#clear method.
+</p>
+</li>
+<li><p>
+Fixed ANSI::BBCode.ansi_to_bbcode and ansi_to_html from omitting lines
+</p>
+</li>
+</ul>
+<p>
+without any ansi code (Junegunn Choi).
+</p>
+<h2>1.2.2 // 2010-06-12</h2>
+<p>
+This release removes warnings about string arguments for certain <a
+href="ANSI/Code.html">ANSI::Code</a> methods. While the string form is
+considered deprecated, for a few methods there is no use for any argument,
+so the string form can remain. In addition, <a
+href="String.html#method-i-unansi">String#unansi</a> has been added to
+compliment <a href="String.html#method-i-ansi">String#ansi</a>. Lastly,
+this release also adds the display method to <a
+href="ANSI/Mixin.html">ANSI::Mixin</a>.
+</p>
+<p>
+Changes:
+</p>
+<ul>
+<li><p>
+Remove string argument warnings.
+</p>
+</li>
+<li><p>
+Add <a href="String.html#method-i-unansi">String#unansi</a> and <a
+href="String.html#method-i-unansi%21">String#unansi!</a>
+</p>
+</li>
+<li><p>
+Add ANIS::Mixin#display.
+</p>
+</li>
+</ul>
+<h2>1.2.1 // 2010-05-10</h2>
+<p>
+This release was simply a quick fix to remove the incorecct embedded
+version number, until it gets fixed.
+</p>
+<h2>1.2.0 // 2010-05-10</h2>
+<p>
+This release entails numerous improvements. First and foremost the Code
+module is transitioning to a block interface only and phasing out the
+string argument interface. Admittedly this is mildly unconvential, but it
+allows the arguments to be used as options with common defaults more
+elegantly.
+</p>
+<p>
+Another important change is that <a href="ANSI/Code.html">ANSI::Code</a> no
+longer provides <a href="String.html">String</a> extension methods when
+included. For this use the new <a href="ANSI/Mixin.html">ANSI::Mixin</a>.
+</p>
+<p>
+Other improvements include a <a href="String.html">String</a> extension,
+ansi, added to code.rb, which makes it even easir to apply <a
+href="ANSI.html">ANSI</a> codes to strings. Also, the <a
+href="ANSI/String.html">ANSI::String</a> class has been fixed (a few bugs
+crept it with the last release) and continues to improve. On top of all
+this testing has substatially improved thanks to QED.
+</p>
+<p>
+Changes:
+</p>
+<ul>
+<li><p>
+Support string argument for now but with warning
+</p>
+</li>
+<li><p>
+Bug fixes for <a href="ANSI/String.html">ANSI::String</a>
+</p>
+</li>
+<li><p>
+Add mixin.rb for alternate mixin.
+</p>
+</li>
+<li><p>
+Many new tests and QED documents.
+</p>
+</li>
+</ul>
+<h2>1.1.0 // 2009-10-04</h2>
+<p>
+This release is the first toward making the <a href="ANSI.html">ANSI</a>
+library more widely useable.
+</p>
+<p>
+Changes:
+</p>
+<ul>
+<li><p>
+Add bbcode.rb for conversion between BBCode/ANSI/HTML.
+</p>
+</li>
+<li><p>
+ProgressBar and Progressbar are the same.
+</p>
+</li>
+<li><p>
+Other minor underthehood improvements.
+</p>
+</li>
+</ul>
 <h2>1.0.1 // 2009-08-15</h2>
 <p>
 The release fixes a single bug that should allow Ruby 1.9 to use the <a
@@ -1649,11 +1706,8 @@ Changes:
 </p>
 <ul>
 <li><p>
-1 Major Enhancement
+Renamed PLATFORM to RUBY_PLATFORM
 </p>
-<pre>
-  * Renamed PLATFORM to RUBY_PLATFORM
-</pre>
 </li>
 </ul>
 <h2>1.0.0 // 2009-08-15</h2>
@@ -1667,10 +1721,8 @@ Changes:
 </p>
 <ul>
 <li><p>
-1 Major Enhancement
+Happy Birthday!
 </p>
-<pre>
-  * Happy Birthday!</pre>
 </li>
 </ul>
 

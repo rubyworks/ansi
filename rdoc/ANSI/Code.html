@@ -94,6 +94,11 @@
           
             
             <li class="method">
+              <a href="#method-i-ansi">#ansi</a>
+            </li>
+          
+            
+            <li class="method">
               <a href="#method-i-clear">#clear</a>
             </li>
           
@@ -169,6 +174,11 @@
           
             
             <li class="method">
+              <a href="#method-i-unansi">#unansi</a>
+            </li>
+          
+            
+            <li class="method">
               <a href="#method-i-uncolered">#uncolered</a>
             </li>
           
@@ -202,9 +212,15 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
+          <li class="file"><a href="../NOTICE.html">NOTICE</a></li>
+        
           <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
         
+          <li class="file"><a href="../PROFILE.html">PROFILE</a></li>
+        
           <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
         
@@ -234,15 +250,17 @@
         
           <li class="module"><a href="../ANSI/Code.html">ANSI::Code</a></li>
         
+          <li class="class"><a href="../ANSI/Columns.html">ANSI::Columns</a></li>
+        
           <li class="class"><a href="../ANSI/Logger.html">ANSI::Logger</a></li>
         
           <li class="module"><a href="../ANSI/Mixin.html">ANSI::Mixin</a></li>
         
           <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
         
-          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
-        
           <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="class"><a href="../ANSI/Table.html">ANSI::Table</a></li>
         
           <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
         
@@ -258,7 +276,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2.1
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.1.0
       <br/><br/>
     </div>
   </div>
@@ -284,7 +302,7 @@ codes. These are esspecially nice for beautifying shell output.
 </pre>
 <h2>Supported <a href="../ANSI.html">ANSI</a> Commands</h2>
 <p>
-The following is a list of supported codes.
+The following is a list of supported display codes.
 </p>
 <pre>
     save
@@ -298,8 +316,11 @@ The following is a list of supported codes.
     down
     left
     right
-    display
-
+</pre>
+<p>
+The following is a list of supported &#8220;style&#8221; codes.
+</p>
+<pre>
     clear
     reset           # synonym for :clear
     bold
@@ -312,7 +333,11 @@ The following is a list of supported codes.
     negative        # no reverse because of String#reverse
     concealed
     strikethrough   # not widely implemented
-
+</pre>
+<p>
+The following is a list of supported color codes.
+</p>
+<pre>
     black
     red
     green
@@ -332,16 +357,21 @@ The following is a list of supported codes.
     on_white
 </pre>
 <p>
+In addition there are color combinations like <tt>red_on_white</tt>.
+</p>
+<h2>Acknowledgement</h2>
+<p>
 This library is a partial adaptation of ANSIColor by Florian Frank.
 </p>
 <p>
 ANSIColor Copyright &#169; 2002 Florian Frank
 </p>
+<h2>Developer&#8217;s Notes</h2>
 <p>
 TODO: Any <a href="../ANSI.html">ANSI</a> codes left to add? Modes?
 </p>
 <p>
-TODO: up, down, right, left, etc could have yielding methods too
+TODO: up, down, right, left, etc could have yielding methods too?
 </p>
 
     </div>
@@ -549,7 +579,7 @@ Regexp for matching style and color codes.
         <dt><a name="TABLE">TABLE</a></dt>
         
         <dd class="description"><p>
-Table of style and color codes.
+<a href="Table.html">Table</a> of style and color codes.
 </p></dd>
         
       
@@ -586,10 +616,10 @@ Table of style and color codes.
           <div class="method-source-code"
             id="colors-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 149</span>
-149:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">colors</span>
-150:       <span class="ruby-node">%{black red green yellow blue magenta cyan white}</span>
-151:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 158</span>
+158:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">colors</span>
+159:       <span class="ruby-node">%{black red green yellow blue magenta cyan white}</span>
+160:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -618,10 +648,10 @@ Table of style and color codes.
           <div class="method-source-code"
             id="styles-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 130</span>
-130:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">styles</span>
-131:       <span class="ruby-node">%{bold dark italic underline underscore blink rapid reverse negative concealed strike}</span>
-132:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 139</span>
+139:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">styles</span>
+140:       <span class="ruby-node">%{bold dark italic underline underscore blink rapid reverse negative concealed strike}</span>
+141:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -634,6 +664,50 @@ Table of style and color codes.
   
     <div id="public-instance-method-details" class="method-section section">
       <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="ansi-method" class="method-detail ">
+        <a name="method-i-ansi"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi</span><span
+            class="method-args">(string, *codes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+This method is just like <a href="Code.html#method-i-style">style</a>,
+except it takes a string rather than a block. The primary purpose of this
+method is to speed up the <a
+href="String.html#method-i-ansi">String#ansi</a> call.
+</p>
+<pre>
+  ansi(&quot;Valentine&quot;, :red, :on_white)</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="ansi-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 341</span>
+341:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi</span>(<span class="ruby-identifier">string</span>, *<span class="ruby-identifier">codes</span>)
+342:       <span class="ruby-identifier">s</span> = <span class="ruby-value str">&quot;&quot;</span>
+343:       <span class="ruby-identifier">codes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+344:         <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{TABLE[code]}m&quot;</span>
+345:       <span class="ruby-keyword kw">end</span>
+346:       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">string</span>
+347:       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">CLEAR</span>
+348:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
 
     
       <div id="clear-method" class="method-detail ">
@@ -649,17 +723,19 @@ Table of style and color codes.
 
         <div class="method-description">
           
-          
+          <p>
+Clear code.
+</p>
           
 
           
           <div class="method-source-code"
             id="clear-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 195</span>
-195:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear</span>
-196:       <span class="ruby-constant">CLEAR</span>
-197:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 211</span>
+211:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear</span>
+212:       <span class="ruby-constant">CLEAR</span>
+213:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -690,10 +766,10 @@ Clear to the end of the current line.
           <div class="method-source-code"
             id="clear-line-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 214</span>
-214:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_line</span>
-215:       <span class="ruby-constant">CLEAR_LINE</span>
-216:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 231</span>
+231:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_line</span>
+232:       <span class="ruby-constant">CLEAR_LINE</span>
+233:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -724,10 +800,10 @@ Clear the screen and move cursor to home.
           <div class="method-source-code"
             id="clear-screen-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 224</span>
-224:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_screen</span>
-225:       <span class="ruby-constant">CLEAR_SCREEN</span>
-226:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 241</span>
+241:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_screen</span>
+242:       <span class="ruby-constant">CLEAR_SCREEN</span>
+243:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -758,10 +834,10 @@ Clear to the end of the current line.
           <div class="method-source-code"
             id="clr-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 219</span>
-219:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clr</span>
-220:       <span class="ruby-constant">CLR</span>
-221:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 236</span>
+236:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clr</span>
+237:       <span class="ruby-constant">CLR</span>
+238:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -792,10 +868,10 @@ Clear the screen and move cursor to home.
           <div class="method-source-code"
             id="cls-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 229</span>
-229:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cls</span>
-230:       <span class="ruby-constant">CLS</span>
-231:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 246</span>
+246:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cls</span>
+247:       <span class="ruby-constant">CLS</span>
+248:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -817,7 +893,9 @@ Clear the screen and move cursor to home.
 
         <div class="method-description">
           
-          
+          <p>
+Alternate term for <a href="Code.html#method-i-style">style</a>.
+</p>
           
 
           
@@ -850,22 +928,19 @@ block.
           <div class="method-source-code"
             id="display-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 266</span>
-266:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>=<span class="ruby-value">0</span>) <span class="ruby-comment cmt">#:yield:</span>
-267:       <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;\e[s&quot;</span>
-268:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{line.to_i};#{column.to_i}H&quot;</span>
-269:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-270:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">yield</span>
-271:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\e[u&quot;</span>
-272:       <span class="ruby-comment cmt">#elsif string</span>
-273:       <span class="ruby-comment cmt">#  result &lt;&lt; string</span>
-274:       <span class="ruby-comment cmt">#  result &lt;&lt; &quot;\e[u&quot;</span>
-275:       <span class="ruby-comment cmt">#elsif respond_to?(:to_str)</span>
-276:       <span class="ruby-comment cmt">#  result &lt;&lt; self</span>
-277:       <span class="ruby-comment cmt">#  result &lt;&lt; &quot;\e[u&quot;</span>
-278:       <span class="ruby-keyword kw">end</span>
-279:       <span class="ruby-identifier">result</span>
-280:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 252</span>
+252:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>=<span class="ruby-value">0</span>) <span class="ruby-comment cmt">#:yield:</span>
+253:       <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;\e[s&quot;</span>
+254:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{line.to_i};#{column.to_i}H&quot;</span>
+255:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+256:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">yield</span>
+257:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\e[u&quot;</span>
+258:       <span class="ruby-comment cmt">#elsif string</span>
+259:       <span class="ruby-comment cmt">#  result &lt;&lt; string</span>
+260:       <span class="ruby-comment cmt">#  result &lt;&lt; &quot;\e[u&quot;</span>
+261:       <span class="ruby-keyword kw">end</span>
+262:       <span class="ruby-identifier">result</span>
+263:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -896,10 +971,10 @@ Move cursor down a specificed number of spaces.
           <div class="method-source-code"
             id="down-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 250</span>
-250:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">down</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
-251:       <span class="ruby-node">&quot;\e[#{spaces.to_i}B&quot;</span>
-252:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 276</span>
+276:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">down</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
+277:       <span class="ruby-node">&quot;\e[#{spaces.to_i}B&quot;</span>
+278:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -930,10 +1005,10 @@ Move cursor left a specificed number of spaces.
           <div class="method-source-code"
             id="left-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 255</span>
-255:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">left</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
-256:       <span class="ruby-node">&quot;\e[#{spaces.to_i}D&quot;</span>
-257:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 281</span>
+281:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">left</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
+282:       <span class="ruby-node">&quot;\e[#{spaces.to_i}D&quot;</span>
+283:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -956,7 +1031,7 @@ Move cursor left a specificed number of spaces.
         <div class="method-description">
           
           <p>
-Move curose to line and column.
+Move cursor to line and column.
 </p>
           
 
@@ -964,10 +1039,10 @@ Move curose to line and column.
           <div class="method-source-code"
             id="move-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 240</span>
-240:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">move</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>=<span class="ruby-value">0</span>)
-241:       <span class="ruby-node">&quot;\e[#{line.to_i};#{column.to_i}H&quot;</span>
-242:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 266</span>
+266:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">move</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>=<span class="ruby-value">0</span>)
+267:       <span class="ruby-node">&quot;\e[#{line.to_i};#{column.to_i}H&quot;</span>
+268:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -989,17 +1064,19 @@ Move curose to line and column.
 
         <div class="method-description">
           
-          
+          <p>
+Reset code.
+</p>
           
 
           
           <div class="method-source-code"
             id="reset-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 199</span>
-199:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
-200:       <span class="ruby-constant">RESET</span>
-201:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 216</span>
+216:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
+217:       <span class="ruby-constant">RESET</span>
+218:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1030,10 +1107,10 @@ Restore saved cursor positon.
           <div class="method-source-code"
             id="restore-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 209</span>
-209:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restore</span>
-210:       <span class="ruby-constant">RESTORE</span>
-211:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 226</span>
+226:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restore</span>
+227:       <span class="ruby-constant">RESTORE</span>
+228:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1064,10 +1141,10 @@ Move cursor right a specificed number of spaces.
           <div class="method-source-code"
             id="right-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 260</span>
-260:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">right</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
-261:       <span class="ruby-node">&quot;\e[#{spaces.to_i}C&quot;</span>
-262:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 286</span>
+286:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">right</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
+287:       <span class="ruby-node">&quot;\e[#{spaces.to_i}C&quot;</span>
+288:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1098,10 +1175,10 @@ Save current cursor positon.
           <div class="method-source-code"
             id="save-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 204</span>
-204:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>
-205:       <span class="ruby-constant">SAVE</span>
-206:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 221</span>
+221:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>
+222:       <span class="ruby-constant">SAVE</span>
+223:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1123,22 +1200,26 @@ Save current cursor positon.
 
         <div class="method-description">
           
-          
+          <p>
+Apply ansi codes to block yield.
+</p>
+<pre>
+  style(:red, :on_white){ &quot;Valentine&quot; }</pre>
           
 
           
           <div class="method-source-code"
             id="style-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 283</span>
-283:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style</span>(*<span class="ruby-identifier">codes</span>)
-284:       <span class="ruby-identifier">s</span> = <span class="ruby-value str">&quot;&quot;</span>
-285:       <span class="ruby-identifier">codes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
-286:         <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{TABLE[code]}m&quot;</span>
-287:       <span class="ruby-keyword kw">end</span>
-288:       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">yield</span>
-289:       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">CLEAR</span>
-290:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 299</span>
+299:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style</span>(*<span class="ruby-identifier">codes</span>) <span class="ruby-comment cmt">#:yield:</span>
+300:       <span class="ruby-identifier">s</span> = <span class="ruby-value str">&quot;&quot;</span>
+301:       <span class="ruby-identifier">codes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+302:         <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{TABLE[code]}m&quot;</span>
+303:       <span class="ruby-keyword kw">end</span>
+304:       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">yield</span>.<span class="ruby-identifier">to_s</span>
+305:       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">CLEAR</span>
+306:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1147,6 +1228,41 @@ Save current cursor positon.
         <div class="aliases">
           Also aliased as: <a href="Code.html#method-i-color">color</a>
         </div>
+        
+      </div>
+
+    
+      <div id="unansi-method" class="method-detail ">
+        <a name="method-i-unansi"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">unansi</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Remove ansi codes from <tt>string</tt>. This method is like unstyle, but
+takes a string rather than a block.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="unansi-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 352</span>
+352:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unansi</span>(<span class="ruby-identifier">string</span>)
+353:       <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
+354:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
         
       </div>
 
@@ -1165,7 +1281,7 @@ Save current cursor positon.
         <div class="method-description">
           
           <p>
-This old term will be deprecated.
+DEPRECATE: This old term will be deprecated.
 </p>
           
 
@@ -1173,17 +1289,17 @@ This old term will be deprecated.
           <div class="method-source-code"
             id="uncolered-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 308</span>
-308:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uncolered</span>(<span class="ruby-identifier">string</span>=<span class="ruby-keyword kw">nil</span>)
-309:       <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;use #uncolor in block form for future version&quot;</span>
-310:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-311:         <span class="ruby-keyword kw">yield</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
-312:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">string</span>
-313:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
-314:       <span class="ruby-keyword kw">else</span>
-315:         <span class="ruby-value str">''</span>
-316:       <span class="ruby-keyword kw">end</span>
-317:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 324</span>
+324:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uncolered</span>(<span class="ruby-identifier">string</span>=<span class="ruby-keyword kw">nil</span>)
+325:       <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;ansi: use #uncolor or #unansi for future version&quot;</span>
+326:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+327:         <span class="ruby-keyword kw">yield</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
+328:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">string</span>
+329:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
+330:       <span class="ruby-keyword kw">else</span>
+331:         <span class="ruby-value str">''</span>
+332:       <span class="ruby-keyword kw">end</span>
+333:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1235,16 +1351,14 @@ This old term will be deprecated.
           <div class="method-source-code"
             id="unstyle-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 295</span>
-295:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unstyle</span>
-296:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-297:         <span class="ruby-keyword kw">yield</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
-298:       <span class="ruby-comment cmt">#elsif string</span>
-299:       <span class="ruby-comment cmt">#  string.gsub(ColoredRegexp, '')</span>
-300:       <span class="ruby-keyword kw">else</span>
-301:         <span class="ruby-value str">''</span>
-302:       <span class="ruby-keyword kw">end</span>
-303:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 312</span>
+312:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unstyle</span> <span class="ruby-comment cmt">#:yield:</span>
+313:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+314:         <span class="ruby-keyword kw">yield</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">PATTERN</span>, <span class="ruby-value str">''</span>)
+315:       <span class="ruby-keyword kw">else</span>
+316:         <span class="ruby-value str">''</span>
+317:       <span class="ruby-keyword kw">end</span>
+318:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>
@@ -1279,10 +1393,10 @@ Move cursor up a specificed number of spaces.
           <div class="method-source-code"
             id="up-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 245</span>
-245:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">up</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
-246:       <span class="ruby-node">&quot;\e[#{spaces.to_i}A&quot;</span>
-247:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 271</span>
+271:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">up</span>(<span class="ruby-identifier">spaces</span>=<span class="ruby-value">1</span>)
+272:       <span class="ruby-node">&quot;\e[#{spaces.to_i}A&quot;</span>
+273:     <span class="ruby-keyword kw">end</span></pre>
           </div>
           
         </div>

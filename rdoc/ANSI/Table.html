@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: ANSI::Table</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">ANSI</a>&nbsp;
+      <a href="/">ANSI::Table</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../lib/ansi/table_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/table.rb">lib/ansi/table.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <li class="class">Object</li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-ansi_formating">#ansi_formating</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-cell_template">#cell_template</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-column_size">#column_size</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-dividing_line">#dividing_line</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-fit_width">#fit_width</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-max_columns">#max_columns</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-to_s">#to_s</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../NOTICE.html">NOTICE</a></li>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../PROFILE.html">PROFILE</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../VERSION.html">VERSION</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../ANSI.html">ANSI</a></li>
+        
+          <li class="module"><a href="../ANSI/BBCode.html">ANSI::BBCode</a></li>
+        
+          <li class="module"><a href="../ANSI/Code.html">ANSI::Code</a></li>
+        
+          <li class="class"><a href="../ANSI/Columns.html">ANSI::Columns</a></li>
+        
+          <li class="class"><a href="../ANSI/Logger.html">ANSI::Logger</a></li>
+        
+          <li class="module"><a href="../ANSI/Mixin.html">ANSI::Mixin</a></li>
+        
+          <li class="class"><a href="../ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
+        
+          <li class="class"><a href="../ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="class"><a href="../ANSI/Table.html">ANSI::Table</a></li>
+        
+          <li class="module"><a href="../ANSI/Terminal.html">ANSI::Terminal</a></li>
+        
+          <li class="class"><a href="../String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.1.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Table</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+    <div id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="table-attribute-method" class="method-detail">
+        <a name="table"></a>
+        
+        <a name="table="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">table</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="fit-attribute-method" class="method-detail">
+        <a name="fit"></a>
+        
+        <a name="fit="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fit</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Fit to scree width.
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="padding-attribute-method" class="method-detail">
+        <a name="padding"></a>
+        
+        <a name="padding="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">padding</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="align-attribute-method" class="method-detail">
+        <a name="align"></a>
+        
+        <a name="align="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">align</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="format-attribute-method" class="method-detail">
+        <a name="format"></a>
+        
+        <a name="format="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">format</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="border-attribute-method" class="method-detail">
+        <a name="border"></a>
+        
+        <a name="border="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">border</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="method-c-new"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(table, options={}, &format)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The <a href="Table.html">Table</a> class can be used to output nicely
+formatted tables with division lines and alignment.
+</p>
+<p>
+table - array of array
+</p>
+<p>
+options[:align]   - align :left or :right options[:padding] - space to add
+to each cell options[:fit]     - fit to screen width options[:border]  - 
+</p>
+<p>
+The <tt>format</tt> block must return <a href="../ANSI.html">ANSI</a> codes
+to apply to each cell.
+</p>
+<p>
+Other Implementations:
+</p>
+<ul>
+<li><p>
+<a
+href="http://github.com/visionmedia/terminal-table">github.com/visionmedia/terminal-table</a>
+</p>
+</li>
+<li><p>
+<a
+href="http://github.com/aptinio/text-table">github.com/aptinio/text-table</a>
+</p>
+</li>
+</ul>
+<p>
+TODO: Support for table headers and footers.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 27</span>
+27:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">table</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">format</span>)
+28:       <span class="ruby-ivar">@table</span>   = <span class="ruby-identifier">table</span>
+29:       <span class="ruby-ivar">@padding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:padding</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+30:       <span class="ruby-ivar">@align</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:align</span>]
+31:       <span class="ruby-ivar">@fit</span>     = <span class="ruby-identifier">options</span>[<span class="ruby-value">:fit</span>]
+32:       <span class="ruby-ivar">@border</span>  = <span class="ruby-identifier">options</span>[<span class="ruby-value">:border</span>]
+33:       <span class="ruby-comment cmt">#@ansi    = [options[:ansi]].flatten</span>
+34:       <span class="ruby-ivar">@format</span>  = <span class="ruby-identifier">format</span>
+35: 
+36:       <span class="ruby-ivar">@pad</span> = <span class="ruby-value str">&quot; &quot;</span> * <span class="ruby-ivar">@padding</span>
+37:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="to-s-method" class="method-detail ">
+        <a name="method-i-to_s"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="to-s-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 58</span>
+58:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span> <span class="ruby-comment cmt">#(fit=false)</span>
+59:       <span class="ruby-identifier">row_count</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">size</span>
+60:       <span class="ruby-identifier">col_count</span> = <span class="ruby-identifier">table</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">size</span>
+61: 
+62:       <span class="ruby-identifier">max</span> = <span class="ruby-identifier">max_columns</span>(<span class="ruby-identifier">fit</span>)
+63: 
+64:       <span class="ruby-identifier">div</span> = <span class="ruby-identifier">dividing_line</span>
+65:       <span class="ruby-identifier">top</span> = <span class="ruby-identifier">div</span> <span class="ruby-comment cmt">#.gsub('+', &quot;.&quot;)</span>
+66:       <span class="ruby-identifier">bot</span> = <span class="ruby-identifier">div</span> <span class="ruby-comment cmt">#.gsub('+', &quot;'&quot;)</span>
+67: 
+68:       <span class="ruby-identifier">body</span> = []
+69:       <span class="ruby-identifier">table</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span>, <span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+70:          <span class="ruby-identifier">body_row</span> = []
+71:          <span class="ruby-identifier">row</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cell</span>, <span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+72:            <span class="ruby-identifier">t</span> = <span class="ruby-identifier">cell_template</span>(<span class="ruby-identifier">max</span>[<span class="ruby-identifier">c</span>])
+73:            <span class="ruby-identifier">body_row</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">t</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">ansi</span>(*<span class="ruby-identifier">ansi_formating</span>(<span class="ruby-identifier">cell</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">r</span>))
+74:          <span class="ruby-keyword kw">end</span>
+75:          <span class="ruby-identifier">body</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;| &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">body_row</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' | '</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; |&quot;</span>
+76:       <span class="ruby-keyword kw">end</span>
+77: 
+78:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">border</span>
+79:         <span class="ruby-identifier">body</span> = <span class="ruby-identifier">body</span>.<span class="ruby-identifier">join</span>(<span class="ruby-node">&quot;\n#{div}\n&quot;</span>)
+80:       <span class="ruby-keyword kw">else</span>
+81:         <span class="ruby-identifier">body</span> = <span class="ruby-identifier">body</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+82:       <span class="ruby-keyword kw">end</span>
+83: 
+84:       <span class="ruby-node">&quot;#{top}\n#{body}\n#{bot}\n&quot;</span>
+85:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="private-instance-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
+
+    
+      <div id="ansi-formating-method" class="method-detail ">
+        <a name="method-i-ansi_formating"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ansi_formating</span><span
+            class="method-args">(cell, col, row)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="ansi-formating-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 127</span>
+127:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi_formating</span>(<span class="ruby-identifier">cell</span>, <span class="ruby-identifier">col</span>, <span class="ruby-identifier">row</span>)
+128:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@format</span>
+129:         <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@format</span>.<span class="ruby-identifier">arity</span>
+130:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span>
+131:           <span class="ruby-identifier">f</span> = <span class="ruby-ivar">@format</span>[]
+132:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span>
+133:           <span class="ruby-identifier">f</span> = <span class="ruby-ivar">@format</span>[<span class="ruby-identifier">cell</span>]
+134:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span> 
+135:           <span class="ruby-identifier">f</span> = <span class="ruby-ivar">@format</span>[<span class="ruby-identifier">row</span>, <span class="ruby-identifier">col</span>]
+136:         <span class="ruby-keyword kw">else</span>
+137:           <span class="ruby-identifier">f</span> = <span class="ruby-ivar">@format</span>[<span class="ruby-identifier">cell</span>, <span class="ruby-identifier">row</span>, <span class="ruby-identifier">col</span>]
+138:         <span class="ruby-keyword kw">end</span>
+139:       <span class="ruby-keyword kw">else</span>
+140:         <span class="ruby-identifier">f</span> = <span class="ruby-keyword kw">nil</span>
+141:       <span class="ruby-keyword kw">end</span>
+142:       [<span class="ruby-identifier">f</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>
+143:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cell-template-method" class="method-detail ">
+        <a name="method-i-cell_template"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cell_template</span><span
+            class="method-args">(max)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="cell-template-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 117</span>
+117:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cell_template</span>(<span class="ruby-identifier">max</span>)
+118:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">align</span>
+119:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">:right</span>, <span class="ruby-value str">'right'</span>
+120:         <span class="ruby-node">&quot;#{@pad}%#{max}s&quot;</span>
+121:       <span class="ruby-keyword kw">else</span>
+122:         <span class="ruby-node">&quot;%-#{max}s#{@pad}&quot;</span>
+123:       <span class="ruby-keyword kw">end</span>
+124:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="column-size-method" class="method-detail ">
+        <a name="method-i-column_size"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">column_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Number of columns.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="column-size-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 112</span>
+112:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">column_size</span>
+113:       <span class="ruby-identifier">table</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">size</span>
+114:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="dividing-line-method" class="method-detail ">
+        <a name="method-i-dividing_line"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">dividing_line</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+TODO: make more efficient
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="dividing-line-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 146</span>
+146:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dividing_line</span>
+147:       <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">max_columns</span>(<span class="ruby-identifier">fit</span>).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;%#{m}s&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; | &quot;</span>)
+148:       <span class="ruby-identifier">tmp</span> = <span class="ruby-node">&quot;| #{tmp} |&quot;</span>
+149:       <span class="ruby-identifier">lin</span> = (<span class="ruby-identifier">tmp</span> <span class="ruby-operator">%</span> ([<span class="ruby-value str">'-'</span>] * <span class="ruby-identifier">column_size</span>)).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/[^\|]/</span>, <span class="ruby-value str">'-'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'|'</span>, <span class="ruby-value str">'+'</span>)
+150:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="fit-width-method" class="method-detail ">
+        <a name="method-i-fit_width"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">fit_width</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+TODO: look at the lines and figure out how many columns will fit
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="fit-width-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 90</span>
+90:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fit_width</span>
+91:       <span class="ruby-identifier">width</span> = <span class="ruby-constant">Terminal</span>.<span class="ruby-identifier">terminal_width</span>
+92:       ((<span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">column_size</span>) <span class="ruby-operator">-</span> (<span class="ruby-identifier">padding</span> <span class="ruby-operator">+</span> <span class="ruby-value">3</span>)).<span class="ruby-identifier">to_i</span>
+93:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="max-columns-method" class="method-detail ">
+        <a name="method-i-max_columns"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">max_columns</span><span
+            class="method-args">(fit=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="max-columns-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ansi/table.rb, line 96</span>
+ 96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max_columns</span>(<span class="ruby-identifier">fit</span>=<span class="ruby-keyword kw">false</span>)
+ 97:       <span class="ruby-identifier">max</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">column_size</span>, <span class="ruby-value">0</span>)
+ 98:       <span class="ruby-identifier">table</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+ 99:         <span class="ruby-identifier">row</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">col</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+100:           <span class="ruby-identifier">col</span> = <span class="ruby-identifier">col</span>.<span class="ruby-identifier">to_s</span>
+101:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fit</span>
+102:             <span class="ruby-identifier">max</span>[<span class="ruby-identifier">index</span>] = [<span class="ruby-identifier">max</span>[<span class="ruby-identifier">index</span>], <span class="ruby-identifier">col</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">fit_width</span>].<span class="ruby-identifier">max</span>
+103:           <span class="ruby-keyword kw">else</span>
+104:             <span class="ruby-identifier">max</span>[<span class="ruby-identifier">index</span>] = [<span class="ruby-identifier">max</span>[<span class="ruby-identifier">index</span>], <span class="ruby-identifier">col</span>.<span class="ruby-identifier">size</span>].<span class="ruby-identifier">max</span>
+105:           <span class="ruby-keyword kw">end</span>
+106:         <span class="ruby-keyword kw">end</span>
+107:       <span class="ruby-keyword kw">end</span>
+108:       <span class="ruby-identifier">max</span>
+109:     <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

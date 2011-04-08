@@ -55,11 +55,17 @@
         <div class="section-body">
           <ul>
           
+            <li class="file"><a href="./lib/ansi/columns_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/columns.rb">lib/ansi/columns.rb</a></li>
+          
             <li class="file"><a href="./lib/ansi/code_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/code.rb">lib/ansi/code.rb</a></li>
           
             <li class="file"><a href="./lib/ansi/mixin_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/mixin.rb">lib/ansi/mixin.rb</a></li>
+          
+            <li class="file"><a href="./lib/ansi/version_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/version.rb">lib/ansi/version.rb</a></li>
           
             <li class="file"><a href="./lib/ansi/terminal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/terminal.rb">lib/ansi/terminal.rb</a></li>
@@ -75,6 +81,9 @@
           
             <li class="file"><a href="./lib/ansi/terminal/win32_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/terminal/win32.rb">lib/ansi/terminal/win32.rb</a></li>
+          
+            <li class="file"><a href="./lib/ansi/table_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/table.rb">lib/ansi/table.rb</a></li>
           
             <li class="file"><a href="./lib/ansi/bbcode_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/bbcode.rb">lib/ansi/bbcode.rb</a></li>
@@ -114,13 +123,15 @@
           
           <li class="module"><a href="ANSI/Terminal.html">ANSI::Terminal</a></li>
           
+          <li class="class"><a href="ANSI/Columns.html">ANSI::Columns</a></li>
+          
           <li class="class"><a href="ANSI/Logger.html">ANSI::Logger</a></li>
           
           <li class="class"><a href="ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
           
-          <li class="class"><a href="ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
-          
           <li class="class"><a href="ANSI/String.html">ANSI::String</a></li>
+          
+          <li class="class"><a href="ANSI/Table.html">ANSI::Table</a></li>
           
         </ul>
       </div>
@@ -152,9 +163,15 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
+          <li class="file"><a href="./NOTICE.html">NOTICE</a></li>
+        
           <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
         
+          <li class="file"><a href="./PROFILE.html">PROFILE</a></li>
+        
           <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
         
@@ -184,15 +201,17 @@
         
           <li class="module"><a href="./ANSI/Code.html">ANSI::Code</a></li>
         
+          <li class="class"><a href="./ANSI/Columns.html">ANSI::Columns</a></li>
+        
           <li class="class"><a href="./ANSI/Logger.html">ANSI::Logger</a></li>
         
           <li class="module"><a href="./ANSI/Mixin.html">ANSI::Mixin</a></li>
         
           <li class="class"><a href="./ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
         
-          <li class="class"><a href="./ANSI/ProgressBar.html">ANSI::ProgressBar</a></li>
-        
           <li class="class"><a href="./ANSI/String.html">ANSI::String</a></li>
+        
+          <li class="class"><a href="./ANSI/Table.html">ANSI::Table</a></li>
         
           <li class="module"><a href="./ANSI/Terminal.html">ANSI::Terminal</a></li>
         
@@ -208,7 +227,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.2.1
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.1.0
       <br/><br/>
     </div>
   </div>
@@ -251,12 +270,92 @@ deprecate
 </p></dd>
         
       
-        <dt><a name="Progressbar">Progressbar</a></dt>
+        <dt><a name="VERSION">VERSION</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="DATE">DATE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="SPEC_VERSION">SPEC_VERSION</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="NAME">NAME</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="TITLE">TITLE</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="CONTACT">CONTACT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="RESOURCES">RESOURCES</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="REQUIRES">REQUIRES</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="MANIFEST">MANIFEST</a></dt>
         
         <dd class="description"></dd>
         
       
         <dt><a name="VERSION">VERSION</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="LICENSES">LICENSES</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="COPYRIGHT">COPYRIGHT</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="DESCRIPTION">DESCRIPTION</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="SUMMARY">SUMMARY</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="AUTHORS">AUTHORS</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ORGANIZATION">ORGANIZATION</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="CREATED">CREATED</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="Progressbar">Progressbar</a></dt>
         
         <dd class="description"></dd>
         
