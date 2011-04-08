@@ -4,7 +4,7 @@ file = "lib/#{project.metadata.name}/version.rb"
 line = []
 line << "module ANSI"
 line << "  VERSION = '#{project.version}'"
-line << "  DATE = '#{project.verfile.date}'"
+line << "  DATE    = '#{Time.new}'"
 project.profile.to_h.each do |key, value|
   line << "  #{key.upcase} = #{value.to_s.inspect}"
 end
