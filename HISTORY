@@ -2,6 +2,10 @@
 
 == 1.2.3 // 2011-04-12
 
+Minor release to add #clear method to ProgressBar and provide bug
+fix to BBCode.ansi_to_bbcode. Big thanks goes to Junegunn Choi 
+for this fix.
+
 Changes:
 
 * Add ProgressBar#clear method.
