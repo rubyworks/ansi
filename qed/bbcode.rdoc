@@ -1,4 +1,4 @@
-= BBCode
+= ANSI::BBCode
 
 The BBCode module provides methods for converting between
 BBCodes, basic HTML and ANSI codes.

@@ -28,7 +28,7 @@ rdoc:
   template: newfish
   include : ~
   exclude : [ Syckfile ]
-  output  : site/rdoc
+  output  : site/docs/api
   active  : true
 
 # vclog:
