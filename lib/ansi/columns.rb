@@ -13,53 +13,62 @@ module ANSI
     # options[:align]   - align :left or :right
     # options[:padding] - space to add to each cell
     #
-    # The +format+ must return ansi codes.
+    # The +format+ block MUST return ANSI codes.
     def initialize(string, options={}, &format)
       @string  = string
-      @columns = options[:columns] || 3
+      @columns = options[:columns]
       @padding = options[:padding] || 0
       @align   = options[:align]
       #@ansi    = [options[:ansi]].flatten
       @format  = format
+
+      @columns = nil if @columns == 0
     end
 
-    #
+    # The string to layout into columns. Each new line is taken to be 
+    # a row-column cell.
     attr_accessor :string
 
-    #
+    # Default number of columns to display. If nil then the number
+    # of coumns is estimated from the size of the terminal.
     attr_accessor :columns
 
-    #
+    # Padding size to apply to cells.
     attr_accessor :padding
 
-    #
+    # Alignment to apply to cells.
     attr_accessor :align
 
-    #
+    # Formating to apply to cells.
     attr_accessor :format
 
-    #
-    def to_s
-      if columns
-        to_s_columns(columns)
-      else
-        to_s_auto
-      end
+    # Return string in column layout. The number of columns is determined
+    # by the `columns` property or overriden by +cols+ argument.
+    def to_s(cols=nil)
+      to_s_columns(cols || columns)
     end
 
     private
 
+    # Layout string lines into columns.
     #
     # TODO: put in empty strings for blank cells
-    def to_s_columns(columns)
+    def to_s_columns(columns=nil)
       lines = string.lines.to_a
       count = lines.size
-      cols  = []
-      mod   = (count / columns.to_f).to_i + 1
+      max   = lines.map{ |l| l.size }.max
+      if columns.nil?
+        width = Terminal.terminal_width
+        columns = (width / (max + padding)).to_i
+      end
+      cols = []
+      mod = (count / columns.to_f).to_i
+      mod += 1 if count % columns != 0
+
       lines.each_with_index do |line, index|
         (cols[index % mod] ||=[]) << line.strip
       end
-      max = lines.map{ |l| l.size }.max
+
       pad = " " * padding
       tmp = template(max, pad)
       str = ""
@@ -72,12 +81,9 @@ module ANSI
       str
     end
 
-    # TODO: look at the lines and figure out how many columns will fit
-    def to_s_auto    
-      width = Terminal.terminal_width
-    end
-
+    # Aligns the cell left or right.
     #
+    # TODO: Handle justified alignment.
     def template(max, pad)
       case align
       when :right, 'right'
@@ -87,7 +93,7 @@ module ANSI
       end
     end
 
-    #
+    # Used to apply ANSI formating to each cell.
     def ansi_formating(cell, col, row)
       if @format
         case @format.arity
