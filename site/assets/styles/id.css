@@ -44,7 +44,7 @@
 
 #footer { margin-top: 0; padding-top: 30px; border-top: 1px solid #ccc; }
 #footer .advert { border: 1px solid :eee; }
-#footer .copyright { margin-top: 20px; padding: 20px 0px 35px 0px; font-size: 0.8em; color: #aaa; }
+#footer .copyright { margin-top: 20px; padding: 20px 0px 35px 0px; font-size: 0.8em; color: #888; }
 
 
 /* CLASS STYLES */
@@ -54,7 +54,7 @@
   margin: 30px auto;
   background: #ffffff;
   padding: 5px 40px;
-  border: 3px solid #555;
+  border: 15px solid #333;
 }
 
 .colorized {
