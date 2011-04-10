@@ -7,4 +7,4 @@ require 'ansi/code'
 require 'ansi/logger'
 require 'ansi/progressbar'
 require 'ansi/string'
-
+require 'ansi/columns'
