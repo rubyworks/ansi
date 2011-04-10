@@ -7,15 +7,15 @@ module ANSI
 
     # Create a column-based layout.
     #
-    # string - multiline string to columnize
+    # list - Multiline String or Array of strings to columnize
     #
     # options[:columns] - number of columns
     # options[:align]   - align :left or :right
     # options[:padding] - space to add to each cell
     #
     # The +format+ block MUST return ANSI codes.
-    def initialize(string, options={}, &format)
-      @string  = string
+    def initialize(list, options={}, &format)
+      @list    = String === list ? list.lines.to_a : list
       @columns = options[:columns]
       @padding = options[:padding] || 0
       @align   = options[:align]
@@ -25,9 +25,9 @@ module ANSI
       @columns = nil if @columns == 0
     end
 
-    # The string to layout into columns. Each new line is taken to be 
+    # List layout into columns. Each new line is taken to be 
     # a row-column cell.
-    attr_accessor :string
+    attr_accessor :list
 
     # Default number of columns to display. If nil then the number
     # of coumns is estimated from the size of the terminal.
@@ -54,7 +54,7 @@ module ANSI
     #
     # TODO: put in empty strings for blank cells
     def to_s_columns(columns=nil)
-      lines = string.lines.to_a
+      lines = list.to_a
       count = lines.size
       max   = lines.map{ |l| l.size }.max
       if columns.nil?
@@ -74,7 +74,12 @@ module ANSI
       str = ""
       cols.each_with_index do |row, c|
         row.each_with_index do |cell, r|
-          str << (tmp % cell).ansi(*ansi_formating(cell, c, r))
+          ansi_codes = ansi_formating(cell, c, r)
+          if ansi_codes.empty?
+            str << (tmp % cell)
+          else
+            str << (tmp % cell).ansi(*ansi_codes)
+          end
         end
         str << "\n"
       end
