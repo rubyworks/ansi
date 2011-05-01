@@ -54,7 +54,7 @@ a:hover {
 }
 
 pre {
-  padding: 0.5em 0;
+  padding: 0.5em;
   border: 1px solid #ccc;
 }
 
@@ -213,7 +213,7 @@ body.file p {
   float: right;
   width: 330px;
   margin-top: 10px;
-  border-left: 1px solid #ccc;
+  border-left: 0px solid #ccc;
   padding-left: 12px;
 }
 
@@ -355,7 +355,7 @@ ul.link-list .type {
 /* @group Documentation Section */
 
 #documentation h1 {
-  margin: 8px 0 4px 0;
+  margin: 8px 0 4px -0.1em;
   padding: 0.2em 0.1em 0.1em 0.1em;
   border-bottom: 1px solid #bbb;
   -moz-border-radius: 5px;

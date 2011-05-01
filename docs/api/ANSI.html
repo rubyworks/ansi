@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
   <title>Module: ANSI</title>
 
@@ -42,7 +42,7 @@
       
         <img src="./assets/icon/module.png" align="absmiddle">&nbsp;
       
-      <a href="./index.html">ANSI</a>&nbsp;
+      <a href="./index.html">&quot;ANSI&quot;</a>&nbsp;
       <a href="/">ANSI</a>
     </h1>
   </div>
@@ -63,9 +63,6 @@
           
             <li class="file"><a href="./lib/ansi/mixin_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/mixin.rb">lib/ansi/mixin.rb</a></li>
-          
-            <li class="file"><a href="./lib/ansi/version_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/ansi/version.rb">lib/ansi/version.rb</a></li>
           
             <li class="file"><a href="./lib/ansi/terminal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/ansi/terminal.rb">lib/ansi/terminal.rb</a></li>
@@ -145,6 +142,16 @@
           
             
             <li class="singleton">
+              <a href="#method-c-const_missing">::const_missing</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-meta">::meta</a>
+            </li>
+          
+            
+            <li class="singleton">
               <a href="#method-c-string">::string</a>
             </li>
           
@@ -163,17 +170,17 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
-          <li class="file"><a href="./NOTICE.html">NOTICE</a></li>
-        
-          <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
-        
           <li class="file"><a href="./PROFILE.html">PROFILE</a></li>
+        
+          <li class="file"><a href="./HISTORY_rdoc.html">HISTORY.rdoc</a></li>
         
           <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
         
           <li class="file"><a href="./VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./NOTICE_rdoc.html">NOTICE.rdoc</a></li>
         
         </ul>
       </div>
@@ -227,7 +234,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.1.0
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.2.0
       <br/><br/>
     </div>
   </div>
@@ -237,23 +244,21 @@
     <div id="description">
       
 
-      <h1><a href="ANSI/BBCode.html">BBCode</a></h1>
-<p>
-Copyright &#169; 2002 Thomas-Ivo Heinen
-</p>
-<p>
-This module is free software. You may use, modify, and/or redistribute this
-software under the same terms as Ruby.
-</p>
-<p>
-This program is distributed in the hope that it will be useful, but WITHOUT
+      
+<h1><a href="ANSI/BBCode.html">BBCode</a></h1>
+
+<p>Copyright © 2002 Thomas-Ivo Heinen</p>
+
+<p>This module is free software. You may use, modify, and/or redistribute this
+software under the same terms as Ruby.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-FITNESS FOR A PARTICULAR PURPOSE.
-</p>
-<hr style="height: 1px"></hr><p>
-<a href="ANSI.html">ANSI</a> module contains all the <a
-href="ANSI.html">ANSI</a> related classes.
-</p>
+FITNESS FOR A PARTICULAR PURPOSE.</p>
+<hr style="height: 1px">
+
+<p><a href="ANSI.html">ANSI</a> module contains all the <a
+href="ANSI.html">ANSI</a> related classes.</p>
 
     </div>
 
@@ -265,19 +270,7 @@ href="ANSI.html">ANSI</a> related classes.
       
         <dt><a name="SUPPORTED">SUPPORTED</a></dt>
         
-        <dd class="description"><p>
-deprecate
-</p></dd>
-        
-      
-        <dt><a name="VERSION">VERSION</a></dt>
-        
-        <dd class="description"></dd>
-        
-      
-        <dt><a name="DATE">DATE</a></dt>
-        
-        <dd class="description"></dd>
+        <dd class="description"><p>deprecate</p></dd>
         
       
         <dt><a name="Progressbar">Progressbar</a></dt>
@@ -298,6 +291,73 @@ deprecate
       <h3 class="section-header">Public Class Methods</h3>
 
     
+      <div id="const_missing-method" class="method-detail ">
+        <a name="method-c-const_missing"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">const_missing</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="const_missing-source">
+<pre>
+<span class="ruby-comment"># File lib/ansi.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">meta</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="meta-method" class="method-detail ">
+        <a name="method-c-meta"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">meta</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="meta-source">
+<pre>
+<span class="ruby-comment"># File lib/ansi.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">meta</span>
+  <span class="ruby-ivar">@spec</span> <span class="ruby-operator">||=</span> (
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'yaml'</span>
+    <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/ansi.yml'</span>))
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
       <div id="string-method" class="method-detail ">
         <a name="method-c-string"></a>
 
@@ -311,19 +371,17 @@ deprecate
 
         <div class="method-description">
           
-          <p>
-Create a new Ansi::String object.
-</p>
+          <p>Create a new Ansi::String object.</p>
           
 
           
           <div class="method-source-code"
             id="string-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/ansi/string.rb, line 6</span>
-6: <span class="ruby-keyword kw">def</span> <span class="ruby-constant">ANSI</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">str</span>)
-7:   <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">str</span>)
-8: <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/ansi/string.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">ANSI</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>

@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
   <title>Class: String</title>
 
@@ -42,7 +42,7 @@
       
         <img src="./assets/icon/class.png" align="absmiddle">&nbsp;
       
-      <a href="./index.html">ANSI</a>&nbsp;
+      <a href="./index.html">&quot;ANSI&quot;</a>&nbsp;
       <a href="/">String</a>
     </h1>
   </div>
@@ -76,7 +76,9 @@
         <h3 class="section-header">Parent</h3>
         <ul>
           
-          <li class="class">Object</li>
+            
+              <li class="class">Object</li>
+            
           
         </ul>
       </div>
@@ -98,7 +100,7 @@
           
             
             <li class="method">
-              <a href="#method-i-ansi%21">#ansi!</a>
+              <a href="#method-i-ansi-21">#ansi!</a>
             </li>
           
             
@@ -108,7 +110,7 @@
           
             
             <li class="method">
-              <a href="#method-i-unansi%21">#unansi!</a>
+              <a href="#method-i-unansi-21">#unansi!</a>
             </li>
           
         </ul>
@@ -126,17 +128,17 @@
         <h3 class="section-header">Information</h3>
         <ul>
         
-          <li class="file"><a href="./NOTICE.html">NOTICE</a></li>
-        
-          <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
-        
           <li class="file"><a href="./PROFILE.html">PROFILE</a></li>
+        
+          <li class="file"><a href="./HISTORY_rdoc.html">HISTORY.rdoc</a></li>
         
           <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
         
           <li class="file"><a href="./VERSION.html">VERSION</a></li>
         
           <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./NOTICE_rdoc.html">NOTICE.rdoc</a></li>
         
         </ul>
       </div>
@@ -190,7 +192,7 @@
       <div style="float: right; margin-right: 5px;">
         <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
       </div>
-      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.1.0
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.2.0
       <br/><br/>
     </div>
   </div>
@@ -237,10 +239,10 @@
           <div class="method-source-code"
             id="ansi-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 399</span>
-399:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi</span>(*<span class="ruby-identifier">codes</span>)
-400:     <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">ansi</span>(<span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">codes</span>)
-401:   <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/ansi/code.rb, line 399</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ansi</span>(*<span class="ruby-identifier">codes</span>)
+  <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">ansi</span>(<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">codes</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -249,8 +251,8 @@
       </div>
 
     
-      <div id="ansi--method" class="method-detail ">
-        <a name="method-i-ansi%21"></a>
+      <div id="ansi-21-method" class="method-detail ">
+        <a name="method-i-ansi-21"></a>
 
         <div class="method-heading">
         
@@ -267,12 +269,12 @@
 
           
           <div class="method-source-code"
-            id="ansi--source">
+            id="ansi-21-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 404</span>
-404:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ansi!</span>(*<span class="ruby-identifier">codes</span>)
-405:     <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">ansi</span>(*<span class="ruby-identifier">codes</span>))
-406:   <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/ansi/code.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ansi!</span>(*<span class="ruby-identifier">codes</span>)
+  <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">ansi</span>(*<span class="ruby-identifier">codes</span>))
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -301,10 +303,10 @@
           <div class="method-source-code"
             id="unansi-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 409</span>
-409:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unansi</span>
-410:     <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">unansi</span>(<span class="ruby-keyword kw">self</span>)
-411:   <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/ansi/code.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unansi</span>
+  <span class="ruby-constant">ANSI</span><span class="ruby-operator">::</span><span class="ruby-constant">Code</span>.<span class="ruby-identifier">unansi</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -313,8 +315,8 @@
       </div>
 
     
-      <div id="unansi--method" class="method-detail ">
-        <a name="method-i-unansi%21"></a>
+      <div id="unansi-21-method" class="method-detail ">
+        <a name="method-i-unansi-21"></a>
 
         <div class="method-heading">
         
@@ -331,12 +333,12 @@
 
           
           <div class="method-source-code"
-            id="unansi--source">
+            id="unansi-21-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/ansi/code.rb, line 414</span>
-414:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unansi!</span>
-415:     <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">unansi</span>)
-416:   <span class="ruby-keyword kw">end</span></pre>
+<span class="ruby-comment"># File lib/ansi/code.rb, line 414</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unansi!</span>
+  <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">unansi</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
