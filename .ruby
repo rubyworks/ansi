@@ -39,6 +39,6 @@ authors:
 - Thomas Sawyer
 - Florian Frank
 organization: RubyWorks
-description: ANSI codes at your fingertips!
+description: The ANSI project is a collection of ANSI escape code related libraries enabling ANSI code based colorization and stylization of output. It is very nice for beautifying shell output.
 summary: ANSI codes at your fingertips!
 created: 2004-08-01

@@ -31,6 +31,11 @@ rdoc:
   output  : site/docs/api
   active  : true
 
+qedoc:
+  service: Custom
+  document: |
+    system 'qedoc -t "Ruby ANSI" -o site/docs/qed qed/'
+
 # vclog:
 #  service  : VClog
 #  formats  : [json]

@@ -47,7 +47,7 @@ dependencies:
         version: "0"
   type: :development
   version_requirements: *id002
-description: ANSI codes at your fingertips!
+description: The ANSI project is a collection of ANSI escape code related libraries enabling ANSI code based colorization and stylization of output. It is very nice for beautifying shell output.
 email: rubyworks-mailinglist@googlegroups.com
 executables: []
 

@@ -18,7 +18,7 @@ The output will be:
   b e h k
   c f i l
 
-Besides and array of elements, Columns.new can take a string in which
+Besides an array of elements, Columns.new can take a string in which
 the elements are divided by newlines characters. The default column
 size can also be given to the initializer.
 
@@ -38,7 +38,7 @@ as a best fit for the current terminal window.
 
 == Padding
 
-Columns can adjsut the padding between cells.
+Columns can adjust the padding between cells.
 
   list = %w{a b c d e f g h i j k l}
 
@@ -70,8 +70,8 @@ The output will be:
 
 == Format
 
-Lastly, columns can be aguamented with ANSI codes. This is done through
-a formating block. The block can take upto three parameters, the cell
+Lastly, columns can be augmented with ANSI codes. This is done through
+a formatting block. The block can take up to three parameters, the cell
 content, the row and column numbers, or the cell and the row and column
 numbers.
 
