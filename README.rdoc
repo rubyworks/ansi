@@ -1,9 +1,5 @@
 = ANSI
 
-* http://rubyworks.github.com/ansi
-* http://github.com/rubyworks/ansi
-
-
 == DESCRIPTION
 
 The ANSI project is a collection of ANSI escape code related libraries
@@ -17,12 +13,18 @@ Terminal which provides information about the current output
 device.
 
 
-== FEATURES/ISSUES
+== FEATURES
 
 * ANSI::Code provides ANSI codes as module functions.
 * String#ansi makes common usage very easy and elegant.
 * ANSI::Mixin provides an alternative mixin (like +colored+ gem).
 * Very Good coverage of standard ANSI codes.
+
+
+== RESOURCES
+
+* home: http://rubyworks.github.com/ansi
+* code: http://github.com/rubyworks/ansi
 
 
 == RELEASE NOTES

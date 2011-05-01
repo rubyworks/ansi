@@ -1,4 +1,4 @@
-#!mast -x Syckfile .ruby bin lib test [A-Z]*
+#!mast -x PROFILE -x VERSION .ruby bin lib qed test [A-Z]*
 .ruby
 lib/ansi/bbcode.rb
 lib/ansi/code.rb
@@ -13,15 +13,23 @@ lib/ansi/terminal/stty.rb
 lib/ansi/terminal/termios.rb
 lib/ansi/terminal/win32.rb
 lib/ansi/terminal.rb
-lib/ansi/version.rb
 lib/ansi.rb
+lib/ansi.yml
+qed/01_ansicode.rdoc
+qed/02_bbcode.rdoc
+qed/03_logger.rdoc
+qed/04_progressbar.rdoc
+qed/05_mixin.rdoc
+qed/06_string.rdoc
+qed/07_columns.rdoc
+qed/08_table.rdoc
+qed/applique/output.rb
 test/case_ansicode.rb
 test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
+Rakefile
 HISTORY.rdoc
-PROFILE
 LICENSE
 README.rdoc
-VERSION
 NOTICE.rdoc
