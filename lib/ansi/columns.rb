@@ -74,20 +74,21 @@ module ANSI
         width = Terminal.terminal_width
         columns = (width / (max + padding)).to_i
       end
-      cols = []
+
+      rows = []
       mod = (count / columns.to_f).to_i
       mod += 1 if count % columns != 0
 
       lines.each_with_index do |line, index|
-        (cols[index % mod] ||=[]) << line.strip
+        (rows[index % mod] ||=[]) << line.strip
       end
 
       pad = " " * padding
       tmp = template(max, pad)
       str = ""
-      cols.each_with_index do |row, c|
-        row.each_with_index do |cell, r|
-          ansi_codes = ansi_formating(cell, c, r)
+      rows.each_with_index do |row, ri|
+        row.each_with_index do |cell, ci|
+          ansi_codes = ansi_formating(cell, ci, ri)
           if ansi_codes.empty?
             str << (tmp % cell)
           else
@@ -121,9 +122,9 @@ module ANSI
         when 1
           f = @format[cell]
         when 2 
-          f = @format[row, col]
+          f = @format[col, row]
         else
-          f = @format[cell, row, col]
+          f = @format[cell, col, row]
         end
       else
         f = nil
