@@ -1,7 +1,0 @@
----
-ridoc:
-  service: RIDoc
-  include: ~
-  exclude: ~
-  active : true
-
