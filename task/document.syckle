@@ -16,7 +16,7 @@ stats:
   output   : ~
   active   : true
 
-ridoc:
+ri:
   service: RIDoc
   output : ri
   include: ~
