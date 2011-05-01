@@ -7,7 +7,7 @@ enabling ANSI code based colorization and stylization of output.
 It is very nice for beautifying shell output.
 
 This collection is based on a set of scripts spun-off from
-Ruby Facets. Include are Code (used to be ANSICode), Logger,
+Ruby Facets. Included are Code (used to be ANSICode), Logger,
 ProgressBar and String. In addition the library includes
 Terminal which provides information about the current output
 device.
