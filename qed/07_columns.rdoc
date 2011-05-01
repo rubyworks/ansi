@@ -1,0 +1,35 @@
+= ANSI::Columns
+
+The +Columns+ class makes it easy to create nice looking text columns,
+sorted from top to bottom, right to left (as opposed to the other way
+around).
+
+  require 'ansi/columns'
+
+  list = %w{a b c d e f g h i j k l}
+
+  columns = ANSI::Columns.new(list)
+
+  columns.to_s(3)
+
+The output will be:
+
+  a d g j
+  b e h k
+  c f i l
+
+Besides and array of elements, Columns.new can take a string in which
+the elements are divided by newlines characters.
+
+  list = "a\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl"
+
+  columns = ANSI::Columns.new(list)
+
+  columns.to_s(2)
+
+The output will be:
+
+  a c e g i k
+  b d f h j l
+
+QED.
