@@ -15,9 +15,10 @@ module ANSI
     #
     # The +format+ block MUST return ANSI codes.
     def initialize(list, options={}, &format)
-      @list    = String === list ? list.lines.to_a : list
+      self.list = list
+
       @columns = options[:columns]
-      @padding = options[:padding] || 0
+      @padding = options[:padding] || 1
       @align   = options[:align]
       #@ansi    = [options[:ansi]].flatten
       @format  = format
@@ -28,6 +29,15 @@ module ANSI
     # List layout into columns. Each new line is taken to be 
     # a row-column cell.
     attr_accessor :list
+
+    def list=(list)
+      case list
+      when ::String
+        @list = list.lines.to_a.map{ |e| e.chomp("\n") }
+      when ::Array
+        @list = list.map{ |e| e.to_s }
+      end
+    end
 
     # Default number of columns to display. If nil then the number
     # of coumns is estimated from the size of the terminal.
@@ -44,6 +54,9 @@ module ANSI
 
     # Return string in column layout. The number of columns is determined
     # by the `columns` property or overriden by +cols+ argument.
+    #--
+    # TODO: Allow #to_s to take options and formating block?
+    #++
     def to_s(cols=nil)
       to_s_columns(cols || columns)
     end
@@ -81,6 +94,7 @@ module ANSI
             str << (tmp % cell).ansi(*ansi_codes)
           end
         end
+        str.rstrip!
         str << "\n"
       end
       str
@@ -88,7 +102,7 @@ module ANSI
 
     # Aligns the cell left or right.
     #
-    # TODO: Handle justified alignment.
+    # TODO: Handle centered alignment.
     def template(max, pad)
       case align
       when :right, 'right'
