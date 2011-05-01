@@ -19,9 +19,9 @@ test/case_ansicode.rb
 test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
+HISTORY.rdoc
 PROFILE
 LICENSE
 README.rdoc
-HISTORY
-NOTICE
 VERSION
+NOTICE.rdoc

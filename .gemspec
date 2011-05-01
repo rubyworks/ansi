@@ -1,13 +1,13 @@
 --- !ruby/object:Gem::Specification 
 name: ansi
 version: !ruby/object:Gem::Version 
-  hash: 25
+  hash: 23
   prerelease: false
   segments: 
   - 1
   - 2
-  - 3
-  version: 1.2.3
+  - 4
+  version: 1.2.4
 platform: ruby
 authors: 
 - Thomas Sawyer
@@ -16,7 +16,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2011-04-08 00:00:00 -04:00
+date: 2011-05-01 00:00:00 -04:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -76,12 +76,12 @@ files:
 - test/case_bbcode.rb
 - test/case_mixin.rb
 - test/case_progressbar.rb
+- HISTORY.rdoc
 - PROFILE
 - LICENSE
 - README.rdoc
-- HISTORY
-- NOTICE
 - VERSION
+- NOTICE.rdoc
 has_rdoc: true
 homepage: http://rubyworks.github.com/ansi
 licenses: 

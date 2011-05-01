@@ -9,6 +9,7 @@ Changes:
 
 * Improved ANSI::Columns to give more consitant output.
 * ANSI::Columns#to_s can override number of columns.
+* ANSI::Columns can take a String or Array list.
 
 
 == 1.2.3 // 2011-04-08
