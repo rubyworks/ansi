@@ -1,6 +1,18 @@
 = RELEASE HISTORY
 
-== 1.2.4 // 2011-04-09
+== 1.2.5 // 2011-05-03
+
+This release introduced a preliminary rendition of a Diff class
+for getting coloreized comparions of strings and other objects.
+It's not officially supported yet, so this is only a point release.
+
+Changes:
+
+* Added Diff class for colorized comparisons.
+* Fixed minor issue with Columns format block --col argument before row.
+
+
+== 1.2.4 // 2011-04-29
 
 This release improves to the ANSI::Columns class. In particular the
 layout is more consitent with intended functionality.
