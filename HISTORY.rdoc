@@ -2,24 +2,24 @@
 
 == 1.2.5 // 2011-05-03
 
-This release introduced a preliminary rendition of a Diff class
-for getting coloreized comparions of strings and other objects.
+This release introduces a preliminary rendition of a Diff class
+for getting colorized comparisons of strings and other objects.
 It's not officially supported yet, so this is only a point release.
 
 Changes:
 
 * Added Diff class for colorized comparisons.
-* Fixed minor issue with Columns format block --col argument before row.
+* Fixed minor issue with Columns format block; col comes before row.
 
 
 == 1.2.4 // 2011-04-29
 
 This release improves to the ANSI::Columns class. In particular the
-layout is more consitent with intended functionality.
+layout is more consistent with intended functionality.
 
 Changes:
 
-* Improved ANSI::Columns to give more consitant output.
+* Improved ANSI::Columns to give more consistent output.
 * ANSI::Columns#to_s can override number of columns.
 * ANSI::Columns can take a String or Array list.
 
@@ -49,12 +49,12 @@ Changes:
 
 * Remove string argument warnings.
 * Add String#unansi and String#unansi!
-* Add ANIS::Mixin#display.
+* Add ANSI::Mixin#display.
 
 
 == 1.2.1 // 2010-05-10
 
-This release was simply a quick fix to remove the incorecct embedded
+This release was simply a quick fix to remove the incorrect embedded
 version number, until it gets fixed.
 
 
@@ -63,7 +63,7 @@ version number, until it gets fixed.
 This release entails numerous improvements. First and foremost
 the Code module is transitioning to a block interface only
 and phasing out the string argument interface. Admittedly this
-is mildly unconvential, but it allows the arguments to be used
+is mildly unconventional, but it allows the arguments to be used
 as options with common defaults more elegantly.
 
 Another important change is that ANSI::Code no longer provides
@@ -71,10 +71,10 @@ String extension methods when included. For this use the new
 ANSI::Mixin.
 
 Other improvements include a String extension, #ansi, added to
-code.rb, which makes it even easir to apply ANSI codes to strings.
+code.rb, which makes it even easier to apply ANSI codes to strings.
 Also, the ANSI::String class has been fixed (a few bugs crept
 it with the last release) and continues to improve. On top of all
-this testing has substatially improved thanks to QED.
+this testing has substantially improved thanks to QED.
 
 Changes:
 
@@ -87,7 +87,7 @@ Changes:
 == 1.1.0 // 2009-10-04
 
 This release is the first toward making the ANSI library
-more widely useable.
+more widely usable.
 
 Changes:
 
