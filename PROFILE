@@ -6,7 +6,7 @@ contact: rubyworks-mailinglist@googlegroups.com
 created: 2004-08-01
 
 requires:
-  - syckle (build)
+  - redline (build)
   - ko (test)
 
 authors:
