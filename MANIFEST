@@ -3,6 +3,7 @@
 lib/ansi/bbcode.rb
 lib/ansi/code.rb
 lib/ansi/columns.rb
+lib/ansi/diff.rb
 lib/ansi/logger.rb
 lib/ansi/mixin.rb
 lib/ansi/progressbar.rb
@@ -23,6 +24,7 @@ qed/05_mixin.rdoc
 qed/06_string.rdoc
 qed/07_columns.rdoc
 qed/08_table.rdoc
+qed/09_diff.rb
 qed/applique/output.rb
 test/case_ansicode.rb
 test/case_bbcode.rb

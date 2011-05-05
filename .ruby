@@ -31,7 +31,7 @@ requires:
   name: ko
   version: 0+
 manifest: MANIFEST
-version: 1.2.4
+version: 1.2.5
 licenses: 
 - Apache 2.0
 copyright: Copyright (c) 2009 Thomas Sawyer

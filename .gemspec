@@ -1,13 +1,13 @@
 --- !ruby/object:Gem::Specification 
 name: ansi
 version: !ruby/object:Gem::Version 
-  hash: 23
+  hash: 21
   prerelease: false
   segments: 
   - 1
   - 2
-  - 4
-  version: 1.2.4
+  - 5
+  version: 1.2.5
 platform: ruby
 authors: 
 - Thomas Sawyer
@@ -16,7 +16,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2011-05-01 00:00:00 -04:00
+date: 2011-05-05 00:00:00 -04:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -60,6 +60,7 @@ files:
 - lib/ansi/bbcode.rb
 - lib/ansi/code.rb
 - lib/ansi/columns.rb
+- lib/ansi/diff.rb
 - lib/ansi/logger.rb
 - lib/ansi/mixin.rb
 - lib/ansi/progressbar.rb
@@ -80,6 +81,7 @@ files:
 - qed/06_string.rdoc
 - qed/07_columns.rdoc
 - qed/08_table.rdoc
+- qed/09_diff.rb
 - qed/applique/output.rb
 - test/case_ansicode.rb
 - test/case_bbcode.rb
