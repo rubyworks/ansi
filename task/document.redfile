@@ -17,7 +17,7 @@ stats:
   active   : true
 
 ri:
-  service: RIDoc
+  service: RI
   output : ri
   include: ~
   exclude: ~

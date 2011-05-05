@@ -9,6 +9,6 @@ end
 
 def update_specs
   system "pom spec > .ruby"
-  system "pom gemspec -f"
+  system "pom gemspec > .gemspec"
 end
 
