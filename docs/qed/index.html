@@ -483,12 +483,12 @@ xx yy  z</pre>
 
 <p>Lastly, columns can be augmented with ANSI codes. This is done through a
 formatting block. The block can take up to three parameters, the cell
-content, the row and column numbers, or the cell and the row and column
+content, the column and row numbers, or the cell and the column and row
 numbers.</p>
 
 <pre>list = %w{a b c d e f g h i j k l}
 
-columns = ANSI::Columns.new(list){ |r,c| c % 2 == 0 ? :red : :blue }
+columns = ANSI::Columns.new(list){ |c,r| r % 2 == 0 ? :red : :blue }
 
 out = columns.to_s(4)
 

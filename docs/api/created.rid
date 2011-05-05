@@ -1,7 +1,7 @@
-Sun, 01 May 2011 15:57:23 -0400
+Thu, 05 May 2011 13:58:19 -0400
 lib/ansi/table.rb	Mon, 13 Sep 2010 18:52:32 -0400
-PROFILE	Sun, 01 May 2011 10:16:23 -0400
-HISTORY.rdoc	Sun, 01 May 2011 09:01:57 -0400
+PROFILE	Thu, 05 May 2011 13:55:55 -0400
+HISTORY.rdoc	Wed, 04 May 2011 08:21:55 -0400
 lib/ansi/string.rb	Sun, 09 May 2010 12:37:17 -0400
 lib/ansi/terminal/win32.rb	Fri, 14 Aug 2009 12:45:05 -0400
 lib/ansi/mixin.rb	Sat, 12 Jun 2010 07:32:46 -0400
@@ -9,14 +9,15 @@ LICENSE	Fri, 08 Apr 2011 06:15:59 -0400
 lib/ansi/terminal/termios.rb	Fri, 14 Aug 2009 12:44:57 -0400
 lib/ansi/terminal/curses.rb	Fri, 14 Aug 2009 12:44:48 -0400
 lib/ansi/logger.rb	Sat, 03 Oct 2009 21:03:25 -0400
-lib/ansi.yml	Sun, 01 May 2011 10:16:39 -0400
+lib/ansi.yml	Thu, 05 May 2011 13:55:18 -0400
 lib/ansi/progressbar.rb	Mon, 27 Dec 2010 13:45:15 -0500
 lib/ansi/terminal.rb	Mon, 10 May 2010 05:25:28 -0400
 Rakefile	Sun, 01 May 2011 10:11:45 -0400
+lib/ansi/diff.rb	Wed, 04 May 2011 08:44:29 -0400
 lib/ansi/columns.rb	Sun, 01 May 2011 15:56:07 -0400
-VERSION	Fri, 08 Apr 2011 14:52:02 -0400
-README.rdoc	Sun, 01 May 2011 10:16:00 -0400
-lib/ansi.rb	Sun, 01 May 2011 10:14:09 -0400
+VERSION	Mon, 02 May 2011 15:09:39 -0400
+README.rdoc	Wed, 04 May 2011 08:22:38 -0400
+lib/ansi.rb	Mon, 02 May 2011 06:16:23 -0400
 lib/ansi/bbcode.rb	Fri, 08 Apr 2011 04:24:30 -0400
 lib/ansi/code.rb	Sat, 12 Jun 2010 07:43:47 -0400
 lib/ansi/terminal/stty.rb	Fri, 14 Aug 2009 12:45:01 -0400

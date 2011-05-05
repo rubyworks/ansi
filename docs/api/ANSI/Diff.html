@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: ANSI::Columns</title>
+  <title>Class: ANSI::Diff</title>
 
   
     <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
@@ -43,7 +43,7 @@
         <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
       
       <a href="../index.html">&quot;ANSI&quot;</a>&nbsp;
-      <a href="/">ANSI::Columns</a>
+      <a href="/">ANSI::Diff</a>
     </h1>
   </div>
 
@@ -55,8 +55,8 @@
         <div class="section-body">
           <ul>
           
-            <li class="file"><a href="../lib/ansi/columns_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/ansi/columns.rb">lib/ansi/columns.rb</a></li>
+            <li class="file"><a href="../lib/ansi/diff_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/ansi/diff.rb">lib/ansi/diff.rb</a></li>
           
           </ul>
         </div>
@@ -96,6 +96,16 @@
             
             <li class="singleton">
               <a href="#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-diff1">#diff1</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-diff2">#diff2</a>
             </li>
           
             
@@ -193,108 +203,21 @@
 
     <div id="description">
       
-        <h1>Columns</h1>
+        <h1>Diff</h1>
       
 
       
+<p><a href="Diff.html">Diff</a> can produced a colorized difference of two
+string or objects.</p>
+
+<p>IMPORTANT! This class is still a very much a work in progress.</p>
+
     </div>
 
     <!-- Constants -->
     
 
     <!-- Attributes -->
-    
-    <div id="attribute-method-details" class="method-section section">
-      <h3 class="section-header">Attributes</h3>
-
-      
-      <div id="list-attribute-method" class="method-detail">
-        <a name="list"></a>
-        
-        <a name="list="></a>
-        
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">list</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        <p>List layout into columns. Each new line is taken to be  a row-column cell.</p>
-        
-        </div>
-      </div>
-      
-      <div id="columns-attribute-method" class="method-detail">
-        <a name="columns"></a>
-        
-        <a name="columns="></a>
-        
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">columns</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        <p>Default number of columns to display. If nil then the number of coumns is
-estimated from the size of the terminal.</p>
-        
-        </div>
-      </div>
-      
-      <div id="padding-attribute-method" class="method-detail">
-        <a name="padding"></a>
-        
-        <a name="padding="></a>
-        
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">padding</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        <p>Padding size to apply to cells.</p>
-        
-        </div>
-      </div>
-      
-      <div id="align-attribute-method" class="method-detail">
-        <a name="align"></a>
-        
-        <a name="align="></a>
-        
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">align</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        <p>Alignment to apply to cells.</p>
-        
-        </div>
-      </div>
-      
-      <div id="format-attribute-method" class="method-detail">
-        <a name="format"></a>
-        
-        <a name="format="></a>
-        
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">format</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        <p>Formating to apply to cells.</p>
-        
-        </div>
-      </div>
-      
-    </div>
     
 
     <!-- Methods -->
@@ -309,40 +232,26 @@ estimated from the size of the terminal.</p>
         <div class="method-heading">
         
           <span class="method-name">new</span><span
-            class="method-args">(list, options={}, &format)</span>
+            class="method-args">(object1, object2, options={})</span>
           <span class="method-click-advice">click to toggle source</span>
         
         </div>
 
         <div class="method-description">
           
-          <p>Create a column-based layout.</p>
-
-<p>list - Multiline <a href="String.html">String</a> or Array of strings to
-columnize</p>
-
-<p>options[:columns] - number of columns options[:align]   - align :left or
-:right options[:padding] - space to add to each cell</p>
-
-<p>The <tt>format</tt> block MUST return <a href="../ANSI.html">ANSI</a>
-codes.</p>
+          
           
 
           
           <div class="method-source-code"
             id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/ansi/columns.rb, line 17</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">list</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">format</span>)
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">list</span> = <span class="ruby-identifier">list</span>
+<span class="ruby-comment"># File lib/ansi/diff.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">object1</span>, <span class="ruby-identifier">object2</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-ivar">@object1</span> = <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">object1</span>)
+  <span class="ruby-ivar">@object2</span> = <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">object2</span>)
 
-  <span class="ruby-ivar">@columns</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:columns</span>]
-  <span class="ruby-ivar">@padding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:padding</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
-  <span class="ruby-ivar">@align</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:align</span>]
-  <span class="ruby-comment">#@ansi    = [options[:ansi]].flatten</span>
-  <span class="ruby-ivar">@format</span>  = <span class="ruby-identifier">format</span>
-
-  <span class="ruby-ivar">@columns</span> = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@columns</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@diff1</span>, <span class="ruby-ivar">@diff2</span> = <span class="ruby-identifier">diff_string</span>(<span class="ruby-ivar">@object1</span>, <span class="ruby-ivar">@object2</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -358,30 +267,93 @@ codes.</p>
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="to_s-method" class="method-detail ">
-        <a name="method-i-to_s"></a>
+      <div id="diff1-method" class="method-detail ">
+        <a name="method-i-diff1"></a>
 
         <div class="method-heading">
         
-          <span class="method-name">to_s</span><span
-            class="method-args">(cols=nil)</span>
+          <span class="method-name">diff1</span><span
+            class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         
         </div>
 
         <div class="method-description">
           
-          <p>Return string in column layout. The number of columns is determined by the
-`columns` property or overriden by <tt>cols</tt> argument.</p>
+          
+          
+
+          
+          <div class="method-source-code"
+            id="diff1-source">
+<pre>
+<span class="ruby-comment"># File lib/ansi/diff.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">diff1</span>
+  <span class="ruby-ivar">@diff1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="diff2-method" class="method-detail ">
+        <a name="method-i-diff2"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">diff2</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="diff2-source">
+<pre>
+<span class="ruby-comment"># File lib/ansi/diff.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">diff2</span>
+  <span class="ruby-ivar">@diff2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to_s-method" class="method-detail ">
+        <a name="method-i-to_s"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
           
 
           
           <div class="method-source-code"
             id="to_s-source">
 <pre>
-<span class="ruby-comment"># File lib/ansi/columns.rb, line 60</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>(<span class="ruby-identifier">cols</span>=<span class="ruby-keyword">nil</span>)
-  <span class="ruby-identifier">to_s_columns</span>(<span class="ruby-identifier">cols</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">columns</span>)
+<span class="ruby-comment"># File lib/ansi/diff.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{@diff1}\n#{@diff2}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
