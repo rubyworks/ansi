@@ -20,7 +20,7 @@ date: 2011-05-05 00:00:00 -04:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
-  name: syckle
+  name: redline
   prerelease: false
   requirement: &id001 !ruby/object:Gem::Requirement 
     none: false
