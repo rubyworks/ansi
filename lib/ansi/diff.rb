@@ -2,15 +2,15 @@ require 'ansi/code'
 
 module ANSI
 
-  # Diff can produced a colorized difference of two strings.
+  # Diff can produced a colorized difference of two string or objects.
   #
-  # IMPORTNATN! This class is still very much a work in progress.
+  # IMPORTANT! This class is still a very much a work in progress.
   class Diff
 
     #
     def initialize(object1, object2, options={})
-      @object1 = object1
-      @object2 = object2
+      @object1 = convert(object1)
+      @object2 = convert(object2)
 
       @diff1, @diff2 = diff_string(@object1, @object2)
     end
@@ -93,6 +93,19 @@ module ANSI
     #
     def color2(str)
       ANSI.color(:green){ str }
+    end
+
+    # Ensure the object of comparison is a string. If +object+ is not
+    # an instance of String then it wll be converted to one by calling
+    # either #to_str, if the object responds to it, or #inspect.
+    def convert(object)
+      if String === object
+        object
+      elsif object.respond_to?(:to_str)
+        object.to_str
+      else
+        object.inspect
+      end
     end
 
   end
