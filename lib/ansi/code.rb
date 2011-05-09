@@ -247,7 +247,7 @@ module ANSI
       CLS
     end
 
-    #
+    # Return Array of ANSI codes given a list of symbolic names.
     def [](*codes)
       s = ""
       codes.each do |code|
