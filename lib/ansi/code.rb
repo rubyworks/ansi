@@ -247,6 +247,15 @@ module ANSI
       CLS
     end
 
+    #
+    def [](*codes)
+      s = ""
+      codes.each do |code|
+        s << "\e[#{TABLE[code]}m"
+      end
+      s
+    end
+
     # Like +move+ but returns to original positon after
     # yielding the block.
     def display(line, column=0) #:yield:
@@ -300,7 +309,7 @@ module ANSI
       s = ""
       codes.each do |code|
         s << "\e[#{TABLE[code]}m"
-      end
+      end 
       s << yield.to_s
       s << CLEAR
     end
@@ -394,7 +403,7 @@ module ANSI
 end
 
 #
-class String
+class ::String
   #
   def ansi(*codes)
     ANSI::Code.ansi(self, *codes)
