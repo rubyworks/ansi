@@ -24,14 +24,14 @@ maintainers: []
 requires: 
 - group: 
   - build
-  name: syckle
+  name: redline
   version: 0+
 - group: 
   - test
   name: ko
   version: 0+
 manifest: MANIFEST
-version: 1.2.5
+version: 1.2.6
 licenses: 
 - Apache 2.0
 copyright: Copyright (c) 2009 Thomas Sawyer
