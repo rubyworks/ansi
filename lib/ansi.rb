@@ -25,3 +25,8 @@ require 'ansi/string'
 require 'ansi/table'
 require 'ansi/terminal'
 
+# Kernel method
+def ansi(string, *codes)
+  ANSI::Code.ansi(string, *codes)
+end
+

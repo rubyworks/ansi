@@ -1,4 +1,4 @@
-#!mast -x PROFILE -x VERSION .ruby bin lib qed test [A-Z]*
+#!mast -x PROFILE -x VERSION .ruby ansi.bezel bin lib qed test [A-Z]*
 .ruby
 lib/ansi/bbcode.rb
 lib/ansi/code.rb
@@ -14,6 +14,7 @@ lib/ansi/terminal/stty.rb
 lib/ansi/terminal/termios.rb
 lib/ansi/terminal/win32.rb
 lib/ansi/terminal.rb
+lib/ansi.bezel
 lib/ansi.rb
 lib/ansi.yml
 qed/01_ansicode.rdoc

@@ -1,3 +1,30 @@
+# ANSI Module provides a Bezel interface as follows:
+#
+#     ANSI = lib('ansi', '1.2.6')
+#
+#     module MyAPP
+#       include ANSI
+#     end
+#
+# Examples
+#
+#     def hello_world
+#       puts ansi("Hello World", :red)
+#     end
+#
+#     # automatically included with ANSI 1.3.
+#     def ansi(string, *codes)
+#       ANSI::Code.ansi(string, *codes)
+#     end
+#
+# Or
+#
+#     def hello_world
+#       puts "Hello World".ansi(:red)
+#     end
+#   
+# NOTE: Core extensions need stable interfaces!
+#
 module ANSI; end
 
 import 'ansi/code'

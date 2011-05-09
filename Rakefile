@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 
-Dir['task/*.rake'].each{ |f| load f }
+# If only I could get rid of this file.
+
+Dir['.rake/*.rake'].each{ |f| load f }
 

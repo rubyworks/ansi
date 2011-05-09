@@ -1,13 +1,13 @@
 --- !ruby/object:Gem::Specification 
 name: ansi
 version: !ruby/object:Gem::Version 
-  hash: 21
+  hash: 19
   prerelease: false
   segments: 
   - 1
   - 2
-  - 5
-  version: 1.2.5
+  - 6
+  version: 1.2.6
 platform: ruby
 authors: 
 - Thomas Sawyer
@@ -16,7 +16,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2011-05-05 00:00:00 -04:00
+date: 2011-05-09 00:00:00 -04:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -71,6 +71,7 @@ files:
 - lib/ansi/terminal/termios.rb
 - lib/ansi/terminal/win32.rb
 - lib/ansi/terminal.rb
+- lib/ansi.bezel
 - lib/ansi.rb
 - lib/ansi.yml
 - qed/01_ansicode.rdoc
