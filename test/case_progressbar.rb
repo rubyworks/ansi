@@ -1,9 +1,9 @@
 require 'stringio'
 require 'ansi/progressbar'
 
-class TC_ANSI_Progressbar < KO::TestCase
+testcase ANSI::Progressbar do
 
-  test "progressbar" do
+  unit :initialize do
     stio = StringIO.new
     pbar = ANSI::Progressbar.new("Test Bar", 10, stio) do |b|
       b.style(:title => [:red], :bar=>[:blue])

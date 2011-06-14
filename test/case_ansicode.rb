@@ -1,19 +1,29 @@
 require 'ansi/code'
 
-class TestANSICode < KO::TestCase
+testcase ANSI::Code do
 
-  include ANSI::Code
-
-  test "base methods" do
-    str = red + "Hello" + blue + "World"
-    out = "\e[31mHello\e[34mWorld"
-    out == str
+  unit :red do
+    str = ANSI::Code.red
+    out = "\e[31m"
+    out.assert == str
   end
 
-  test "block notation" do
-    str = red { "Hello" } + blue { "World" }
-    out = "\e[31mHello\e[0m\e[34mWorld\e[0m"
-    out == str
+  unit :red => "with block notation" do
+    str = ANSI::Code.red { "Hello" }
+    out = "\e[31mHello\e[0m"
+    out.assert == str
+  end
+
+  unit :blue do
+    str = ANSI::Code.blue
+    out = "\e[34m"
+    out.assert == str
+  end
+
+  unit :blue => "with block notation" do
+    str = ANSI::Code.blue { "World" }
+    out = "\e[34mWorld\e[0m"
+    out.assert == str
   end
 
 end

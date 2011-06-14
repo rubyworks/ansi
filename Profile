@@ -6,8 +6,9 @@ contact: rubyworks-mailinglist@googlegroups.com
 created: 2004-08-01
 
 requires:
-  - redline (build)
-  - ko (test)
+  - promenade (build)
+  - qed (test)
+  - lemon (test)
 
 authors:
   - Thomas Sawyer
