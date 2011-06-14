@@ -7,7 +7,7 @@
 
   diff = ANSI::Diff.new(a,b)
 
-  puts diff.to_s
+  diff.to_s.assert == "\e[31mabc\e[0m\e[33mYefg\e[0m\n\e[31mabc\e[0mXefg"
 
 Try another.
 
@@ -16,7 +16,7 @@ Try another.
 
   diff = ANSI::Diff.new(a,b)
 
-  puts diff.to_s
+  diff.to_s.assert == "\e[31mabc\e[0m\n\e[31mabc\e[0mdef"
 
 And another.
 
@@ -25,7 +25,7 @@ And another.
 
   diff = ANSI::Diff.new(a,b)
 
-  puts diff.to_s
+  diff.to_s.assert == "\e[31mabc\e[0m\e[33mXXXghi\e[0m\n\e[31mabc\e[0mdefghi"
 
 And another.
 
@@ -34,7 +34,7 @@ And another.
 
   diff = ANSI::Diff.new(a,b)
 
-  puts diff.to_s
+  diff.to_s.assert == "\e[31mabc\e[0m\e[33mXXX\e[0m\e[35mdefghi\e[0m\n\e[31mabc\e[0m\e[35mdefghi\e[0m"
 
 Comparison that is mostly different.
 
@@ -43,5 +43,5 @@ Comparison that is mostly different.
 
   diff = ANSI::Diff.new(a,b)
 
-  puts diff.to_s
+  diff.to_s.assert == "\e[31mabc\e[0m\e[33mpppz123\e[0m\n\e[31mabc\e[0mxyzzz43"
 

@@ -3,8 +3,6 @@ require 'ansi/code'
 module ANSI
 
   # Diff can produced a colorized difference of two string or objects.
-  #
-  # IMPORTANT! This class is still a very much a work in progress.
   class Diff
 
     #
@@ -34,65 +32,8 @@ module ANSI
 
     # Take two plain strings and produce colorized
     # versions of each highlighting their differences.
-    #
-    # TODO: I am sure there are better ways to do this,
-    # but for now this suffices.
-    def diff_string(str1, str2)
-      i1, i2 = 0, 0
-      m1, m2 = nil, nil
-      s1, s2 = "", ""
-      t1, t2 = "", ""
-      c = 0
-
-      loop do
-        if str1[i1,1] == str2[i2,1]
-          s1 << red(t1); t1 = "" unless t1 == ""
-          s2 << red(t2); t2 = "" unless t2 == ""
-          s1 << str1[i1,1].to_s
-          s2 << str2[i2,1].to_s
-          i1 += 1; i2 += 1
-          #m1 += 1; m2 += 1
-        else
-          if m1 && str1[m1,1] == str2[i2,1]
-            s2 << color1(t2)
-            t1, t2 = "", ""
-            i1 = m1
-            m1, m2 = nil, nil
-          elsif m2 && str1[i1,1] == str2[m2,1]
-            s1 << color2(t1)
-            t1, t2 = "", ""
-            i2 = m2
-            m1, m2 = nil, nil
-          else
-            t1 << str1[i1,1].to_s
-            t2 << str2[i2,1].to_s
-            m1, m2 = i1, i2 if m1 == nil
-            i1 += 1; i2 += 1
-          end
-        end
-        break if i1 >= str1.size && i2 >= str2.size
-      end
-      s1 << red(t1); t1 = "" unless t1 == ""
-      s2 << red(t2); t2 = "" unless t2 == ""
-      #s1 << ANSI::Code::CLEAR
-      #s2 << ANSI::Code::CLEAR
-
-      return s1, s2
-    end
-
-    #
-    def red(str)
-      ANSI.color(:red){ str }
-    end
-
-    #
-    def color1(str)
-      ANSI.color(:blue){ str }
-    end
-
-    #
-    def color2(str)
-      ANSI.color(:green){ str }
+    def diff_string(string1, string2)
+      compare(string1, string2)
     end
 
     # Ensure the object of comparison is a string. If +object+ is not
@@ -106,6 +47,102 @@ module ANSI
       else
         object.inspect
       end
+    end
+
+    # Rotation of colors for diff output.
+    COLORS = [:red, :yellow, :magenta]
+
+    #
+    def compare(x, y)
+      c = common(x, y)
+      a = x.dup
+      b = y.dup
+      oi = 0
+      oj = 0
+      c.each_with_index do |m, q|
+        i = a.index(m, oi)
+        j = b.index(m, oj)
+        a[i,m.size] = ANSI.ansi(m, COLORS[q%3]) if i
+        b[j,m.size] = ANSI.ansi(m, COLORS[q%3]) if j
+        oi = i + m.size if i
+        oj = j + m.size if j
+      end
+      return a, b
+    end
+
+    #
+    def common(x,y)
+      c = lcs(x, y)
+
+      i = x.index(c)
+      j = y.index(c)
+
+      ix = i + c.size
+      jx = j + c.size
+
+      if i == 0 
+        l = y[0...j]
+      elsif j == 0
+        l = x[0...i]
+      else
+        l = common(x[0...i], y[0...j])
+      end
+
+      if ix == x.size - 1
+        r = y[jx..-1]
+      elsif jx = y.size - 1
+        r = x[ix..-1]
+      else
+        r = common(x[ix..-1], y[jx..-1])
+      end
+
+      [l, c, r].flatten.reject{ |s| s.empty? }
+    end
+
+    #
+    def lcs_size(s1, s2)
+      num=Array.new(s1.size){Array.new(s2.size)}
+      len,ans=0
+      s1.scan(/./).each_with_index do |l1,i |
+        s2.scan(/./).each_with_index do |l2,j |
+          unless l1==l2
+            num[i][j]=0
+          else
+            (i==0 || j==0)? num[i][j]=1 : num[i][j]=1 + num[i-1][j-1]
+            len = ans = num[i][j] if num[i][j] > len
+          end
+        end
+      end
+      ans
+    end
+
+    #
+    def lcs(s1, s2)
+      res="" 
+      num=Array.new(s1.size){Array.new(s2.size)}
+      len,ans=0
+      lastsub=0
+      s1.scan(/./).each_with_index do |l1,i |
+        s2.scan(/./).each_with_index do |l2,j |
+          unless l1==l2
+            num[i][j]=0
+          else
+            (i==0 || j==0)? num[i][j]=1 : num[i][j]=1 + num[i-1][j-1]
+            if num[i][j] > len
+              len = ans = num[i][j]
+              thissub = i
+              thissub -= num[i-1][j-1] unless num[i-1][j-1].nil?  
+              if lastsub==thissub
+                res+=s1[i,1]
+              else
+                lastsub=thissub
+                res=s1[lastsub, (i+1)-lastsub]
+              end
+            end
+          end
+        end
+      end
+      res
     end
 
   end
