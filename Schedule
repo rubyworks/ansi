@@ -1,4 +1,41 @@
 ---
+gem:
+  service: Gem
+  active : true
+
+grancher:
+  service: grancher
+  active: true
+
+email:
+  service : Email
+  file    : ~
+  subject : ~
+  mailto  : ruby-talk@ruby-lang.org
+  active  : true
+
+qed:
+  service: Custom
+  track  : main
+  test   : |
+    result = system "qed -Ilib qed/"
+    exit -1 unless result
+
+syntax:
+  service  : Syntax
+  loadpath : ~
+  exclude  : ~
+  active   : false
+
+testrb:
+  service  : testrb
+  tests    : ~
+  exclude  : ~
+  loadpath : ~
+  requires : ~
+  live     : false   
+  active   : false
+
 dnote:
   service  : DNote
   loadpath : ~
