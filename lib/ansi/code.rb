@@ -1,6 +1,12 @@
-require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /win32/
+require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /(win32|w32)/
 
 module ANSI
+
+  # Global variialbe can be used to prevent ANSI codes
+  # from being used in ANSI's methods that do so to string.
+  #
+  # NOTE: This has no effect of methods that return ANSI codes.
+  $ansi = true
 
   # deprecate
   SUPPORTED = true
@@ -144,10 +150,12 @@ module ANSI
       module_eval <<-END, __FILE__, __LINE__
         def #{style}(string=nil)
           if string
+            return string unless $ansi
             #warn "use ANSI block notation for future versions"
             return "\#{#{style.upcase}}\#{string}\#{CLEAR}"
           end
           if block_given?
+            return yield unless $ansi
             return "\#{#{style.upcase}}\#{yield}\#{CLEAR}"
           end
           #{style.upcase}
@@ -165,10 +173,12 @@ module ANSI
       module_eval <<-END, __FILE__, __LINE__
         def #{color}(string=nil)
           if string
+            return string unless $ansi
             #warn "use ANSI block notation for future versions"
             return "\#{#{color.upcase}}\#{string}\#{CLEAR}"
           end
           if block_given?
+            return yield unless $ansi
             return "\#{#{color.upcase}}\#{yield}\#{CLEAR}"
           end
           #{color.upcase}
@@ -176,10 +186,12 @@ module ANSI
 
         def on_#{color}(string=nil)
           if string
+            return string unless $ansi
             #warn "use ANSI block notation for future versions"
             return "\#{ON_#{color.upcase}}\#{string}\#{CLEAR}"
           end
           if block_given?
+            return yield unless $ansi
             return "\#{ON_#{color.upcase}}\#{yield}\#{CLEAR}"
           end
           ON_#{color.upcase}
@@ -194,10 +206,12 @@ module ANSI
         module_eval <<-END, __FILE__, __LINE__
           def #{color}_on_#{on_color}(string=nil)
             if string
+              return string unless $ansi
               #warn "use ANSI block notation for future versions"
               return #{color.upcase} + ON_#{color.upcase} + string + CLEAR
             end
             if block_given?
+              return yeild unless $ansi
               #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + CLEAR
             else
               #{color.upcase} + ON_#{on_color.upcase}
@@ -256,6 +270,10 @@ module ANSI
       s
     end
 
+    # TODO: How to deal with position codes when $ansi is false?
+    # Should we reaise an error or just not push the codes?
+    # For now, we will leave this it as is.
+
     # Like +move+ but returns to original positon after
     # yielding the block.
     def display(line, column=0) #:yield:
@@ -306,6 +324,7 @@ module ANSI
     #   style(:red, :on_white){ "Valentine" }
     #
     def style(*codes) #:yield:
+      return yield unless $ansi
       s = ""
       codes.each do |code|
         s << "\e[#{TABLE[code]}m"
@@ -326,20 +345,19 @@ module ANSI
       end
     end
 
-    #
+    # Alias for unstyle.
     alias_method :uncolor, :unstyle
 
     # DEPRECATE: This old term will be deprecated.
-    def uncolered(string=nil)
-      warn "ansi: use #uncolor or #unansi for future version"
-      if block_given?
-        yield.gsub(PATTERN, '')
-      elsif string
-        string.gsub(PATTERN, '')
-      else
-        ''
-      end
-    end
+    #def uncolered(string=nil)
+    #  if block_given?
+    #    yield.gsub(PATTERN, '')
+    #  elsif string
+    #    string.gsub(PATTERN, '')
+    #  else
+    #    ''
+    #  end
+    #end
 
     # This method is just like #style, except it takes a string
     # rather than a block. The primary purpose of this method
@@ -348,6 +366,7 @@ module ANSI
     #   ansi("Valentine", :red, :on_white)
     #
     def ansi(string, *codes)
+      return string unless $ansi
       s = ""
       codes.each do |code|
         s << "\e[#{TABLE[code]}m"
