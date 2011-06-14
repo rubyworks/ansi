@@ -1,4 +1,4 @@
-#!mast -x PROFILE -x VERSION .ruby ansi.bezel bin lib qed test [A-Z]*
+#!mast .ruby bin lib qed test [A-Z][A-Z]*
 .ruby
 lib/ansi/bbcode.rb
 lib/ansi/code.rb
@@ -31,8 +31,7 @@ test/case_ansicode.rb
 test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
-Rakefile
 HISTORY.rdoc
-LICENSE
 README.rdoc
+BSD2.txt
 NOTICE.rdoc
