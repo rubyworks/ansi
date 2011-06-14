@@ -77,11 +77,10 @@ then download[http://github.com/rubyworks/ansi/download] the tarball package and
 Windows users use 'ruby setup.rb all'.
 
 
-== LICENSE/COPYRIGHT
+== LICENSE & COPYRIGHT
 
 Copyright (c) 2004 Thomas Sawyer
 
-This program is distributed under the terms of the Apache 2 license.
+This program is distributed under the terms of the BSD 2-clause license.
 
-See LICENSE file for details.
-
+See NOTICE.rdoc and BSD2.txt files for details.

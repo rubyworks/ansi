@@ -1,5 +1,12 @@
 = COPYRIGHT NOTICES
 
+== ANSI
+
+Copyright (c) 2004 Rubyworks, Thomas Sawyer
+
+{BSD 2-clause License}[http://www.opensource.org/licenses/bsd-license.php]
+
+
 == ProgressBar
 
 ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
@@ -14,5 +21,5 @@ by James Edward Gray II.
 
 Copyright 2006 Gray Productions
 
-{Ruby software license}[http://www.ruby-lang.org/en/LICENSE.txt]
+{Ruby Software License}[http://www.ruby-lang.org/en/LICENSE.txt]
 
