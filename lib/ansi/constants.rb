@@ -1,6 +1,6 @@
 module ANSI
 
-  # Converts {Code::CHART} into constants.
+  # Converts {CHART} and {SPECIAL_CHART} entries into constants.
   module Constants
 
     require 'ansi/chart'
