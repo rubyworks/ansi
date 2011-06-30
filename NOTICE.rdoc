@@ -39,6 +39,8 @@ Copyright:: (C) 2001 Satoru Takabayashi
 License:: Ruby License
 Website:: http://0xcc.net/ruby-progressbar/
 
+ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
+
     Ruby/ProgressBar - a text progress bar library
 
     Copyright (C) 2001-2005 Satoru Takabayashi <satoru@namazu.org>
@@ -48,14 +50,15 @@ Website:: http://0xcc.net/ruby-progressbar/
     You can redistribute it and/or modify it under the terms
     of Ruby's license.
 
-ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
-
 
 == HighLine (Terminal Extensions)
 
 Copyright:: (c) 2006 Gray Productions
 License:: Ruby License
 Website:: http://highline.rubyforge.org/
+
+The terminal extensions are based on HighLine's SystemExtensions
+by James Edward Gray II.
 
     Copyright 2006 Gray Productions
 
@@ -65,14 +68,13 @@ Website:: http://highline.rubyforge.org/
 
     Please email James[mailto:james@grayproductions.net] with any questions.
 
-The terminal extensions are based on HighLine's SystemExtensions
-by James Edward Gray II.
-
 
 == BBCode
 
 Copyright:: (c) 2002 Thomas-Ivo Heinen
 License:: Ruby License
+
+BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
     Copyright (c) 2002 Thomas-Ivo Heinen
 
@@ -83,14 +85,15 @@ License:: Ruby License
     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
     FOR A PARTICULAR PURPOSE.
 
-BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
-
 
 == Rainbow (XTerm Color Support)
 
 Copyright:: (c) Marcin Kulik
 License:: MIT
 Website:: http://github.com/sickill/rainbow
+
+Rainbox provided the bases for building the XTerm 256 color code
+support into the ANSI::Code module.
 
     Copyright (c) Marcin Kulik
 
@@ -112,9 +115,6 @@ Website:: http://github.com/sickill/rainbow
     LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Rainbox provided the bases for building the XTerm 256 color code
-support into the ANSI::Code module.
 
 
 = ACKNOWLEDGEMENTS
