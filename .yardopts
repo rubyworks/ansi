@@ -1,0 +1,8 @@
+--output-dir site/doc/api
+--title ANSI
+--protected
+lib/
+-
+qed/**/*.rdoc
+[A-Z][A-Z]*
+

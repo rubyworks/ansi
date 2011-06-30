@@ -1,6 +1,6 @@
-.cache
+.rdoc
+.yardocs
 log
 pkg
-ri
 tmp
-site/docs
+site/doc

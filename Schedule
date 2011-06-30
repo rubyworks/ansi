@@ -1,10 +1,8 @@
 ---
 gem:
-  service: Gem
   active : true
 
-grancher:
-  service: grancher
+github:
   active: true
 
 email:
@@ -17,20 +15,16 @@ email:
   active  : true
 
 qed:
-  service: Custom
-  track  : main
-  test   : |
-    result = system "qed -Ilib qed/"
-    exit -1 unless result
+  tests : qed/**/*.rdoc
+  active: true
 
-syntax:
-  service  : Syntax
-  loadpath : ~
-  exclude  : ~
-  active   : false
+qedoc:
+  files : qed/
+  title : Ruby ANSI
+  output: site/doc/qed
+  active: true
 
-testrb:
-  service  : testrb
+minitest:
   tests    : ~
   exclude  : ~
   loadpath : ~
@@ -40,46 +34,15 @@ testrb:
 
 dnote:
   service  : DNote
-  loadpath : ~
   labels   : ~
-  exclude  : [work]
-  output   : ~
-  format   : ~
+  output   : log/dnote.rdoc
   active   : true
 
-stats:
-  service  : Stats
-  title    : ~
-  loadpath : ~
-  exclude  : ~
-  output   : ~
+yard:
+  yardopts : true
   active   : true
 
-ri:
-  service: RI
-  output : ri
-  include: ~
-  exclude: ~
-  active : true
-
-rdoc:
-  service : RDoc
-  format  : newfish
-  include : ~
-  exclude : [ Syckfile ]
-  output  : site/docs/api
-  active  : true
-
-qedoc:
-  service: Custom
-  document: |
-    system 'qedoc -t "Ruby ANSI" -o site/docs/qed qed/'
-
-# vclog:
-#  service  : VClog
-#  formats  : [json]
-#  #layout   : rel    # gnu
-#  typed    : false
-#  output   : ~
-#  active   : false
+vclog:
+  output   : log/history.rdoc
+  active   : false
 
