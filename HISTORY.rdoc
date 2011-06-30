@@ -1,5 +1,21 @@
 = RELEASE HISTORY
 
+== 1.3.0 // 2011-06-30
+
+This release cleans up the Code module. It adds support for x-term
+256 color codes. Also, the Diff class is now awesome, making use of
+an LCS algorithm.
+
+Changes:
+
+* Clean-up Code module.
+* Utilize common chart for Code methods.
+* Constants now have their own module.
+* Move core methods to `ansi/core.rb`.
+* Add XTerm 256 color code support.
+* Improved Diff class with LCS algorithm.
+
+
 == 1.2.5 // 2011-05-03
 
 This release introduces a preliminary rendition of a Diff class
