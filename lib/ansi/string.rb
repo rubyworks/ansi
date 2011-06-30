@@ -1,23 +1,22 @@
 require 'ansi/code'
 #require 'ansi/layout/split'
-#require 'clio/facets/string'
 
 # Create a new Ansi::String object.
 def ANSI.string(str)
   ANSI::String.new(str)
 end
 
-# = String
+# IMPORTANT! ANSI::String is experimental!!!
 #
-# ANSI Strings store a regular string (@text) and
-# a Hash mapping character index to ANSI codes (@marks).
+# ANSI::String stores a regular string (`@text`) and an associative
+# array that ties a character index to an ANSI code (`marks`).
 # For example is we have the string:
 #
 #   "Big Apple"
 #
-# And applied the color red to it, the marks hash would be:
+# And applied the color red to it, the marks list would be:
 #
-#   { 0=>[:red] , 9=>[:clear] }
+#   [[0, :red], [9, :clear]]
 #
 # TODO: In the future we may be able to subclass String,
 # instead of delegating via @text, but not until it is more
@@ -25,7 +24,7 @@ end
 #
 class ANSI::String
 
-  CLR = ANSI::Code.clear
+  CLR = ANSI::Code::CLEAR
 
   attr :text
   attr :marks
@@ -41,7 +40,7 @@ class ANSI::String
   # This converts the intental markup codes to ANSI codes.
   def to_s
     s = text.dup
-    m = marks.sort do |(a,b)|
+    m = marks.sort do |a,b|
       v = b[0] <=> a[0]
       if v == 0
         (b[1] == :clear or b[1] == :reset) ? -1 : 1
