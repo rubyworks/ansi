@@ -44,13 +44,6 @@ As well as combined color methods.
   str = white_on_red + "Hello"
   str.assert == "\e[37m\e[41mHello"
 
-In addition the library offers an extension to String class
-called #ansi, which allows some of the ANSI::Code methods
-to be called in a more object-oriented fashion.
-
-  str = "Hello".ansi(:red) + "World".ansi(:blue)
-  str.assert == "\e[31mHello\e[0m\e[34mWorld\e[0m"
-
 The ANSI::Code module supports most standard ANSI codes, though
 not all platforms support every code, so YMMV.
 
