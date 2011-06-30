@@ -1,44 +1,47 @@
 --- 
-spec_version: 1.0.0
-replaces: []
-
+name: ansi
+version: 1.3.0
+title: ANSI
+summary: ANSI codes at your fingertips!
+description: The ANSI project is a collection of ANSI escape code related libraries enabling ANSI code based colorization and stylization of output. It is very nice for beautifying shell output.
 loadpath: 
 - lib
-name: ansi
-repositories: {}
-
+manifest: Manifest
+requires: 
+- name: detroit
+  version: 0+
+  group: 
+  - build
+- name: qed
+  version: 0+
+  group: 
+  - test
+- name: lemon
+  version: 0+
+  group: 
+  - test
 conflicts: []
+
+replaces: []
 
 engine_check: []
 
-title: ANSI
+organization: RubyWorks
 contact: rubyworks-mailinglist@googlegroups.com
-resources: 
-  repository: git://github.com/rubyworks/ansi.git
-  api: http://rubyworks.github.com/ansi/rdoc
-  mail: http://groups.google.com/group/rubyworks-mailinglist
-  home: http://rubyworks.github.com/ansi
-  work: http://github.com/rubyworks/ansi
-maintainers: []
-
-requires: 
-- group: 
-  - build
-  name: redline
-  version: 0+
-- group: 
-  - test
-  name: ko
-  version: 0+
-manifest: MANIFEST
-version: 1.2.6
+created: 2004-08-01
+copyright: Copyright (c) 2009 Thomas Sawyer
 licenses: 
 - Apache 2.0
-copyright: Copyright (c) 2009 Thomas Sawyer
 authors: 
 - Thomas Sawyer
 - Florian Frank
-organization: RubyWorks
-description: The ANSI project is a collection of ANSI escape code related libraries enabling ANSI code based colorization and stylization of output. It is very nice for beautifying shell output.
-summary: ANSI codes at your fingertips!
-created: 2004-08-01
+maintainers: []
+
+resources: 
+  home: http://rubyworks.github.com/ansi
+  work: http://github.com/rubyworks/ansi
+  api: http://rubyworks.github.com/ansi/rdoc
+  mail: http://groups.google.com/group/rubyworks-mailinglist
+repositories: 
+  public: git://github.com/rubyworks/ansi.git
+spec_version: 1.0.0

@@ -4,7 +4,9 @@
 
 This release cleans up the Code module. It adds support for x-term
 256 color codes. Also, the Diff class is now awesome, making use of
-an LCS algorithm.
+an LCS algorithm. But the most important difference with this release
+is that the String core extensions are in their own file, core.rb.
+If you want to use them you will need to require `ansi` or `ansi/core`.
 
 Changes:
 

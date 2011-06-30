@@ -1,8 +1,11 @@
 #!mast .ruby bin lib qed test [A-Z][A-Z]*
 .ruby
 lib/ansi/bbcode.rb
+lib/ansi/chart.rb
 lib/ansi/code.rb
 lib/ansi/columns.rb
+lib/ansi/constants.rb
+lib/ansi/core.rb
 lib/ansi/diff.rb
 lib/ansi/logger.rb
 lib/ansi/mixin.rb
@@ -14,8 +17,8 @@ lib/ansi/terminal/stty.rb
 lib/ansi/terminal/termios.rb
 lib/ansi/terminal/win32.rb
 lib/ansi/terminal.rb
-lib/ansi.bezel
 lib/ansi.rb
+lib/ansi.rbz
 lib/ansi.yml
 qed/01_ansicode.rdoc
 qed/02_bbcode.rdoc
@@ -26,12 +29,16 @@ qed/06_string.rdoc
 qed/07_columns.rdoc
 qed/08_table.rdoc
 qed/09_diff.rb
+qed/10_core.rdoc
 qed/applique/output.rb
 test/case_ansicode.rb
 test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
 HISTORY.rdoc
+LICENSE/BSD-2-Clause.txt
+LICENSE/GPL-2.0.txt
+LICENSE/MIT.txt
+LICENSE/RUBY.txt
 README.rdoc
-BSD2.txt
 NOTICE.rdoc

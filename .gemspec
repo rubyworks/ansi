@@ -1,13 +1,8 @@
 --- !ruby/object:Gem::Specification 
 name: ansi
 version: !ruby/object:Gem::Version 
-  hash: 19
-  prerelease: false
-  segments: 
-  - 1
-  - 2
-  - 6
-  version: 1.2.6
+  prerelease: 
+  version: 1.3.0
 platform: ruby
 authors: 
 - Thomas Sawyer
@@ -16,37 +11,41 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2011-05-09 00:00:00 -04:00
-default_executable: 
+date: 2011-06-30 00:00:00 Z
 dependencies: 
 - !ruby/object:Gem::Dependency 
-  name: redline
+  name: detroit
   prerelease: false
   requirement: &id001 !ruby/object:Gem::Requirement 
     none: false
     requirements: 
     - - ">="
       - !ruby/object:Gem::Version 
-        hash: 3
-        segments: 
-        - 0
         version: "0"
   type: :development
   version_requirements: *id001
 - !ruby/object:Gem::Dependency 
-  name: ko
+  name: qed
   prerelease: false
   requirement: &id002 !ruby/object:Gem::Requirement 
     none: false
     requirements: 
     - - ">="
       - !ruby/object:Gem::Version 
-        hash: 3
-        segments: 
-        - 0
         version: "0"
   type: :development
   version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: lemon
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: "0"
+  type: :development
+  version_requirements: *id003
 description: The ANSI project is a collection of ANSI escape code related libraries enabling ANSI code based colorization and stylization of output. It is very nice for beautifying shell output.
 email: rubyworks-mailinglist@googlegroups.com
 executables: []
@@ -58,8 +57,11 @@ extra_rdoc_files:
 files: 
 - .ruby
 - lib/ansi/bbcode.rb
+- lib/ansi/chart.rb
 - lib/ansi/code.rb
 - lib/ansi/columns.rb
+- lib/ansi/constants.rb
+- lib/ansi/core.rb
 - lib/ansi/diff.rb
 - lib/ansi/logger.rb
 - lib/ansi/mixin.rb
@@ -71,8 +73,8 @@ files:
 - lib/ansi/terminal/termios.rb
 - lib/ansi/terminal/win32.rb
 - lib/ansi/terminal.rb
-- lib/ansi.bezel
 - lib/ansi.rb
+- lib/ansi.rbz
 - lib/ansi.yml
 - qed/01_ansicode.rdoc
 - qed/02_bbcode.rdoc
@@ -83,17 +85,19 @@ files:
 - qed/07_columns.rdoc
 - qed/08_table.rdoc
 - qed/09_diff.rb
+- qed/10_core.rdoc
 - qed/applique/output.rb
 - test/case_ansicode.rb
 - test/case_bbcode.rb
 - test/case_mixin.rb
 - test/case_progressbar.rb
-- Rakefile
 - HISTORY.rdoc
-- LICENSE
+- LICENSE/BSD-2-Clause.txt
+- LICENSE/GPL-2.0.txt
+- LICENSE/MIT.txt
+- LICENSE/RUBY.txt
 - README.rdoc
 - NOTICE.rdoc
-has_rdoc: true
 homepage: http://rubyworks.github.com/ansi
 licenses: 
 - Apache 2.0
@@ -110,23 +114,17 @@ required_ruby_version: !ruby/object:Gem::Requirement
   requirements: 
   - - ">="
     - !ruby/object:Gem::Version 
-      hash: 3
-      segments: 
-      - 0
       version: "0"
 required_rubygems_version: !ruby/object:Gem::Requirement 
   none: false
   requirements: 
   - - ">="
     - !ruby/object:Gem::Version 
-      hash: 3
-      segments: 
-      - 0
       version: "0"
 requirements: []
 
 rubyforge_project: ansi
-rubygems_version: 1.3.7
+rubygems_version: 1.8.2
 signing_key: 
 specification_version: 3
 summary: ANSI codes at your fingertips!
