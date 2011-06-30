@@ -7,6 +7,13 @@ Copyright (c) 2004 Rubyworks, Thomas Sawyer
 {BSD 2-clause License}[http://www.opensource.org/licenses/bsd-license.php]
 
 
+== ANSIColor 
+
+Copyright (c) 2002 Florian Frank
+
+The Code module originated in part from ANSIColor by Florian Frank.
+
+
 == ProgressBar
 
 ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
