@@ -123,7 +123,7 @@ module ANSI
               return #{color.upcase} + ON_#{color.upcase} + string + ENDCODE
             end
             if block_given?
-              return yeild unless $ansi
+              return yield unless $ansi
               #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + ENDCODE
             else
               #{color.upcase} + ON_#{on_color.upcase}
@@ -221,7 +221,7 @@ module ANSI
     #
     def ansi(*codes) #:yield:
       if block_given?
-        string = yeild.to_s
+        string = yield.to_s
       else
         string = codes.shift.to_s
       end
@@ -244,7 +244,7 @@ module ANSI
     #++
     def unansi(string=nil) #:yield:
       if block_given?
-        string = yeild.to_s
+        string = yield.to_s
       else
         string = string.to_s
       end
