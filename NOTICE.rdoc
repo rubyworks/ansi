@@ -92,7 +92,7 @@ Copyright:: (c) Marcin Kulik
 License:: MIT
 Website:: http://github.com/sickill/rainbow
 
-Rainbox provided the bases for building the XTerm 256 color code
+Usage:: Rainbox provided the bases for building the XTerm 256 color code
 support into the ANSI::Code module.
 
     Copyright (c) Marcin Kulik
