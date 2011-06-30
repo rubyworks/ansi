@@ -11,7 +11,9 @@ email:
   service : Email
   file    : ~
   subject : ~
-  mailto  : ruby-talk@ruby-lang.org
+  mailto  : 
+    - rubyworks-mailinglist@googlegroups.com
+    - ruby-talk@ruby-lang.org
   active  : true
 
 qed:
