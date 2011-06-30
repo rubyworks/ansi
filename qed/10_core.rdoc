@@ -1,4 +1,4 @@
-= Core Extensions
+= String Extensions
 
 In addition the library offers an extension to String class
 called #ansi, which allows some of the ANSI::Code methods

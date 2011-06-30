@@ -1,9 +1,9 @@
---output-dir site/doc/api
+--output-dir doc/yard
 --title ANSI
 --protected
 lib/**/*.rb
 -
-qed/**/*.rdoc
+doc/QED.rdoc
 LICENSE/*
 [A-Z][A-Z]*
 

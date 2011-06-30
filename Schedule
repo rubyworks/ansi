@@ -19,10 +19,10 @@ qed:
   active: true
 
 qedoc:
-  files : qed/**/*.rdoc
-  title : Ruby ANSI
-  output: site/doc/qed
-  active: true
+  active   : true
+  files    : qed/**/*.rdoc
+  title    : Ruby ANSI
+  output   : doc/QED.rdoc
 
 minitest:
   tests    : ~
@@ -37,6 +37,7 @@ dnote:
   files    : lib/**/*.rb
   labels   : ~
   output   : log/dnote.rdoc
+  priority : -1
   active   : true
 
 yard:
