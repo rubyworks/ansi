@@ -37,25 +37,20 @@ Please see HISTORY file.
 There are a number of modules and classes provided by the ANSI
 package. To get a good understanding of them it is best to pursue 
 the QED documents[http://github.com/rubyworks/ansi/tree/master/qed/]
-or the API documentation[http://rubyworks.github.com/ansi/rdoc/].
+or the API documentation[http://rubyworks.github.com/ansi/api/index.html].
 
 At the heart of all the provided libraries lies the ANSI::Code module
 which defines ANSI codes as constants and methods. For example:
 
   require 'ansi/code'
 
-  include ANSI::Code
-
-  red + "Hello" + blue + "World"
+  ANSI.red + "Hello" + ANSI.blue + "World"
   => "\e[31mHello\e[34mWorld"
 
 Or in block form.
 
-  red{ "Hello" } + blue{ "World" }
+  ANSI.red{ "Hello" } + ANSI.blue{ "World" }
   => "\e[31mHello\e[0m\e[34mWorld\e[0m"
-
-Rather than include +ANSI::Code+, these methods can also be called as module
-methods. Either as <code>ANSI::Code.red</code> or just <code>ANSI.red</code>.
 
 The methods defined by this module are used throughout the rest of
 the system.
@@ -83,4 +78,4 @@ Copyright (c) 2004 Thomas Sawyer
 
 This program is distributed under the terms of the BSD 2-clause license.
 
-See NOTICE.rdoc and BSD2.txt files for details.
+See NOTICE.rdoc file and LICENSE directory for details.
