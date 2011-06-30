@@ -1,6 +1,8 @@
-require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /(win32|w32)/
-
 module ANSI
+
+  require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /(win32|w32)/
+
+  require 'ansi/constants'
 
   # Global variialbe can be used to prevent ANSI codes
   # from being used in ANSI's methods that do so to string.
@@ -8,165 +10,67 @@ module ANSI
   # NOTE: This has no effect of methods that return ANSI codes.
   $ansi = true
 
-  # deprecate
-  SUPPORTED = true
-
-  # = ANSI Codes
+  # ANSI Codes
   #
   # Ansi::Code module makes it very easy to use ANSI codes.
   # These are esspecially nice for beautifying shell output.
   #
-  #   include Ansi::Code
-  #
-  #   red + "Hello" + blue + "World"
+  #   Ansi::Code.red + "Hello" + Ansi::Code.blue + "World"
   #   => "\e[31mHello\e[34mWorld"
   #
-  #   red { "Hello" } + blue { "World" }
+  #   Ansi::Code.red{ "Hello" } + Ansi::Code.blue{ "World" }
   #   => "\e[31mHello\e[0m\e[34mWorld\e[0m"
   #
-  # == Supported ANSI Commands
+  # IMPORTANT! Do not mixin Ansi::Code, instead use {ANSI::Mixin}.
   #
-  # The following is a list of supported display codes.
+  # See {ANSI::Code::CHART} for list of all supported codes.
   #
-  #     save
-  #     restore
-  #     clear_screen
-  #     cls             # synonym for :clear_screen
-  #     clear_line
-  #     clr             # synonym for :clear_line
-  #     move
-  #     up
-  #     down
-  #     left
-  #     right
-  #
-  # The following is a list of supported "style" codes.
-  #
-  #     clear
-  #     reset           # synonym for :clear
-  #     bold
-  #     dark
-  #     italic          # not widely implemented
-  #     underline
-  #     underscore      # synonym for :underline
-  #     blink
-  #     rapid_blink     # not widely implemented
-  #     negative        # no reverse because of String#reverse
-  #     concealed
-  #     strikethrough   # not widely implemented
-  #
-  # The following is a list of supported color codes.
-  #
-  #     black
-  #     red
-  #     green
-  #     yellow
-  #     blue
-  #     magenta
-  #     cyan
-  #     white
-  #
-  #     on_black
-  #     on_red
-  #     on_green
-  #     on_yellow
-  #     on_blue
-  #     on_magenta
-  #     on_cyan
-  #     on_white
-  #
-  # In addition there are color combinations like +red_on_white+.
-  #
-  # == Acknowledgement
-  #
-  # This library is a partial adaptation of ANSIColor by Florian Frank.
-  #
-  # ANSIColor Copyright (c) 2002 Florian Frank
-  #
-  # == Developer's Notes
-  #
-  # TODO: Any ANSI codes left to add? Modes?
-  #
+  #--
   # TODO: up, down, right, left, etc could have yielding methods too?
+  #++
 
   module Code
     extend self
 
-    CLEAR      = "\e[0m"
-    RESET      = "\e[0m"
-    BOLD       = "\e[1m"
-    DARK       = "\e[2m"
-    ITALIC     = "\e[3m"  # not widely implemented
-    UNDERLINE  = "\e[4m"
-    UNDERSCORE = "\e[4m"
-    BLINK      = "\e[5m"
-    RAPID      = "\e[6m"  # not widely implemented
-    REVERSE    = "\e[7m"
-    NEGATIVE   = "\e[7m"  # alternate to reverse because of String#reverse
-    CONCEALED  = "\e[8m"
-    STRIKE     = "\e[9m"  # not widely implemented
+    # include ANSI Constants
+    include Constants
 
-    BLACK      = "\e[30m"
-    RED        = "\e[31m"
-    GREEN      = "\e[32m"
-    YELLOW     = "\e[33m"
-    BLUE       = "\e[34m"
-    MAGENTA    = "\e[35m"
-    CYAN       = "\e[36m"
-    WHITE      = "\e[37m"
+    # Regexp for matching most ANSI codes.
+    PATTERN = /\e\[(\d+)m/
 
-    ON_BLACK   = "\e[40m"
-    ON_RED     = "\e[41m"
-    ON_GREEN   = "\e[42m"
-    ON_YELLOW  = "\e[43m"
-    ON_BLUE    = "\e[44m"
-    ON_MAGENTA = "\e[45m"
-    ON_CYAN    = "\e[46m"
-    ON_WHITE   = "\e[47m"
+    # ANSI clear code.
+    ENDCODE = "\e[0m"
 
-    # Save current cursor positon.
-    SAVE       = "\e[s"
-
-    # Restore saved cursor positon.
-    RESTORE    = "\e[u"
-
-    # Clear to the end of the current line.
-    CLEAR_LINE = "\e[K"
-
-    # Clear to the end of the current line.
-    CLR        = "\e[K"
-
-    # Clear the screen and move cursor to home.
-    CLEAR_SCREEN = "\e[2J"
-
-    # Clear the screen and move cursor to home.
-    CLS          = "\e[2J"
-
+    # List of primary styles.
     def self.styles
       %w{bold dark italic underline underscore blink rapid reverse negative concealed strike}
     end
 
+    # List of primary colors.
+    def self.colors
+      %w{black red green yellow blue magenta cyan white}
+    end
+
+=begin
     styles.each do |style|
       module_eval <<-END, __FILE__, __LINE__
         def #{style}(string=nil)
           if string
             return string unless $ansi
             #warn "use ANSI block notation for future versions"
-            return "\#{#{style.upcase}}\#{string}\#{CLEAR}"
+            return "\#{#{style.upcase}}\#{string}\#{ENDCODE}"
           end
           if block_given?
             return yield unless $ansi
-            return "\#{#{style.upcase}}\#{yield}\#{CLEAR}"
+            return "\#{#{style.upcase}}\#{yield}\#{ENDCODE}"
           end
           #{style.upcase}
         end
       END
     end
+=end
 
-    def self.colors
-      %w{black red green yellow blue magenta cyan white}
-    end
-
+=begin
     # Dynamically create color methods.
 
     colors.each do |color|
@@ -175,11 +79,11 @@ module ANSI
           if string
             return string unless $ansi
             #warn "use ANSI block notation for future versions"
-            return "\#{#{color.upcase}}\#{string}\#{CLEAR}"
+            return "\#{#{color.upcase}}\#{string}\#{ENDCODE}"
           end
           if block_given?
             return yield unless $ansi
-            return "\#{#{color.upcase}}\#{yield}\#{CLEAR}"
+            return "\#{#{color.upcase}}\#{yield}\#{ENDCODE}"
           end
           #{color.upcase}
         end
@@ -188,19 +92,27 @@ module ANSI
           if string
             return string unless $ansi
             #warn "use ANSI block notation for future versions"
-            return "\#{ON_#{color.upcase}}\#{string}\#{CLEAR}"
+            return "\#{ON_#{color.upcase}}\#{string}\#{ENDCODE}"
           end
           if block_given?
             return yield unless $ansi
-            return "\#{ON_#{color.upcase}}\#{yield}\#{CLEAR}"
+            return "\#{ON_#{color.upcase}}\#{yield}\#{ENDCODE}"
           end
           ON_#{color.upcase}
         end
       END
     end
+=end
+
+    # Return ANSI code given a list of symbolic names.
+    def [](*codes)
+      code(*codes)
+    end
 
     # Dynamically create color on color methods.
-
+    #
+    # @deprecated
+    #
     colors.each do |color|
       colors.each do |on_color|
         module_eval <<-END, __FILE__, __LINE__
@@ -208,11 +120,11 @@ module ANSI
             if string
               return string unless $ansi
               #warn "use ANSI block notation for future versions"
-              return #{color.upcase} + ON_#{color.upcase} + string + CLEAR
+              return #{color.upcase} + ON_#{color.upcase} + string + ENDCODE
             end
             if block_given?
               return yeild unless $ansi
-              #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + CLEAR
+              #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + ENDCODE
             else
               #{color.upcase} + ON_#{on_color.upcase}
             end
@@ -221,53 +133,30 @@ module ANSI
       end
     end
 
-    # Clear code.
-    def clear
-      CLEAR
-    end
+    # Use method missing to dispatch ANSI code methods.
+    def method_missing(code, *args, &blk)
+      esc = nil
 
-    # Reset code.
-    def reset
-      RESET
-    end
-
-    # Save current cursor positon.
-    def save
-      SAVE
-    end
-
-    # Restore saved cursor positon.
-    def restore
-      RESTORE
-    end
-
-    # Clear to the end of the current line.
-    def clear_line
-      CLEAR_LINE
-    end
-
-    # Clear to the end of the current line.
-    def clr
-      CLR
-    end
-
-    # Clear the screen and move cursor to home.
-    def clear_screen
-      CLEAR_SCREEN
-    end
-
-    # Clear the screen and move cursor to home.
-    def cls
-      CLS
-    end
-
-    # Return Array of ANSI codes given a list of symbolic names.
-    def [](*codes)
-      s = ""
-      codes.each do |code|
-        s << "\e[#{TABLE[code]}m"
+      if CHART.key?(code)
+        esc = "\e[#{CHART[code]}m"
+      elsif SPECIAL_CHART.key?(code)
+        esc = SPECIAL_CHART[code]
       end
-      s
+
+      if esc
+        if string = args.first
+          return string unless $ansi
+          #warn "use ANSI block notation for future versions"
+          return "#{esc}#{string}#{ENDCODE}"
+        end
+        if block_given?
+          return yield unless $ansi
+          return "#{esc}#{yield}#{ENDCODE}"
+        end
+        esc
+      else
+        super(code, *args, &blk)
+      end
     end
 
     # TODO: How to deal with position codes when $ansi is false?
@@ -319,128 +208,140 @@ module ANSI
     #  "\e[#;#R"
     #end
 
-    # Apply ansi codes to block yield.
+    # Apply ANSI codes to a first argument or block value.
     #
-    #   style(:red, :on_white){ "Valentine" }
-    #
-    def style(*codes) #:yield:
-      return yield unless $ansi
-      s = ""
-      codes.each do |code|
-        s << "\e[#{TABLE[code]}m"
-      end 
-      s << yield.to_s
-      s << CLEAR
-    end
-
-    # Alternate term for #style.
-    alias_method :color, :style
-
-    #
-    def unstyle #:yield:
-      if block_given?
-        yield.gsub(PATTERN, '')
-      else
-        ''
-      end
-    end
-
-    # Alias for unstyle.
-    alias_method :uncolor, :unstyle
-
-    # DEPRECATE: This old term will be deprecated.
-    #def uncolered(string=nil)
-    #  if block_given?
-    #    yield.gsub(PATTERN, '')
-    #  elsif string
-    #    string.gsub(PATTERN, '')
-    #  else
-    #    ''
-    #  end
-    #end
-
-    # This method is just like #style, except it takes a string
-    # rather than a block. The primary purpose of this method
-    # is to speed up the String#ansi call.
-    #
+    # @example
     #   ansi("Valentine", :red, :on_white)
     #
-    def ansi(string, *codes)
-      return string unless $ansi
-      s = ""
-      codes.each do |code|
-        s << "\e[#{TABLE[code]}m"
+    # @example
+    #   ansi(:red, :on_white){ "Valentine" }
+    #
+    # @return [String]
+    #   String wrapped ANSI code.
+    #
+    def ansi(*codes) #:yield:
+      if block_given?
+        string = yeild.to_s
+      else
+        string = codes.shift.to_s
       end
-      s << string
-      s << CLEAR
+
+      return string unless $ansi
+
+      code(*codes) + string + ENDCODE
     end
 
-    # Remove ansi codes from +string+. This method is like unstyle,
-    # but takes a string rather than a block.
-    def unansi(string)
+    # Remove ANSI codes from string or block value.
+    #
+    # @param [String]
+    #   String from which to remove ANSI codes.
+    #
+    # @return [String]
+    #   String wrapped ANSI code.
+    #
+    #--
+    # TODO: Allow selective removal using *codes argument?
+    #++
+    def unansi(string=nil) #:yield:
+      if block_given?
+        string = yeild.to_s
+      else
+        string = string.to_s
+      end
       string.gsub(PATTERN, '')
     end
 
-    # Regexp for matching style and color codes.
-    PATTERN = /\e\[([34][0-7]|[0-9])m/
+    # Alias for #ansi method.
+    #
+    # @deprecated
+    #   Here for backward scompatibility.
+    alias_method :style, :ansi
 
-    # Table of style and color codes.
-    TABLE = {
-      :clear        =>   0,
-      :reset        =>   0,
-      :bold         =>   1,
-      :dark         =>   2,
-      :italic       =>   3,
-      :underline    =>   4,
-      :underscore   =>   4,
-      :blink        =>   5,
-      :rapid        =>   6,
-      :reverse      =>   7,
-      :negative     =>   7,
-      :concealed    =>   8,
-      :strike       =>   9,
-      :black        =>  30,
-      :red          =>  31,
-      :green        =>  32,
-      :yellow       =>  33,
-      :blue         =>  34,
-      :magenta      =>  35,
-      :cyan         =>  36,
-      :white        =>  37,
-      :on_black     =>  40,
-      :on_red       =>  41,
-      :on_green     =>  42,
-      :on_yellow    =>  43,
-      :on_blue      =>  44,
-      :on_magenta   =>  45,
-      :on_cyan      =>  46,
-      :on_white     =>  47
-    }
+    # Alias for #unansi method.
+    #
+    # @deprecated 
+    #   Here for backwards compatibility.
+    alias_method :unstyle, :unansi
+
+    # Alternate term for #ansi.
+    #
+    # @deprecated 
+    #   May change in future definition.
+    alias_method :color, :ansi
+
+    # Alias for unansi.
+    #
+    # @deprecated 
+    #   May change in future definition.
+    alias_method :uncolor, :unansi
+
+    # Look-up code from chart, or if Integer simply pass through.
+    # Also resolves :random and :on_random.
+    #
+    # @param codes [Array<Symbol,Integer]
+    #   Symbols or integers to covnert to ANSI code.
+    #
+    # @return [String] ANSI code
+    def code(*codes)
+      list = []
+      codes.each do |code|
+        list << \
+          case code
+          when Integer
+            code
+          when Array
+            rgb(*code)
+          when :random
+            random
+          when :on_random
+            random(true)
+          else
+            CHART[code.to_sym]
+          end
+      end
+      "\e[" + (list * ";") + "m"
+    end
+
+    # Provides a random primary ANSI color.
+    #
+    # @param background [Boolean]
+    #   Use `true` for background color, otherwise foreground color.
+    #
+    # @return [Integer] ANSI color number
+    def random(background=false)
+      (background ? 40 : 30) + rand(8)
+    end
+
+    # Creates an xterm-256 color from rgb value.
+    #
+    # @param background [Boolean]
+    #   Use `true` for background color, otherwise foreground color.
+    #
+    def rgb(red, green, blue, background=false)
+      "#{background ? 48 : 38};5;#{rgb_value(red, green, blue)}"
+    end
+
+    # Creates an xterm-256 color from a CSS-style color string.
+    def hex(string, background=false)
+      string.tr!('#','')
+      x = (string.size == 6 ? 2 : 1)
+      r, g, b = [0,1,2].map{ |i| string[i*x,2].to_i(16) }
+      rgb(r, g, b, background)
+    end
+
+    private
+
+    # Gets closest xterm-256 color.
+    def rgb_256(r, g, b)
+      r, g, b = [r, g, b].map{ |c| rgb_valid(c); (6 * (c.to_f / 256.0)).to_i }
+      v = (r * 36 + g * 6 + b + 16).abs
+      raise ArgumentError, "RGB value outside 0-255 range" if v > 255
+      v
+    end
+
   end
 
+  #
   extend Code
-end
-
-#
-class ::String
-  #
-  def ansi(*codes)
-    ANSI::Code.ansi(self, *codes)
-  end
-
-  #
-  def ansi!(*codes)
-    replace(ansi(*codes))
-  end
-
-  #
-  def unansi
-    ANSI::Code.unansi(self)
-  end
-
-  #
-  def unansi!
-    replace(unansi)
-  end
 end
 
