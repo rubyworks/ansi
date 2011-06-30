@@ -16,10 +16,10 @@ module ANSI
 
     modes = %w{win32 termios curses stty}
 
-    #
     # This section builds character reading and terminal size functions
-    # to suit the proper platform we're running on.  Be warned:  Here be
-    # dragons!
+    # to suit the proper platform we're running on.
+    #
+    # Be warned: Here be dragons!
     #
     begin
       require 'ansi/terminal/' + (mode = modes.pop)

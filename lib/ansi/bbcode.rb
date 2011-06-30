@@ -31,6 +31,9 @@ module ANSI
   #   print( BBCode.bbcode_to_ansi(str) )
   #   print( BBCode.bbcode_to_html(str) )
   #
+  #--
+  # TODO: integrate with Code module.
+  #++
   module BBCode
 
     ## ANSIname => ANSIcode LUT
