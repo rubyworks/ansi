@@ -14,6 +14,7 @@ module ANSI
   end
 end
 
+require 'ansi/core'
 require 'ansi/code'
 require 'ansi/bbcode'
 require 'ansi/columns'
