@@ -4,6 +4,7 @@
 
 Copyright:: (c) 2004 Rubyworks, Thomas Sawyer
 License:: BSD-2-Clause
+Website:: http://rubyworks.github.com/ansi
 
     Copyright 2004 Thomas Sawyer. All rights reserved.
 
@@ -31,15 +32,12 @@ License:: BSD-2-Clause
     authors and should not be interpreted as representing official policies, either expressed
     or implied, of <copyright holder>.
 
-(http://rubyworks.github.com/ansi)
-
 
 == ProgressBar
 
 Copyright:: (C) 2001 Satoru Takabayashi
 License:: Ruby License
-
-ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
+Website:: http://0xcc.net/ruby-progressbar/
 
     Ruby/ProgressBar - a text progress bar library
 
@@ -50,16 +48,16 @@ ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
     You can redistribute it and/or modify it under the terms
     of Ruby's license.
 
-(http://0xcc.net/ruby-progressbar/)
+ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
 
 
 == HighLine (Terminal Extensions)
 
 Copyright:: (c) 2006 Gray Productions
 License:: Ruby License
+Website:: http://highline.rubyforge.org/
 
-The terminal extensions are based on HighLine's SystemExtensions
-by James Edward Gray II.
+    Copyright 2006 Gray Productions
 
     Distributed under the user's choice of the {GPL Version 2}[http://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
     (see GPL-2.0.txt for details) or the {Ruby software license}[http://www.ruby-lang.org/en/LICENSE.txt]
@@ -67,20 +65,14 @@ by James Edward Gray II.
 
     Please email James[mailto:james@grayproductions.net] with any questions.
 
-Copyright 2006 Gray Productions
-
-{Ruby Software License}[http://www.ruby-lang.org/en/LICENSE.txt]
-{Ruby Software License}[LICENSE/RUBY.txt]
-
-(http://highline.rubyforge.org/)
+The terminal extensions are based on HighLine's SystemExtensions
+by James Edward Gray II.
 
 
 == BBCode
 
 Copyright:: (c) 2002 Thomas-Ivo Heinen
 License:: Ruby License
-
-BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
     Copyright (c) 2002 Thomas-Ivo Heinen
 
@@ -91,16 +83,14 @@ BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
     FOR A PARTICULAR PURPOSE.
 
-(http://)
+BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
 
 == Rainbow (XTerm Color Support)
 
 Copyright:: (c) Marcin Kulik
 License:: MIT
-
-Rainbox provided the bases for building the XTerm 256 color code
-support into the ANSI::Code module.
+Website:: http://github.com/sickill/rainbow
 
     Copyright (c) Marcin Kulik
 
@@ -123,18 +113,18 @@ support into the ANSI::Code module.
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(http://github.com/sickill/rainbow)
+Rainbox provided the bases for building the XTerm 256 color code
+support into the ANSI::Code module.
 
 
 = ACKNOWLEDGEMENTS
 
 == ANSIColor
 
+Copyright:: (c) 2002 Florian Frank
+Website:: http://flori.github.com/term-ansicolor
+
 Albeit the code no long bares any resemblance to it, the ANSI Code module
 (and subsequently the Constants module) originated with the ANSIColor
 library by Florian Frank.
-
-Copyright (c) 2002 Florian Frank
-
-(http://flori.github.com/term-ansicolor/)
 
