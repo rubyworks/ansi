@@ -1,6 +1,13 @@
 module ANSI
 
-  require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /(win32|w32)/
+  if RUBY_PLATFORM =~ /(win32|w32)/
+    begin
+      require 'Win32/Console/ANSI'
+    rescue
+      warn "ansi: 'gem install win32console' to use color on Windows"
+      $ansi = false
+    end
+  end
 
   require 'ansi/constants'
 
