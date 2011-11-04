@@ -1,132 +1,187 @@
---- !ruby/object:Gem::Specification 
-name: ansi
-version: !ruby/object:Gem::Version 
-  prerelease: 
-  version: 1.3.0
-platform: ruby
-authors: 
-- Thomas Sawyer
-- Florian Frank
-autorequire: 
-bindir: bin
-cert_chain: []
+# encoding: utf-8
 
-date: 2011-06-30 00:00:00 Z
-dependencies: 
-- !ruby/object:Gem::Dependency 
-  name: detroit
-  prerelease: false
-  requirement: &id001 !ruby/object:Gem::Requirement 
-    none: false
-    requirements: 
-    - - ">="
-      - !ruby/object:Gem::Version 
-        version: "0"
-  type: :development
-  version_requirements: *id001
-- !ruby/object:Gem::Dependency 
-  name: qed
-  prerelease: false
-  requirement: &id002 !ruby/object:Gem::Requirement 
-    none: false
-    requirements: 
-    - - ">="
-      - !ruby/object:Gem::Version 
-        version: "0"
-  type: :development
-  version_requirements: *id002
-- !ruby/object:Gem::Dependency 
-  name: lemon
-  prerelease: false
-  requirement: &id003 !ruby/object:Gem::Requirement 
-    none: false
-    requirements: 
-    - - ">="
-      - !ruby/object:Gem::Version 
-        version: "0"
-  type: :development
-  version_requirements: *id003
-description: The ANSI project is a collection of ANSI escape code related libraries enabling ANSI code based colorization and stylization of output. It is very nice for beautifying shell output.
-email: rubyworks-mailinglist@googlegroups.com
-executables: []
+require 'yaml'
 
-extensions: []
+module DotRuby
 
-extra_rdoc_files: 
-- README.rdoc
-files: 
-- .ruby
-- lib/ansi/bbcode.rb
-- lib/ansi/chart.rb
-- lib/ansi/code.rb
-- lib/ansi/columns.rb
-- lib/ansi/constants.rb
-- lib/ansi/core.rb
-- lib/ansi/diff.rb
-- lib/ansi/logger.rb
-- lib/ansi/mixin.rb
-- lib/ansi/progressbar.rb
-- lib/ansi/string.rb
-- lib/ansi/table.rb
-- lib/ansi/terminal/curses.rb
-- lib/ansi/terminal/stty.rb
-- lib/ansi/terminal/termios.rb
-- lib/ansi/terminal/win32.rb
-- lib/ansi/terminal.rb
-- lib/ansi.rb
-- lib/ansi.rbz
-- lib/ansi.yml
-- qed/01_ansicode.rdoc
-- qed/02_bbcode.rdoc
-- qed/03_logger.rdoc
-- qed/04_progressbar.rdoc
-- qed/05_mixin.rdoc
-- qed/06_string.rdoc
-- qed/07_columns.rdoc
-- qed/08_table.rdoc
-- qed/09_diff.rb
-- qed/10_core.rdoc
-- qed/applique/output.rb
-- test/case_ansicode.rb
-- test/case_bbcode.rb
-- test/case_mixin.rb
-- test/case_progressbar.rb
-- HISTORY.rdoc
-- LICENSE/BSD-2-Clause.txt
-- LICENSE/GPL-2.0.txt
-- LICENSE/MIT.txt
-- LICENSE/RUBY.txt
-- README.rdoc
-- NOTICE.rdoc
-homepage: http://rubyworks.github.com/ansi
-licenses: 
-- Apache 2.0
-post_install_message: 
-rdoc_options: 
-- --title
-- ANSI API
-- --main
-- README.rdoc
-require_paths: 
-- lib
-required_ruby_version: !ruby/object:Gem::Requirement 
-  none: false
-  requirements: 
-  - - ">="
-    - !ruby/object:Gem::Version 
-      version: "0"
-required_rubygems_version: !ruby/object:Gem::Requirement 
-  none: false
-  requirements: 
-  - - ">="
-    - !ruby/object:Gem::Version 
-      version: "0"
-requirements: []
+  #
+  class GemSpec
 
-rubyforge_project: ansi
-rubygems_version: 1.8.2
-signing_key: 
-specification_version: 3
-summary: ANSI codes at your fingertips!
-test_files: []
+    # For which revision of .ruby is this gemspec intended?
+    REVISION = 0
 
+    #
+    PATTERNS = {
+      :bin_files  => 'bin/*',
+      :lib_files  => 'lib/{**/}*.rb',
+      :ext_files  => 'ext/{**/}extconf.rb',
+      :doc_files  => '*.{txt,rdoc,md,markdown,tt,textile}',
+      :test_files => '{test/{**/}*_test.rb,spec/{**/}*_spec.rb}'
+    }
+
+    #
+    def self.instance
+      new.to_gemspec
+    end
+
+    attr :metadata
+
+    attr :manifest
+
+    #
+    def initialize
+      @metadata = YAML.load_file('.ruby')
+      @manifest = Dir.glob('manifest{,.txt}', File::FNM_CASEFOLD).first
+
+      if @metadata['revision'].to_i != REVISION
+        warn "You have the wrong revision. Trying anyway..."
+      end
+    end
+
+    #
+    def scm
+      @scm ||= \
+        case
+        when File.directory?('.git')
+          :git
+        end
+    end
+
+    #
+    def files
+      @files ||= \
+        #glob_files[patterns[:files]]
+        case
+        when manifest
+          File.readlines(manifest).
+            map{ |line| line.strip }.
+            reject{ |line| line.empty? || line[0,1] == '#' }
+        when scm == :git
+         `git ls-files -z`.split("\0")
+        else
+          Dir.glob('{**/}{.*,*}')  # TODO: be more specific using standard locations ?
+        end.select{ |path| File.file?(path) }
+    end
+
+    #
+    def glob_files(pattern)
+      Dir.glob(pattern).select { |path|
+        File.file?(path) && files.include?(path)
+      }
+    end
+
+    #
+    def patterns
+      PATTERNS
+    end
+
+    #
+    def executables
+      @executables ||= \
+        glob_files(patterns[:bin_files]).map do |path|
+          File.basename(path)
+        end
+    end
+
+    def extensions
+      @extensions ||= \
+        glob_files(patterns[:ext_files]).map do |path|
+          File.basename(path)
+        end
+    end
+
+    #
+    def name
+      metadata['name'] || metadata['title'].downcase.gsub(/\W+/,'_')
+    end
+
+    #
+    def to_gemspec
+      Gem::Specification.new do |gemspec|
+        gemspec.name        = name
+        gemspec.version     = metadata['version']
+        gemspec.summary     = metadata['summary']
+        gemspec.description = metadata['description']
+
+        metadata['authors'].each do |author|
+          gemspec.authors << author['name']
+
+          if author.has_key?('email')
+            if gemspec.email
+              gemspec.email << author['email']
+            else
+              gemspec.email = [author['email']]
+            end
+          end
+        end
+
+        gemspec.licenses = metadata['copyrights'].map{ |c| c['license'] }.compact
+
+        metadata['requirements'].each do |req|
+          name    = req['name']
+          version = req['version']
+          groups  = req['groups'] || []
+
+          case version
+          when /^(.*?)\+$/
+            version = ">= #{$1}"
+          when /^(.*?)\-$/
+            version = "< #{$1}"
+          when /^(.*?)\~$/
+            version = "~> #{$1}"
+          end
+
+          if groups.empty? or groups.include?('runtime')
+            # populate runtime dependencies  
+            if gemspec.respond_to?(:add_runtime_dependency)
+              gemspec.add_runtime_dependency(name,*version)
+            else
+              gemspec.add_dependency(name,*version)
+            end
+          else
+            # populate development dependencies
+            if gemspec.respond_to?(:add_development_dependency)
+              gemspec.add_development_dependency(name,*version)
+            else
+              gemspec.add_dependency(name,*version)
+            end
+          end
+        end
+
+        # convert external dependencies into a requirements
+        if metadata['external_dependencies']
+          ##gemspec.requirements = [] unless metadata['external_dependencies'].empty?
+          metadata['external_dependencies'].each do |req|
+            gemspec.requirements << req.to_s
+          end
+        end
+
+        # determine homepage from resources
+        homepage = metadata['resources'].find{ |key, url| key =~ /^home/ }
+        gemspec.homepage = homepage.last if homepage
+
+        gemspec.require_paths        = metadata['load_path'] || ['lib']
+        gemspec.post_install_message = metadata['install_message']
+
+        # RubyGems specific metadata
+        gemspec.files       = files
+        gemspec.extensions  = extensions
+        gemspec.executables = executables
+
+        if Gem::VERSION < '1.7.'
+          gemspec.default_executable = gemspec.executables.first
+        end
+
+        gemspec.test_files = glob_files(patterns[:test_files])
+
+        unless gemspec.files.include?('.document')
+          gemspec.extra_rdoc_files = glob_files(patterns[:doc_files])
+        end
+      end
+    end
+
+  end #class GemSpec
+
+end
+
+DotRuby::GemSpec.instance
