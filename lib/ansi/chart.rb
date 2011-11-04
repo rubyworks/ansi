@@ -1,5 +1,7 @@
 module ANSI
 
+  require 'ansi/version'
+
   # Table of codes used throughout the system.
   #
   # @see http://en.wikipedia.org/wiki/ANSI_escape_code
