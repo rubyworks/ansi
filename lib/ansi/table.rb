@@ -70,7 +70,8 @@ module ANSI
          body_row = []
          row.each_with_index do |cell, c|
            t = cell_template(max[c])
-           body_row << (t % cell.to_s).ansi(*ansi_formating(cell, c, r))
+           s = t % cell.to_s
+           body_row << apply_format(s, cell, c, r)
          end
          body << "| " + body_row.join(' | ') + " |"
       end
@@ -84,7 +85,7 @@ module ANSI
       "#{top}\n#{body}\n#{bot}\n"
     end
 
-    private
+  private
 
     # TODO: look at the lines and figure out how many columns will fit
     def fit_width
@@ -128,6 +129,30 @@ module ANSI
       end
     end
 
+    # TODO: make more efficient
+    def dividing_line
+      tmp = max_columns(fit).map{ |m| "%#{m}s" }.join(" | ")
+      tmp = "| #{tmp} |"
+      lin = (tmp % (['-'] * column_size)).gsub(/[^\|]/, '-').gsub('|', '+')
+    end
+
+    #def dividing_line_top
+    #  dividing_line.gsub('+', '.')
+    #end
+
+    #def dividing_line_bottom
+    #  dividing_line.gsub('+', "'")
+    #end
+
+    #
+    def apply_format(str, cell, col, row)
+      if @format
+        str.ansi(*ansi_formating(cell, col, row))
+      else
+        str
+      end 
+    end
+
     #
     def ansi_formating(cell, col, row)
       if @format
@@ -146,21 +171,6 @@ module ANSI
       end
       [f].flatten.compact
     end
-
-    # TODO: make more efficient
-    def dividing_line
-      tmp = max_columns(fit).map{ |m| "%#{m}s" }.join(" | ")
-      tmp = "| #{tmp} |"
-      lin = (tmp % (['-'] * column_size)).gsub(/[^\|]/, '-').gsub('|', '+')
-    end
-
-    #def dividing_line_top
-    #  dividing_line.gsub('+', '.')
-    #end
-
-    #def dividing_line_bottom
-    #  dividing_line.gsub('+', "'")
-    #end
 
   end
 
