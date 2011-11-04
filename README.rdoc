@@ -1,5 +1,13 @@
 = ANSI
 
+{Home}[http://rubyworks.github.com/ansi] |
+{API}[http://rubydoc.info/gems/ansi/frames] |
+{Code}[http://github.com/rubyworks/ansi] |
+{Mail}[http://googlegroups.com/group/rubyworks-mailinglist]
+
+{<img src="http://travis-ci.org/rubyworks/ansi.png" />}[http://travis-ci.org/rubyworks/ansi]
+
+
 == DESCRIPTION
 
 The ANSI project is a collection of ANSI escape code related libraries
@@ -19,12 +27,6 @@ device.
 * String#ansi makes common usage very easy and elegant.
 * ANSI::Mixin provides an alternative mixin (like +colored+ gem).
 * Very Good coverage of standard ANSI codes.
-
-
-== RESOURCES
-
-* home: http://rubyworks.github.com/ansi
-* code: http://github.com/rubyworks/ansi
 
 
 == RELEASE NOTES
