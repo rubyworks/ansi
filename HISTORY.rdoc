@@ -10,6 +10,7 @@ Changes:
 
 * Add HexDump class.
 * Fix cell size of tables when ANSI codes are used.
+* Fix extra ansi codes in tables without format.
 * Modernize build configuration.
 * Switch to BSD-2-Clause license.
 
