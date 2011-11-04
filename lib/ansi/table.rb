@@ -1,4 +1,4 @@
-require 'ansi'
+require 'ansi/core'
 require 'ansi/terminal'
 
 module ANSI
@@ -92,12 +92,15 @@ module ANSI
       ((width.to_f / column_size) - (padding + 3)).to_i
     end
 
+    # Calculate the maximun column sizes.
     #
+    # @return [Array] maximum size for each column
     def max_columns(fit=false)
       max = Array.new(column_size, 0)
       table.each do |row|
         row.each_with_index do |col, index|
           col = col.to_s
+          col = col.unansi
           if fit
             max[index] = [max[index], col.size, fit_width].max
           else
@@ -108,7 +111,9 @@ module ANSI
       max
     end
 
-    # Number of columns.
+    # Number of columns based on the first row of table.
+    #
+    # @return [Integer] number of columns
     def column_size
       table.first.size
     end
