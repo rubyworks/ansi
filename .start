@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-watchr *.watcher &
-
-# TODO: shell log?
-
