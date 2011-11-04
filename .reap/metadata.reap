@@ -1,0 +1,6 @@
+
+file 'meta' do
+  #system "detroit generate"
+  system "doturby source"
+end
+

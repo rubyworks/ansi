@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+ignore 'pages', 'doc', 'site', 'log'
+
+task :default => [:test, :qed]
+
+desc "run unit tests"
+task :test do
+  run "ruby-test -Ilib test/*.rb"
+end
+
+desc "run qed tests"
+task :qed do
+  run "qed -Ilib qed/"
+end
+
+file( 'test/test_helper.rb'    )  { test tests }
+file( 'test/test_*.rb'         )  { |f| test(f) }
+file( /^lib\/(.*?)\.rb$/       )  { |m| test("test/test_#{m[1]}") }
+file( /^lib\/ansi\/(.*?)\.rb$/ )  { |m| test("test/test_#{m[1]}") }
+
+Signal.trap('QUIT') { test tests  } # Ctrl-\
+Signal.trap('INT' ) { abort("\n") } # Ctrl-C
+
+def test(*paths)
+  run "ruby-test #{gem_opt} -Ilib:test #{paths.flatten.join(' ')}"
+end
+
+def tests
+  Dir['test/**/test_*.rb'] - ['test/test_helper.rb']
+end
+
+def run(cmd)
+  puts   cmd
+  system cmd
+end
+
+def gem_opt
+  defined?(Gem) ? "-rubygems" : ""
+end
+
