@@ -1,5 +1,6 @@
-#!mast .ruby bin lib qed test [A-Z][A-Z]*
+#!mast .ruby .yardopts bin lib man qed spec test [A-Z]*.*
 .ruby
+.yardopts
 lib/ansi/bbcode.rb
 lib/ansi/chart.rb
 lib/ansi/code.rb
@@ -7,6 +8,7 @@ lib/ansi/columns.rb
 lib/ansi/constants.rb
 lib/ansi/core.rb
 lib/ansi/diff.rb
+lib/ansi/hexdump.rb
 lib/ansi/logger.rb
 lib/ansi/mixin.rb
 lib/ansi/progressbar.rb
@@ -17,6 +19,7 @@ lib/ansi/terminal/stty.rb
 lib/ansi/terminal/termios.rb
 lib/ansi/terminal/win32.rb
 lib/ansi/terminal.rb
+lib/ansi/version.rb
 lib/ansi.rb
 lib/ansi.rbz
 lib/ansi.yml
@@ -36,9 +39,6 @@ test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
 HISTORY.rdoc
-LICENSE/BSD-2-Clause.txt
-LICENSE/GPL-2.0.txt
-LICENSE/MIT.txt
-LICENSE/RUBY.txt
 README.rdoc
 NOTICE.rdoc
+LICENSE.rdoc
