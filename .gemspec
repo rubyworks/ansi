@@ -8,7 +8,7 @@ module DotRuby
   class GemSpec
 
     # For which revision of .ruby is this gemspec intended?
-    REVISION = 0
+    REVISION = 0 unless defined?(REVISION)
 
     #
     PATTERNS = {
