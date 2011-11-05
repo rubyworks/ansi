@@ -15,9 +15,11 @@
 
   <SCRIPT type="text/javascript">
     $(document).ready(function() {
-      $('pre').wrapInner('<code></code>');
-      hljs.tabReplace = '    ';
-      hljs.initHighlightingOnLoad('ruby');
+      $('#readme').load('readme.html', function(){
+        $('pre').wrapInner('<code></code>');
+        hljs.tabReplace = '    ';
+        hljs.initHighlightingOnLoad('ruby');
+      });
     });
   </SCRIPT>
 
@@ -36,8 +38,8 @@
     <h1>ANSI for Ruby</h1>
   </div>
   <div id="nav">
-    <a href="http://rubyworks.github.com/ansi/docs/api/">Documentation</a> &middot;
-    <a href="http://rubyworks.github.com/ansi/docs/qed/">Demonstrandum</a> &middot;
+    <a href="http://rubydoc.info/gems/ansi/frames">Documentation</a> &middot;
+    <a href="http://rubydoc.info/gems/ansi/file/QED.rdoc">Demonstrandum</a> &middot;
     <a href="http://groups.google.com/group/rubyworks-mailinglist/">Mailing List</a> &middot;
     <a href="http://github.com/rubyworks/ansi/">Development</a>
   </div>
@@ -154,10 +156,10 @@
 
 <div class="section" id="section_license/copyright"><h2>LICENSE/COPYRIGHT</h2>
   <p>
-  Copyright &#169; 2004 Thomas Sawyer
+  Copyright &#169; 2009 Thomas Sawyer
   </p>
   <p>
-  This program is ditributed unser the terms of the Apache 2 license.
+  This program is ditributed unser the terms of the BSD 2-clause license.
   </p>
   <p>
   See LICENSE file for details.
