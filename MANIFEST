@@ -38,7 +38,9 @@ test/case_ansicode.rb
 test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
+test/test_helper.rb
 HISTORY.rdoc
 README.rdoc
+QED.rdoc
 NOTICE.rdoc
 LICENSE.rdoc
