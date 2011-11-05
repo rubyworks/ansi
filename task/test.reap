@@ -14,28 +14,31 @@ task :qed do
   run "qed -Ilib qed/"
 end
 
-file( 'test/test_helper.rb'    )  { test tests }
-file( 'test/test_*.rb'         )  { |f| test(f) }
-file( /^lib\/(.*?)\.rb$/       )  { |m| test("test/test_#{m[1]}") }
-file( /^lib\/ansi\/(.*?)\.rb$/ )  { |m| test("test/test_#{m[1]}") }
 
-Signal.trap('QUIT') { test tests  } # Ctrl-\
-Signal.trap('INT' ) { abort("\n") } # Ctrl-C
+file( 'test/test_helper.rb'    )  { test tests }
+file( 'test/case_*.rb'         )  { |f| test(f) }
+file( /^lib\/(.*?)\.rb$/       )  { |m| test("test/case_#{m[1]}") }
+file( /^lib\/ansi\/(.*?)\.rb$/ )  { |m| test("test/case_#{m[1]}") }
+
 
 def test(*paths)
   run "ruby-test #{gem_opt} -Ilib:test #{paths.flatten.join(' ')}"
 end
 
 def tests
-  Dir['test/**/test_*.rb'] - ['test/test_helper.rb']
+  Dir['test/**/case_*.rb']
 end
 
 def run(cmd)
-  puts   cmd
-  system cmd
+  puts cmd
+  status = system(cmd)
+  exit -1 unless status
 end
 
 def gem_opt
-  defined?(Gem) ? "-rubygems" : ""
+  defined?(::Gem) ? "-rubygems" : ""
 end
+
+#Signal.trap('QUIT') { test tests  } # Ctrl-\
+#Signal.trap('INT' ) { abort("\n") } # Ctrl-C
 

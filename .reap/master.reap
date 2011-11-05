@@ -1,0 +1,4 @@
+Dir['task/*.reap'].each do |file|
+  require file
+end
+
