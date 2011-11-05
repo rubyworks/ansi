@@ -5,4 +5,5 @@ log
 pkg
 tmp
 doc
-site/doc
+pages
+QED.rdoc

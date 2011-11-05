@@ -3,26 +3,21 @@ gem:
   active : true
 
 github:
-  active: true
+  folder: pages
 
 email:
   service : Email
-  file    : ~
-  subject : ~
   mailto  : 
     - rubyworks-mailinglist@googlegroups.com
     - ruby-talk@ruby-lang.org
-  active  : true
 
 qed:
-  files : qed/**/*.rdoc
-  active: true
+  files : qed/
 
 qedoc:
-  active   : true
-  files    : qed/**/*.rdoc
+  files    : qed/
   title    : Ruby ANSI
-  output   : doc/QED.rdoc
+  output   : QED.rdoc
 
 minitest:
   tests    : ~
@@ -33,18 +28,16 @@ minitest:
   active   : false
 
 dnote:
-  service  : dnote
   files    : lib/**/*.rb
-  labels   : ~
-  output   : log/dnote.rdoc
-  priority : -1
-  active   : true
+  output   : log/Notes.rdoc
 
 yard:
   yardopts : true
-  active   : true
+  priority : 2   # do last
 
 vclog:
-  output   : log/history.rdoc
-  active   : false
+  output:
+    - log/History.rdoc
+    - log/Changes.rdoc
+  active: false
 

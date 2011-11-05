@@ -49,4 +49,4 @@ description: ! 'The ANSI project is a collection of ANSI escape code related lib
 
   beautifying shell output.'
 organization: Rubyworks
-date: '2011-11-04'
+date: '2011-11-05'
