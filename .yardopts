@@ -1,9 +1,8 @@
---output-dir doc/yard
 --title ANSI
 --protected
-lib/**/*.rb
+--private
+lib
 -
-doc/QED.rdoc
-LICENSE/*
-[A-Z][A-Z]*
+QED.rdoc
+[A-Z]*.*
 
