@@ -1,6 +1,16 @@
 = RELEASE HISTORY
 
-== 1.4.0 | 2011-11-04
+== 1.4.1 | 2011-11-06
+
+This release simply fixes a documentation issue, to make sure
+QED.rdoc appears in the YARD docs.
+
+Changes:
+
+* Adjust .yardopts file.
+
+
+== 1.4.0 | 2011-11-05
 
 New release adds a HexDump class for colorized byte string dumps
 and fixes some minor cell size issues with the Table class.
