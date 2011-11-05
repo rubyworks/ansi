@@ -1,3 +1,4 @@
+require 'test_helper'
 require 'ansi/mixin'
 
 testcase ANSI::Mixin do

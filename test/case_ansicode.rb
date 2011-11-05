@@ -1,3 +1,4 @@
+require 'test_helper'
 require 'ansi/code'
 
 testcase ANSI::Code do
