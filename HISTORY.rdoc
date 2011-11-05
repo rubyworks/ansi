@@ -2,7 +2,8 @@
 
 == 1.4.0 | 2011-11-04
 
-New release adds a HexDump class for colorized byte string dumps.
+New release adds a HexDump class for colorized byte string dumps
+and fixes some minor cell size issues with the Table class.
 This release also modernizes the build config and changes the
 license to BSD-2-Clause.
 
