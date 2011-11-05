@@ -76,7 +76,7 @@ Windows users use 'ruby setup.rb all'.
 
 == LICENSE & COPYRIGHT
 
-Copyright (c) 2004 Thomas Sawyer
+Copyright (c) 2009 Rubyworks
 
 This program is distributed under the terms of the BSD 2-clause license.
 
