@@ -3,6 +3,7 @@ source:
 - meta
 authors:
 - name: Thomas Sawyer
+  email: transfire@gmail.com
 - name: Florian Frank
 copyrights:
 - holder: Rubyworks

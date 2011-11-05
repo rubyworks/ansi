@@ -1,6 +1,6 @@
 
 file 'meta/*' do
-  #system "detroit generate"
+  #sh "detroit generate"
   sh "doturby source meta"
 end
 
