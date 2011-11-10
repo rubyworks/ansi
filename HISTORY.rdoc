@@ -3,11 +3,14 @@
 == 1.4.1 | 2011-11-06
 
 This release simply fixes a documentation issue, to make sure
-QED.rdoc appears in the YARD docs.
+QED.rdoc appears in the YARD docs. And a shout-out to Chad Perrin
+for submitting some doc fixes for this project and a few other
+Rubyworks projects.
 
 Changes:
 
 * Adjust .yardopts file.
+* Documentation fixes.
 
 
 == 1.4.0 | 2011-11-05
