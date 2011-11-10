@@ -316,7 +316,7 @@ module ANSI
 
     # -- Transitive methods ---------------
 
-    # Converts a ANSI string to one with HTML markup.
+    # Converts an ANSI string to one with HTML markup.
     # Returns the string with ANSI code sequences converted to XHTML markup.
     def BBCode.ansi_to_html(string)
         bbcoded = BBCode.ansi_to_bbcode(string )
