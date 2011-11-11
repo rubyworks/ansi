@@ -3,7 +3,7 @@ gem:
   active : true
 
 github:
-  folder: pages
+  folder: web
 
 email:
   service : Email
