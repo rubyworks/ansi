@@ -44,17 +44,17 @@ module ANSI
 
     # A Unix savvy method to fetch the console columns, and rows.
     def terminal_size
-      if /solaris/ =~ RUBY_PLATFORM and (`stty` =~ /\brows = (\d+).*\bcolumns = (\d+)/)
+      if /solaris/ =~ RUBY_PLATFORM && (`stty` =~ /\brows = (\d+).*\bcolumns = (\d+)/)
         w, r = [$2, $1]
       else
-        w, r = `stty size`.split.map { |x| x.to_i }
+        w, r = `stty size`.split.reverse
       end
       w = `tput cols` unless w  # last ditch effort to at least get width
 
       w = w.to_i if w
       r = r.to_i if r
 
-      return w.to_i, r.to_i
+      return w, r
     end
 
   end

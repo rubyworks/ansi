@@ -30,12 +30,12 @@ module ANSI
 
     # Get the width of the terminal window.
     def terminal_width
-      terminal_size[0]
+      terminal_size.first
     end
 
     # Get the height of the terminal window.
     def terminal_height
-      terminal_size[1]
+      terminal_size.last
     end
 
   end
