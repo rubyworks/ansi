@@ -5,6 +5,16 @@ module ANSI
   # Diff can produced a colorized difference of two string or objects.
   class Diff
 
+    # Highlight the differnce between to two strings.
+    #
+    # This class method is equivalent to calling:
+    #
+    #   ANSI::Diff.new(object1, object2).to_a
+    #
+    def self.diff(object1, object2, options={})
+      new(object1, object2, options={}).to_a
+    end
+
     #
     def initialize(object1, object2, options={})
       @object1 = convert(object1)
@@ -28,7 +38,12 @@ module ANSI
       "#{@diff1}\n#{@diff2}"
     end
 
-    private
+    #
+    def to_a
+      [diff1, diff2]
+    end
+
+  private
 
     # Take two plain strings and produce colorized
     # versions of each highlighting their differences.
