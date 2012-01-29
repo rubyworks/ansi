@@ -43,12 +43,12 @@ summary: ANSI at your fingertips!
 title: ANSI
 version: 1.4.2
 name: ansi
-description: ! 'The ANSI project is an awesome collection of ANSI escape code related
+description: ! 'The ANSI project is a superlative collection of ANSI escape code related
   libraries
 
   enabling ANSI colorization and stylization of console output. Byte for byte
 
-  ANSI is hands down the best ANSI code library available for the Ruby programming
+  ANSI is the best ANSI code library available for the Ruby programming
 
   language.'
 organization: Rubyworks
