@@ -19,6 +19,7 @@ module ANSI
     :slow_blink       => 5,
     :rapid            => 6,
     :rapid_blink      => 6,
+    :invert           => 7,
     :inverse          => 7,
     :reverse          => 7,
     :negative         => 7,
