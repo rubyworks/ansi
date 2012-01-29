@@ -1,9 +1,15 @@
 require 'ansi/code'
+require 'ansi/chain'
 
 class ::String
+
   #
   def ansi(*codes)
-    ANSI::Code.ansi(self, *codes)
+    if codes.empty?
+      ANSI::Chain.new(self)
+    else
+      ANSI::Code.ansi(self, *codes)
+    end
   end
 
   #
