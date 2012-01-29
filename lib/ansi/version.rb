@@ -1,7 +1,6 @@
-# ANSI module contains all the ANSI related classes.
 module ANSI
   # Returns Hash table of project metadata.
-  def self.meta
+  def self.metadata
     @spec ||= (
       require 'yaml'
       YAML.load(File.new(File.dirname(__FILE__) + '/../ansi.yml'))
@@ -10,7 +9,7 @@ module ANSI
 
   # Check metadata for missing constants.
   def self.const_missing(name)
-    meta[name.to_s.downcase] || super(name)
+    metadata[name.to_s.downcase] || super(name)
   end
 end
 
