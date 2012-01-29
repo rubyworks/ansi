@@ -2,6 +2,7 @@
 .ruby
 .yardopts
 lib/ansi/bbcode.rb
+lib/ansi/chain.rb
 lib/ansi/chart.rb
 lib/ansi/code.rb
 lib/ansi/columns.rb
@@ -21,7 +22,6 @@ lib/ansi/terminal/win32.rb
 lib/ansi/terminal.rb
 lib/ansi/version.rb
 lib/ansi.rb
-lib/ansi.rbz
 lib/ansi.yml
 qed/01_ansicode.rdoc
 qed/02_bbcode.rdoc
@@ -31,8 +31,10 @@ qed/05_mixin.rdoc
 qed/06_string.rdoc
 qed/07_columns.rdoc
 qed/08_table.rdoc
-qed/09_diff.rb
+qed/09_diff.rdoc
 qed/10_core.rdoc
+qed/11_terminal.rdoc
+qed/applique/ae.rb
 qed/applique/output.rb
 test/case_ansicode.rb
 test/case_bbcode.rb
@@ -42,5 +44,4 @@ test/test_helper.rb
 HISTORY.rdoc
 README.rdoc
 QED.rdoc
-NOTICE.rdoc
-LICENSE.rdoc
+COPYING.rdoc

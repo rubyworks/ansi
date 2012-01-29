@@ -27,6 +27,7 @@ device.
 * String#ansi makes common usage very easy and elegant.
 * ANSI::Mixin provides an alternative mixin (like +colored+ gem).
 * Very Good coverage of standard ANSI codes.
+* Additional clases for colorized columns, tables, loggers and more.
 
 
 == RELEASE NOTES
@@ -58,7 +59,7 @@ The methods defined by this module are used throughout the rest of
 the system.
 
 
-== HOW TO INSTALL
+== INSTALLATION
 
 To install with RubyGems simply open a console and type:
 
@@ -74,10 +75,13 @@ then download[http://github.com/rubyworks/ansi/download] the tarball package and
 Windows users use 'ruby setup.rb all'.
 
 
-== LICENSE & COPYRIGHT
+== LICENSE & COPYRIGHTS
 
 Copyright (c) 2009 Rubyworks
 
-This program is distributed under the terms of the BSD 2-clause license.
+This program is redistributable under the terms of the *FreeBSD* license.
 
-See NOTICE.rdoc file and LICENSE directory for details.
+Some pieces of the code are copyrighted by others.
+
+See COPYING.rdoc file for details.
+
