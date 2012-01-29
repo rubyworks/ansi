@@ -24,7 +24,7 @@ lib/ansi/version.rb
 lib/ansi.rb
 lib/ansi.yml
 qed/01_ansicode.rdoc
-qed/02_bbcode.rdoc
+qed/02_core.rdoc
 qed/03_logger.rdoc
 qed/04_progressbar.rdoc
 qed/05_mixin.rdoc
@@ -32,7 +32,7 @@ qed/06_string.rdoc
 qed/07_columns.rdoc
 qed/08_table.rdoc
 qed/09_diff.rdoc
-qed/10_core.rdoc
+qed/10_bbcode.rdoc
 qed/11_terminal.rdoc
 qed/applique/ae.rb
 qed/applique/output.rb
