@@ -1,8 +1,8 @@
 = ANSI
 
-{Home}[http://rubyworks.github.com/ansi] |
-{API}[http://rubydoc.info/gems/ansi/frames] |
-{Code}[http://github.com/rubyworks/ansi] |
+{Home}[http://rubyworks.github.com/ansi] /
+{API}[http://rubydoc.info/gems/ansi/frames] /
+{Code}[http://github.com/rubyworks/ansi] /
 {Mail}[http://googlegroups.com/group/rubyworks-mailinglist]
 
 {<img src="http://travis-ci.org/rubyworks/ansi.png" />}[http://travis-ci.org/rubyworks/ansi]
