@@ -4,7 +4,7 @@
 
 === ANSI
 
-Copyright:: (c) 2009 Rubyworks
+Copyright:: (c) 2009 {Rubyworks}[http://rubyworks.github.com]
 License:: {BSD-2-Clause}[http://spdx.org/licenses/BSD-2-Clause]
 Website:: http://rubyworks.github.com/ansi
 
@@ -37,7 +37,7 @@ Website:: http://rubyworks.github.com/ansi
 
 === ProgressBar
 
-Copyright:: (C) 2001 Satoru Takabayashi
+Copyright:: (c) 2001 Satoru Takabayashi
 License:: {Ruby}[http://spdx.org/licenses/Ruby]
 Website:: http://0xcc.net/ruby-progressbar
 
@@ -122,6 +122,7 @@ support into the ANSI::Code module.
 === Paint
 
 Copyright:: (c) 2011 Jan Lelis
+License:: {MIT}[http://spdx.org/licenses/MIT]
 Website:: https://github.com/janlelis/paint
 
 Some of the latest ANSI code names, and inspiration to check out Rainbow
