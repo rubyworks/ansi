@@ -41,7 +41,7 @@ revision: 0
 created: '2009-08-01'
 summary: ANSI at your fingertips!
 title: ANSI
-version: 1.4.1
+version: 1.4.2
 name: ansi
 description: ! 'The ANSI project is a collection of ANSI escape code related libraries
   enabling
