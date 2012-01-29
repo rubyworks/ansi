@@ -3,32 +3,47 @@ require 'ansi/terminal'
 
 module ANSI
 
+  #
   class Columns
 
     # Create a column-based layout.
     #
-    # list - Multiline String or Array of strings to columnize
+    # @param [String,Array] list
+    #   Multiline String or Array of strings to columnize.
     #
-    # options[:columns] - number of columns
-    # options[:align]   - align :left or :right
-    # options[:padding] - space to add to each cell
+    # @param [Hash] options
+    #   Options to customize columnization.
+    #
+    # @option options [Fixnum] :columns
+    #   Number of columns.
+    #
+    # @option options [Symbol] :align
+    #   Column alignment, either :left, :right or :center.
+    #
+    # @option options [String,Fixnum] :padding
+    #   String or number or spaces to append to each column.
     #
     # The +format+ block MUST return ANSI codes.
     def initialize(list, options={}, &format)
       self.list = list
 
-      @columns = options[:columns]
-      @padding = options[:padding] || 1
-      @align   = options[:align]
-      #@ansi    = [options[:ansi]].flatten
-      @format  = format
+      self.columns = options[:columns] || options[:cols]
+      self.padding = options[:padding] || 1
+      self.align   = options[:align]   || :left
+      #self.ansi    = options[:ansi]
+      self.format  = format
 
-      @columns = nil if @columns == 0
+      #@columns = nil if @columns == 0
+    end
+
+    #
+    def inspect
+      "#<#{self.class}:#{object_id} #{list.inspect} x #{columns}>"
     end
 
     # List layout into columns. Each new line is taken to be 
     # a row-column cell.
-    attr_accessor :list
+    attr :list
 
     def list=(list)
       case list
@@ -41,38 +56,80 @@ module ANSI
 
     # Default number of columns to display. If nil then the number
     # of coumns is estimated from the size of the terminal.
-    attr_accessor :columns
+    attr :columns
+
+    # Set column count ensuring value is either an integer or nil.
+    # The the value given is zero, it will be taken to mean the same
+    # as nil, which means fit-to-screen.
+    def columns=(integer)
+      integer = integer.to_i
+      @columns = (integer.zero? ? nil : integer)
+    end
 
     # Padding size to apply to cells.
-    attr_accessor :padding
+    attr :padding
+
+    # Set padding to string or number (of spaces).
+    def padding=(pad)
+      case pad
+      when Numeric
+        @padding = ' ' * pad.to_i
+      else
+        @padding = pad.to_s
+      end
+    end
 
     # Alignment to apply to cells.
-    attr_accessor :align
+    attr :align
+
+    # Set alignment ensuring value is a symbol.
+    #
+    # @param [Symbol] Either `:right`, `:left` or `:center`.
+    def align=(symbol)
+      symbol = symbol.to_sym
+      raise ArgumentError, "invalid alignment -- #{symbol.inspect}" \
+            unless [:left, :right, :center].include?(symbol)
+      @align = symbol
+    end
 
     # Formating to apply to cells.
-    attr_accessor :format
+    attr :format
+
+    # Set formatting procedure. The procedure must return
+    # ANSI codes, suitable for passing to String#ansi method.
+    def format=(procedure)
+      @format = procedure ? procedure.to_proc : nil
+    end
+
+    # TODO: Should #to_s also take options and formatting block?
+    #       Maybe instead have hoin take all these and leave #to_s bare.
 
     # Return string in column layout. The number of columns is determined
     # by the `columns` property or overriden by +cols+ argument.
-    #--
-    # TODO: Allow #to_s to take options and formating block?
-    #++
     def to_s(cols=nil)
       to_s_columns(cols || columns)
     end
 
-    private
+    #
+    def join(cols=nil)
+      to_s_columns(cols || columns)
+    end
+
+  private
 
     # Layout string lines into columns.
     #
-    # TODO: put in empty strings for blank cells
+    # @todo Put in empty strings for blank cells.
+    # @todo Centering look like it's off by one to the right.
+    #
     def to_s_columns(columns=nil)
       lines = list.to_a
       count = lines.size
       max   = lines.map{ |l| l.size }.max
+
       if columns.nil?
         width = Terminal.terminal_width
-        columns = (width / (max + padding)).to_i
+        columns = (width / (max + padding.size)).to_i
       end
 
       rows = []
@@ -83,12 +140,12 @@ module ANSI
         (rows[index % mod] ||=[]) << line.strip
       end
 
-      pad = " " * padding
+      pad = padding
       tmp = template(max, pad)
       str = ""
       rows.each_with_index do |row, ri|
         row.each_with_index do |cell, ci|
-          ansi_codes = ansi_formating(cell, ci, ri)
+          ansi_codes = ansi_formatting(cell, ci, ri)
           if ansi_codes.empty?
             str << (tmp % cell)
           else
@@ -102,10 +159,11 @@ module ANSI
     end
 
     # Aligns the cell left or right.
-    #
-    # TODO: Handle centered alignment.
     def template(max, pad)
       case align
+      when :center, 'center'
+        offset = " " * (max / 2)
+        "#{offset}%#{max}s#{offset}#{pad}"
       when :right, 'right'
         "%#{max}s#{pad}"
       else
@@ -113,8 +171,8 @@ module ANSI
       end
     end
 
-    # Used to apply ANSI formating to each cell.
-    def ansi_formating(cell, col, row)
+    # Used to apply ANSI formatting to each cell.
+    def ansi_formatting(cell, col, row)
       if @format
         case @format.arity
         when 0
