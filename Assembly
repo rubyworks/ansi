@@ -29,7 +29,8 @@ minitest:
 
 dnote:
   files    : lib/**/*.rb
-  output   : log/Notes.rdoc
+  title    : Source Notes
+  output   : log/notes.html
 
 yard:
   yardopts : true
