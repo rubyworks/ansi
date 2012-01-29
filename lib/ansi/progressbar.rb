@@ -25,7 +25,7 @@ module ANSI
       @out   = out
 
       @bar_length = 80
-      @bar_mark = "o"
+      @bar_mark = "|"
       @total_overflow = true
       @current = 0
       @previous = 0
@@ -54,6 +54,8 @@ module ANSI
     def bar_mark=(mark)
       @bar_mark = String(mark)[0..0]
     end
+    alias_method :barmark=, :bar_mark=
+    alias_method :mark=,    :bar_mark=
 
     def total_overflow=(boolv)
       @total_overflow = boolv ? true : false
@@ -272,7 +274,8 @@ module ANSI
     #
     def colorize(part, style)
       return part unless style
-      [style].flatten.inject(part){ |pt, st| ANSI::Code.send(st){pt} }
+      #[style].flatten.inject(part){ |pt, st| ANSI::Code.ansi(pt, *st) }
+      ANSI::Code.ansi(part, *style)
     end
 
   end
