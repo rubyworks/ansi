@@ -1,8 +1,10 @@
 module ANSI
 
   module Terminal
-
     module_function
+
+    #COLS_FALLBACK = 80
+    #ROWS_FALLBACK = 25
 
     #CHARACTER_MODE = "stty"    # For Debugging purposes only.
 
@@ -42,12 +44,17 @@ module ANSI
 
     # A Unix savvy method to fetch the console columns, and rows.
     def terminal_size
-      if /solaris/ =~ RUBY_PLATFORM and
-          `stty` =~ /\brows = (\d+).*\bcolumns = (\d+)/
-        [$2, $1].map { |c| x.to_i }
+      if /solaris/ =~ RUBY_PLATFORM and (`stty` =~ /\brows = (\d+).*\bcolumns = (\d+)/)
+        w, r = [$2, $1]
       else
-        `stty size`.split.map { |x| x.to_i }.reverse
+        w, r = `stty size`.split.map { |x| x.to_i }
       end
+      w = `tput cols` unless w  # last ditch effort to at least get width
+
+      w = w.to_i if w
+      r = r.to_i if r
+
+      return w.to_i, r.to_i
     end
 
   end
