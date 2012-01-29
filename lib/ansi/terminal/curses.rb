@@ -19,7 +19,7 @@ module ANSI
       Curses.init_screen
       w, r = Curses.cols, Curses.rows
       Curses.close_screen
-      return r, w
+      return w, r
     end
 
   end
