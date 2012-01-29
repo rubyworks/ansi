@@ -1,15 +1,15 @@
 
-<h1>ANSI</h1>
+<h1 id="label-ANSI">ANSI</h1>
 
-<p><a href="http://rubyworks.github.com/ansi">Home</a> | <a
-href="http://rubydoc.info/gems/ansi/frames">API</a> | <a
-href="http://github.com/rubyworks/ansi">Code</a> | <a
+<p><a href="http://rubyworks.github.com/ansi">Home</a> / <a
+href="http://rubydoc.info/gems/ansi/frames">API</a> / <a
+href="http://github.com/rubyworks/ansi">Code</a> / <a
 href="http://googlegroups.com/group/rubyworks-mailinglist">Mail</a></p>
 
 <p><a href="http://travis-ci.org/rubyworks/ansi"><img
 src="http://travis-ci.org/rubyworks/ansi.png" /></a></p>
 
-<h2>DESCRIPTION</h2>
+<h2 id="label-DESCRIPTION">DESCRIPTION</h2>
 
 <p>The ANSI project is a collection of ANSI escape code related libraries
 enabling ANSI code based colorization and stylization of output. It is very
@@ -20,22 +20,24 @@ Included are Code (used to be ANSICode), Logger, ProgressBar and String. In
 addition the library includes Terminal which provides information about the
 current output device.</p>
 
-<h2>FEATURES</h2>
+<h2 id="label-FEATURES">FEATURES</h2>
 <ul><li>
 <p>ANSI::Code provides ANSI codes as module functions.</p>
 </li><li>
 <p>String#ansi makes common usage very easy and elegant.</p>
 </li><li>
-<p>ANSI::Mixin provides an alternative mixin (like <tt>colored</tt> gem).</p>
+<p>ANSI::Mixin provides an alternative mixin (like <code>colored</code> gem).</p>
 </li><li>
 <p>Very Good coverage of standard ANSI codes.</p>
+</li><li>
+<p>Additional clases for colorized columns, tables, loggers and more.</p>
 </li></ul>
 
-<h2>RELEASE NOTES</h2>
+<h2 id="label-RELEASE+NOTES">RELEASE NOTES</h2>
 
 <p>Please see HISTORY file.</p>
 
-<h2>SYNOPSIS</h2>
+<h2 id="label-SYNOPSIS">SYNOPSIS</h2>
 
 <p>There are a number of modules and classes provided by the ANSI package. To
 get a good understanding of them it is best to pursue  the QED <a
@@ -46,20 +48,22 @@ href="http://rubyworks.github.com/ansi/api/index.html">documentation</a>.</p>
 <p>At the heart of all the provided libraries lies the ANSI::Code module which
 defines ANSI codes as constants and methods. For example:</p>
 
-<pre>require 'ansi/code'
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'ansi/code'</span>
 
-ANSI.red + &quot;Hello&quot; + ANSI.blue + &quot;World&quot;
-=&gt; &quot;\e[31mHello\e[34mWorld&quot;</pre>
+<span class="ruby-constant">ANSI</span>.<span class="ruby-identifier">red</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;Hello&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">ANSI</span>.<span class="ruby-identifier">blue</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;World&quot;</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;\e[31mHello\e[34mWorld&quot;</span>
+</pre>
 
 <p>Or in block form.</p>
 
-<pre>ANSI.red{ &quot;Hello&quot; } + ANSI.blue{ &quot;World&quot; }
-=&gt; &quot;\e[31mHello\e[0m\e[34mWorld\e[0m&quot;</pre>
+<pre class="ruby"><span class="ruby-constant">ANSI</span>.<span class="ruby-identifier">red</span>{ <span class="ruby-string">&quot;Hello&quot;</span> } <span class="ruby-operator">+</span> <span class="ruby-constant">ANSI</span>.<span class="ruby-identifier">blue</span>{ <span class="ruby-string">&quot;World&quot;</span> }
+=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;\e[31mHello\e[0m\e[34mWorld\e[0m&quot;</span>
+</pre>
 
 <p>The methods defined by this module are used throughout the rest of the
 system.</p>
 
-<h2>HOW TO INSTALL</h2>
+<h2 id="label-INSTALLATION">INSTALLATION</h2>
 
 <p>To install with RubyGems simply open a console and type:</p>
 
@@ -75,10 +79,13 @@ $ sudo setup.rb all</pre>
 
 <p>Windows users use ‘ruby setup.rb all’.</p>
 
-<h2>LICENSE &amp; COPYRIGHT</h2>
+<h2 id="label-LICENSE+%26+COPYRIGHTS">LICENSE &amp; COPYRIGHTS</h2>
 
 <p>Copyright © 2009 Rubyworks</p>
 
-<p>This program is distributed under the terms of the BSD 2-clause license.</p>
+<p>This program is redistributable under the terms of the
+<strong>FreeBSD</strong> license.</p>
 
-<p>See NOTICE.rdoc file and LICENSE directory for details.</p>
+<p>Some pieces of the code are copyrighted by others.</p>
+
+<p>See COPYING.rdoc file for details.</p>
