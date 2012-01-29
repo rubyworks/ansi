@@ -2,7 +2,7 @@ require 'ansi/code'
 
 module ANSI
 
-  # ANSI::Chain was ispired by Kazuyoshi Tlacaelel's Isna library.
+  # ANSI::Chain was inspired by Kazuyoshi Tlacaelel's Isna library.
   #
   class Chain
 

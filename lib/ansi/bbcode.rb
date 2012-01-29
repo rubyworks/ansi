@@ -1,4 +1,4 @@
-# = BBCode
+# BBCode
 #
 # Copyright (c) 2002 Thomas-Ivo Heinen
 #
@@ -9,31 +9,26 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
+#
 module ANSI
 
-  # = BBCode
-  #
+  # TODO: Integrate BBCode with Code module.
+
   # The BBCode module helps ease the separation of core and frontend with the
   # core (or submodules) being still able to say, what colors shall be used
   # in it's responses. This is achieved by encoding formatting information
   # using the BBCode tokens. This enables you to "pipe" layout information
-  # such as colors, style, fonttype, size and alignment through the core to
+  # such as colors, style, font, size and alignment through the core to
   # the frontend.
   #
   # Additionally it converts markups/codes between ANSI, HTML and BBCode
   # almost freely ;)
   #
-  # == Usage
-  #
   #   # Converting a bbcode string to ANSI and XHTML
-  #
   #   str = "this is [COLOR=red]red[/COLOR], this is [B]bold[/B]"
   #   print( BBCode.bbcode_to_ansi(str) )
   #   print( BBCode.bbcode_to_html(str) )
   #
-  #--
-  # TODO: integrate with Code module.
-  #++
   module BBCode
 
     ## ANSIname => ANSIcode LUT

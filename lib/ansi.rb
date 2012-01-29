@@ -1,3 +1,7 @@
+# ANSI namespace module contains all the ANSI related classes.
+module ANSI
+end
+
 require 'ansi/version'
 require 'ansi/core'
 require 'ansi/code'

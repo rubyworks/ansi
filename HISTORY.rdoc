@@ -1,5 +1,26 @@
 = RELEASE HISTORY
 
+== 1.4.2 | 2012-01-29
+
+ANSI chains are a new feature inspired by Kazuyoshi Tlacaelel's Isna project.
+It is a fluid notation for the String#ansi method, e.g. `"foo".red.on_white`.
+Also, ASNI now supports "smart codes", preventing previously applied codes
+from undermining the applicaiton of additional codes --a subtle issue that
+most other ANSI libraries overlook. Plus a few other improvements including
+that of the API documentation.
+
+Changes:
+
+* Add ANSI::Chains, extending String#ansi method.
+* Support smart code application.
+* Add Diff#to_a and shortcut to it via Diff.diff().
+* Improve #colorize method in ProgressBar.
+* Change ProgressBar's default mark to `|` instead of `o`.
+* Fix Curses return order of screen cols and rows.
+* Support center alignment in Columns.
+* Support custom padding for Columns.
+
+
 == 1.4.1 | 2011-11-09
 
 This release simply fixes a documentation issue, to make sure

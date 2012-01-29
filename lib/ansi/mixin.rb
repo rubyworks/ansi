@@ -7,9 +7,8 @@ module ANSI
   # Generally speaking the String#ansi method is the more
   # elegant approach to modifying a string with codes
   # via a method call. But in some cases this Mixin's design
-  # might be preferable. In particular it was primarily
-  # designed to provide a compatability layer for the
-  # +colored+ gem.
+  # might be preferable. Indeed, it original intent was
+  # as a compatability layer for the +colored+ gem.
 
   module Mixin
 
@@ -120,4 +119,3 @@ module ANSI
   end
 
 end
-
