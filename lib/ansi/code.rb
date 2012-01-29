@@ -17,6 +17,8 @@ module ANSI
   # NOTE: This has no effect of methods that return ANSI codes.
   $ansi = true
 
+  # TODO: up, down, right, left, etc could have yielding methods too?
+
   # ANSI Codes
   #
   # Ansi::Code module makes it very easy to use ANSI codes.
@@ -32,10 +34,6 @@ module ANSI
   #
   # See {ANSI::Code::CHART} for list of all supported codes.
   #
-  #--
-  # TODO: up, down, right, left, etc could have yielding methods too?
-  #++
-
   module Code
     extend self
 
@@ -235,8 +233,12 @@ module ANSI
 
       return string unless $ansi
 
-      code(*codes) + string + ENDCODE
+      c = code(*codes)
+
+      c + string.gsub(ENDCODE, ENDCODE + c) + ENDCODE
     end
+
+    # TODO: Allow selective removal using *codes argument?
 
     # Remove ANSI codes from string or block value.
     #
@@ -246,9 +248,6 @@ module ANSI
     # @return [String]
     #   String wrapped ANSI code.
     #
-    #--
-    # TODO: Allow selective removal using *codes argument?
-    #++
     def unansi(string=nil) #:yield:
       if block_given?
         string = yield.to_s
