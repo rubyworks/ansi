@@ -69,7 +69,7 @@ module ANSI
       table.each_with_index do |row, r|
          body_row = []
          row.each_with_index do |cell, c|
-           t = cell_template(max[c])
+           t = cell_template(r, c, max[c])
            s = t % cell.to_s
            body_row << apply_format(s, cell, c, r)
          end
@@ -120,8 +120,22 @@ module ANSI
     end
 
     #
-    def cell_template(max)
-      case align
+    def cell_template(row, col, max)
+      _align = nil
+      if align.class==Array
+        _align = align[col]
+        if _align.class==Hash
+          _align.each do |range,alignment|
+            range = (range.begin..1.0/0) if range.end == -1
+            _align=alignment if range.member? row
+          end
+        else
+          _align = nil
+        end
+      else
+        _align = align
+      end
+      case _align
       when :right, 'right'
         "#{@pad}%#{max}s"
       else

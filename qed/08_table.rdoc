@@ -25,4 +25,24 @@ The output will be:
   | 50 | 40 | 20 |
   +----+----+----+
 
+Also supports some limited custom-alignments:
 
+  data = [
+    [ 'Foo', 'Bar', 'Baaz' ],
+    [ 'Josef Stalin', 'Leon Trotsky', 'Nikita Kruschev' ],
+    [ 'Franklin Roosevelt', 'Lyndon Johnson', 'Ronald Reagan' ]
+  ]
+  
+  table = ANSI::Table.new(data, :align=>[:left, {(1..-1)=>:right}, {(1..-1)=>:right}])
+  table.to_s
+  
+Which will output:
+
+  +--------------------+----------------+-----------------+
+  | Foo                | Bar            | Baaz            |
+  | Josef Stalin       |   Leon Trotsky | Nikita Kruschev |
+  | Franklin Roosevelt | Lyndon Johnson |   Ronald Reagan |
+  +--------------------+----------------+-----------------+
+
+  
+  
