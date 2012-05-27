@@ -1,23 +1,22 @@
 ---
 gem:
-  active : true
+  active: true
 
 github:
   folder: web
 
 email:
-  service : Email
-  mailto  : 
+  mailto: 
     - rubyworks-mailinglist@googlegroups.com
     - ruby-talk@ruby-lang.org
 
 qed:
-  files : qed/
+  files : demo/
 
 qedoc:
-  files    : qed/
+  files    : demo/
   title    : Ruby ANSI
-  output   : QED.rdoc
+  output   : DEMO.rdoc
 
 minitest:
   tests    : ~
@@ -38,7 +37,7 @@ yard:
 
 vclog:
   output:
-    - log/History.rdoc
-    - log/Changes.rdoc
+    - log/history.html
+    - log/changes.html
   active: false
 
