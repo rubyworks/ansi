@@ -117,8 +117,9 @@ class ANSI::String
         end
         self.class.new(new_text, new_marks)
       else
-        nm = marks.select do |(i,c)|
-          marks[0] == rng or ( marks[0] == rng + 1 && [:clear, :reset].include?(marks[1]) )
+        nm = marks.select do |(i, v)|
+          #marks[0] == rng or ( marks[0] == rng + 1 && [:clear, :reset].include?(marks[1]) )
+          i == rng or ( i == rng + 1 && [:clear, :reset].include?(v) )
         end
         self.class.new(text[rng,1], nm)
       end

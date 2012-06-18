@@ -61,6 +61,9 @@ module ANSI
       @total_overflow = boolv ? true : false
     end
 
+    # Get rid of warning about Kenrel method being redefined.
+    remove_method :format
+
     # Set format and format arguments.
     def format(format, *arguments)
       @format = format
@@ -220,7 +223,8 @@ module ANSI
     def title
       @title[0,13] + ":"
     end
-    #
+
+    # TODO: Use Terminal.terminal_width instead.
     def get_width
       # FIXME: I don't know how portable it is.
       default_width = 80
@@ -228,7 +232,8 @@ module ANSI
         tiocgwinsz = 0x5413
         data = [0, 0, 0, 0].pack("SSSS")
         if @out.ioctl(tiocgwinsz, data) >= 0 then
-          rows, cols, xpixels, ypixels = data.unpack("SSSS")
+          #rows, cols, xpixels, ypixels = data.unpack("SSSS")
+          cols = data.unpack("SSSS")[1]
           if cols >= 0 then cols else default_width end
         else
           default_width

@@ -56,8 +56,8 @@ module ANSI
 
     #
     def to_s #(fit=false)
-      row_count = table.size
-      col_count = table[0].size
+      #row_count = table.size
+      #col_count = table[0].size
 
       max = max_columns(fit)
 
@@ -134,6 +134,7 @@ module ANSI
       tmp = max_columns(fit).map{ |m| "%#{m}s" }.join(" | ")
       tmp = "| #{tmp} |"
       lin = (tmp % (['-'] * column_size)).gsub(/[^\|]/, '-').gsub('|', '+')
+      lin
     end
 
     #def dividing_line_top
