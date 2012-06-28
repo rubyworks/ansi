@@ -8,8 +8,6 @@ authors:
 copyrights:
 - holder: Rubyworks
   year: '2009'
-replacements: []
-alternatives: []
 requirements:
 - name: detroit
   groups:
@@ -24,25 +22,34 @@ requirements:
   - test
   development: true
 dependencies: []
+alternatives: []
 conflicts: []
 repositories:
 - uri: git://github.com/rubyworks/ansi.git
   scm: git
   name: upstream
 resources:
-  home: http://rubyworks.github.com/ansi
-  code: http://github.com/rubyworks/ansi
-  docs: http://rubydoc.info/gems/ansi/frames
-  mail: http://groups.google.com/group/rubyworks-mailinglist
+- uri: http://rubyworks.github.com/ansi
+  label: Website
+  type: home
+- uri: http://github.com/rubyworks/ansi
+  label: Source Code
+  type: code
+- uri: http://rubydoc.info/gems/ansi/frames
+  label: Documentation
+  type: docs
+- uri: http://groups.google.com/group/rubyworks-mailinglist
+  label: Mailing List
+  type: mail
+categories: []
 extra: {}
 load_path:
 - lib
 revision: 0
+name: ansi
+title: ANSI
 created: '2009-08-01'
 summary: ANSI at your fingertips!
-title: ANSI
-version: 1.4.2
-name: ansi
 description: ! 'The ANSI project is a superlative collection of ANSI escape code related
   libraries
 
@@ -52,4 +59,5 @@ description: ! 'The ANSI project is a superlative collection of ANSI escape code
 
   language.'
 organization: Rubyworks
-date: '2012-01-29'
+version: 1.4.3
+date: '2012-06-28'

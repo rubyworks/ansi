@@ -1,5 +1,18 @@
 = RELEASE HISTORY
 
+== 1.4.3 | 2012-06-26
+
+This release bring two small changes. The first improves support
+for Windows by only rescuing LoadError when 'win32console' fails
+to load. The second improves the heuritstics used for determining
+the current terminal screen width.
+
+Changes:
+
+* Only rescue LoadError on windows require. (#9) [bug]
+* Improvements for getting proper screen width.
+
+
 == 1.4.2 | 2012-01-29
 
 ANSI chains are a new feature inspired by Kazuyoshi Tlacaelel's Isna project.

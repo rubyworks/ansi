@@ -1,4 +1,4 @@
-#!mast .ruby .yardopts bin lib man qed spec test [A-Z]*.*
+#!mast .ruby .yardopts bin lib man demo spec test [A-Z]*.*
 .ruby
 .yardopts
 lib/ansi/bbcode.rb
@@ -23,25 +23,26 @@ lib/ansi/terminal.rb
 lib/ansi/version.rb
 lib/ansi.rb
 lib/ansi.yml
-qed/01_ansicode.rdoc
-qed/02_core.rdoc
-qed/03_logger.rdoc
-qed/04_progressbar.rdoc
-qed/05_mixin.rdoc
-qed/06_string.rdoc
-qed/07_columns.rdoc
-qed/08_table.rdoc
-qed/09_diff.rdoc
-qed/10_bbcode.rdoc
-qed/11_terminal.rdoc
-qed/applique/ae.rb
-qed/applique/output.rb
+demo/01_ansicode.rdoc
+demo/02_core.rdoc
+demo/03_logger.rdoc
+demo/04_progressbar.rdoc
+demo/05_mixin.rdoc
+demo/06_string.rdoc
+demo/07_columns.rdoc
+demo/08_table.rdoc
+demo/09_diff.rdoc
+demo/10_bbcode.rdoc
+demo/11_terminal.rdoc
+demo/applique/ae.rb
+demo/applique/output.rb
 test/case_ansicode.rb
 test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
 test/test_helper.rb
 HISTORY.rdoc
-README.rdoc
-QED.rdoc
+DEMO.rdoc
 COPYING.rdoc
+Config.rb
+README.rdoc
