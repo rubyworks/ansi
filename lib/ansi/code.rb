@@ -242,7 +242,7 @@ module ANSI
 
     # Remove ANSI codes from string or block value.
     #
-    # @param [String]
+    # @param [String] string
     #   String from which to remove ANSI codes.
     #
     # @return [String]

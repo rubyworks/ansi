@@ -110,10 +110,10 @@ module ANSI
     # Take two plain strings and produce colorized
     # versions of each highlighting their differences.
     #
-    # @param [String] string1
+    # @param [String] x
     #   First string to compare.
     #
-    # @param [String] string2
+    # @param [String] y
     #   Second string to compare.
     #
     # @return [Array<String>] The two difference strings.

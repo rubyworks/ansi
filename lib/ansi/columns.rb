@@ -84,7 +84,10 @@ module ANSI
 
     # Set alignment ensuring value is a symbol.
     #
-    # @param [Symbol] Either `:right`, `:left` or `:center`.
+    # @param [#to_sym] symbol
+    #   Either `:right`, `:left` or `:center`.
+    #
+    # @return [Symbol] The given symbol.
     def align=(symbol)
       symbol = symbol.to_sym
       raise ArgumentError, "invalid alignment -- #{symbol.inspect}" \
