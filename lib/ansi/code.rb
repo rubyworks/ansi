@@ -5,17 +5,10 @@ module ANSI
       require 'Win32/Console/ANSI'
     rescue LoadError
       warn "ansi: 'gem install win32console' to use color on Windows"
-      $ansi = false
     end
   end
 
   require 'ansi/constants'
-
-  # Global variialbe can be used to prevent ANSI codes
-  # from being used in ANSI's methods that do so to string.
-  #
-  # NOTE: This has no effect of methods that return ANSI codes.
-  $ansi = true
 
   # TODO: up, down, right, left, etc could have yielding methods too?
 
@@ -56,59 +49,6 @@ module ANSI
       %w{black red green yellow blue magenta cyan white}
     end
 
-=begin
-    styles.each do |style|
-      module_eval <<-END, __FILE__, __LINE__
-        def #{style}(string=nil)
-          if string
-            return string unless $ansi
-            #warn "use ANSI block notation for future versions"
-            return "\#{#{style.upcase}}\#{string}\#{ENDCODE}"
-          end
-          if block_given?
-            return yield unless $ansi
-            return "\#{#{style.upcase}}\#{yield}\#{ENDCODE}"
-          end
-          #{style.upcase}
-        end
-      END
-    end
-=end
-
-=begin
-    # Dynamically create color methods.
-
-    colors.each do |color|
-      module_eval <<-END, __FILE__, __LINE__
-        def #{color}(string=nil)
-          if string
-            return string unless $ansi
-            #warn "use ANSI block notation for future versions"
-            return "\#{#{color.upcase}}\#{string}\#{ENDCODE}"
-          end
-          if block_given?
-            return yield unless $ansi
-            return "\#{#{color.upcase}}\#{yield}\#{ENDCODE}"
-          end
-          #{color.upcase}
-        end
-
-        def on_#{color}(string=nil)
-          if string
-            return string unless $ansi
-            #warn "use ANSI block notation for future versions"
-            return "\#{ON_#{color.upcase}}\#{string}\#{ENDCODE}"
-          end
-          if block_given?
-            return yield unless $ansi
-            return "\#{ON_#{color.upcase}}\#{yield}\#{ENDCODE}"
-          end
-          ON_#{color.upcase}
-        end
-      END
-    end
-=end
-
     # Return ANSI code given a list of symbolic names.
     def [](*codes)
       code(*codes)
@@ -123,12 +63,12 @@ module ANSI
         module_eval <<-END, __FILE__, __LINE__
           def #{color}_on_#{on_color}(string=nil)
             if string
-              return string unless $ansi
+              return string if $ansi == false
               #warn "use ANSI block notation for future versions"
               return #{color.upcase} + ON_#{color.upcase} + string + ENDCODE
             end
             if block_given?
-              return yield unless $ansi
+              return yield $ansi == false
               #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + ENDCODE
             else
               #{color.upcase} + ON_#{on_color.upcase}
@@ -150,12 +90,12 @@ module ANSI
 
       if esc
         if string = args.first
-          return string unless $ansi
+          return string if $ansi == false
           #warn "use ANSI block notation for future versions"
           return "#{esc}#{string}#{ENDCODE}"
         end
         if block_given?
-          return yield unless $ansi
+          return yield if $ansi == false
           return "#{esc}#{yield}#{ENDCODE}"
         end
         esc
@@ -231,7 +171,7 @@ module ANSI
         string = codes.shift.to_s
       end
 
-      return string unless $ansi
+      return string if $ansi == false
 
       c = code(*codes)
 
