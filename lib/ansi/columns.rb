@@ -1,4 +1,3 @@
-require 'ansi'
 require 'ansi/terminal'
 
 module ANSI
