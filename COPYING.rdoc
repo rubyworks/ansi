@@ -71,7 +71,7 @@ by James Edward Gray II.
     Please email James[mailto:james@grayproductions.net] with any questions.
 
 
-== BBCode
+=== BBCode
 
 Copyright:: (c) 2002 Thomas-Ivo Heinen
 License:: {Ruby}[http://spdx.org/licenses/Ruby]
@@ -88,7 +88,7 @@ BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
     FOR A PARTICULAR PURPOSE.
 
 
-== Rainbow (XTerm Color Support)
+=== Rainbow (XTerm Color Support)
 
 Copyright:: (c) Marcin Kulik
 License:: {MIT}[http://spdx.org/licenses/MIT]
