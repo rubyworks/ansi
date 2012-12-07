@@ -231,17 +231,10 @@ module Indexer
         gemspec.requirements << ("%s-%s" % req.values_at('name', 'version'))
       end
 
-<<<<<<< .merge_file_XCVAlY
-        # determine homepage from resources
-        homepage = metadata['resources'].find{ |r| r['type'] =~ /^home/i } ||
-                   metadata['resources'].find{ |r| r['name'] =~ /^(home|web)/i }
-        gemspec.homepage = homepage['uri'] if homepage
-=======
       gemspec.homepage = homepage
       gemspec.require_paths = require_paths
       gemspec.post_install_message = metadata['install_message']
     end
->>>>>>> .merge_file_5DL8jX
 
     #
     # Set gemspec settings that require a root directory path.
