@@ -1,4 +1,5 @@
-#!mast .ruby .yardopts bin lib man demo spec test [A-Z]*.*
+#!mast .index .ruby .yardopts bin lib man demo spec test [A-Z]*.*
+.index
 .ruby
 .yardopts
 lib/ansi/bbcode.rb
@@ -43,6 +44,6 @@ test/case_progressbar.rb
 test/test_helper.rb
 HISTORY.rdoc
 DEMO.rdoc
+README.rdoc
 COPYING.rdoc
 Config.rb
-README.rdoc
