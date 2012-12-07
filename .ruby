@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_bkv06R
 ---
 source:
 - var
@@ -61,3 +62,6 @@ description: ! 'The ANSI project is a superlative collection of ANSI escape code
 organization: Rubyworks
 version: 1.4.3
 date: '2012-06-28'
+=======
+ansi 1.4.2 2012-01-29
+>>>>>>> .merge_file_XyvGdS
