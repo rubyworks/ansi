@@ -4,8 +4,8 @@
 
 ### ANSI
 
-Copyright: (c) 2009 {Rubyworks}[http://rubyworks.github.com]
-License: {BSD-2-Clause}[http://spdx.org/licenses/BSD-2-Clause]
+Copyright: (c) 2009 [Rubyworks](http://rubyworks.github.com)
+License: [BSD-2-Clause](http://spdx.org/licenses/BSD-2-Clause)
 Website: http://rubyworks.github.com/ansi
 
     Copyright 2009 Rubyworks.
@@ -38,7 +38,7 @@ Website: http://rubyworks.github.com/ansi
 ### ProgressBar
 
 Copyright: (c) 2001 Satoru Takabayashi
-License: {Ruby}[http://spdx.org/licenses/Ruby]
+License: [Ruby](http://spdx.org/licenses/Ruby)
 Website: http://0xcc.net/ruby-progressbar
 
 ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
@@ -56,7 +56,7 @@ ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
 ### HighLine (Terminal Extensions)
 
 Copyright: (c) 2006 Gray Productions
-License: {Ruby}[http://spdx.org/licenses/Ruby]
+License: [Ruby](http://spdx.org/licenses/Ruby)
 Website: http://highline.rubyforge.org
 
 The terminal extensions are based on HighLine's SystemExtensions
@@ -74,7 +74,7 @@ by James Edward Gray II.
 ### BBCode
 
 Copyright: (c) 2002 Thomas-Ivo Heinen
-License: {Ruby}[http://spdx.org/licenses/Ruby]
+License: [Ruby](http://spdx.org/licenses/Ruby)
 
 BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
@@ -91,7 +91,7 @@ BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 ### Rainbow (XTerm Color Support)
 
 Copyright: (c) Marcin Kulik
-License: {MIT}[http://spdx.org/licenses/MIT]
+License: [MIT](http://spdx.org/licenses/MIT)
 Website: http://github.com/sickill/rainbow
 
 Rainbox provided the bases for building the XTerm 256 color code
@@ -122,7 +122,7 @@ support into the ANSI::Code module.
 ### Paint
 
 Copyright: (c) 2011 Jan Lelis
-License: {MIT}[http://spdx.org/licenses/MIT]
+License: [MIT](http://spdx.org/licenses/MIT)
 Website: https://github.com/janlelis/paint
 
 Some of the latest ANSI code names, and inspiration to check out Rainbow
