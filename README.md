@@ -1,14 +1,14 @@
-= ANSI
+# ANSI
 
-{Home}[http://rubyworks.github.com/ansi] /
-{API}[http://rubydoc.info/gems/ansi/frames] /
-{Code}[http://github.com/rubyworks/ansi] /
-{Mail}[http://googlegroups.com/group/rubyworks-mailinglist]
+[Home](http://rubyworks.github.com/ansi) /
+[API}](http://rubydoc.info/gems/ansi/frames) /
+[Code](http://github.com/rubyworks/ansi) /
+[Mail](http://googlegroups.com/group/rubyworks-mailinglist)
 
-{<img src="http://travis-ci.org/rubyworks/ansi.png" />}[http://travis-ci.org/rubyworks/ansi]
+[![Build Status](https://secure.travis-ci.org/rubyworks/ansi.png)](http://travis-ci.org/rubyworks/ansi)
 
 
-== DESCRIPTION
+## Description
 
 The ANSI project is a collection of ANSI escape code related libraries
 enabling ANSI code based colorization and stylization of output.
@@ -21,7 +21,7 @@ Terminal which provides information about the current output
 device.
 
 
-== FEATURES
+## Features
 
 * ANSI::Code provides ANSI codes as module functions.
 * String#ansi makes common usage very easy and elegant.
@@ -30,12 +30,7 @@ device.
 * Additional clases for colorized columns, tables, loggers and more.
 
 
-== RELEASE NOTES
-
-Please see HISTORY file.
-
-
-== SYNOPSIS
+## Synopsis
 
 There are a number of modules and classes provided by the ANSI
 package. To get a good understanding of them it is best to pursue 
@@ -45,37 +40,42 @@ or the API documentation[http://rubyworks.github.com/ansi/api/index.html].
 At the heart of all the provided libraries lies the ANSI::Code module
 which defines ANSI codes as constants and methods. For example:
 
-  require 'ansi/code'
+    require 'ansi/code'
 
-  ANSI.red + "Hello" + ANSI.blue + "World"
-  => "\e[31mHello\e[34mWorld"
+    ANSI.red + "Hello" + ANSI.blue + "World"
+    => "\e[31mHello\e[34mWorld"
 
 Or in block form.
 
-  ANSI.red{ "Hello" } + ANSI.blue{ "World" }
-  => "\e[31mHello\e[0m\e[34mWorld\e[0m"
+    ANSI.red{ "Hello" } + ANSI.blue{ "World" }
+    => "\e[31mHello\e[0m\e[34mWorld\e[0m"
 
 The methods defined by this module are used throughout the rest of
 the system.
 
 
-== INSTALLATION
+## Installation
 
 To install with RubyGems simply open a console and type:
 
-  $ sudo gem install ansi
+    $ sudo gem install ansi
 
 Local installation requires Setup.rb (gem install setup),
 then download[http://github.com/rubyworks/ansi/download] the tarball package and type:
 
-  $ tar -xvzf ansi-1.0.0.tgz
-  $ cd ansi-1.0.0
-  $ sudo setup.rb all
+    $ tar -xvzf ansi-1.0.0.tgz
+    $ cd ansi-1.0.0
+    $ sudo setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
 
-== LICENSE & COPYRIGHTS
+## Release Notes
+
+Please see HISTORY file.
+
+
+## License & Copyrights
 
 Copyright (c) 2009 Rubyworks
 

@@ -1,6 +1,6 @@
-= RELEASE HISTORY
+# RELEASE HISTORY
 
-== 1.4.3 | 2012-06-26
+## 1.4.3 | 2012-06-26
 
 This release bring two small changes. The first improves support
 for Windows by only rescuing LoadError when 'win32console' fails
@@ -13,7 +13,7 @@ Changes:
 * Improvements for getting proper screen width.
 
 
-== 1.4.2 | 2012-01-29
+## 1.4.2 | 2012-01-29
 
 ANSI chains are a new feature inspired by Kazuyoshi Tlacaelel's Isna project.
 It is a fluid notation for the String#ansi method, e.g. `"foo".red.on_white`.
@@ -34,7 +34,7 @@ Changes:
 * Support custom padding for Columns.
 
 
-== 1.4.1 | 2011-11-09
+## 1.4.1 | 2011-11-09
 
 This release simply fixes a documentation issue, to make sure
 QED.rdoc appears in the YARD docs. And a shout-out to Chad Perrin
@@ -47,7 +47,7 @@ Changes:
 * Documentation fixes.
 
 
-== 1.4.0 | 2011-11-05
+## 1.4.0 | 2011-11-05
 
 New release adds a HexDump class for colorized byte string dumps
 and fixes some minor cell size issues with the Table class.
@@ -63,7 +63,7 @@ Changes:
 * Switch to BSD-2-Clause license.
 
 
-== 1.3.0 | 2011-06-30
+## 1.3.0 | 2011-06-30
 
 This release cleans up the Code module. It adds support for x-term
 256 color codes. Also, the Diff class is now awesome, making use of
@@ -81,7 +81,7 @@ Changes:
 * Improved Diff class with LCS algorithm.
 
 
-== 1.2.5 | 2011-05-03
+## 1.2.5 | 2011-05-03
 
 This release introduces a preliminary rendition of a Diff class
 for getting colorized comparisons of strings and other objects.
@@ -93,7 +93,7 @@ Changes:
 * Fixed minor issue with Columns format block; col comes before row.
 
 
-== 1.2.4 | 2011-04-29
+## 1.2.4 | 2011-04-29
 
 This release improves to the ANSI::Columns class. In particular the
 layout is more consistent with intended functionality.
@@ -105,7 +105,7 @@ Changes:
 * ANSI::Columns can take a String or Array list.
 
 
-== 1.2.3 | 2011-04-08
+## 1.2.3 | 2011-04-08
 
 Minor release to add #clear method to ProgressBar and provide bug
 fix to BBCode.ansi_to_bbcode. Big thanks goes to Junegunn Choi 
@@ -117,7 +117,7 @@ Changes:
 * Fixed ANSI::BBCode.ansi_to_bbcode and ansi_to_html from omitting lines
 without any ansi code (Junegunn Choi).
 
-== 1.2.2 | 2010-06-12
+## 1.2.2 | 2010-06-12
 
 This release removes warnings about string arguments for certain
 ANSI::Code methods. While the string form is considered deprecated,
@@ -133,13 +133,13 @@ Changes:
 * Add ANSI::Mixin#display.
 
 
-== 1.2.1 | 2010-05-10
+## 1.2.1 | 2010-05-10
 
 This release was simply a quick fix to remove the incorrect embedded
 version number, until it gets fixed.
 
 
-== 1.2.0 | 2010-05-10
+## 1.2.0 | 2010-05-10
 
 This release entails numerous improvements. First and foremost
 the Code module is transitioning to a block interface only
@@ -165,7 +165,7 @@ Changes:
 * Many new tests and QED documents.
 
 
-== 1.1.0 | 2009-10-04
+## 1.1.0 | 2009-10-04
 
 This release is the first toward making the ANSI library
 more widely usable.
@@ -177,7 +177,7 @@ Changes:
 * Other minor underthehood improvements.
 
 
-== 1.0.1 | 2009-08-15
+## 1.0.1 | 2009-08-15
 
 The release fixes a single bug that should allow Ruby 1.9
 to use the ANSI library.
@@ -187,7 +187,7 @@ Changes:
 * Renamed PLATFORM to RUBY_PLATFORM
 
 
-== 1.0.0 | 2009-08-15
+## 1.0.0 | 2009-08-15
 
 This is the initial stand-alone release of ANSI, a collection
 of ANSI based classes spun-off from Ruby Facets.
@@ -195,3 +195,4 @@ of ANSI based classes spun-off from Ruby Facets.
 Changes:
 
 * Happy Birthday!
+
