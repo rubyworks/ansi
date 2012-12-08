@@ -16,7 +16,7 @@ qed:
 qedoc:
   files    : demo/
   title    : Ruby ANSI
-  output   : DEMO.rdoc
+  output   : DEMO.md
 
 minitest:
   tests    : ~

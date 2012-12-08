@@ -87,5 +87,5 @@ This program is redistributable under the terms of the *FreeBSD* license.
 
 Some pieces of the code are copyrighted by others.
 
-See COPYING.md file for details.
+See LICENSE.txt and NOTICE.md files for details.
 
