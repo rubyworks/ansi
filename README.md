@@ -1,10 +1,10 @@
 # ANSI
 
-[Homepage](http://rubyworks.github.com/ansi) /
-[API Reference](http://rubydoc.info/gems/ansi/frames) /
-[Mailing List](http://googlegroups.com/group/rubyworks-mailinglist)  /
-[Report Issue](http://github.com/rubyworks/ansi/issues) /
-[Source Code](http://github.com/rubyworks/ansi) :
+[HOME](http://rubyworks.github.com/ansi) /
+[API](http://rubydoc.info/gems/ansi/frames) /
+[MAIL](http://googlegroups.com/group/rubyworks-mailinglist)  /
+[ISSUES](http://github.com/rubyworks/ansi/issues) /
+[SOURCE](http://github.com/rubyworks/ansi) :
 [![Build Status](https://secure.travis-ci.org/rubyworks/ansi.png)](http://travis-ci.org/rubyworks/ansi)
 
 <br/>

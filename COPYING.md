@@ -4,7 +4,7 @@
 
 ### ANSI
 
-Copyright (c) 2009 [Rubyworks](http://rubyworks.github.com) &middot;
+Copyright &copy; 2009 [Rubyworks](http://rubyworks.github.com) &middot;
 License [BSD-2-Clause](http://spdx.org/licenses/BSD-2-Clause) &middot;
 Website http://rubyworks.github.com/ansi
 
@@ -37,7 +37,7 @@ Website http://rubyworks.github.com/ansi
 
 ### ProgressBar
 
-Copyright (c) 2001 Satoru Takabayashi &middot;
+Copyright &copy; 2001 Satoru Takabayashi &middot;
 License [Ruby](http://spdx.org/licenses/Ruby) &middot;
 Website http://0xcc.net/ruby-progressbar
 
@@ -55,7 +55,7 @@ ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
 
 ### HighLine (Terminal Extensions)
 
-Copyright (c) 2006 Gray Productions &middot;
+Copyright &copy; 2006 Gray Productions &middot;
 License [Ruby](http://spdx.org/licenses/Ruby) &middot;
 Website http://highline.rubyforge.org
 
@@ -73,7 +73,7 @@ by James Edward Gray II.
 
 ### BBCode
 
-Copyright (c) 2002 Thomas-Ivo Heinen &middot;
+Copyright &copy; 2002 Thomas-Ivo Heinen &middot;
 License [Ruby](http://spdx.org/licenses/Ruby)
 
 BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
@@ -90,7 +90,7 @@ BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
 ### Rainbow (XTerm Color Support)
 
-Copyright (c) Marcin Kulik &middot;
+Copyright &copy; Marcin Kulik &middot;
 License [MIT](http://spdx.org/licenses/MIT) &middot;
 Website http://github.com/sickill/rainbow
 
@@ -121,7 +121,7 @@ support into the ANSI::Code module.
 
 ### Paint
 
-Copyright (c) 2011 Jan Lelis &middot;
+Copyright &copy; 2011 Jan Lelis &middot;
 License [MIT](http://spdx.org/licenses/MIT) &middot;
 Website https://github.com/janlelis/paint
 
@@ -152,13 +152,14 @@ and include XTerm 256 color codes, came from Paint.
 
 ### ANSIColor
 
-Copyright (c) 2002 Florian Frank &middot;
+Copyright &copy; 2002 Florian Frank &middot;
 Website http://flori.github.com/term-ansicolor
 
 Albeit the code no long bares much if any resemblance to it, the ANSI Code
 module (and subsequently the Constants module) originated with the
 ANSIColor library by Florian Frank.
 
+<br/>
 
 ## LICENSES
 
