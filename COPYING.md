@@ -4,9 +4,9 @@
 
 ### ANSI
 
-Copyright: (c) 2009 [Rubyworks](http://rubyworks.github.com)
-License: [BSD-2-Clause](http://spdx.org/licenses/BSD-2-Clause)
-Website: http://rubyworks.github.com/ansi
+Copyright (c) 2009 [Rubyworks](http://rubyworks.github.com) &middot;
+License [BSD-2-Clause](http://spdx.org/licenses/BSD-2-Clause) &middot;
+Website http://rubyworks.github.com/ansi
 
     Copyright 2009 Rubyworks.
 
@@ -37,9 +37,9 @@ Website: http://rubyworks.github.com/ansi
 
 ### ProgressBar
 
-Copyright: (c) 2001 Satoru Takabayashi
-License: [Ruby](http://spdx.org/licenses/Ruby)
-Website: http://0xcc.net/ruby-progressbar
+Copyright (c) 2001 Satoru Takabayashi &middot;
+License [Ruby](http://spdx.org/licenses/Ruby) &middot;
+Website http://0xcc.net/ruby-progressbar
 
 ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
 
@@ -55,9 +55,9 @@ ProgressBar class is based on the original ProgressBar by Satoru Takabayashi.
 
 ### HighLine (Terminal Extensions)
 
-Copyright: (c) 2006 Gray Productions
-License: [Ruby](http://spdx.org/licenses/Ruby)
-Website: http://highline.rubyforge.org
+Copyright (c) 2006 Gray Productions &middot;
+License [Ruby](http://spdx.org/licenses/Ruby) &middot;
+Website http://highline.rubyforge.org
 
 The terminal extensions are based on HighLine's SystemExtensions
 by James Edward Gray II.
@@ -73,8 +73,8 @@ by James Edward Gray II.
 
 ### BBCode
 
-Copyright: (c) 2002 Thomas-Ivo Heinen
-License: [Ruby](http://spdx.org/licenses/Ruby)
+Copyright (c) 2002 Thomas-Ivo Heinen &middot;
+License [Ruby](http://spdx.org/licenses/Ruby)
 
 BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
@@ -90,9 +90,9 @@ BBCode module is a derivative of BBCode by Thomas-Ivo Heinen.
 
 ### Rainbow (XTerm Color Support)
 
-Copyright: (c) Marcin Kulik
-License: [MIT](http://spdx.org/licenses/MIT)
-Website: http://github.com/sickill/rainbow
+Copyright (c) Marcin Kulik &middot;
+License [MIT](http://spdx.org/licenses/MIT) &middot;
+Website http://github.com/sickill/rainbow
 
 Rainbox provided the bases for building the XTerm 256 color code
 support into the ANSI::Code module.
@@ -121,9 +121,9 @@ support into the ANSI::Code module.
 
 ### Paint
 
-Copyright: (c) 2011 Jan Lelis
-License: [MIT](http://spdx.org/licenses/MIT)
-Website: https://github.com/janlelis/paint
+Copyright (c) 2011 Jan Lelis &middot;
+License [MIT](http://spdx.org/licenses/MIT) &middot;
+Website https://github.com/janlelis/paint
 
 Some of the latest ANSI code names, and inspiration to check out Rainbow
 and include XTerm 256 color codes, came from Paint.
@@ -152,8 +152,8 @@ and include XTerm 256 color codes, came from Paint.
 
 ### ANSIColor
 
-Copyright: (c) 2002 Florian Frank
-Website: http://flori.github.com/term-ansicolor
+Copyright (c) 2002 Florian Frank &middot;
+Website http://flori.github.com/term-ansicolor
 
 Albeit the code no long bares much if any resemblance to it, the ANSI Code
 module (and subsequently the Constants module) originated with the
