@@ -1,13 +1,13 @@
 # ANSI
 
-[Home](http://rubyworks.github.com/ansi) /
-[API](http://rubydoc.info/gems/ansi/frames) /
-[Code](http://github.com/rubyworks/ansi) /
-[Mail](http://googlegroups.com/group/rubyworks-mailinglist) : :
+[Homepage](http://rubyworks.github.com/ansi) /
+[API Reference](http://rubydoc.info/gems/ansi/frames) /
+[Mailing List](http://googlegroups.com/group/rubyworks-mailinglist)  /
+[Report Issue](http://github.com/rubyworks/ansi/issues) /
+[Source Code](http://github.com/rubyworks/ansi) :
 [![Build Status](https://secure.travis-ci.org/rubyworks/ansi.png)](http://travis-ci.org/rubyworks/ansi)
 
-
-## Description
+<br/>
 
 The ANSI project is a collection of ANSI escape code related libraries
 enabling ANSI code based colorization and stylization of output.
