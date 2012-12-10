@@ -1,5 +1,11 @@
 module ANSI
 
+  # Global variialbe can be used to prevent ANSI codes
+  # from being used in ANSI's methods that do so to string.
+  #
+  # NOTE: This has no effect of methods that return ANSI codes.
+  $ansi = true
+
   if RUBY_PLATFORM =~ /(win32|w32)/
     begin
       require 'Win32/Console/ANSI'
@@ -10,12 +16,6 @@ module ANSI
   end
 
   require 'ansi/constants'
-
-  # Global variialbe can be used to prevent ANSI codes
-  # from being used in ANSI's methods that do so to string.
-  #
-  # NOTE: This has no effect of methods that return ANSI codes.
-  $ansi = true
 
   # TODO: up, down, right, left, etc could have yielding methods too?
 
@@ -202,11 +202,13 @@ module ANSI
     def left(spaces=1)
       "\e[#{spaces.to_i}D"
     end
+    alias :back :left
 
     # Move cursor right a specificed number of spaces.
     def right(spaces=1)
       "\e[#{spaces.to_i}C"
     end
+    alias :forward :right
 
     ##
     #def position
@@ -228,6 +230,7 @@ module ANSI
       if block_given?
         string = yield.to_s
       else
+        # first argument must be the string
         string = codes.shift.to_s
       end
 

@@ -87,12 +87,17 @@ module ANSI
 
   #
   SPECIAL_CHART = {
-    :save             => "\e[s",   # Save current cursor positon.
-    :restore          => "\e[u",   # Restore saved cursor positon.
-    :clear_line       => "\e[K",   # Clear to the end of the current line.
-    :clr              => "\e[K",   # Clear to the end of the current line.
-    :clear_screen     => "\e[2J",  # Clear the screen and move cursor to home.
-    :cls              => "\e[2J",  # Clear the screen and move cursor to home.
+    :save             => "\e[s",     # Save current cursor positon.
+    :restore          => "\e[u",     # Restore saved cursor positon.
+    :clear_eol        => "\e[K",     # Clear to the end of the current line.
+    :clr              => "\e[K",     # Clear to the end of the current line.
+    :clear_right      => "\e[0K",    # Clear to the end of the current line.
+    :clear_left       => "\e[1K",    # Clear to the start of the current line.
+    :clear_line       => "\e[2K",    # Clear the entire current line.
+    :clear_screen     => "\e[2J",    # Clear the screen and move cursor to home.
+    :cls              => "\e[2J",    # Clear the screen and move cursor to home.
+    :cursor_hide      => "\e[?25l",  # Hide the cursor.
+    :cursor_show      => "\e[?25h"   # Show the cursor.
   }
 
 end

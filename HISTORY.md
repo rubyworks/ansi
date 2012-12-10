@@ -1,5 +1,20 @@
 # RELEASE HISTORY
 
+## 1.5.0 | 2012-12-20
+
+ANSI 1.5 introduces one change that is not backward compatiable. The 
+`:clear_line` code no longer clears to the end of the line. Instead it
+clears the entire line. If you have used this in the past you
+will need to update your code to use `:clear_eol` or `:clear_right`
+instead.
+
+Changes:
+
+* Alias `:right` and `:left` as `:forward` and `:back` respectively.
+* Change `:clear_line` to clear whole line, not just to the end of line.
+* Add `:cursor_hide` and `:cursor_show` codes.
+
+
 ## 1.4.3 | 2012-06-26
 
 This release bring two small changes. The first improves support
