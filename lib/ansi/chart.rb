@@ -26,7 +26,6 @@ module ANSI
     :concealed        => 8,
     :swap             => 7,
     :conceal          => 8,
-    :concealed        => 8,
     :hide             => 9,
     :strike           => 9,
 
