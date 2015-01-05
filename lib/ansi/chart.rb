@@ -23,7 +23,6 @@ module ANSI
     :inverse          => 7,
     :reverse          => 7,
     :negative         => 7,
-    :concealed        => 8,
     :swap             => 7,
     :conceal          => 8,
     :concealed        => 8,
