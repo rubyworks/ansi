@@ -3,7 +3,7 @@ module ANSI
   # Global variable can be used to prevent ANSI codes
   # from being used in ANSI's methods that do so to string.
   #
-  # NOTE: This has no effect of methods that return ANSI codes.
+  # NOTE: This has no effect on methods that return ANSI codes.
   $ansi = true
 
   if RUBY_PLATFORM =~ /(win32|w32)/

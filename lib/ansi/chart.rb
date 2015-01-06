@@ -1,6 +1,6 @@
-module ANSI
+#require 'ansi/version'
 
-  require 'ansi/version'
+module ANSI
 
   # Table of codes used throughout the system.
   #
