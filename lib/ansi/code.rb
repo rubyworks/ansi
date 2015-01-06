@@ -32,7 +32,7 @@ module ANSI
   #
   # IMPORTANT! Do not mixin Ansi::Code, instead use {ANSI::Mixin}.
   #
-  # See {ANSI::Code::CHART} for list of all supported codes.
+  # See {ANSI::CHART} for list of all supported codes.
   #
   module Code
     extend self
