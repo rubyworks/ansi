@@ -2,18 +2,21 @@
 revision: 2013
 type: ruby
 sources:
-- var
+- Index.yml
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
 - name: Florian Frank
-organizations:
-- name: Rubyworks
+organizations: []
 requirements:
 - groups:
   - build
   development: true
-  name: detroit
+  name: mast
+- groups:
+  - build
+  development: true
+  name: index
 - groups:
   - build
   development: true
@@ -25,7 +28,7 @@ requirements:
 - groups:
   - test
   development: true
-  name: qe
+  name: ae
 - groups:
   - test
   development: true
@@ -61,12 +64,14 @@ customs: []
 paths:
   lib:
   - lib
-created: '2009-08-01'
-summary: ANSI at your fingertips!
+name: ansi
 title: ANSI
 version: 1.5.0
-name: ansi
-description: ! "The ANSI project is a superlative collection of ANSI escape code related\nlibraries
-  eabling ANSI colorization and stylization of console output. \nByte for byte ANSI
-  is the best ANSI code library available for the Ruby\nprogramming language."
-date: '2013-03-12'
+summary: ANSI at your fingertips!
+description: The ANSI project is a superlative collection of ANSI escape code related
+  libraries eabling ANSI colorization and stylization of console output. Byte for
+  byte ANSI is the best ANSI code library available for the Ruby programming language.
+orgranizations:
+- Rubyworks
+created: '2009-08-01'
+date: '2015-01-06'

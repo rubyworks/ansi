@@ -16,10 +16,10 @@ module Indexer
   #
   class GemspecExporter
 
-    # File globs to include in package (unless manifest file exists).
-    FILES = ".index .ruby .yardopts alt bin ext lib man spec test [A-Z]*.*" unless defined?(FILES)
+    # File globs to include in package --unless a manifest file exists.
+    FILES = ".index .yardopts alt bin data demo ext features lib man spec test try* [A-Z]*.*" unless defined?(FILES)
 
-    # File globs to omit.
+    # File globs to omit from FILES.
     OMIT = "Config.rb" unless defined?(OMIT)
 
     # Standard file patterns.
@@ -155,7 +155,8 @@ module Indexer
     end
 
     def require_paths
-      metadata['load_path'] || ['lib']
+      paths = metadata['paths'] || {}
+      paths['load'] || ['lib']
     end
 
     #
@@ -269,7 +270,7 @@ module Indexer
       root_files = patterns[:root]
       if Dir.glob(root_files).first
         Pathname.new(Dir.pwd)
-      elsif Dir.glob("../#{ROOT}").first
+      elsif Dir.glob("../#{root_files}").first
         Pathname.new(Dir.pwd).parent
       else
         #raise "Can't find root of project containing `#{root_files}'."
