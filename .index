@@ -16,7 +16,7 @@ requirements:
 - groups:
   - build
   development: true
-  name: index
+  name: indexer
 - groups:
   - build
   development: true

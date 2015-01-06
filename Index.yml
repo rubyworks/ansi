@@ -19,7 +19,7 @@ description:
 
 requirements:
 - mast (build)
-- index (build)
+- indexer (build)
 - ergo (build)
 - qed (test)
 - ae (test)
