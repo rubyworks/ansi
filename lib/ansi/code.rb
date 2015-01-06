@@ -1,6 +1,6 @@
 module ANSI
 
-  # Global variialbe can be used to prevent ANSI codes
+  # Global variable can be used to prevent ANSI codes
   # from being used in ANSI's methods that do so to string.
   #
   # NOTE: This has no effect of methods that return ANSI codes.
@@ -22,7 +22,7 @@ module ANSI
   # ANSI Codes
   #
   # Ansi::Code module makes it very easy to use ANSI codes.
-  # These are esspecially nice for beautifying shell output.
+  # These are especially nice for beautifying shell output.
   #
   #   Ansi::Code.red + "Hello" + Ansi::Code.blue + "World"
   #   => "\e[31mHello\e[34mWorld"
@@ -165,10 +165,10 @@ module ANSI
     end
 
     # TODO: How to deal with position codes when $ansi is false?
-    # Should we reaise an error or just not push the codes?
+    # Should we raise an error or just not push the codes?
     # For now, we will leave this it as is.
 
-    # Like +move+ but returns to original positon after
+    # Like +move+ but returns to original position after
     # yielding the block.
     def display(line, column=0) #:yield:
       result = "\e[s"
@@ -188,23 +188,23 @@ module ANSI
       "\e[#{line.to_i};#{column.to_i}H"
     end
 
-    # Move cursor up a specificed number of spaces.
+    # Move cursor up a specified number of spaces.
     def up(spaces=1)
       "\e[#{spaces.to_i}A"
     end
 
-    # Move cursor down a specificed number of spaces.
+    # Move cursor down a specified number of spaces.
     def down(spaces=1)
       "\e[#{spaces.to_i}B"
     end
 
-    # Move cursor left a specificed number of spaces.
+    # Move cursor left a specified number of spaces.
     def left(spaces=1)
       "\e[#{spaces.to_i}D"
     end
     alias :back :left
 
-    # Move cursor right a specificed number of spaces.
+    # Move cursor right a specified number of spaces.
     def right(spaces=1)
       "\e[#{spaces.to_i}C"
     end
@@ -263,7 +263,7 @@ module ANSI
     # Alias for #ansi method.
     #
     # @deprecated
-    #   Here for backward scompatibility.
+    #   Here for backward compatibility.
     alias_method :style, :ansi
 
     # Alias for #unansi method.
@@ -288,7 +288,7 @@ module ANSI
     # Also resolves :random and :on_random.
     #
     # @param codes [Array<Symbol,Integer]
-    #   Symbols or integers to covnert to ANSI code.
+    #   Symbols or integers to convert to ANSI code.
     #
     # @return [String] ANSI code
     def code(*codes)
