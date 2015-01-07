@@ -1,5 +1,3 @@
-#require 'ansi/version'
-
 module ANSI
 
   # Table of codes used throughout the system.

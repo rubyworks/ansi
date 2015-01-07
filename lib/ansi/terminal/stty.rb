@@ -9,11 +9,11 @@ module ANSI
     #CHARACTER_MODE = "stty"    # For Debugging purposes only.
 
     #
-    # Unix savvy getc().  (Second choice.)
+    # Unix savvy getc().  (second choice)
     #
     # *WARNING*:  This method requires the external "stty" program!
     #
-    def get_character( input = STDIN )
+    def get_character(input = STDIN)
       raw_no_echo_mode
 
       begin

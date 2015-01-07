@@ -10,7 +10,6 @@ module ANSI
     #
     # Curses savvy getc().
     #
-    #
     def get_character(input = STDIN)
       Curses.getch()
     end

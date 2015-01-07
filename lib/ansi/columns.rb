@@ -1,5 +1,3 @@
-#require 'ansi'
-#require 'ansi/version'
 require 'ansi/terminal'
 
 module ANSI
