@@ -17,7 +17,7 @@ module ANSI
 
     def terminal_size
       Curses.init_screen
-      w, r = Curses.cols, Curses.rows
+      w, r = Curses.cols, Curses.lines
       Curses.close_screen
       return w, r
     end
