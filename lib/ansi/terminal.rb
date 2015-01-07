@@ -22,7 +22,7 @@ module ANSI
     # Be warned: Here be dragons!
     #
     begin
-      require 'ansi/terminal/' + (mode = modes.pop)
+      require 'ansi/terminal/' + (mode = modes.shift)
       CHARACTER_MODE = mode
     rescue LoadError
       retry
