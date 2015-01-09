@@ -8,22 +8,28 @@ testcase ANSI::Mixin do
     include ANSI::Mixin
   end
 
-  unit :red do
-    str = "Hello".red
-    out = "\e[31mHello\e[0m"
-    out.assert == str
+  method :red do
+    test do
+      str = "Hello".red
+      out = "\e[31mHello\e[0m"
+      out.assert == str
+    end
   end
 
-  unit :blue do
-    str = "World".blue
-    out = "\e[34mWorld\e[0m"
-    out.assert == str
+  method :blue do
+    test do
+      str = "World".blue
+      out = "\e[34mWorld\e[0m"
+      out.assert == str
+    end
   end
 
-  unit :display do
-    str = "Hello".display(4,10)
-    out = "\e[s\e[4;10HHello\e[u"
-    out.assert == str
+  method :display do
+    test do
+      str = "Hello".display(4,10)
+      out = "\e[s\e[4;10HHello\e[u"
+      out.assert == str
+    end
   end
 
 end
