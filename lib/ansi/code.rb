@@ -56,59 +56,6 @@ module ANSI
       %w{black red green yellow blue magenta cyan white}
     end
 
-=begin
-    styles.each do |style|
-      module_eval <<-END, __FILE__, __LINE__
-        def #{style}(string=nil)
-          if string
-            return string unless $ansi
-            #warn "use ANSI block notation for future versions"
-            return "\#{#{style.upcase}}\#{string}\#{ENDCODE}"
-          end
-          if block_given?
-            return yield unless $ansi
-            return "\#{#{style.upcase}}\#{yield}\#{ENDCODE}"
-          end
-          #{style.upcase}
-        end
-      END
-    end
-=end
-
-=begin
-    # Dynamically create color methods.
-
-    colors.each do |color|
-      module_eval <<-END, __FILE__, __LINE__
-        def #{color}(string=nil)
-          if string
-            return string unless $ansi
-            #warn "use ANSI block notation for future versions"
-            return "\#{#{color.upcase}}\#{string}\#{ENDCODE}"
-          end
-          if block_given?
-            return yield unless $ansi
-            return "\#{#{color.upcase}}\#{yield}\#{ENDCODE}"
-          end
-          #{color.upcase}
-        end
-
-        def on_#{color}(string=nil)
-          if string
-            return string unless $ansi
-            #warn "use ANSI block notation for future versions"
-            return "\#{ON_#{color.upcase}}\#{string}\#{ENDCODE}"
-          end
-          if block_given?
-            return yield unless $ansi
-            return "\#{ON_#{color.upcase}}\#{yield}\#{ENDCODE}"
-          end
-          ON_#{color.upcase}
-        end
-      END
-    end
-=end
-
     # Return ANSI code given a list of symbolic names.
     def [](*codes)
       code(*codes)
@@ -299,11 +246,18 @@ module ANSI
           when Integer
             code
           when Array
-            rgb(*code)
-          when :random
+            rgb_code(*code)
+          when :random, 'random'
             random
-          when :on_random
+          when :on_random, 'on_random'
             random(true)
+          when String
+            # TODO: code =~ /\d\d\d\d\d\d/ ?
+            if code.start_with?('#')
+              hex_code(code)
+            else
+              CHART[code.to_sym]
+            end
           else
             CHART[code.to_sym]
           end
@@ -321,30 +275,69 @@ module ANSI
       (background ? 40 : 30) + rand(8)
     end
 
+    # Creates an XTerm 256 color escape code from RGB value(s). The
+    # RGB value can be three arguments red, green and blue respectively
+    # each from 0 to 255, or the RGB value can be a single CSS-style
+    # hex string.
+    #
+    # @param background [Boolean]
+    #   Use `true` for background color, otherwise foreground color.
+    #
+    def rgb(*args)
+      case args.size
+      when 1, 2
+        hex, background = *args
+        esc = "\e[" + hex_code(hex, background) + "m"
+      when 3, 4
+        red, green, blue, background = *args
+        esc = "\e[" + rgb_code(red, green, blue, background) + "m"
+      else
+        raise ArgumentError
+      end
+
+      if block_given?
+        return yield.to_s unless $ansi
+        return "#{esc}#{yield}#{ENDCODE}"
+      else
+        return esc
+      end
+    end
+
+  #private
+
     # Creates an xterm-256 color from rgb value.
     #
     # @param background [Boolean]
     #   Use `true` for background color, otherwise foreground color.
     #
-    def rgb(red, green, blue, background=false)
-      "#{background ? 48 : 38};5;#{rgb_value(red, green, blue)}"
+    def rgb_code(red, green, blue, background=false)
+      "#{background ? 48 : 38};5;#{rgb_256(red, green, blue)}"
     end
 
-    # Creates an xterm-256 color from a CSS-style color string.
-    def hex(string, background=false)
+    # Creates an xterm-256 color code from a CSS-style color string.
+    #
+    # @param string [String]
+    #   Hex string in CSS style, .e.g. `#5FA0C2`.
+    #
+    # @param background [Boolean]
+    #   Use `true` for background color, otherwise foreground color.
+    #
+    def hex_code(string, background=false)
       string.tr!('#','')
       x = (string.size == 6 ? 2 : 1)
       r, g, b = [0,1,2].map{ |i| string[i*x,2].to_i(16) }
-      rgb(r, g, b, background)
+      rgb_code(r, g, b, background)
     end
 
-    private
-
-    # Gets closest xterm-256 color.
+    # Given red, green and blue values between 0 and 255, this method
+    # returns the closest XTerm 256 color value.
+    #
     def rgb_256(r, g, b)
-      r, g, b = [r, g, b].map{ |c| rgb_valid(c); (6 * (c.to_f / 256.0)).to_i }
+      # TODO: what was rgb_valid for?
+      #r, g, b = [r, g, b].map{ |c| rgb_valid(c); (6 * (c.to_f / 256.0)).to_i }
+      r, g, b = [r, g, b].map{ |c| (6 * (c.to_f / 256.0)).to_i }
       v = (r * 36 + g * 6 + b + 16).abs
-      raise ArgumentError, "RGB value outside 0-255 range" if v > 255
+      raise ArgumentError, "RGB value is outside 0-255 range -- #{v}" if v > 255
       v
     end
 
