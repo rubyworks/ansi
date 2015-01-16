@@ -56,7 +56,7 @@ end
 book :index do
   desc "update index file"
 
-  rule 'Index.yml' do
-    shell "index -u Index.yml"
+  rule 'INDEX.yml' do
+    shell "index -u INDEX.yml"
   end
 end
