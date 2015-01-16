@@ -1,4 +1,4 @@
-#!mast .index .ruby .yardopts bin lib man demo spec test [A-Z]*.*
+#!mast .index .yardopts bin lib man demo test *.md *.txt
 .index
 .yardopts
 lib/ansi/bbcode.rb
@@ -41,9 +41,8 @@ test/case_bbcode.rb
 test/case_mixin.rb
 test/case_progressbar.rb
 test/test_helper.rb
-LICENSE.txt
-HISTORY.md
-README.md
-DEMO.md
 NOTICE.md
-Config.rb
+README.md
+HISTORY.md
+DEMO.md
+LICENSE.txt

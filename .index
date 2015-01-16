@@ -2,7 +2,7 @@
 revision: 2013
 type: ruby
 sources:
-- Index.yml
+- INDEX.yml
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
@@ -74,4 +74,4 @@ description: The ANSI project is a superlative collection of ANSI escape code re
 orgranizations:
 - Rubyworks
 created: '2009-08-01'
-date: '2015-01-06'
+date: '2015-01-16'
