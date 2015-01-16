@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+desc "update index file"
+
+rule 'Index.yml' do
+  shell "index -u Index.yml"
+end
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+desc "run unit tests"
+
+rule 'test/helper.rb'         => :test_all
+rule 'test/case_*.rb'         => :test
+rule /^lib\/(.*?)\.rb$/       => :test_match
+rule /^lib\/ansi\/(.*?)\.rb$/ => :test_match
+
+def test_all
+  test *Dir['test/test_*.rb']
+end
+
+def test_match(m)
+  test "test/case_#{m[1]}"
+end
+
+def test(*paths)
+  shell "bundle exec rubytest #{gem_opt} -Ilib:test " + paths.flatten.join(' ')
+end
+
+def gem_opt
+  defined?(::Gem) ? "-rubygems" : ""
+end
+
+#Signal.trap('QUIT') { test tests  } # Ctrl-\
+#Signal.trap('INT' ) { abort("\n") } # Ctrl-C
+

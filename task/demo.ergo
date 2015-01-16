@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+desc "run demos"
+
+rule "demo/*.md"   => :run_demo
+rule "lib/**/*.rb" => :run_all
+
+def run_demo(*demos)
+  shell "bundle exec qed -Ilib " + demos.join(' ')
+end
+
+def run_all
+  shell "bundle exec qed -Ilib demo/*.md"
+end
+
+#task("demo") { shell "qed -Ilib qed/" }
+
