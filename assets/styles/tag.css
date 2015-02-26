@@ -4,7 +4,8 @@ html { font-family: helvetica, sans-serif; font-size: 100%; }
 body { position: relative; color: #222233; background: url(../images/girl.jpg) #ffffff; }
 
   li { padding: 3px 0; font-size: 80%; line-height: 150%; }
-pre { margin: 10px 0; font-family: monospace; color: white; }
+pre { margin: 10px 0; padding: 10px 10px 0px 10px; font-family: monospace; color: white; background-color: #333; }
+pre.ruby { padding: 10px; }
 pre code { padding: 10px 10px; }
 
  img { border: none; }

@@ -8,9 +8,9 @@
 
 pre code {
     display: block;
-    color: #000;
+    color: #eee;
     background: #f8f8ff;
-    background: #eee;
+    background: #333;
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
@@ -21,7 +21,7 @@ code .comment, .template_comment, .diff .header, .javadoc {
 }
 
 code .keyword, .css .rule .keyword, .winutils, .javascript .title, .lisp .title, .subst {
-    color: #000;
+    color: #77f;
     font-weight: bold 
 }
 

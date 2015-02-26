@@ -2,7 +2,7 @@
 
 /* #header */
 
-#header { border-bottom: 0px solid #ccc; padding: 0; }
+#header { border-bottom: 0px solid #ccc; padding: 0; text-align: center; }
 #header .title { padding: 0; font-size: 20px; height: 110px; vertical-align: absmiddle; }
 #header .title h1 { font-size: 100px; font-weight: bold; margin-top: 30px; }
 #header .title h1 { color: #000000; }
@@ -10,7 +10,7 @@
 
 /* #nav */
 
-#nav { padding: 10px 0; text-align: left; }
+#nav { padding: 10px 0; text-align: center; }
 #nav ul { list-style-type: none; margin: 0px; padding: 0px; width: 100%; position: relative; }
 #nav ul li { margin: 0 1px 10px 0; line-height: 20px; white-space:nowrap; }
 #nav ul li a { border-top: 0 solid; }
@@ -34,7 +34,7 @@
 #doc { font-family: helvetica, sans-serif; font-weight: bold; line-height: 150%; padding: 20px 20px 0 0; }
 #doc a { color: #00415A; }
 #doc a:hover { }
-#doc p { font-weight: bold; font-size: 150%; }
+#doc p { font-weight: bold; font-size: 130%; }
 #doc h2 { color: #ff0000; border-color: #80C1DA; margin-top: 0; padding-top: 0; }
 #doc h3 { border-color: #80C1DA; }
 
@@ -42,7 +42,7 @@
 #readme ol, ul { list-style: square; margin-left: 24px; }
 /* #footer */
 
-#footer { margin-top: 0; padding-top: 30px; border-top: 1px solid #ccc; }
+#footer { margin-top: 0; padding-top: 30px; border-top: 1px solid #ccc; text-align: center; }
 #footer .advert { border: 1px solid :eee; }
 #footer .copyright { margin-top: 20px; padding: 20px 0px 35px 0px; font-size: 0.8em; color: #888; }
 

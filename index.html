@@ -15,11 +15,11 @@
 
   <SCRIPT type="text/javascript">
     $(document).ready(function() {
-      $('#readme').load('readme.html', function(){
-        $('pre').wrapInner('<code></code>');
+      //$('#readme').load('readme.html', function(){
+        $('pre.ruby').wrapInner('<code></code>');
         hljs.tabReplace = '    ';
         hljs.initHighlightingOnLoad('ruby');
-      });
+      //});
     });
   </SCRIPT>
 
@@ -37,10 +37,10 @@
   <div class="title">
     <h1>ANSI for Ruby</h1>
   </div>
+
   <div id="nav">
+    <a href="http://rubydoc.info/github/rubyworks/ansi/master/frames/file/DEMO.md">Demonstrandum</a> &middot;
     <a href="http://rubydoc.info/github/rubyworks/ansi/master/frames">Documentation</a> &middot;
-    <a href="http://rubydoc.info/github/rubyworks/ansi/master/frames/file/QED.rdoc">Demonstrandum</a> &middot;
-    <a href="http://groups.google.com/group/rubyworks-mailinglist/">Mailing List</a> &middot;
     <a href="http://github.com/rubyworks/ansi/">Development</a>
   </div>
 </div>
@@ -50,89 +50,160 @@
     <p>The Ruby ANSI project is a superlative collection of ANSI escape code
     related libraries enabling ANSI code based colorization and stylization
     of output in a variety of forms and layouts.</p>
+
+    <p>Included are Code module, which is the heart of the system, a Mixin module for
+    including color method into your own classes, a Logger, a ProgressBar, a String sublass
+    and more. The library also includes Terminal which provides information about the
+    current output device.</p>
+
     <br/>
-    <a href="#" onclick="$('#readme').toggle();">Read More ...</a>
+
+    <div style="text-align: center;">
+      [<a href="#" onclick="$('#readme').toggle();">Click Here to Learn More</a>]
+    </div>
   </div>
 </div>
 
 <div id="readme" style="display: none;">
 
-<div class="section" id="section_description"><h2>DESCRIPTION</h2>
-  <p>
-  The ANSI project is a collection of ANSI escape code related libraries
-  enabling ANSI code based colorization and stylization of output. It is very
-  nice for beautifying shell output.
-  </p>
-  <p>
-  This collection is based on a set of scripts spun-off from Ruby Facets.
-  Include are Code (used to be ANSICode), Logger, ProgressBar and String. In
-  addition the library includes Terminal which provides information about the
-  current output device.
-  </p>
+<div class="section">
+  <p>There are a number of modules and classes provided by the ANSI package.
+  Below is a small sampling of some of these. To get an even better understanding
+  of the available modules and classes and their capabilities, have a look at the 
+  <a href="https://github.com/rubyworks/ansi/tree/master/demo">QED Demonstrandum</a>.</p>
 </div>
 
-<div class="section" id="section_features/issues"><h2>FEATURES/ISSUES</h2>
-  <ul>
-  <li><p>
-  ANSI::Code provides ANSI codes and supporting methods as module functions.
-  </p>
-  </li>
-  <li><p>
-  ANSI::Mixin provides a reusable mixin (like <tt>colored</tt> gem).
-  </p>
-  </li>
-  <li><p>
-  Single extension to String class makes common usage very elegant.
-  </p>
-  </li>
-  <li><p>
-  Very Good coverage of standard ANSI codes.
-  </p>
-  </li>
-  </ul>
-</div>
+<div class="section" id="section_code"><h3>ANSI::Code</h3>
+  <p>At the heart of all the provided libraries lies the ANSI::Code module which
+  defines ANSI codes as constants and methods. For exmaple:</p>
 
-<div class="section" id="section_release_notes"><h2>RELEASE NOTES</h2>
-  <p>
-  Please see HISTORY file.
-  </p>
-</div>
-
-<div class="section" id="section_synopsis"><h2>SYNOPSIS</h2>
-  <p>
-  There are a number of modules and classes provided by the ANSI package. To
-  get a good unserstanding of them it is best to puruse  the QED <a
-  href="http://github.com/rubyworks/ansi/tree/master/qed/">documents</a> or
-  the API documentation[rdoc/].
-  </p>
-  <p>
-  At the heart of all the provided libraries lies the ANSI::Code module which
-  defines ANSI codes as constants and methods. For exmaple:
-  </p>
-  <pre>
+  <pre class="ruby">
     require 'ansi/code'
 
     include ANSI::Code
 
-    red + &quot;Hello&quot; + blue + &quot;World&quot;
-    =&gt; &quot;\e[31mHello\e[34mWorld&quot;
+    red + &quot;Hello&quot; + " " + blue + &quot;World&quot; + clear
   </pre>
-  <p>
-  Or in block form.
-  </p>
+
   <pre>
-    red{ &quot;Hello&quot; } + blue{ &quot;World&quot; }
-    =&gt; &quot;\e[31mHello\e[0m\e[34mWorld\e[0m&quot;
+      <span style="color: red">Hello</span> <span style="color: green">World</span>
   </pre>
-  <p>
-  Rather than include +ANSI::Code+, these mehods can also be called as module
-  methods. Either as <tt>ANSI::Code.red</tt> or just <tt>ANSI.red</tt>.
-  </p>
-  <p>
-  The methods defined by this module are used throughout the rest of the
-  system.
-  </p>
-  </div><div class="section" id="section_how_to_install"><h2>HOW TO INSTALL</h2>
+
+  <p>Or in block form...</p>
+
+  <pre class="ruby">
+    puts red{ &quot;Hello&quot; } + " " + green{ &quot;World&quot; }
+  </pre>
+
+  <pre>
+      <span style="color: red">Hello</span> <span style="color: green">World</span>
+  </pre>
+
+  <p>Rather than include +ANSI::Code+, these mehods can also be called as module
+  methods. Either as <tt>ANSI::Code.red</tt> or just <tt>ANSI.red</tt>.</p>
+
+  <p>The methods defined by this module are used throughout the rest of the
+  system.</p>
+</div>
+
+<div class="section" id="section_progressbar"><h3>ANSI::ProgressBar</h3>
+  <p>The <tt>ANSI::ProgressBar</tt> class is great to convey the progress
+  of long running process.</p>
+
+  <pre class="ruby">
+    require 'ansi/progressbar'
+
+    pbar = ANSI::Progressbar.new("Test Bar", 100)
+
+    100.times do |i|
+      sleep 0.01
+      pbar.inc
+    end
+    pbar.finish
+  </pre>
+
+  <pre>
+     Test Bar:  100% |||||||||||||||||||||||||||||||||||||||||||| Time: 00:00:11
+  </pre>
+
+  <p>As with the rest of the ANSI classes, ANSI codes can be used to spice up the 
+  progress bar output.</p>
+</div>
+
+<div class="section" id="section_string"><h3>ANSI::String</h3>
+  <p>The <tt>ANSI::String</tt> class provides a specialized String subclass ideally suited for ANSI
+color manipulation..</p>
+
+  <pre class="ruby">
+    require 'ansi/string'
+
+    flower1 = ANSI::String.new("Roses")
+    flower2 = ANSI::String.new("Violets")
+
+    puts flower1.red + " are red and, " + flower2.blue + " are blue."
+  </pre>
+
+  <pre>
+     <span style="color: red;">Roses</span> are red, and <span style="color: lightblue;">Violets</span> are blue.
+  </pre>
+
+  <p>The <tt>ANSI::String</tt> class is mostly a String subclass with
+  the <tt>ANSI::Mixin</tt> module mixed-in.</p>
+</div>
+
+<div class="section" id="section_columns"><h3>ANSI::Columns</h3>
+  <p>The <tt>ANSI::Columns</tt> class provides easy way to create columnar output.</p>
+
+  <pre class="ruby">
+    require 'ansi/columns'
+
+    list = %w{a b c d e f g h i j k l}
+
+    columns = ANSI::Columns.new(list)
+
+    puts columns.to_s(4)
+  </pre>
+
+  <pre>
+      a d g j
+      b e h k
+      c f i l
+  </pre>
+
+  <p>A block can be passed to the constructor to apply ANSI codes to each entry.</p>
+</div>
+
+<div class="section" id="section_code"><h3>ANSI::Table</h3>
+  <p>The <tt>ANSI::Table</tt> class makes quick work of tables.</p>
+
+  <pre class="ruby">
+    require 'ansi/table'
+
+    data = [
+      [ 10, 20, 30 ],
+      [ 20, 10, 20 ],
+      [ 50, 40, 20 ]
+    ]
+
+    table = ANSI::Table.new(data)
+
+    puts table
+  </pre>
+
+  <pre>
+    +----+----+----+
+    | 10 | 20 | 30 |
+    | 20 | 10 | 20 |
+    | 50 | 40 | 20 |
+    +----+----+----+
+  </pre>
+
+  <p>As with the <tt>Columns</tt> class, a block passed to the constructor can de
+  used to apply ANSI coded to each cell.</p>
+</div>
+
+<!--
+<div class="section" id="section_how_to_install"><h2>HOW TO INSTALL</h2>
   <p>
   To install with RubyGems simply open a console and type:
   </p>
@@ -165,6 +236,7 @@
   See LICENSE file for details.
   </p>
 </div>
+-->
 
 </div>
 
@@ -184,7 +256,7 @@
   </div>
 
   <div class="copyright">
-    Copyright &copy; 2010 Thomas Sawyer &middot;
+    Copyright &copy; 2010 Rubyworks &middot;
     Background Image Copyright 2006 <a href="http://www.flickr.com/photos/26233461@N00/124396361/#/">Simon Kenny</a>
   </div>
 </div>
