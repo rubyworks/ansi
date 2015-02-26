@@ -2,7 +2,6 @@
 
 [HOME](http://rubyworks.github.com/ansi) &middot;
 [API](http://rubydoc.info/gems/ansi/frames) &middot;
-[MAIL](http://googlegroups.com/group/rubyworks-mailinglist)  &middot;
 [ISSUES](http://github.com/rubyworks/ansi/issues) &middot;
 [SOURCE](http://github.com/rubyworks/ansi)
 
@@ -55,6 +54,14 @@ the system.
 
 
 ## Installation
+
+### Bundler
+
+Add the usual `gem` line to your project's `Gemfile`.
+
+    gem 'ansi'
+
+And run then `bundle` command.
 
 ### RubyGems
 

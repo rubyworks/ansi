@@ -6,4 +6,5 @@ pkg
 tmp
 doc
 web
-Gemfile.lock
+*.lock
+*.gem

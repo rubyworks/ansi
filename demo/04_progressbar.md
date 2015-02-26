@@ -52,8 +52,8 @@ Calling this methods is the same as calling:
     pbar.format("%-14s %3d%% %s %s",:title, :percentage, :bar, :stat_for_file_transfer)
     run(pbar)
 
-The `#style` setter allows each part of the line be modified with ANSI codes. And the
-`#bar_mark` writer can be used to change the character used to make the bar.
+The `#style` setter allows each part of the line be modified with ANSI codes. 
+And the `#bar_mark` writer can be used to change the character used to make the bar.
 
     pbar.standard_mode
     pbar.style(:title => [:red], :bar=>[:blue])
