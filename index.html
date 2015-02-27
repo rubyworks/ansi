@@ -38,21 +38,32 @@
   </div>
 </div>
 
-<div id="nav">
-  <a href="http://www.rubydoc.info/gems/ansi/file/DEMO.md">Demonstrandum</a>
-  &nbsp; &nbsp;
-  <a href="http://www.rubydoc.info/gems/ansi">Documentation</a>
-  &nbsp; &nbsp;
-  <a href="http://github.com/rubyworks/ansi/">Development</a>
-</div>
+<table id="nav">
+<tr><td>
+  <a href="http://www.rubydoc.info/gems/ansi/file/DEMO.md">
+    <img src="assets/images/book.png" /><br/>
+    Demonstrandum
+  </a>
+</td><td>
+  <a href="http://www.rubydoc.info/gems/ansi">
+    <img src="assets/images/gears.png" /><br/>
+    Documentation
+  </a>
+</td><td>
+  <a href="http://github.com/rubyworks/ansi/">
+    <img src="assets/images/github.png" /><br/>
+    Development
+  </a>
+</td></tr>
+</table>
 
 <div id="doc">
-  <p>The Ruby ANSI project is a superlative collection of ANSI escape code
+  <p>The Ruby ANSI project is a brilliant collection of ANSI escape code
   related libraries enabling ANSI code based colorization and stylization
   of output in a variety of forms and layouts.</p>
 
   <p>Included are Code module, which is the heart of the system, a Mixin module for
-  including color method into your own classes, a Logger, a ProgressBar, a String sublass
+  including color method into your own classes, a Logger, a ProgressBar, a String subclass
   and more. The library also includes Terminal which provides information about the
   current output device.</p>
 
@@ -76,7 +87,7 @@
 
 <div class="section" id="section_code"><h3>ANSI::Code</h3>
   <p>At the heart of all the provided libraries lies the ANSI::Code module which
-  defines ANSI codes as constants and methods. For exmaple:</p>
+  defines ANSI codes as constants and methods. For example:</p>
 
   <pre class="ruby">
     require 'ansi/code'
@@ -100,7 +111,7 @@
       <span style="color: red">Hello</span> <span style="color: green">World</span>
   </pre>
 
-  <p>Rather than include +ANSI::Code+, these mehods can also be called as module
+  <p>Rather than include +ANSI::Code+, these methods can also be called as module
   methods. Either as <tt>ANSI::Code.red</tt> or just <tt>ANSI.red</tt>.</p>
 
   <p>The methods defined by this module are used throughout the rest of the
@@ -199,7 +210,7 @@ color manipulation..</p>
     +----+----+----+
   </pre>
 
-  <p>As with the <tt>Columns</tt> class, a block passed to the constructor can de
+  <p>As with the <tt>Columns</tt> class, a block passed to the constructor can be
   used to apply ANSI coded to each cell.</p>
 </div>
 
