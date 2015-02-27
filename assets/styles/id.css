@@ -2,15 +2,17 @@
 
 /* #header */
 
-#header { border-bottom: 0px solid #ccc; padding: 0; text-align: center; }
-#header .title { padding: 0; font-size: 20px; height: 110px; vertical-align: absmiddle; }
-#header .title h1 { font-size: 100px; font-weight: bold; margin-top: 30px; }
-#header .title h1 { color: #000000; }
+#header { border-bottom: 0px solid #ccc; padding: 20px; text-align: center; background: url(../images/color_bars.gif) #ffffff; }
+#header .title { padding: 0; font-size: 40px; vertical-align: absmiddle; }
+#header .title h1 { font-size: 190px; font-weight: bold; margin: 10px 0 0 0; font-family: monospace; }
+#header .title h1 { color: #ffffff; }
 #header .title pre { background: transparent; }
+#header .title h2 { color: red; font-weight: bold; margin: 0; text-shadow: 1px 1px 5px #333; }
 
 /* #nav */
 
-#nav { padding: 10px 0; text-align: center; }
+#nav { padding: 30px 0; text-align: center; }
+#nav a { font-weight: bold; font-size: 20px; }
 #nav ul { list-style-type: none; margin: 0px; padding: 0px; width: 100%; position: relative; }
 #nav ul li { margin: 0 1px 10px 0; line-height: 20px; white-space:nowrap; }
 #nav ul li a { border-top: 0 solid; }
@@ -31,8 +33,8 @@
 
 /* #doc */
 
-#doc { font-family: helvetica, sans-serif; font-weight: bold; line-height: 150%; padding: 20px 20px 0 0; }
-#doc a { color: #00415A; }
+#doc { font-family: helvetica, sans-serif; line-height: 150%; padding: 20px 20px 0 0;  background-color: #222; color: white; padding: 2em; }
+#doc a { color: #ff415A; }
 #doc a:hover { }
 #doc p { font-weight: bold; font-size: 130%; }
 #doc h2 { color: #ff0000; border-color: #80C1DA; margin-top: 0; padding-top: 0; }
@@ -50,11 +52,10 @@
 /* CLASS STYLES */
 
 .centered {
-  width: 730px;
-  margin: 30px auto;
+  width: 90%;
+  margin: 10px auto;
   background: #ffffff;
   padding: 5px 40px;
-  border: 15px solid #333;
 }
 
 .colorized {
