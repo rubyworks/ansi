@@ -11,8 +11,12 @@
 
 /* #nav */
 
-#nav { padding: 30px 0; text-align: center; }
+#nav { text-align: center; margin: 20px auto; }
+#nav img { height: 128px; width: 128px; }
+#nav td { text-align: center; padding: 40px; }
 #nav a { font-weight: bold; font-size: 20px; }
+
+/* NOT USED */
 #nav ul { list-style-type: none; margin: 0px; padding: 0px; width: 100%; position: relative; }
 #nav ul li { margin: 0 1px 10px 0; line-height: 20px; white-space:nowrap; }
 #nav ul li a { border-top: 0 solid; }
@@ -33,14 +37,14 @@
 
 /* #doc */
 
-#doc { font-family: helvetica, sans-serif; line-height: 150%; padding: 20px 20px 0 0;  background-color: #222; color: white; padding: 2em; }
+#doc { font-family: helvetica, sans-serif; line-height: 150%; background-color: #222; color: white; padding: 3em 2em 2em 2em; }
 #doc a { color: #ff415A; }
 #doc a:hover { }
 #doc p { font-weight: bold; font-size: 130%; }
 #doc h2 { color: #ff0000; border-color: #80C1DA; margin-top: 0; padding-top: 0; }
 #doc h3 { border-color: #80C1DA; }
 
-#readme { margin-top: 0; padding-top: 20px; border-top: 1px solid #ccc; }
+#readme { margin-top: 0; padding-top: 20px; border-top: 0px solid #ccc; }
 #readme ol, ul { list-style: square; margin-left: 24px; }
 /* #footer */
 
