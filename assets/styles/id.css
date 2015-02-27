@@ -5,7 +5,7 @@
 #header { border-bottom: 0px solid #ccc; padding: 20px; text-align: center; background: url(../images/color_bars.gif) #ffffff; }
 #header .title { padding: 0; font-size: 40px; vertical-align: absmiddle; }
 #header .title h1 { font-size: 190px; font-weight: bold; margin: 10px 0 0 0; font-family: monospace; }
-#header .title h1 { color: #ffffff; }
+#header .title h1 { color: #ffffff; text-shadow: 1px 1px 5px #333; }
 #header .title pre { background: transparent; }
 #header .title h2 { color: red; font-weight: bold; margin: 0; text-shadow: 1px 1px 5px #333; }
 
@@ -44,7 +44,7 @@
 #readme ol, ul { list-style: square; margin-left: 24px; }
 /* #footer */
 
-#footer { margin-top: 0; padding-top: 30px; border-top: 1px solid #ccc; text-align: center; }
+#footer { margin-top: 0; padding-top: 30px; border-top: 0px solid #ccc; text-align: center; }
 #footer .advert { border: 1px solid :eee; }
 #footer .copyright { margin-top: 20px; padding: 20px 0px 35px 0px; font-size: 0.8em; color: #888; }
 
