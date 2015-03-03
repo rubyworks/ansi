@@ -26,7 +26,6 @@ module ANSI
     :concealed        => 8,
     :hide             => 9,
     :strike           => 9,
-
     :default_font     => 10,
     :font_default     => 10,
     :font0            => 10,
@@ -55,7 +54,6 @@ module ANSI
     :reveal           => 27,
     :crossed_off      => 29,
     :crossed_out_off  => 29,
-
     :black            => 30,
     :red              => 31,
     :green            => 32,
@@ -64,7 +62,6 @@ module ANSI
     :magenta          => 35,
     :cyan             => 36,
     :white            => 37,
-
     :on_black         => 40,
     :on_red           => 41,
     :on_green         => 42,
@@ -73,7 +70,6 @@ module ANSI
     :on_magenta       => 45,
     :on_cyan          => 46,
     :on_white         => 47,
-
     :frame            => 51,
     :encircle         => 52,
     :overline         => 53,
