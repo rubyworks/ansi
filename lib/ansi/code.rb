@@ -72,7 +72,7 @@ module ANSI
             if string
               return string unless $ansi
               #warn "use ANSI block notation for future versions"
-              return #{color.upcase} + ON_#{color.upcase} + string + ENDCODE
+              return #{color.upcase} + ON_#{on_color.upcase} + string + ENDCODE
             end
             if block_given?
               return yield unless $ansi
