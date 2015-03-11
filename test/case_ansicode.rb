@@ -31,6 +31,26 @@ testcase ANSI::Code do
     end
   end
 
+  method :red_on_blue do
+    test do
+      str = ANSI::Code.red_on_blue
+      out = "\e[31m\e[44m"
+      out.assert == str
+    end
+
+    test "with block notation" do
+      str = ANSI::Code.red_on_blue { "Lemon" }
+      out = "\e[31m\e[44mLemon\e[0m"
+      out.assert == str
+    end
+
+    test "with positional argument" do
+      str = ANSI::Code.red_on_blue("Cakes")
+      out = "\e[31m\e[44mCakes\e[0m"
+      out.assert == str
+    end
+  end
+
   method :hex do
     test do
       str = ANSI::Code.hex("#000000")
