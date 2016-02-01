@@ -224,20 +224,11 @@ module ANSI
       @title[0,13] + ":"
     end
 
-    # TODO: Use Terminal.terminal_width instead.
     def get_width
-      # FIXME: I don't know how portable it is.
       default_width = 80
       begin
-        tiocgwinsz = 0x5413
-        data = [0, 0, 0, 0].pack("SSSS")
-        if @out.ioctl(tiocgwinsz, data) >= 0 then
-          #rows, cols, xpixels, ypixels = data.unpack("SSSS")
-          cols = data.unpack("SSSS")[1]
-          if cols >= 0 then cols else default_width end
-        else
-          default_width
-        end
+        console = IO.console
+        console.winsize[1]
       rescue Exception
         default_width
       end
