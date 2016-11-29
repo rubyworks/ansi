@@ -11,7 +11,6 @@ module ANSI
       require 'Win32/Console/ANSI'
     rescue LoadError
       warn "ansi: 'gem install win32console' to use color on Windows"
-      $ansi = false
     end
   end
 
@@ -70,12 +69,12 @@ module ANSI
         module_eval <<-END, __FILE__, __LINE__
           def #{color}_on_#{on_color}(string=nil)
             if string
-              return string unless $ansi
+              return string if $ansi == false
               #warn "use ANSI block notation for future versions"
               return #{color.upcase} + ON_#{color.upcase} + string + ENDCODE
             end
             if block_given?
-              return yield unless $ansi
+              return yield $ansi == false
               #{color.upcase} + ON_#{on_color.upcase} + yield.to_s + ENDCODE
             else
               #{color.upcase} + ON_#{on_color.upcase}
@@ -97,12 +96,12 @@ module ANSI
 
       if esc
         if string = args.first
-          return string unless $ansi
+          return string if $ansi == false
           #warn "use ANSI block notation for future versions"
           return "#{esc}#{string}#{ENDCODE}"
         end
         if block_given?
-          return yield unless $ansi
+          return yield if $ansi == false
           return "#{esc}#{yield}#{ENDCODE}"
         end
         esc
@@ -181,7 +180,7 @@ module ANSI
         string = codes.shift.to_s
       end
 
-      return string unless $ansi
+      return string if $ansi == false
 
       c = code(*codes)
 
