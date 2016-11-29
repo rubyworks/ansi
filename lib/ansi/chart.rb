@@ -23,7 +23,6 @@ module ANSI
     :negative         => 7,
     :swap             => 7,
     :conceal          => 8,
-    :concealed        => 8,
     :hide             => 9,
     :strike           => 9,
 
