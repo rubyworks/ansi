@@ -34,7 +34,7 @@ device.
 There are a number of modules and classes provided by the ANSI
 package. To get a good understanding of them it is best to pursue 
 the [QED documents](http://github.com/rubyworks/ansi/tree/master/qed/)
-or the [API documentation](http://rubyworks.github.com/ansi/api/index.html).
+or the [API documentation](https://www.rubydoc.info/gems/ansi).
 
 At the heart of all the provided libraries lies the ANSI::Code module
 which defines ANSI codes as constants and methods. For example:
