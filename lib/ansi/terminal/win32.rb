@@ -29,7 +29,7 @@ module ANSI
     def terminal_size
       stdout_handle = GetStdHandle(STD_OUTPUT_HANDLE)
 
-      bufx, bufy, curx, cury, wattr, left, top, right, bottom, maxx, maxy =
+      _bufx, _bufy, _curx, _cury, _wattr, left, top, right, bottom, _maxx, _maxy =
         GetConsoleScreenBufferInfo(stdout_handle)
       return right - left + 1, bottom - top + 1
     end
@@ -45,7 +45,7 @@ module ANSI
           mode &= ~ENABLE_ECHO_INPUT
       end
 
-      ok = SetConsoleMode(console_handle, mode)
+      SetConsoleMode(console_handle, mode)
     end
 
     # win32 console APIs
