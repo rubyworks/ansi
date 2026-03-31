@@ -2,9 +2,9 @@
 
 ## ANSI
 
-Copyright &copy; 2009 [Rubyworks](http://rubyworks.github.com) &middot;
+Copyright &copy; 2009 [Rubyworks](http://rubyworks.github.io) &middot;
 License [BSD-2-Clause](http://spdx.org/licenses/BSD-2-Clause) &middot;
-Website http://rubyworks.github.com/ansi
+Website http://rubyworks.github.io/ansi
 
     Copyright 2009 Rubyworks.
 
