@@ -1,14 +1,20 @@
-#/usr/bin/env ruby
+require 'rubygems/package_task'
 
-task :default => [:demo]
+gemspec = Gem::Specification.load('ansi.gemspec')
 
-desc "run demos"
+Gem::PackageTask.new(gemspec) do |pkg|
+  pkg.need_zip = false
+  pkg.need_tar = false
+end
+
+desc "Run QED demos"
 task :demo do
-  sh "bundle exec qed"
+  sh 'bundle exec qed'
 end
 
-desc "run unit tests"
+desc "Run unit tests"
 task :test do
-  sh "bundle exec rubytest"
+  sh 'bundle exec ruby -Ilib -Itest -e "Dir.glob(\"test/case_*.rb\").each{|f| require \"./#{f}\"}"'
 end
 
+task :default => :demo

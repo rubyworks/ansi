@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+  <TITLE>ANSI for RUBY</TITLE>
+
+  <META NAME="description" CONTENT="ANSI codes for your Ruby code!">
+
+  <LINK rel="shortcut icon" href="assets/images/ruby.png"/>
+
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/reset.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/tag.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/id.css" />
+
+  <SCRIPT language="javascript" type="text/javascript" src="assets/scripts/jquery.js"></SCRIPT>
+  <SCRIPT language="javascript" type="text/javascript" src="assets/scripts/highlight.js"></SCRIPT>
+
+  <SCRIPT type="text/javascript">
+    $(document).ready(function() {
+        $('pre.ruby').wrapInner('<code></code>');
+        hljs.tabReplace = '    ';
+        hljs.initHighlightingOnLoad('ruby');
+    });
+  </SCRIPT>
+
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/highlight.css" />
+
+  <style>
+    #rubyworks{ position: fixed; bottom: 0; right: 3px; padding: 0; opacity: 0.2; }
+  </style>
+</HEAD>
+<BODY>
+
+<div id="header">
+  <div class="title">
+    <h2>Ruby's</h2>
+    <h1>ANSI</h1>
+  </div>
+</div>
+
+<table id="nav">
+<tr><td>
+  <a href="https://rubydoc.info/gems/ansi/file/DEMO.md">
+    <img src="assets/images/book.png" /><br/>
+    Demonstrandum
+  </a>
+</td><td>
+  <a href="https://rubydoc.info/gems/ansi">
+    <img src="assets/images/gears.png" /><br/>
+    Documentation
+  </a>
+</td><td>
+  <a href="https://github.com/rubyworks/ansi/">
+    <img src="assets/images/github.png" /><br/>
+    Development
+  </a>
+</td></tr>
+</table>
+
+<div id="doc">
+  <p>The Ruby ANSI project is a brilliant collection of ANSI escape code
+  related libraries enabling ANSI code based colorization and stylization
+  of console output in a variety of formats and layouts.</p>
+
+  <p>Included in the library are the Code module, which is the heart of the system,
+  a Mixin module for including color methods into your own classes, a Logger,
+  a ProgressBar, a String subclass and more. The library also includes a Terminal
+  module which provides information about the current output device.</p>
+
+  <br/>
+
+  <div style="text-align: center;">
+    <a href="#" onclick="$('#readme').toggle();">Click Here to Learn More</a>
+  </div>
+</div>
+
+<div class="centered">
+
+<div id="readme" style="display: none;">
+
+<div class="section">
+  <p>There are a number of modules and classes provided by the ANSI package.
+  Below is a small sampling of some of these. To get an even better understanding
+  of the available modules and classes and their capabilities, have a look at the
+  <a href="https://github.com/rubyworks/ansi/tree/master/demo">QED Demonstrandum</a>.</p>
+</div>
+
+<div class="section" id="section_code"><h3>ANSI::Code</h3>
+  <p>At the heart of all the provided libraries lies the ANSI::Code module which
+  defines ANSI codes as constants and methods. For example:</p>
+
+  <pre class="ruby">
+    require 'ansi/code'
+
+    include ANSI::Code
+
+    red + &quot;Hello&quot; + " " + blue + &quot;World&quot; + clear
+  </pre>
+
+  <pre>
+      <span style="color: red">Hello</span> <span style="color: green">World</span>
+  </pre>
+
+  <p>Or in block form...</p>
+
+  <pre class="ruby">
+    puts red{ &quot;Hello&quot; } + " " + green{ &quot;World&quot; }
+  </pre>
+
+  <pre>
+      <span style="color: red">Hello</span> <span style="color: green">World</span>
+  </pre>
+
+  <p>Rather than include <tt>ANSI::Code</tt>, these methods can also be called as module
+  methods. Either as <tt>ANSI::Code.red</tt> or just <tt>ANSI.red</tt>.</p>
+
+  <p>The methods defined by this module are used throughout the rest of the
+  system.</p>
+</div>
+
+<div class="section" id="section_progressbar"><h3>ANSI::ProgressBar</h3>
+  <p>The <tt>ANSI::ProgressBar</tt> class is great to convey the progress
+  of long running process.</p>
+
+  <pre class="ruby">
+    require 'ansi/progressbar'
+
+    pbar = ANSI::Progressbar.new("Test Bar", 100)
+
+    100.times do |i|
+      sleep 0.01
+      pbar.inc
+    end
+    pbar.finish
+  </pre>
+
+  <pre>
+     Test Bar:  100% |||||||||||||||||||||||||||||||||||||||||||| Time: 00:00:11
+  </pre>
+
+  <p>As with the rest of the ANSI classes, ANSI codes can be used to spice up the
+  progress bar output.</p>
+</div>
+
+<div class="section" id="section_string"><h3>ANSI::String</h3>
+  <p>The <tt>ANSI::String</tt> class provides a specialized String subclass ideally suited for ANSI
+color manipulation.</p>
+
+  <pre class="ruby">
+    require 'ansi/string'
+
+    flower1 = ANSI::String.new("Roses")
+    flower2 = ANSI::String.new("Violets")
+
+    puts flower1.red + " are red and, " + flower2.blue + " are blue."
+  </pre>
+
+  <pre>
+     <span style="color: red;">Roses</span> are red, and <span style="color: lightblue;">Violets</span> are blue.
+  </pre>
+
+  <p>The <tt>ANSI::String</tt> class is mostly a String subclass with
+  the <tt>ANSI::Mixin</tt> module mixed-in.</p>
+</div>
+
+<div class="section" id="section_columns"><h3>ANSI::Columns</h3>
+  <p>The <tt>ANSI::Columns</tt> class provides easy way to create columnar output.</p>
+
+  <pre class="ruby">
+    require 'ansi/columns'
+
+    list = %w{a b c d e f g h i j k l}
+
+    columns = ANSI::Columns.new(list)
+
+    puts columns.to_s(4)
+  </pre>
+
+  <pre>
+      a d g j
+      b e h k
+      c f i l
+  </pre>
+
+  <p>A block can be passed to the constructor to apply ANSI codes to each entry.</p>
+</div>
+
+<div class="section" id="section_table"><h3>ANSI::Table</h3>
+  <p>The <tt>ANSI::Table</tt> class makes quick work of tables.</p>
+
+  <pre class="ruby">
+    require 'ansi/table'
+
+    data = [
+      [ 10, 20, 30 ],
+      [ 20, 10, 20 ],
+      [ 50, 40, 20 ]
+    ]
+
+    table = ANSI::Table.new(data)
+
+    puts table
+  </pre>
+
+  <pre>
+    +----+----+----+
+    | 10 | 20 | 30 |
+    | 20 | 10 | 20 |
+    | 50 | 40 | 20 |
+    +----+----+----+
+  </pre>
+
+  <p>As with the <tt>Columns</tt> class, a block passed to the constructor can be
+  used to apply ANSI codes to each cell.</p>
+</div>
+
+</div>
+
+<div id="footer">
+  <div class="copyright">
+    Copyright &copy; 2010 <a href="https://rubyworks.github.io">Rubyworks</a> &middot;
+    Background Image Copyright 2006 <a href="http://www.flickr.com/photos/26233461@N00/124396361/#/">Simon Kenny</a>
+  </div>
+</div>
+
+</div>
+
+<div id="rubyworks">
+  <a href="https://rubyworks.github.io">
+    <img src="https://rubyworks.github.io/assets/images/seal.png" height="175px" />
+  </a>
+</div>
+
+</BODY>
+</HTML>

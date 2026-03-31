@@ -1,0 +1,74 @@
+/* ID STYLES */
+
+/* #header */
+
+#header { border-bottom: 0px solid #ccc; padding: 20px; text-align: center; background: url(../images/color_bars.gif) #ffffff; }
+#header .title { padding: 0; font-size: 40px; vertical-align: absmiddle; }
+#header .title h1 { font-size: 190px; font-weight: bold; margin: 10px 0 0 0; font-family: monospace; }
+#header .title h1 { color: #ffffff; text-shadow: 1px 1px 5px #333; }
+#header .title pre { background: transparent; }
+#header .title h2 { color: red; font-weight: bold; margin: 0; text-shadow: 1px 1px 5px #333; }
+
+/* #nav */
+
+#nav { text-align: center; margin: 20px auto; }
+#nav img { height: 128px; width: 128px; }
+#nav td { text-align: center; padding: 40px; }
+#nav a { font-weight: bold; font-size: 20px; }
+
+/* NOT USED */
+#nav ul { list-style-type: none; margin: 0px; padding: 0px; width: 100%; position: relative; }
+#nav ul li { margin: 0 1px 10px 0; line-height: 20px; white-space:nowrap; }
+#nav ul li a { border-top: 0 solid; }
+#nav ul li a { font-weight: bold; text-decoration: none; font-size: 30px; }
+#nav ul li a:hover { text-decoration: underline; }
+#nav ul li a:active { text-decoration: underline; }
+#nav ul { background: transparent; }
+#nav ul li a { color: #00415A; border-color: #80C1DA; }
+
+/* #main */
+
+.main { padding: 10px 0 30px 0; }
+.main { }
+.main a { font-size: 100%; }
+.main a:hover { text-decoration: underline; }
+.main h2 { font-size: 2em; font-weight: bold; }
+.main h3 { font-style: italic; }
+
+/* #doc */
+
+#doc { font-family: helvetica, sans-serif; line-height: 150%; background-color: #222; color: white; padding: 3em 2em 2em 2em; }
+#doc a { color: #ff415A; }
+#doc a:hover { }
+#doc p { font-weight: bold; font-size: 130%; }
+#doc h2 { color: #ff0000; border-color: #80C1DA; margin-top: 0; padding-top: 0; }
+#doc h3 { border-color: #80C1DA; }
+
+#readme { margin-top: 0; padding-top: 20px; border-top: 0px solid #ccc; }
+#readme ol, ul { list-style: square; margin-left: 24px; }
+/* #footer */
+
+#footer { margin-top: 0; padding-top: 30px; border-top: 0px solid #ccc; text-align: center; }
+#footer .advert { border: 1px solid :eee; }
+#footer .copyright { margin-top: 20px; padding: 20px 0px 35px 0px; font-size: 0.8em; color: #888; }
+
+
+/* CLASS STYLES */
+
+.centered {
+  width: 90%;
+  margin: 10px auto;
+  background: #ffffff;
+  padding: 5px 40px;
+}
+
+.colorized {
+  background: #0082B4;
+  color: #333333;
+}
+
+.highlighted {
+  background: #0082B4;
+  color: #80C1DA;
+}
+

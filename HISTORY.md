@@ -1,5 +1,22 @@
 # RELEASE HISTORY
 
+## 1.6.0 | 2026-03-30
+
+Maintenance release. Modernized project tooling and cleaned up documentation.
+
+Changes:
+
+* Replace custom Indexer system with standard gemspec.
+* Replace Travis CI with GitHub Actions.
+* Replace Assembly/detroit/ergo with Rakefile.
+* Simplify version.rb to use a plain constant.
+* Fix Fixnum reference for Ruby 3+ compatibility.
+* Fix typos and update URLs to HTTPS.
+* Move site from gh-pages to docs/.
+* Remove obsolete files.
+* Clean up .gitignore.
+
+
 ## 1.5.0 | 2015-01-16
 
 ANSI 1.5 introduces one change that is not backward compatiable. The 
