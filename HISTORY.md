@@ -1,5 +1,17 @@
 # RELEASE HISTORY
 
+## 1.6.1 | 2026-11-20
+
+Fixes loading on Ruby 4.0.
+
+Changes:
+
+* Depend on the `logger` gem. `require 'ansi'` loads `ANSI::Logger`, which
+  needs Ruby's `logger` library, and Ruby 4.0 no longer ships that as a
+  default gem. Under Bundler on Ruby 4.0, `require 'ansi'` failed with
+  "cannot load such file -- logger".
+* Test on Ruby 4.0.
+
 ## 1.6.0 | 2026-03-30
 
 Maintenance release. Modernized project tooling and cleaned up documentation.

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'ansi'
-  s.version     = '1.6.0'
+  s.version     = '1.6.1'
   s.summary     = 'ANSI at your fingertips!'
   s.description = 'The ANSI project is a superlative collection of ANSI escape code related ' \
                   'libraries enabling ANSI colorization and stylization of console output. Byte for ' \
@@ -16,6 +16,10 @@ Gem::Specification.new do |s|
 
   s.files       = Dir['lib/**/*', 'LICENSE.txt', 'README.md', 'HISTORY.md', 'NOTICE.md', 'demo/**/*']
   s.require_paths = ['lib']
+
+  # ANSI::Logger extends Ruby's Logger, which stopped being a default gem
+  # in Ruby 4.0.
+  s.add_dependency 'logger'
 
   s.add_development_dependency 'rake', '>= 13'
   s.add_development_dependency 'qed', '>= 2.9'
