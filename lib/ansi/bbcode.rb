@@ -84,7 +84,7 @@ module ANSI
 
     # ---------------------------
 
-    # Returns the ANSI sequence for given color, if existant
+    # Returns the ANSI sequence for given color, if existent
     def BBCode.ansi(colorname)
         colorname.strip!
         return ANSINAME2CODE[ colorname.downcase ]
