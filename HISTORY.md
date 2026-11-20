@@ -2,15 +2,23 @@
 
 ## 1.6.1 | 2026-11-20
 
-Fixes loading on Ruby 4.0.
+Fixes loading on Ruby 4.0, color on Windows, and two wrong codes.
 
 Changes:
 
+* Stop asking for the win32console gem on Windows. Windows hasn't needed
+  it since Ruby 2.0, but without it ANSI printed a warning and turned
+  color off. (Darunada, #35; reported in #36)
+* Correct the codes for `inverse_off` and `positive`, now 27, and for
+  `conceal_off`, `show` and `reveal`, now 28. They were 26 and 27, so
+  `inverse_off` did nothing and `reveal` turned off inverse instead.
+  (hurricup, #38)
 * Depend on the `logger` gem. `require 'ansi'` loads `ANSI::Logger`, which
   needs Ruby's `logger` library, and Ruby 4.0 no longer ships that as a
   default gem. Under Bundler on Ruby 4.0, `require 'ansi'` failed with
   "cannot load such file -- logger".
 * Test on Ruby 4.0.
+* Fix a typo in a comment. (eduardoj, #41)
 
 ## 1.6.0 | 2026-03-30
 
