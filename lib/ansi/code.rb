@@ -6,15 +6,6 @@ module ANSI
   # NOTE: This has no effect on methods that return ANSI codes.
   $ansi = true
 
-  if RUBY_PLATFORM =~ /(win32|w32)/
-    begin
-      require 'Win32/Console/ANSI'
-    rescue LoadError
-      warn "ansi: 'gem install win32console' to use color on Windows"
-      $ansi = false
-    end
-  end
-
   require 'ansi/constants'
 
   # TODO: up, down, right, left, etc could have yielding methods too?
